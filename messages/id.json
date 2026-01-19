@@ -1,0 +1,1208 @@
+{
+  "common": {
+    "learnMore": "Pelajari Lebih Lanjut",
+    "getStarted": "Mulai Sekarang",
+    "contactUs": "Hubungi Kami",
+    "viewAll": "Lihat Semua",
+    "readMore": "Baca Selengkapnya",
+    "apply": "Lamar",
+    "subscribe": "Berlangganan",
+    "submit": "Kirim",
+    "close": "Tutup",
+    "menu": "Menu",
+    "language": "Bahasa",
+    "requestQuote": "Minta Penawaran",
+    "talkToExpert": "Bicara dengan Ahli"
+  },
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "services": "Layanan",
+    "solutions": "Solusi",
+    "resources": "Sumber Daya",
+    "blog": "Blog",
+    "careers": "Karir",
+    "contact": "Kontak",
+    "portfolio": "Portofolio",
+    "manpower": "Tenaga Kerja IT",
+    "partnership": "Kemitraan",
+    "openSource": "Open Source",
+    "products": "Produk"
+  },
+  "menu": {
+    "services": {
+      "viewAll": "Lihat Semua Layanan",
+      "webDev": {
+        "title": "Pengembangan Web",
+        "description": "Aplikasi web modern dengan React & Next.js"
+      },
+      "mobileDev": {
+        "title": "Pengembangan Aplikasi Mobile",
+        "description": "Aplikasi iOS & Android dengan Flutter"
+      },
+      "aiSolutions": {
+        "title": "Solusi AI",
+        "description": "Pengembangan LLM & chatbot AI kustom"
+      },
+      "iotSolutions": {
+        "title": "Solusi IoT",
+        "description": "Integrasi perangkat & sensor pintar"
+      },
+      "cloudServices": {
+        "title": "Layanan Cloud",
+        "description": "Deployment AWS, Azure & GCP"
+      },
+      "cybersecurity": {
+        "title": "Keamanan Siber",
+        "description": "Audit keamanan & kepatuhan"
+      }
+    },
+    "solutions": {
+      "title": "Solusi Industri",
+      "subtitle": "Sistem terintegrasi lengkap untuk industri Anda",
+      "viewAll": "Lihat Semua Solusi",
+      "corporate": {
+        "title": "Paket Korporat",
+        "description": "Email, ERP, Dashboard BI",
+        "badge": "Populer"
+      },
+      "education": {
+        "title": "Paket Pendidikan",
+        "description": "SIS, LMS, Sistem Pembayaran"
+      },
+      "healthcare": {
+        "title": "SIMRS Kesehatan",
+        "description": "Pasien, BPJS, Lab, Farmasi",
+        "badge": "Enterprise"
+      },
+      "retail": {
+        "title": "Retail & E-Commerce",
+        "description": "E-Commerce, POS, Inventori"
+      }
+    },
+    "products": {
+      "title": "22 Produk & Layanan",
+      "subtitle": "Layanan inti, produk perangkat lunak, dan solusi SaaS untuk kebutuhan bisnis Anda",
+      "badge": "Portofolio Lengkap",
+      "coreServices": "Layanan Inti",
+      "softwareProducts": "Produk Perangkat Lunak",
+      "saasProducts": "Produk SaaS",
+      "needCustom": "Butuh solusi khusus?",
+      "needCustomDesc": "Kami dapat menyesuaikan produk apa pun sesuai kebutuhan Anda",
+      "items": {
+        "webDev": {
+          "title": "Pengembangan Web",
+          "description": "Aplikasi web kustom",
+          "badge": null
+        },
+        "mobileDev": {
+          "title": "Pengembangan Aplikasi Mobile",
+          "description": "Aplikasi iOS & Android",
+          "badge": null
+        },
+        "aiLlm": {
+          "title": "Solusi AI & LLM",
+          "description": "Integrasi ChatGPT, Claude",
+          "badge": "Hot"
+        },
+        "iot": {
+          "title": "Solusi IoT",
+          "description": "Integrasi perangkat pintar",
+          "badge": null
+        },
+        "cloud": {
+          "title": "Solusi Cloud",
+          "description": "Setup AWS, GCP, Azure",
+          "badge": null
+        },
+        "cybersecurity": {
+          "title": "Keamanan Siber",
+          "description": "Audit, Pentest, SOC",
+          "badge": null
+        },
+        "emailZimbra": {
+          "title": "Email Zimbra",
+          "description": "Server email enterprise",
+          "badge": null
+        },
+        "erpOdoo": {
+          "title": "ERP Odoo",
+          "description": "Sistem ERP lengkap",
+          "badge": null
+        },
+        "lmsMoodle": {
+          "title": "LMS Moodle",
+          "description": "Manajemen pembelajaran",
+          "badge": null
+        },
+        "hrManagement": {
+          "title": "Manajemen HR",
+          "description": "Absensi, payroll, cuti",
+          "badge": null
+        },
+        "posSystem": {
+          "title": "Sistem POS",
+          "description": "Point of sale retail",
+          "badge": null
+        },
+        "crmSystem": {
+          "title": "Sistem CRM",
+          "description": "Hubungan pelanggan",
+          "badge": null
+        },
+        "bpjsIntegration": {
+          "title": "Integrasi BPJS",
+          "description": "Sinkronisasi asuransi kesehatan",
+          "badge": null
+        },
+        "inventorySystem": {
+          "title": "Sistem Inventori",
+          "description": "Manajemen stok & gudang",
+          "badge": null
+        },
+        "matchfinance": {
+          "title": "Matchfinance",
+          "description": "SaaS manajemen keuangan & akuntansi",
+          "badge": "Baru"
+        },
+        "mabda": {
+          "title": "MABDA",
+          "description": "Ekosistem sekolah & pondok pesantren",
+          "badge": null
+        },
+        "deliveryApp": {
+          "title": "DeliveryApp",
+          "description": "Platform pengiriman & logistik lengkap",
+          "badge": null
+        },
+        "mediWish": {
+          "title": "MediWish",
+          "description": "Layanan laundry & laundry medis",
+          "badge": null
+        },
+        "medixMind": {
+          "title": "MedixMind",
+          "description": "Platform kecerdasan medis berbasis AI",
+          "badge": "AI"
+        },
+        "ryugate": {
+          "title": "Ryugate",
+          "description": "IoT perangkat gate & sistem absensi",
+          "badge": null
+        },
+        "wabotiq": {
+          "title": "Wabotiq",
+          "description": "Layanan otomasi bot WhatsApp",
+          "badge": null
+        },
+        "ocrFile": {
+          "title": "OcrFile",
+          "description": "Pemrosesan & ekstraksi dokumen OCR",
+          "badge": null
+        }
+      }
+    },
+    "resources": {
+      "blogArticles": {
+        "title": "Blog & Artikel",
+        "description": "Wawasan & tutorial teknologi terbaru"
+      },
+      "caseStudies": {
+        "title": "Studi Kasus",
+        "description": "Kisah sukses proyek nyata"
+      },
+      "careers": {
+        "title": "Karir",
+        "description": "Bergabunglah dengan tim ahli kami"
+      },
+      "manpower": {
+        "title": "Tenaga Kerja IT",
+        "description": "Profesional bersertifikat"
+      },
+      "partnership": {
+        "title": "Kemitraan",
+        "description": "Peluang kolaborasi"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Mitra Transformasi Digital Anda. Kami menyediakan solusi IT komprehensif, dari pengembangan perangkat lunak kustom hingga implementasi AI dan layanan tenaga kerja IT.",
+    "quickLinks": "Tautan Cepat",
+    "servicesTitle": "Layanan",
+    "solutionsTitle": "Solusi",
+    "companyTitle": "Perusahaan",
+    "services": {
+      "webDev": "Pengembangan Web",
+      "mobileApps": "Aplikasi Mobile",
+      "aiSolutions": "Solusi AI",
+      "iotSolutions": "Solusi IoT",
+      "cloudServices": "Layanan Cloud",
+      "cybersecurity": "Keamanan Siber"
+    },
+    "solutions": {
+      "corporate": "Paket Korporat",
+      "education": "Paket Pendidikan",
+      "healthcare": "SIMRS Kesehatan",
+      "retail": "Retail & E-Commerce",
+      "manpower": "Tenaga Kerja IT",
+      "partnership": "Kemitraan"
+    },
+    "company": {
+      "about": "Tentang Kami",
+      "portfolio": "Portofolio",
+      "careers": "Karir",
+      "blog": "Blog",
+      "openSource": "Open Source",
+      "contact": "Kontak"
+    },
+    "newsletter": {
+      "title": "Berlangganan Newsletter Kami",
+      "description": "Dapatkan update terbaru tentang tren teknologi, praktik terbaik, dan layanan kami.",
+      "placeholder": "Masukkan email Anda",
+      "subscribe": "Berlangganan",
+      "subscribing": "Berlangganan...",
+      "success": "Berhasil berlangganan! Periksa email Anda untuk konfirmasi.",
+      "error": "Gagal berlangganan. Silakan coba lagi."
+    },
+    "location": "Jl. Gg. Bina Warga III No. 36, Lubang Buaya, Jakarta Timur 13810",
+    "legal": "Legal",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Syarat Layanan",
+    "cookies": "Cookies",
+    "copyright": "© {year} Autobot Wijaya Solution. Hak Cipta Dilindungi.",
+    "followUs": "Ikuti Kami"
+  },
+  "home": {
+    "solutions": {
+      "subtitle": "Solusi & Paket",
+      "title": "Solusi Siap Pakai",
+      "description": "Paket yang telah dikonfigurasi untuk industri tertentu dengan harga yang transparan."
+    },
+    "hero": {
+      "subtitle": "Solusi IT Terpadu",
+      "title": "Transformasi Digital untuk Bisnis Indonesia",
+      "description": "Kami menyediakan solusi IT end-to-end dari pengembangan perangkat lunak custom hingga AI/LLM, membantu bisnis Indonesia bertumbuh di era digital.",
+      "primaryCTA": "Konsultasi Gratis",
+      "secondaryCTA": "Lihat Layanan"
+    },
+    "stats": {
+      "projects": "Proyek Terkirim",
+      "clients": "Klien Puas",
+      "industries": "Industri Dilayani",
+      "satisfaction": "Kepuasan Klien"
+    },
+    "services": {
+      "subtitle": "Layanan Kami",
+      "title": "Solusi IT Komprehensif",
+      "description": "Dari konsultasi hingga implementasi, kami menyediakan layanan IT lengkap untuk kebutuhan bisnis Anda."
+    },
+    "whyUs": {
+      "subtitle": "Mengapa Memilih Kami",
+      "title": "Partner Terpercaya untuk Transformasi Digital Anda",
+      "description": "Kami menggabungkan keahlian teknis dengan pemahaman mendalam tentang pasar Indonesia."
+    },
+    "cta": {
+      "badge": "Siap Bertransformasi?",
+      "title": "Siap Transformasi Digital?",
+      "description": "Mari diskusikan bagaimana kami dapat membantu bisnis Anda tumbuh dengan teknologi."
+    }
+  },
+  "services": {
+    "hero": {
+      "subtitle": "Layanan Kami",
+      "title": "Solusi IT Komprehensif untuk Bisnis Anda",
+      "description": "Dari pengembangan web hingga implementasi AI, kami menawarkan layanan teknologi end-to-end untuk membantu bisnis Anda berkembang di era digital.",
+      "primaryCTA": "Mulai Sekarang",
+      "secondaryCTA": "Bicara dengan Ahli"
+    },
+    "whatWeOffer": "Yang Kami Tawarkan",
+    "ourServices": "Layanan Kami",
+    "exploreDescription": "Jelajahi rangkaian lengkap layanan IT kami yang dirancang untuk mempercepat transformasi digital Anda.",
+    "howWeWork": "Cara Kerja Kami",
+    "processTitle": "Proses Pengembangan Kami",
+    "processDescription": "Kami mengikuti metodologi terbukti untuk memastikan keberhasilan pengiriman proyek.",
+    "process": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "Kami mulai dengan memahami bisnis, tantangan, dan tujuan Anda melalui konsultasi detail."
+      },
+      "planning": {
+        "title": "Perencanaan",
+        "description": "Tim kami membuat rencana proyek komprehensif dengan milestone dan deliverable yang jelas."
+      },
+      "development": {
+        "title": "Pengembangan",
+        "description": "Kami membangun solusi Anda menggunakan metodologi agile dengan update dan feedback loop rutin."
+      },
+      "testing": {
+        "title": "Pengujian",
+        "description": "Testing menyeluruh memastikan kualitas, performa, dan keamanan sebelum deployment."
+      },
+      "deployment": {
+        "title": "Deployment",
+        "description": "Deployment lancar dengan gangguan minimal terhadap operasional bisnis Anda."
+      },
+      "support": {
+        "title": "Dukungan",
+        "description": "Dukungan berkelanjutan, pelatihan, dan maintenance untuk memastikan kesuksesan jangka panjang."
+      }
+    },
+    "webDevelopment": {
+      "hero": {
+        "subtitle": "Layanan Pengembangan Web",
+        "title": "Aplikasi Web Modern dan Scalable",
+        "description": "Bangun aplikasi web powerful dengan teknologi terkini. Dari website korporat hingga platform web kompleks, kami memberikan solusi yang mendorong pertumbuhan bisnis.",
+        "primaryCTA": "Mulai Proyek Anda",
+        "secondaryCTA": "Lihat Portofolio"
+      },
+      "name": "Pengembangan Web",
+      "shortDescription": "Aplikasi web modern dan responsif dibangun dengan teknologi terkini.",
+      "features": [
+        "Pengembangan React, Next.js, Vue.js",
+        "Progressive Web Apps (PWA)",
+        "Platform e-commerce",
+        "Portal web custom",
+        "Pengembangan & integrasi API"
+      ],
+      "keyFeatures": {
+        "title": "Mengapa Memilih Layanan Pengembangan Web Kami?",
+        "subtitle": "Fitur Utama",
+        "items": {
+          "responsive": {
+            "title": "Desain Responsif",
+            "description": "Pendekatan mobile-first memastikan pengalaman sempurna di semua perangkat dan ukuran layar."
+          },
+          "performance": {
+            "title": "Performa Tinggi",
+            "description": "Waktu loading super cepat dengan kode optimal dan teknologi web modern."
+          },
+          "seo": {
+            "title": "Optimal SEO",
+            "description": "Dibangun dengan praktik SEO terbaik untuk memastikan visibilitas maksimal di mesin pencari."
+          },
+          "security": {
+            "title": "Aman & Andal",
+            "description": "Langkah keamanan standar industri melindungi data dan pengguna Anda."
+          },
+          "scalable": {
+            "title": "Arsitektur Scalable",
+            "description": "Dibangun untuk tumbuh bersama bisnis Anda, menangani peningkatan traffic dan fitur."
+          },
+          "maintenance": {
+            "title": "Mudah Dipelihara",
+            "description": "Kode bersih dan terdokumentasi membuat update dan enhancement mudah dilakukan."
+          }
+        }
+      },
+      "techStack": {
+        "title": "Teknologi yang Kami Gunakan",
+        "subtitle": "Tech Stack",
+        "frontend": {
+          "title": "Frontend",
+          "items": [
+            "React",
+            "Next.js",
+            "Vue.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ]
+        },
+        "backend": {
+          "title": "Backend",
+          "items": [
+            "Node.js",
+            "Python",
+            "PHP",
+            "Java",
+            "Go"
+          ]
+        },
+        "database": {
+          "title": "Database",
+          "items": [
+            "PostgreSQL",
+            "MySQL",
+            "MongoDB",
+            "Redis"
+          ]
+        },
+        "cloud": {
+          "title": "Cloud & DevOps",
+          "items": [
+            "AWS",
+            "Google Cloud",
+            "Docker",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      },
+      "process": {
+        "title": "Proses Pengembangan Kami",
+        "subtitle": "Cara Kami Membangun Website Anda",
+        "steps": {
+          "discovery": {
+            "title": "Discovery & Perencanaan",
+            "description": "Kami menganalisis kebutuhan, target audience, dan tujuan bisnis Anda untuk membuat roadmap proyek komprehensif."
+          },
+          "design": {
+            "title": "Desain UI/UX",
+            "description": "Designer kami membuat interface intuitif dan indah yang memberikan pengalaman pengguna excellent."
+          },
+          "development": {
+            "title": "Pengembangan",
+            "description": "Kode bersih dan efisien mengikuti best practice dengan update progress reguler."
+          },
+          "testing": {
+            "title": "Quality Assurance",
+            "description": "Testing komprehensif di berbagai perangkat, browser, dan skenario untuk memastikan kesempurnaan."
+          },
+          "launch": {
+            "title": "Launch & Deploy",
+            "description": "Deployment hati-hati dengan monitoring untuk memastikan transisi smooth ke production."
+          },
+          "support": {
+            "title": "Maintenance & Dukungan",
+            "description": "Dukungan berkelanjutan, update, dan optimisasi untuk menjaga website Anda berjalan sempurna."
+          }
+        }
+      }
+    },
+    "mobileApp": {
+      "hero": {
+        "subtitle": "Pengembangan Aplikasi Mobile",
+        "title": "Aplikasi Mobile Native & Cross-Platform",
+        "description": "Ciptakan pengalaman mobile yang menakjubkan untuk iOS dan Android. Dari konsep hingga deployment di store, kami membangun aplikasi yang disukai pengguna.",
+        "primaryCTA": "Bangun Aplikasi Anda",
+        "secondaryCTA": "Lihat Karya Kami"
+      },
+      "name": "Pengembangan Aplikasi Mobile",
+      "shortDescription": "Aplikasi mobile native dan cross-platform untuk iOS dan Android.",
+      "features": [
+        "Aplikasi Flutter & React Native",
+        "Native iOS (Swift) & Android (Kotlin)",
+        "Desain UI/UX aplikasi mobile",
+        "Optimisasi app store",
+        "Maintenance & update"
+      ],
+      "keyFeatures": {
+        "title": "Mengapa Memilih Pengembangan Aplikasi Mobile Kami?",
+        "subtitle": "Fitur Utama",
+        "items": {
+          "crossPlatform": {
+            "title": "Keahlian Cross-Platform",
+            "description": "Satu codebase untuk iOS dan Android, mengurangi waktu dan biaya pengembangan."
+          },
+          "native": {
+            "title": "Performa Native",
+            "description": "Performa optimal memanfaatkan fitur dan kemampuan spesifik platform."
+          },
+          "ux": {
+            "title": "UX Exceptional",
+            "description": "Interface intuitif mengikuti panduan desain iOS dan Android."
+          },
+          "offline": {
+            "title": "Kapabilitas Offline",
+            "description": "Aplikasi yang bekerja seamless bahkan tanpa koneksi internet."
+          },
+          "integration": {
+            "title": "Integrasi API",
+            "description": "Integrasi seamless dengan backend services, API pihak ketiga, dan database."
+          },
+          "deployment": {
+            "title": "Deployment ke Store",
+            "description": "Dukungan penuh untuk submission dan optimisasi App Store dan Google Play."
+          }
+        }
+      }
+    },
+    "aiSolutions": {
+      "hero": {
+        "subtitle": "Solusi AI & Machine Learning",
+        "title": "Solusi Cerdas Didukung AI",
+        "description": "Manfaatkan kekuatan artificial intelligence dan machine learning untuk otomatisasi proses, mendapatkan insights, dan menciptakan solusi inovatif.",
+        "primaryCTA": "Jelajahi Solusi AI",
+        "secondaryCTA": "Bicara dengan Ahli AI"
+      },
+      "name": "AI & Machine Learning",
+      "shortDescription": "Solusi cerdas didukung artificial intelligence dan machine learning.",
+      "features": [
+        "Pengembangan LLM custom",
+        "AI chatbot & virtual assistant",
+        "Predictive analytics",
+        "Computer vision",
+        "Natural language processing"
+      ],
+      "keyFeatures": {
+        "title": "Transformasi Bisnis Anda dengan AI",
+        "subtitle": "Kapabilitas AI",
+        "items": {
+          "llm": {
+            "title": "Solusi LLM Custom",
+            "description": "Kembangkan large language model khusus untuk kebutuhan bisnis dan industri Anda."
+          },
+          "chatbot": {
+            "title": "AI Chatbot",
+            "description": "Conversational AI cerdas untuk customer support, sales, dan engagement."
+          },
+          "vision": {
+            "title": "Computer Vision",
+            "description": "Analisis gambar dan video untuk quality control, surveillance, dan otomasi."
+          },
+          "nlp": {
+            "title": "Natural Language Processing",
+            "description": "Ekstrak insights dari teks, otomasi pemrosesan dokumen, dan analisis sentimen."
+          },
+          "predictive": {
+            "title": "Predictive Analytics",
+            "description": "Prediksi trend, optimasi operasi, dan buat keputusan berbasis data."
+          },
+          "automation": {
+            "title": "Otomasi Proses",
+            "description": "Otomasi tugas dan workflow repetitif dengan AI agent cerdas."
+          }
+        }
+      }
+    },
+    "iot": {
+      "hero": {
+        "subtitle": "Solusi IoT",
+        "title": "Koneksi, Monitor, dan Kontrol Smart Device",
+        "description": "Bangun solusi IoT komprehensif dari sensor hingga cloud platform. Transformasi bisnis Anda dengan connected device dan data real-time.",
+        "primaryCTA": "Mulai Proyek IoT",
+        "secondaryCTA": "Lihat Studi Kasus"
+      },
+      "name": "Solusi IoT",
+      "shortDescription": "Koneksi dan kelola smart device dengan pengembangan platform IoT kami.",
+      "features": [
+        "Konsultasi & strategi IoT",
+        "Integrasi smart device",
+        "Pengembangan platform IoT",
+        "Industrial IoT (IIoT)",
+        "Analitik & visualisasi data"
+      ],
+      "keyFeatures": {
+        "title": "Solusi IoT Lengkap",
+        "subtitle": "Kapabilitas IoT",
+        "items": {
+          "platform": {
+            "title": "Pengembangan Platform IoT",
+            "description": "Platform IoT custom untuk manajemen device, pengumpulan data, dan analytics."
+          },
+          "integration": {
+            "title": "Integrasi Device",
+            "description": "Koneksikan device atau sensor apapun ke ekosistem IoT Anda dengan seamless."
+          },
+          "analytics": {
+            "title": "Analytics Real-time",
+            "description": "Monitor, analisa, dan visualisasikan data dari IoT device Anda secara real-time."
+          },
+          "edge": {
+            "title": "Edge Computing",
+            "description": "Proses data di edge untuk mengurangi latency dan meningkatkan efisiensi."
+          },
+          "security": {
+            "title": "Keamanan IoT",
+            "description": "Keamanan end-to-end untuk device, transmisi data, dan cloud infrastructure."
+          },
+          "industrial": {
+            "title": "Industrial IoT",
+            "description": "Solusi khusus untuk manufaktur, logistik, dan otomasi industri."
+          }
+        }
+      }
+    },
+    "cloud": {
+      "hero": {
+        "subtitle": "Layanan Cloud",
+        "title": "Migrasi, Manajemen & Optimisasi Cloud",
+        "description": "Manfaatkan kekuatan cloud computing. Dari strategi migrasi hingga manajemen berkelanjutan, kami membantu Anda maksimalkan benefit cloud.",
+        "primaryCTA": "Rencanakan Migrasi",
+        "secondaryCTA": "Konsultasi Cloud"
+      },
+      "name": "Layanan Cloud",
+      "shortDescription": "Migrasi cloud, manajemen infrastruktur, dan optimisasi.",
+      "features": [
+        "Layanan AWS, Azure, GCP",
+        "Strategi migrasi cloud",
+        "Infrastructure as Code",
+        "Pipeline DevOps & CI/CD",
+        "Optimisasi biaya"
+      ],
+      "keyFeatures": {
+        "title": "Solusi Cloud Komprehensif",
+        "subtitle": "Layanan Cloud",
+        "items": {
+          "migration": {
+            "title": "Migrasi Cloud",
+            "description": "Migrasi seamless dari on-premise ke cloud dengan downtime minimal."
+          },
+          "multicloud": {
+            "title": "Strategi Multi-Cloud",
+            "description": "Optimisasi biaya dan performa di AWS, Azure, dan Google Cloud."
+          },
+          "iac": {
+            "title": "Infrastructure as Code",
+            "description": "Deployment dan manajemen infrastruktur otomatis menggunakan Terraform, CloudFormation."
+          },
+          "devops": {
+            "title": "Implementasi DevOps",
+            "description": "Pipeline CI/CD, otomasi, dan kolaborasi untuk delivery lebih cepat."
+          },
+          "monitoring": {
+            "title": "Monitoring & Logging",
+            "description": "Monitoring komprehensif, alerting, dan log management untuk cloud infrastructure Anda."
+          },
+          "optimization": {
+            "title": "Optimisasi Biaya",
+            "description": "Kurangi biaya cloud melalui right-sizing, reserved instances, dan arsitektur efisien."
+          }
+        }
+      }
+    },
+    "cybersecurity": {
+      "hero": {
+        "subtitle": "Layanan Cybersecurity",
+        "title": "Lindungi Aset Digital Anda",
+        "description": "Solusi keamanan komprehensif untuk melindungi bisnis Anda dari ancaman cyber. Dari audit hingga compliance, kami amankan infrastruktur Anda.",
+        "primaryCTA": "Penilaian Keamanan",
+        "secondaryCTA": "Bicara dengan Ahli Keamanan"
+      },
+      "name": "Cybersecurity",
+      "shortDescription": "Solusi keamanan komprehensif untuk melindungi aset digital Anda.",
+      "features": [
+        "Audit & assessment keamanan",
+        "Penetration testing",
+        "Compliance (ISO 27001, GDPR)",
+        "Manajemen vulnerability",
+        "Pelatihan keamanan"
+      ],
+      "keyFeatures": {
+        "title": "Solusi Keamanan Komprehensif",
+        "subtitle": "Layanan Keamanan",
+        "items": {
+          "assessment": {
+            "title": "Audit Keamanan",
+            "description": "Assessment komprehensif postur keamanan dan vulnerability Anda."
+          },
+          "pentest": {
+            "title": "Penetration Testing",
+            "description": "Ethical hacking untuk identifikasi dan perbaiki kelemahan keamanan sebelum attacker."
+          },
+          "compliance": {
+            "title": "Manajemen Compliance",
+            "description": "Capai dan pertahankan compliance ISO 27001, GDPR, dan regulasi lainnya."
+          },
+          "monitoring": {
+            "title": "Monitoring Keamanan",
+            "description": "Monitoring dan incident response 24/7 untuk deteksi dan cegah ancaman."
+          },
+          "training": {
+            "title": "Pelatihan Keamanan",
+            "description": "Edukasi tim Anda tentang best practice keamanan dan kesadaran ancaman."
+          },
+          "incident": {
+            "title": "Incident Response",
+            "description": "Prosedur response dan recovery cepat untuk insiden keamanan."
+          }
+        }
+      }
+    },
+    "webDev": {
+      "hero": {
+        "badge": "Layanan Pengembangan Web",
+        "title": "Bangun Aplikasi Web Powerful Yang",
+        "titleHighlight": "Berkembang",
+        "description": "Dari website korporat hingga aplikasi web kompleks, kami menciptakan solusi web modern, cepat, dan aman menggunakan teknologi terkini.",
+        "primaryCTA": "Mulai Proyek Anda",
+        "secondaryCTA": "Lihat Portfolio"
+      },
+      "featuresSection": {
+        "subtitle": "Mengapa Memilih Kami",
+        "title": "Pengembangan Web Tingkat Enterprise",
+        "description": "Kami menghadirkan solusi web yang menggabungkan desain indah dengan fungsionalitas yang kokoh"
+      },
+      "features": {
+        "modernTech": {
+          "title": "Teknologi Modern",
+          "desc": "React, Next.js, Vue.js, Angular - kami menggunakan framework terbaru untuk performa terbaik"
+        },
+        "lightning": {
+          "title": "Sangat Cepat",
+          "desc": "Dioptimalkan untuk kecepatan dengan lazy loading, code splitting, dan integrasi CDN"
+        },
+        "responsive": {
+          "title": "Desain Responsif",
+          "desc": "Pengalaman sempurna di semua perangkat - mobile, tablet, dan desktop"
+        },
+        "secure": {
+          "title": "Aman & Handal",
+          "desc": "Praktik keamanan terbaik, SSL, autentikasi, dan perlindungan data"
+        },
+        "scalable": {
+          "title": "Arsitektur Scalable",
+          "desc": "Dibangun untuk berkembang dengan bisnis Anda menggunakan microservices dan cloud infrastructure"
+        },
+        "seo": {
+          "title": "SEO Optimized",
+          "desc": "Server-side rendering, meta tags, sitemaps untuk peringkat pencarian lebih baik"
+        }
+      },
+      "solutionsSection": {
+        "subtitle": "Solusi",
+        "title": "Solusi Pengembangan Web",
+        "description": "Pilih solusi sempurna untuk kebutuhan bisnis Anda"
+      },
+      "solutions": {
+        "corporate": {
+          "title": "Website Korporat",
+          "desc": "Profil perusahaan profesional, landing page, dan website bisnis",
+          "features": [
+            "Desain Custom",
+            "Integrasi CMS",
+            "Form Kontak",
+            "SEO Ready",
+            "Mobile Responsive"
+          ]
+        },
+        "ecommerce": {
+          "title": "Platform E-Commerce",
+          "desc": "Toko online lengkap dengan payment gateway dan manajemen inventori",
+          "features": [
+            "Katalog Produk",
+            "Keranjang Belanja",
+            "Payment Gateway",
+            "Manajemen Order",
+            "Dashboard Admin"
+          ]
+        },
+        "webapp": {
+          "title": "Aplikasi Web",
+          "desc": "Aplikasi web custom, platform SaaS, dan solusi enterprise",
+          "features": [
+            "Fitur Custom",
+            "Desain Database",
+            "Integrasi API",
+            "Manajemen User",
+            "Analytics"
+          ]
+        },
+        "portal": {
+          "title": "Portal & Dashboard",
+          "desc": "Portal karyawan, dashboard pelanggan, dan panel admin",
+          "features": [
+            "Role-based Access",
+            "Data Real-time",
+            "Laporan & Grafik",
+            "Notifikasi",
+            "Export Data"
+          ]
+        }
+      },
+      "startingFrom": "Mulai dari",
+      "getQuote": "Minta Penawaran",
+      "techSection": {
+        "subtitle": "Technology Stack",
+        "title": "Teknologi Modern Yang Kami Gunakan",
+        "description": "Tools dan framework terdepan di industri untuk hasil terbaik"
+      },
+      "techStack": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Database",
+        "cloud": "Cloud & DevOps"
+      },
+      "processSection": {
+        "subtitle": "Proses Kami",
+        "title": "Cara Kami Bekerja",
+        "description": "Metodologi terbukti untuk pengiriman proyek yang sukses"
+      },
+      "process": {
+        "discovery": {
+          "title": "Discovery",
+          "desc": "Memahami kebutuhan dan tujuan"
+        },
+        "design": {
+          "title": "Design",
+          "desc": "Desain UI/UX dan prototyping"
+        },
+        "development": {
+          "title": "Development",
+          "desc": "Pengembangan agile dengan sprint"
+        },
+        "testing": {
+          "title": "Testing",
+          "desc": "Quality assurance dan testing"
+        },
+        "deployment": {
+          "title": "Deployment",
+          "desc": "Peluncuran dan dukungan go-live"
+        },
+        "support": {
+          "title": "Support",
+          "desc": "Pemeliharaan dan update berkelanjutan"
+        }
+      },
+      "successSection": {
+        "subtitle": "Kisah Sukses",
+        "title": "Hasil Terbukti",
+        "description": "Dampak nyata dari proyek pengembangan web kami"
+      },
+      "projects": [
+        {
+          "name": "RetailHub E-Commerce",
+          "industry": "Retail",
+          "result": "Peningkatan 300% penjualan online"
+        },
+        {
+          "name": "FinTech Dashboard",
+          "industry": "Finance",
+          "result": "50% lebih cepat pemrosesan transaksi"
+        },
+        {
+          "name": "Corporate Portal",
+          "industry": "Enterprise",
+          "result": "2000+ karyawan terdaftar"
+        }
+      ],
+      "cta": {
+        "title": "Siap Membangun Aplikasi Web Anda?",
+        "description": "Mari diskusikan proyek Anda dan ciptakan sesuatu yang luar biasa bersama.",
+        "primaryCTA": "Mulai Sekarang",
+        "secondaryCTA": "Lihat Karya Kami"
+      }
+    }
+  },
+  "solutions": {
+    "corporate": {
+      "features": [
+        "Email Zimbra",
+        "ERPNext/Odoo",
+        "Manajemen Dokumen",
+        "BI Dashboard"
+      ],
+      "hero": {
+        "subtitle": "Solusi Korporat",
+        "title": "Infrastruktur Digital Lengkap untuk Bisnis Anda",
+        "description": "Dari pendirian perusahaan hingga operasional digital penuh. Kami menyediakan semua yang Anda butuhkan untuk menjalankan bisnis modern di Indonesia.",
+        "primaryCTA": "Mulai Sekarang",
+        "secondaryCTA": "Lihat Paket"
+      },
+      "name": "Solusi Korporat",
+      "description": "Solusi lengkap setup bisnis dan infrastruktur digital.",
+      "packages": {
+        "starter": {
+          "name": "Paket Starter",
+          "price": "Mulai dari IDR 15 juta",
+          "description": "Sempurna untuk bisnis baru dan startup",
+          "features": [
+            "Pendirian perusahaan (PT/CV)",
+            "NIB & izin usaha",
+            "Pendaftaran pajak (NPWP)",
+            "Website dasar (5 halaman)",
+            "Setup email bisnis",
+            "Cloud storage (50GB)"
+          ]
+        },
+        "professional": {
+          "name": "Paket Professional",
+          "price": "Mulai dari IDR 35 juta",
+          "description": "Untuk bisnis mapan yang siap scale",
+          "features": [
+            "Semua di Paket Starter",
+            "Website custom (10 halaman)",
+            "Implementasi sistem CRM",
+            "Setup social media",
+            "Konsultasi digital marketing",
+            "Dukungan prioritas"
+          ]
+        },
+        "enterprise": {
+          "name": "Paket Enterprise",
+          "price": "Harga custom",
+          "description": "Solusi lengkap untuk organisasi besar",
+          "features": [
+            "Semua di Paket Professional",
+            "Sistem ERP custom",
+            "Otomasi advanced",
+            "Account manager dedicated",
+            "Dukungan 24/7",
+            "Pelatihan & konsultasi"
+          ]
+        }
+      }
+    },
+    "education": {
+      "features": [
+        "Sistem Informasi Siswa",
+        "LMS (Moodle)",
+        "Manajemen Perpustakaan",
+        "Modul Keuangan"
+      ],
+      "hero": {
+        "subtitle": "Solusi Pendidikan",
+        "title": "Sistem Manajemen Pembelajaran Modern",
+        "description": "Transformasi pendidikan dengan solusi digital komprehensif. Dari K-12 hingga universitas, kami menyediakan sistem lengkap untuk pembelajaran modern.",
+        "primaryCTA": "Minta Demo",
+        "secondaryCTA": "Lihat Fitur"
+      },
+      "name": "Solusi Pendidikan",
+      "description": "Solusi komprehensif untuk sekolah, universitas, dan pusat pelatihan."
+    },
+    "healthcare": {
+      "features": [
+        "Manajemen Pasien",
+        "Rawat Jalan/Inap",
+        "Integrasi BPJS",
+        "Laboratorium & Radiologi"
+      ],
+      "hero": {
+        "subtitle": "Solusi Healthcare",
+        "title": "Sistem Informasi Manajemen Rumah Sakit (SIMRS)",
+        "description": "Sistem manajemen rumah sakit digital lengkap. Tingkatkan perawatan pasien, perlancar operasi, dan pastikan kepatuhan regulasi.",
+        "primaryCTA": "Jadwalkan Demo",
+        "secondaryCTA": "Lihat Modul"
+      },
+      "name": "Solusi Healthcare",
+      "description": "SIMRS dan solusi IT healthcare untuk rumah sakit dan klinik.",
+      "modules": {
+        "emr": {
+          "title": "Electronic Medical Records",
+          "description": "Rekam medis digital pasien dengan riwayat medis lengkap dan rencana perawatan."
+        },
+        "registration": {
+          "title": "Pendaftaran Pasien",
+          "description": "Check-in pasien efisien, penjadwalan appointment, dan manajemen antrian."
+        },
+        "pharmacy": {
+          "title": "Manajemen Farmasi",
+          "description": "Inventory obat, proses resep, dan cek interaksi obat."
+        },
+        "laboratory": {
+          "title": "Sistem Informasi Laboratorium",
+          "description": "Manajemen tes lab, tracking hasil, dan quality control."
+        },
+        "billing": {
+          "title": "Billing & Asuransi",
+          "description": "Billing otomatis, klaim asuransi, dan pelaporan keuangan."
+        },
+        "inventory": {
+          "title": "Manajemen Inventory",
+          "description": "Tracking supply medis, equipment, dan reordering otomatis."
+        }
+      }
+    },
+    "retail": {
+      "features": [
+        "Platform E-Commerce",
+        "Sistem POS",
+        "Manajemen Inventori",
+        "Payment Gateway"
+      ],
+      "hero": {
+        "subtitle": "Solusi Retail & E-commerce",
+        "title": "Platform Retail Omnichannel",
+        "description": "Solusi retail lengkap dari toko online hingga point-of-sale. Kelola e-commerce, toko fisik, dan marketplace Anda dari satu platform.",
+        "primaryCTA": "Buka Toko Anda",
+        "secondaryCTA": "Lihat Paket"
+      },
+      "name": "Solusi Retail",
+      "description": "E-commerce, POS, dan sistem manajemen retail omnichannel."
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Tentang Autobot",
+      "title": "Mentransformasi Bisnis Melalui Teknologi",
+      "description": "Kami adalah penyedia solusi IT terkemuka di Indonesia, spesialisasi dalam pengembangan perangkat lunak custom, implementasi AI, dan transformasi digital. Misi kami adalah memberdayakan bisnis dengan solusi teknologi inovatif.",
+      "contactUs": "Hubungi Kami",
+      "viewPortfolio": "Lihat Portofolio"
+    },
+    "story": {
+      "subtitle": "Kisah Kami",
+      "title": "Siapa Kami",
+      "paragraph1": "CV Autobot Wijaya Solution adalah perusahaan teknologi yang menyediakan solusi IT komprehensif termasuk pengembangan perangkat lunak, implementasi AI, solusi IoT, dan layanan tenaga kerja IT.",
+      "paragraph2": "Kami menggabungkan keahlian teknis dengan pemahaman bisnis yang mendalam untuk memberikan solusi yang benar-benar membuat perbedaan. Tim profesional bersertifikat kami telah berhasil menyelesaikan 150+ proyek di lebih dari 12 industri berbeda.",
+      "paragraph3": "Dari startup hingga perusahaan besar, sekolah hingga rumah sakit, kami telah membantu organisasi mengadopsi transformasi digital dan mencapai tujuan bisnis mereka melalui teknologi.",
+      "stats": {
+        "projects": "Proyek",
+        "clients": "Klien",
+        "industries": "Industri"
+      }
+    },
+    "vision": {
+      "title": "Visi Kami",
+      "description": "Menjadi partner teknologi paling terpercaya di Indonesia, memberdayakan bisnis untuk berkembang di era digital melalui solusi yang inovatif dan berkelanjutan."
+    },
+    "mission": {
+      "title": "Misi Kami",
+      "items": [
+        "Memberikan solusi IT kelas dunia yang disesuaikan untuk bisnis Indonesia",
+        "Mendorong inovasi melalui pembelajaran berkelanjutan dan R&D",
+        "Membangun kemitraan jangka panjang berdasarkan kepercayaan dan hasil",
+        "Berkontribusi pada pertumbuhan ekonomi digital Indonesia"
+      ]
+    },
+    "values": {
+      "subtitle": "Nilai-nilai Kami",
+      "title": "Apa yang Mendorong Kami",
+      "description": "Nilai-nilai inti kami memandu semua yang kami lakukan dan membantu kami memberikan hasil yang luar biasa.",
+      "excellence": {
+        "title": "Keunggulan",
+        "description": "Kami berusaha untuk keunggulan dalam setiap proyek yang kami kerjakan, memastikan standar kualitas tertinggi."
+      },
+      "clientCentric": {
+        "title": "Berpusat pada Klien",
+        "description": "Kesuksesan klien kami adalah kesuksesan kami. Kami membangun kemitraan yang langgeng berdasarkan kepercayaan dan hasil."
+      },
+      "innovation": {
+        "title": "Inovasi",
+        "description": "Kami mengadopsi teknologi dan metodologi baru untuk memberikan solusi terdepan."
+      },
+      "integrity": {
+        "title": "Integritas",
+        "description": "Kami beroperasi dengan kejujuran, transparansi, dan praktik etis dalam semua urusan kami."
+      }
+    },
+    "milestones": {
+      "subtitle": "Perjalanan Kami",
+      "title": "Pencapaian Penting",
+      "description": "Dari awal yang sederhana hingga menjadi partner teknologi terpercaya.",
+      "items": [
+        {
+          "year": "2021",
+          "event": "Perusahaan Didirikan",
+          "description": "Didirikan dengan visi mentransformasi bisnis melalui automasi dan integrasi AI."
+        },
+        {
+          "year": "2022-2023",
+          "event": "Kontrak Strategis Pertama",
+          "description": "Memulai kerjasama dengan klien korporat untuk sistem automasi finansial. Mengembangkan sistem manajemen akademik untuk sektor pendidikan. Implementasi teknologi OCR untuk automasi rekonsiliasi bank."
+        },
+        {
+          "year": "2023",
+          "event": "Pencapaian Milestone & Ekspansi Solusi",
+          "description": "Kontrak 5 tahun senilai 1+ miliar rupiah. Sistem automasi finansial sukses mengurangi waktu rekonsiliasi dari 14 hari menjadi 2 hari dengan penghematan biaya 80%. 50+ proyek berhasil diselesaikan. Pengembangan berbagai sistem SaaS dan IoT solutions."
+        },
+        {
+          "year": "2024",
+          "event": "Inovasi AI & IoT",
+          "description": "Fokus pengembangan solusi AI dan automation yang lebih advance. Ekspansi portfolio produk IoT."
+        },
+        {
+          "year": "2025",
+          "event": "Fokus Partnership Mitra Strategis",
+          "description": "Membangun kemitraan strategis untuk ekspansi bisnis. Pengembangan produk untuk persiapan peluncuran 2026."
+        },
+        {
+          "year": "2026",
+          "event": "Peluncuran Produk & Pertumbuhan Berkelanjutan",
+          "description": "Peluncuran produk-produk inovatif hasil pengembangan 2025."
+        }
+      ]
+    },
+    "team": {
+      "subtitle": "Tim Kami",
+      "title": "Temui Para Ahli",
+      "description": "Tim profesional bersertifikat kami siap mentransformasi bisnis Anda.",
+      "roles": {
+        "ceoFounder": {
+          "title": "CEO & Pendiri",
+          "name": "Kepemimpinan"
+        },
+        "cto": {
+          "title": "CTO",
+          "name": "Teknologi"
+        },
+        "leadDeveloper": {
+          "title": "Lead Developer",
+          "name": "Pengembangan"
+        },
+        "designer": {
+          "title": "UI/UX Designer",
+          "name": "Desain"
+        },
+        "projectManager": {
+          "title": "Project Manager",
+          "name": "Manajemen"
+        },
+        "businessAnalyst": {
+          "title": "Business Analyst",
+          "name": "Strategi"
+        }
+      },
+      "stats": {
+        "teamMembers": "Anggota Tim",
+        "certifications": "Sertifikasi",
+        "experience": "Tahun Pengalaman (Rata-rata)"
+      }
+    },
+    "cta": {
+      "title": "Siap Bekerja Sama?",
+      "description": "Mari diskusikan bagaimana kami dapat membantu bisnis Anda tumbuh melalui teknologi.",
+      "getInTouch": "Hubungi Kami",
+      "joinTeam": "Bergabung dengan Tim Kami"
+    }
+  },
+  "error": {
+    "title": "Ups! Terjadi Kesalahan",
+    "description": "Kami mohon maaf atas ketidaknyamanan ini. Terjadi kesalahan yang tidak terduga.",
+    "tryAgain": "Coba Lagi",
+    "or": "atau",
+    "returnHome": "kembali ke beranda"
+  },
+  "notFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Maaf, kami tidak dapat menemukan halaman yang Anda cari. Halaman mungkin telah dipindahkan atau dihapus.",
+    "backToHome": "Kembali ke Beranda",
+    "quickLinks": "Tautan Cepat:",
+    "services": "Layanan",
+    "solutions": "Solusi",
+    "products": "Produk",
+    "contact": "Hubungi Kami"
+  },
+  "services": {
+    "aiSolutions": {
+      "meta": {
+        "title": "Solusi AI & Machine Learning | Autobot Indonesia",
+        "description": "Solusi AI & ML kustom: Pengembangan LLM, chatbot, computer vision, analitik prediktif. Peningkatan efisiensi 95%, ROI 3.5x dalam 12 bulan.",
+        "keywords": "Solusi AI Indonesia, Machine Learning, LLM Custom, Computer Vision, Predictive Analytics, Pengembangan AI Jakarta, Chatbot AI, Otomasi AI"
+      }
+    },
+    "iotSolutions": {
+      "meta": {
+        "title": "Solusi IoT & Sistem Pintar | Autobot Indonesia",
+        "description": "Solusi IoT end-to-end: Sensor pintar, monitoring real-time, predictive maintenance, otomasi industri. Terhubung dan otomatis kan bisnis Anda.",
+        "keywords": "Solusi IoT Indonesia, Sistem Pintar, Pengembangan IoT, Sensor Pintar, IoT Industri, IoT Jakarta, Otomasi, Monitoring Real-time"
+      }
+    },
+    "mobileAppDevelopment": {
+      "meta": {
+        "title": "Jasa Pengembangan Aplikasi Mobile - iOS & Android | Autobot",
+        "description": "Pengembangan aplikasi mobile profesional untuk iOS dan Android. React Native, Flutter, native development dengan UX terbaik. Rating 4.9★.",
+        "keywords": "Pengembangan Aplikasi Mobile Indonesia, Aplikasi iOS, Aplikasi Android, React Native, Flutter, Mobile Development Jakarta, Aplikasi Cross-platform"
+      }
+    },
+    "webDevelopment": {
+      "meta": {
+        "title": "Jasa Pembuatan Website & Aplikasi Web Custom | Autobot",
+        "description": "Pembuatan website custom: Website corporate, aplikasi web, e-commerce, PWA. Teknologi modern Next.js, React. Cepat, aman, scalable.",
+        "keywords": "Pembuatan Website Indonesia, Website Custom, Aplikasi Web, E-commerce Development, PWA, Next.js Development, React Development Jakarta"
+      }
+    },
+    "cloudSolutions": {
+      "meta": {
+        "title": "Solusi Cloud & Infrastruktur | AWS, Azure, Google Cloud",
+        "description": "Layanan cloud komprehensif: Migrasi cloud, setup infrastruktur, DevOps, managed services. Expertise AWS, Google Cloud, Azure dengan uptime 99.9%.",
+        "keywords": "Solusi Cloud Indonesia, Layanan AWS, Azure Cloud, Google Cloud, Migrasi Cloud, DevOps, Infrastruktur Cloud Jakarta"
+      }
+    },
+    "cybersecurity": {
+      "meta": {
+        "title": "Layanan Cybersecurity - Audit Keamanan & Implementasi",
+        "description": "Cybersecurity enterprise: Penetration testing, audit keamanan, monitoring ancaman, compliance. Lindungi bisnis Anda dengan standar ISO 27001.",
+        "keywords": "Cybersecurity Indonesia, Audit Keamanan, Penetration Testing, Keamanan Informasi, Security Jakarta, Monitoring Ancaman, ISO 27001"
+      }
+    }
+  }
+}

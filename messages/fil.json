@@ -1,0 +1,1028 @@
+{
+  "common": {
+    "learnMore": "Magbasa Pa",
+    "getStarted": "Magsimula",
+    "contactUs": "Makipag-ugnayan",
+    "viewAll": "Tingnan Lahat",
+    "readMore": "Magbasa Pa",
+    "apply": "Mag-apply",
+    "subscribe": "Mag-subscribe",
+    "submit": "Isumite",
+    "close": "Isara",
+    "menu": "Menu",
+    "language": "Wika",
+    "requestQuote": "Request Quote",
+    "talkToExpert": "Talk to Expert"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Tungkol sa Amin",
+    "services": "Mga Serbisyo",
+    "solutions": "Mga Solusyon",
+    "resources": "Mga Resources",
+    "blog": "Blog",
+    "careers": "Mga Trabaho",
+    "contact": "Makipag-ugnayan",
+    "portfolio": "Portfolio",
+    "manpower": "IT Manpower",
+    "partnership": "Partnership",
+    "openSource": "Open Source",
+    "products": "Products"
+  },
+  "menu": {
+    "services": {
+      "webDev": {
+        "title": "Web Development",
+        "description": "Custom at responsive na website development"
+      },
+      "mobileDev": {
+        "title": "Mobile Apps",
+        "description": "Native iOS & Android apps"
+      },
+      "aiSolutions": {
+        "title": "AI Solutions",
+        "description": "AI at Machine Learning implementation"
+      },
+      "iotSolutions": {
+        "title": "IoT Solutions",
+        "description": "Konektadong smart devices at systems"
+      },
+      "cloudServices": {
+        "title": "Cloud Services",
+        "description": "Scalable cloud infrastructure"
+      },
+      "cybersecurity": {
+        "title": "Cybersecurity",
+        "description": "Protektahan ang iyong digital business"
+      },
+      "viewAll": "Tingnan Lahat ng Serbisyo"
+    },
+    "solutions": {
+      "title": "Solusyon para sa Industriya",
+      "subtitle": "Mga solusyon na dinisenyo para sa iyong industriya",
+      "corporate": {
+        "title": "Solusyon para sa Korporasyon",
+        "description": "ERP & CRM systems para sa enterprise",
+        "badge": "Sikat"
+      },
+      "education": {
+        "title": "Solusyon sa Edukasyon",
+        "description": "Learning Management System & smart campus"
+      },
+      "healthcare": {
+        "title": "Solusyon sa Kalusugan",
+        "description": "Hospital Information System & BPJS integration",
+        "badge": "Bago"
+      },
+      "retail": {
+        "title": "Solusyon sa Retail",
+        "description": "POS, E-commerce & inventory system"
+      },
+      "viewAll": "Tingnan Lahat ng Solusyon"
+    },
+    "products": {
+      "title": "Mga Produkto & Serbisyo",
+      "badge": "14 Produkto",
+      "subtitle": "Kumpletong portfolio ng core services at software products para sa iyong business needs",
+      "coreServices": "Core Services",
+      "softwareProducts": "Software Products",
+      "needCustom": "Kailangan ng custom solution?",
+      "needCustomDesc": "Gumawa tayo ng natatanging para sa iyong negosyo",
+      "items": {
+        "webDev": {
+          "title": "Web Development",
+          "description": "Custom & responsive websites"
+        },
+        "mobileDev": {
+          "title": "Mobile Apps",
+          "description": "Native iOS & Android apps"
+        },
+        "aiLlm": {
+          "title": "AI & LLM",
+          "description": "Advanced AI solutions",
+          "badge": "AI"
+        },
+        "iot": {
+          "title": "IoT",
+          "description": "Smart device systems"
+        },
+        "cloud": {
+          "title": "Cloud Solutions",
+          "description": "Scalable cloud infrastructure"
+        },
+        "cybersecurity": {
+          "title": "Cybersecurity",
+          "description": "Comprehensive security protection"
+        },
+        "emailZimbra": {
+          "title": "Email (Zimbra)",
+          "description": "Enterprise email server"
+        },
+        "erpOdoo": {
+          "title": "ERP (Odoo)",
+          "description": "Integrated enterprise resource system"
+        },
+        "lmsMoodle": {
+          "title": "LMS (Moodle)",
+          "description": "Learning management platform"
+        },
+        "hrManagement": {
+          "title": "HR Management",
+          "description": "Human resources & payroll system"
+        },
+        "posSystem": {
+          "title": "POS System",
+          "description": "Retail point-of-sale system"
+        },
+        "crmSystem": {
+          "title": "CRM System",
+          "description": "Customer relationship management"
+        },
+        "bpjsIntegration": {
+          "title": "BPJS Integration",
+          "description": "BPJS health integration system"
+        },
+        "inventorySystem": {
+          "title": "Inventory System",
+          "description": "Warehouse & stock management"
+        }
+      }
+    },
+    "resources": {
+      "blogArticles": {
+        "title": "Blog & Artikulo",
+        "description": "Tech insights & best practices"
+      },
+      "caseStudies": {
+        "title": "Case Studies",
+        "description": "Mga success stories ng mga kliyente"
+      },
+      "careers": {
+        "title": "Careers",
+        "description": "Sumali sa lumalaking team"
+      },
+      "manpower": {
+        "title": "IT Manpower Services",
+        "description": "Mga skilled IT professionals para sa iyong team"
+      },
+      "partnership": {
+        "title": "Partnership",
+        "description": "Lumaki kasama namin bilang partner"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Makabagong IT solutions para sa mga negosyong Indonesian",
+    "quickLinks": "Mabilisang Links",
+    "services": {
+      "webDev": "Web Development",
+      "mobileApps": "Mobile Apps",
+      "aiSolutions": "AI Solutions",
+      "iotSolutions": "IoT Solutions",
+      "cloudServices": "Cloud Services",
+      "cybersecurity": "Cybersecurity"
+    },
+    "legal": "Legal",
+    "privacy": "Patakaran sa Privacy",
+    "terms": "Mga Tuntunin at Kondisyon",
+    "copyright": "© 2025 Autobot. Lahat ng Karapatan ay Nakalaan.",
+    "followUs": "Sundan Kami",
+    "servicesTitle": "Mga Serbisyo",
+    "solutionsTitle": "Mga Solusyon",
+    "companyTitle": "Kumpanya",
+    "solutions": {
+      "corporate": "Corporate Setup",
+      "education": "Education Setup",
+      "healthcare": "Healthcare SIMRS",
+      "retail": "Retail & E-Commerce",
+      "manpower": "IT Manpower",
+      "partnership": "Partnership"
+    },
+    "company": {
+      "about": "Tungkol sa Amin",
+      "portfolio": "Portfolio",
+      "careers": "Careers",
+      "blog": "Blog",
+      "openSource": "Open Source",
+      "contact": "Makipag-ugnayan"
+    },
+    "newsletter": {
+      "title": "Mag-subscribe sa Newsletter",
+      "description": "Makatanggap ng pinakabagong update tungkol sa teknolohiya, best practices, at aming mga serbisyo.",
+      "placeholder": "Ilagay ang iyong email",
+      "subscribe": "Mag-subscribe",
+      "subscribing": "Nag-subscribe...",
+      "success": "Matagumpay na nag-subscribe! Suriin ang email para sa kumpirmasyon.",
+      "error": "Nabigo ang pag-subscribe. Subukan muli."
+    },
+    "location": "Jakarta, Indonesia",
+    "cookies": "Cookies"
+  },
+  "home": {
+    "solutions": {
+      "subtitle": "Mga Solusyon at Pakete",
+      "title": "Handa nang I-deploy na Solusyon",
+      "description": "Mga naka-configure na pakete para sa mga tiyak na industriya na may malinaw na presyo."
+    },
+    "hero": {
+      "subtitle": "Integrated IT Solutions",
+      "title": "Digital Transformation para sa mga Negosyong Indonesian",
+      "description": "Nagbibigay kami ng end-to-end IT solutions mula sa custom software development hanggang AI/LLM, tumutulong sa mga negosyong Indonesian na umunlad sa digital era.",
+      "primaryCTA": "Libreng Konsultasyon",
+      "secondaryCTA": "Tingnan ang Mga Serbisyo"
+    },
+    "stats": {
+      "projects": "Natapos na Proyekto",
+      "clients": "Masayang Clients",
+      "years": "Taon ng Karanasan",
+      "experts": "IT Experts",
+      "industries": "Industries Served",
+      "satisfaction": "Client Satisfaction"
+    },
+    "services": {
+      "subtitle": "Ang Aming Mga Serbisyo",
+      "title": "Komprehensibong IT Solutions",
+      "description": "Mula sa konsultasyon hanggang implementasyon, nagbibigay kami ng kumpletong IT services para sa inyong pangangailangan sa negosyo."
+    },
+    "whyUs": {
+      "subtitle": "Bakit Pipiliin Kami",
+      "title": "Ang Inyong Pinagkakatiwalaang Partner para sa Digital Transformation",
+      "description": "Pinagsasama namin ang technical expertise at malalim na pag-unawa sa Indonesian market."
+    },
+    "cta": {
+      "badge": "Handa nang Mag-transform?",
+      "title": "Handa na ba para sa Digital Transformation?",
+      "description": "Pag-usapan natin kung paano namin matutulungan ang inyong negosyo na lumago gamit ang teknolohiya."
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Tungkol sa Autobot",
+      "title": "Pagbabago ng Negosyo sa Pamamagitan ng Teknolohiya",
+      "description": "Kami ay isang nangungunang IT solutions provider sa Indonesia, na dalubhasa sa custom software development, AI implementation, at digital transformation. Ang aming misyon ay bigyang-kapangyarihan ang mga negosyo gamit ang mga makabagong solusyon sa teknolohiya.",
+      "contactUs": "Makipag-ugnayan",
+      "viewPortfolio": "Tingnan ang Portfolio"
+    },
+    "story": {
+      "subtitle": "Ang Aming Kuwento",
+      "title": "Sino Kami",
+      "paragraph1": "Ang CV Autobot Wijaya Solution ay isang kumpanya ng teknolohiya na nagbibigay ng komprehensibong IT solutions kabilang ang software development, AI implementation, IoT solutions, at IT manpower services.",
+      "paragraph2": "Pinagsasama namin ang teknikal na kadalubhasaan at malalim na pag-unawa sa negosyo upang maghatid ng mga solusyon na tunay na gumagawa ng pagkakaiba. Ang aming koponan ng mga sertipikadong propesyonal ay matagumpay na nag-deliver ng 150+ na proyekto sa 12+ iba't ibang industriya.",
+      "paragraph3": "Mula sa mga startup hanggang sa malalaking negosyo, mula sa mga paaralan hanggang sa mga ospital, tinulungan namin ang mga organisasyon na tanggapin ang digital transformation at makamit ang kanilang mga layunin sa negosyo sa pamamagitan ng teknolohiya.",
+      "stats": {
+        "projects": "Mga Proyekto",
+        "clients": "Mga Kliyente",
+        "industries": "Mga Industriya"
+      }
+    },
+    "vision": {
+      "title": "Ang Aming Pananaw",
+      "description": "Maging ang pinaka-pinagkakatiwalaang kasosyo sa teknolohiya sa Indonesia, na nagbibigay-kapangyarihan sa mga negosyo na umunlad sa digital age sa pamamagitan ng mga makabago at napapanatiling solusyon."
+    },
+    "mission": {
+      "title": "Ang Aming Misyon",
+      "items": [
+        "Maghatid ng world-class IT solutions na inilaan para sa mga negosyong Indonesyo",
+        "Magtaguyod ng innovation sa pamamagitan ng patuloy na pag-aaral at R&D",
+        "Bumuo ng pangmatagalang partnerships batay sa tiwala at mga resulta",
+        "Mag-ambag sa paglaki ng digital economy ng Indonesia"
+      ]
+    },
+    "values": {
+      "subtitle": "Ang Aming Mga Halaga",
+      "title": "Ano ang Nagtutulak sa Amin",
+      "description": "Ang aming core values ay gumagabay sa lahat ng aming ginagawa at tumutulong sa amin na maghatid ng kahusay na mga resulta.",
+      "excellence": {
+        "title": "Kahusayan",
+        "description": "Nagsusumikap kami para sa kahusayan sa bawat proyektong aming inihahatid, tinitiyak ang pinakamataas na pamantayan ng kalidad."
+      },
+      "clientCentric": {
+        "title": "Nakatuon sa Kliyente",
+        "description": "Ang tagumpay ng aming mga kliyente ay aming tagumpay. Bumubuo kami ng pangmatagalang partnerships batay sa tiwala at mga resulta."
+      },
+      "innovation": {
+        "title": "Inobasyon",
+        "description": "Tinatanggap namin ang mga bagong teknolohiya at metodolohiya upang maghatid ng mga advanced na solusyon."
+      },
+      "integrity": {
+        "title": "Integridad",
+        "description": "Gumagana kami nang may katapatan, transparency, at etikal na kasanayan sa lahat ng aming pakikitungo."
+      }
+    },
+    "milestones": {
+      "subtitle": "Ang Aming Paglalakbay",
+      "title": "Mga Pangunahing Milestones",
+      "description": "Mula sa aming humble na simula hanggang sa pagiging pinagkakatiwalaang technology partner.",
+      "items": [
+        {
+          "year": "2021",
+          "event": "Pagtatag ng Kumpanya",
+          "description": "Itinatag na may pananaw na baguhin ang mga negosyo sa pamamagitan ng automation at AI integration."
+        },
+        {
+          "year": "2022-2023",
+          "event": "Unang Strategic Contracts",
+          "description": "Nagsimula ng partnerships sa mga corporate clients para sa financial automation systems. Nag-develop ng academic management systems para sa education sector. Nag-implement ng OCR technology para sa bank reconciliation automation."
+        },
+        {
+          "year": "2023",
+          "event": "Milestone Achievement & Solution Expansion",
+          "description": "Nakakuha ng 5-taong kontrata na nagkakahalaga ng 1+ bilyong rupiah. Ang financial automation system ay matagumpay na nagpababa ng reconciliation time mula 14 araw hanggang 2 araw na may 80% cost savings. 50+ na proyektong matagumpay na nakumpleto. Pag-develop ng iba't ibang SaaS systems at IoT solutions."
+        },
+        {
+          "year": "2024",
+          "event": "AI & IoT Innovation",
+          "description": "Pokus sa pag-develop ng advanced AI at automation solutions. Pagpapalawak ng IoT product portfolio."
+        },
+        {
+          "year": "2025",
+          "event": "Strategic Partnership Focus",
+          "description": "Pagbuo ng strategic partnerships para sa business expansion. Product development sa paghahanda para sa 2026 launch."
+        },
+        {
+          "year": "2026",
+          "event": "Product Launch & Sustainable Growth",
+          "description": "Paglulunsad ng mga innovative products na developed noong 2025."
+        }
+      ]
+    },
+    "team": {
+      "subtitle": "Ang Aming Koponan",
+      "title": "Kilalanin ang mga Eksperto",
+      "description": "Ang aming koponan ng mga sertipikadong propesyonal ay handa nang baguhin ang iyong negosyo.",
+      "roles": {
+        "ceoFounder": {
+          "title": "CEO & Founder",
+          "name": "Pamumuno"
+        },
+        "cto": {
+          "title": "CTO",
+          "name": "Teknolohiya"
+        },
+        "leadDeveloper": {
+          "title": "Lead Developer",
+          "name": "Development"
+        },
+        "designer": {
+          "title": "UI/UX Designer",
+          "name": "Disenyo"
+        },
+        "projectManager": {
+          "title": "Project Manager",
+          "name": "Pamamahala"
+        },
+        "businessAnalyst": {
+          "title": "Business Analyst",
+          "name": "Estratehiya"
+        }
+      },
+      "stats": {
+        "teamMembers": "Mga Miyembro ng Koponan",
+        "certifications": "Mga Sertipikasyon",
+        "experience": "Taong Karanasan (Avg.)"
+      }
+    },
+    "cta": {
+      "title": "Handa Nang Magtulungan?",
+      "description": "Pag-usapan natin kung paano namin matutulungan ang iyong negosyo na lumago sa pamamagitan ng teknolohiya.",
+      "getInTouch": "Makipag-ugnayan",
+      "joinTeam": "Sumali sa Koponan"
+    }
+  },
+  "careers": {
+    "hero": {
+      "subtitle": "Sumali sa Aming Koponan",
+      "title": "Itayo ang Inyong Karera kasama ang Autobot",
+      "description": "Sumali sa koponan ng mga masigasig na technologist na bumubuo ng makabagong solusyon para sa digital future ng Indonesia. Nag-aalok kami ng competitive compensation, patuloy na pag-aaral, at nakaaaliw na mga proyekto.",
+      "primaryCTA": "Tingnan ang Mga Bakanteng Posisyon",
+      "secondaryCTA": "Magbasa Pa"
+    },
+    "benefits": {
+      "subtitle": "Bakit Sumali sa Amin",
+      "title": "Mga Benepisyo at Perks"
+    },
+    "positions": {
+      "subtitle": "Nag-hire Kami",
+      "title": "Mga Bakanteng Posisyon"
+    }
+  },
+  "blog": {
+    "hero": {
+      "subtitle": "Mga Resources at Insights",
+      "title": "Tech Blog at Knowledge Base",
+      "description": "Manatiling updated sa pinakabagong technology trends, best practices, at insights mula sa aming koponan ng mga eksperto.",
+      "primaryCTA": "Mag-subscribe sa Newsletter",
+      "secondaryCTA": "I-browse Lahat"
+    }
+  },
+  "manpower": {
+    "hero": {
+      "subtitle": "IT Manpower Services",
+      "title": "Mga Sertipikadong IT Professionals na Handang Sumali sa Inyong Koponan",
+      "description": "Pag-access sa mga sertipikadong developer, engineer, at IT specialist nang walang abala sa recruitment. Flexible engagement models mula 1 buwan hanggang full-time.",
+      "primaryCTA": "Maghanap ng Talent",
+      "secondaryCTA": "Tingnan ang Mga Package"
+    }
+  },
+  "partnership": {
+    "hero": {
+      "subtitle": "Mga Oportunidad sa Partnership",
+      "title": "Magtayo Tayo ng Isang Dakilang Bagay",
+      "description": "Higit pa sa tradisyonal na client-vendor relationship. Nag-aalok kami ng flexible partnership models kabilang ang co-development, equity stakes, at revenue sharing.",
+      "primaryCTA": "Mag-apply para sa Partnership",
+      "secondaryCTA": "Tingnan ang Mga Success Stories"
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "subtitle": "Ang Aming Trabaho",
+      "title": "Portfolio at Case Studies",
+      "description": "I-explore ang aming mga matagumpay na proyekto sa iba't ibang industriya. Mula sa mga ospital hanggang sa mga paaralan, retail hanggang AI – nag-deliver kami ng kahusayan.",
+      "primaryCTA": "Tingnan ang Lahat ng Proyekto",
+      "secondaryCTA": "Humiling ng Demo"
+    }
+  },
+  "openSource": {
+    "hero": {
+      "subtitle": "Open Source",
+      "title": "Pagtatayo sa Publiko, Pag-aambag sa Komunidad",
+      "description": "Naniniwala kami sa pagbabalik sa komunidad. I-explore ang aming mga open-source na proyekto, mag-ambag, at magtayo ng mga kahanga-hangang bagay nang magkasama.",
+      "primaryCTA": "Tingnan ang Mga Proyekto",
+      "secondaryCTA": "Mag-ambag"
+    }
+  },
+  "retail": {
+    "hero": {
+      "subtitle": "Retail at E-Commerce Solutions",
+      "title": "Omnichannel Retail Platform",
+      "description": "Kumpletong retail solution mula sa online store hanggang point of sale. Pamahalaan ang inyong e-commerce, physical stores, at marketplaces mula sa isang unified platform.",
+      "primaryCTA": "Magsimula",
+      "secondaryCTA": "Tingnan ang Mga Package"
+    }
+  },
+  "contact": {
+    "hero": {
+      "subtitle": "Makipag-ugnayan sa Amin",
+      "title": "Pag-usapan Natin ang Inyong Proyekto",
+      "description": "May mga tanong o gusto pag-usapan ang isang proyekto? Handa kaming tulungan kayo.",
+      "primaryCTA": "Magpadala ng Mensahe",
+      "secondaryCTA": "Makipag-ugnayan sa Sales"
+    }
+  },
+  "error": {
+    "title": "Oops! Something went wrong",
+    "description": "We apologize for the inconvenience. An unexpected error has occurred.",
+    "tryAgain": "Try Again",
+    "or": "or",
+    "returnHome": "return to homepage"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find the page you're looking for. The page might have been moved or deleted.",
+    "backToHome": "Back to Homepage",
+    "quickLinks": "Quick Links:",
+    "services": "Services",
+    "solutions": "Solutions",
+    "products": "Products",
+    "contact": "Contact Us"
+  },
+  "services": {
+    "hero": {
+      "subtitle": "Our Services",
+      "title": "Comprehensive IT Solutions for Your Business",
+      "description": "From web development to AI implementation, we offer end-to-end technology services to help your business thrive in the digital age.",
+      "primaryCTA": "Get Started",
+      "secondaryCTA": "Talk to Expert"
+    },
+    "whatWeOffer": "What We Offer",
+    "ourServices": "Our Services",
+    "exploreDescription": "Explore our comprehensive range of IT services designed to accelerate your digital transformation.",
+    "howWeWork": "How We Work",
+    "processTitle": "Our Development Process",
+    "processDescription": "We follow a proven methodology to ensure successful project delivery.",
+    "process": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "We start by understanding your business, challenges, and goals through detailed consultation."
+      },
+      "planning": {
+        "title": "Planning",
+        "description": "Our team creates a comprehensive project plan with clear milestones and deliverables."
+      },
+      "development": {
+        "title": "Development",
+        "description": "We build your solution using agile methodologies with regular updates and feedback loops."
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "Rigorous testing ensures quality, performance, and security before deployment."
+      },
+      "deployment": {
+        "title": "Deployment",
+        "description": "Smooth deployment with minimal disruption to your business operations."
+      },
+      "support": {
+        "title": "Support",
+        "description": "Ongoing support, training, and maintenance to ensure long-term success."
+      }
+    },
+    "webDevelopment": {
+      "hero": {
+        "subtitle": "Web Development Services",
+        "title": "Modern, Scalable Web Applications",
+        "description": "Build powerful web applications with cutting-edge technologies. From corporate websites to complex web platforms, we deliver solutions that drive business growth.",
+        "primaryCTA": "Start Your Project",
+        "secondaryCTA": "View Portfolio"
+      },
+      "name": "Web Development",
+      "shortDescription": "Modern, responsive web applications built with cutting-edge technologies.",
+      "features": [
+        "React, Next.js, Vue.js development",
+        "Progressive Web Apps (PWA)",
+        "E-commerce platforms",
+        "Custom web portals",
+        "API development & integration"
+      ],
+      "keyFeatures": {
+        "title": "Why Choose Our Web Development Services?",
+        "subtitle": "Key Features",
+        "items": {
+          "responsive": {
+            "title": "Responsive Design",
+            "description": "Mobile-first approach ensuring perfect experience across all devices and screen sizes."
+          },
+          "performance": {
+            "title": "High Performance",
+            "description": "Lightning-fast load times with optimized code and modern web technologies."
+          },
+          "seo": {
+            "title": "SEO Optimized",
+            "description": "Built with best SEO practices to ensure maximum visibility in search engines."
+          },
+          "security": {
+            "title": "Secure & Reliable",
+            "description": "Industry-standard security measures protecting your data and users."
+          },
+          "scalable": {
+            "title": "Scalable Architecture",
+            "description": "Built to grow with your business, handling increased traffic and features."
+          },
+          "maintenance": {
+            "title": "Easy Maintenance",
+            "description": "Clean, documented code making updates and enhancements straightforward."
+          }
+        }
+      },
+      "techStack": {
+        "title": "Technologies We Use",
+        "subtitle": "Tech Stack",
+        "frontend": {
+          "title": "Frontend",
+          "items": [
+            "React",
+            "Next.js",
+            "Vue.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ]
+        },
+        "backend": {
+          "title": "Backend",
+          "items": [
+            "Node.js",
+            "Python",
+            "PHP",
+            "Java",
+            "Go"
+          ]
+        },
+        "database": {
+          "title": "Database",
+          "items": [
+            "PostgreSQL",
+            "MySQL",
+            "MongoDB",
+            "Redis"
+          ]
+        },
+        "cloud": {
+          "title": "Cloud & DevOps",
+          "items": [
+            "AWS",
+            "Google Cloud",
+            "Docker",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      },
+      "process": {
+        "title": "Our Development Process",
+        "subtitle": "How We Build Your Website",
+        "steps": {
+          "discovery": {
+            "title": "Discovery & Planning",
+            "description": "We analyze your requirements, target audience, and business goals to create a comprehensive project roadmap."
+          },
+          "design": {
+            "title": "UI/UX Design",
+            "description": "Our designers create intuitive, beautiful interfaces that provide excellent user experience."
+          },
+          "development": {
+            "title": "Development",
+            "description": "Clean, efficient code following best practices with regular progress updates."
+          },
+          "testing": {
+            "title": "Quality Assurance",
+            "description": "Comprehensive testing across devices, browsers, and scenarios to ensure perfection."
+          },
+          "launch": {
+            "title": "Launch & Deploy",
+            "description": "Careful deployment with monitoring to ensure smooth transition to production."
+          },
+          "support": {
+            "title": "Maintenance & Support",
+            "description": "Ongoing support, updates, and optimization to keep your website running perfectly."
+          }
+        }
+      }
+    },
+    "mobileApp": {
+      "hero": {
+        "subtitle": "Mobile App Development",
+        "title": "Native & Cross-Platform Mobile Applications",
+        "description": "Create stunning mobile experiences for iOS and Android. From concept to store deployment, we build apps that users love.",
+        "primaryCTA": "Build Your App",
+        "secondaryCTA": "See Our Work"
+      },
+      "name": "Mobile App Development",
+      "shortDescription": "Native and cross-platform mobile applications for iOS and Android.",
+      "features": [
+        "Flutter & React Native apps",
+        "Native iOS (Swift) & Android (Kotlin)",
+        "Mobile app UI/UX design",
+        "App store optimization",
+        "Maintenance & updates"
+      ],
+      "keyFeatures": {
+        "title": "Why Choose Our Mobile App Development?",
+        "subtitle": "Key Features",
+        "items": {
+          "crossPlatform": {
+            "title": "Cross-Platform Expertise",
+            "description": "Single codebase for iOS and Android, reducing development time and costs."
+          },
+          "native": {
+            "title": "Native Performance",
+            "description": "Optimized performance leveraging platform-specific features and capabilities."
+          },
+          "ux": {
+            "title": "Exceptional UX",
+            "description": "Intuitive interfaces following iOS and Android design guidelines."
+          },
+          "offline": {
+            "title": "Offline Capability",
+            "description": "Apps that work seamlessly even without internet connection."
+          },
+          "integration": {
+            "title": "API Integration",
+            "description": "Seamless integration with backend services, third-party APIs, and databases."
+          },
+          "deployment": {
+            "title": "Store Deployment",
+            "description": "Full support for App Store and Google Play submission and optimization."
+          }
+        }
+      }
+    },
+    "aiSolutions": {
+      "hero": {
+        "subtitle": "AI & Machine Learning Solutions",
+        "title": "Intelligent Solutions Powered by AI",
+        "description": "Harness the power of artificial intelligence and machine learning to automate processes, gain insights, and create innovative solutions.",
+        "primaryCTA": "Explore AI Solutions",
+        "secondaryCTA": "Talk to AI Expert"
+      },
+      "name": "AI & Machine Learning",
+      "shortDescription": "Intelligent solutions powered by artificial intelligence and machine learning.",
+      "features": [
+        "Custom LLM development",
+        "AI chatbots & virtual assistants",
+        "Predictive analytics",
+        "Computer vision",
+        "Natural language processing"
+      ],
+      "keyFeatures": {
+        "title": "Transform Your Business with AI",
+        "subtitle": "AI Capabilities",
+        "items": {
+          "llm": {
+            "title": "Custom LLM Solutions",
+            "description": "Develop tailored large language models for your specific business needs and industry."
+          },
+          "chatbot": {
+            "title": "AI Chatbots",
+            "description": "Intelligent conversational AI for customer support, sales, and engagement."
+          },
+          "vision": {
+            "title": "Computer Vision",
+            "description": "Image and video analysis for quality control, surveillance, and automation."
+          },
+          "nlp": {
+            "title": "Natural Language Processing",
+            "description": "Extract insights from text, automate document processing, and sentiment analysis."
+          },
+          "predictive": {
+            "title": "Predictive Analytics",
+            "description": "Forecast trends, optimize operations, and make data-driven decisions."
+          },
+          "automation": {
+            "title": "Process Automation",
+            "description": "Automate repetitive tasks and workflows with intelligent AI agents."
+          }
+        }
+      }
+    },
+    "iot": {
+      "hero": {
+        "subtitle": "IoT Solutions",
+        "title": "Connect, Monitor, and Control Smart Devices",
+        "description": "Build comprehensive IoT solutions from sensors to cloud platforms. Transform your business with connected devices and real-time data.",
+        "primaryCTA": "Start IoT Project",
+        "secondaryCTA": "View Case Studies"
+      },
+      "name": "IoT Solutions",
+      "shortDescription": "Connect and manage smart devices with our IoT platform development.",
+      "features": [
+        "IoT consultation & strategy",
+        "Smart device integration",
+        "IoT platform development",
+        "Industrial IoT (IIoT)",
+        "Data analytics & visualization"
+      ],
+      "keyFeatures": {
+        "title": "Complete IoT Solutions",
+        "subtitle": "IoT Capabilities",
+        "items": {
+          "platform": {
+            "title": "IoT Platform Development",
+            "description": "Custom IoT platforms for device management, data collection, and analytics."
+          },
+          "integration": {
+            "title": "Device Integration",
+            "description": "Connect any device or sensor to your IoT ecosystem seamlessly."
+          },
+          "analytics": {
+            "title": "Real-time Analytics",
+            "description": "Monitor, analyze, and visualize data from your IoT devices in real-time."
+          },
+          "edge": {
+            "title": "Edge Computing",
+            "description": "Process data at the edge for reduced latency and improved efficiency."
+          },
+          "security": {
+            "title": "IoT Security",
+            "description": "End-to-end security for devices, data transmission, and cloud infrastructure."
+          },
+          "industrial": {
+            "title": "Industrial IoT",
+            "description": "Specialized solutions for manufacturing, logistics, and industrial automation."
+          }
+        }
+      }
+    },
+    "cloud": {
+      "hero": {
+        "subtitle": "Cloud Services",
+        "title": "Cloud Migration, Management & Optimization",
+        "description": "Leverage the power of cloud computing. From migration strategy to ongoing management, we help you maximize cloud benefits.",
+        "primaryCTA": "Plan Migration",
+        "secondaryCTA": "Cloud Consultation"
+      },
+      "name": "Cloud Services",
+      "shortDescription": "Cloud migration, infrastructure management, and optimization.",
+      "features": [
+        "AWS, Azure, GCP services",
+        "Cloud migration strategy",
+        "Infrastructure as Code",
+        "DevOps & CI/CD pipelines",
+        "Cost optimization"
+      ],
+      "keyFeatures": {
+        "title": "Comprehensive Cloud Solutions",
+        "subtitle": "Cloud Services",
+        "items": {
+          "migration": {
+            "title": "Cloud Migration",
+            "description": "Seamless migration from on-premise to cloud with minimal downtime."
+          },
+          "multicloud": {
+            "title": "Multi-Cloud Strategy",
+            "description": "Optimize costs and performance across AWS, Azure, and Google Cloud."
+          },
+          "iac": {
+            "title": "Infrastructure as Code",
+            "description": "Automated infrastructure deployment and management using Terraform, CloudFormation."
+          },
+          "devops": {
+            "title": "DevOps Implementation",
+            "description": "CI/CD pipelines, automation, and collaboration for faster delivery."
+          },
+          "monitoring": {
+            "title": "Monitoring & Logging",
+            "description": "Comprehensive monitoring, alerting, and log management for your cloud infrastructure."
+          },
+          "optimization": {
+            "title": "Cost Optimization",
+            "description": "Reduce cloud costs through right-sizing, reserved instances, and efficient architecture."
+          }
+        }
+      }
+    },
+    "cybersecurity": {
+      "hero": {
+        "subtitle": "Cybersecurity Services",
+        "title": "Protect Your Digital Assets",
+        "description": "Comprehensive security solutions to protect your business from cyber threats. From audits to compliance, we secure your infrastructure.",
+        "primaryCTA": "Security Assessment",
+        "secondaryCTA": "Talk to Security Expert"
+      },
+      "name": "Cybersecurity",
+      "shortDescription": "Comprehensive security solutions to protect your digital assets.",
+      "features": [
+        "Security audits & assessments",
+        "Penetration testing",
+        "Compliance (ISO 27001, GDPR)",
+        "Vulnerability management",
+        "Security training"
+      ],
+      "keyFeatures": {
+        "title": "Comprehensive Security Solutions",
+        "subtitle": "Security Services",
+        "items": {
+          "assessment": {
+            "title": "Security Audits",
+            "description": "Comprehensive assessment of your security posture and vulnerabilities."
+          },
+          "pentest": {
+            "title": "Penetration Testing",
+            "description": "Ethical hacking to identify and fix security weaknesses before attackers do."
+          },
+          "compliance": {
+            "title": "Compliance Management",
+            "description": "Achieve and maintain ISO 27001, GDPR, and other regulatory compliance."
+          },
+          "monitoring": {
+            "title": "Security Monitoring",
+            "description": "24/7 monitoring and incident response to detect and prevent threats."
+          },
+          "training": {
+            "title": "Security Training",
+            "description": "Educate your team on security best practices and threat awareness."
+          },
+          "incident": {
+            "title": "Incident Response",
+            "description": "Rapid response and recovery procedures for security incidents."
+          }
+        }
+      }
+    }
+  },
+  "solutions": {
+    "corporate": {
+      "features": [
+        "Email Zimbra",
+        "ERPNext/Odoo",
+        "Pamamahala ng Dokumento",
+        "BI Dashboard"
+      ],
+      "hero": {
+        "subtitle": "Corporate Solutions",
+        "title": "Complete Digital Infrastructure for Your Business",
+        "description": "From company formation to full digital operations. We provide everything you need to run a modern business in Indonesia.",
+        "primaryCTA": "Get Started",
+        "secondaryCTA": "View Packages"
+      },
+      "name": "Corporate Solutions",
+      "description": "Complete business setup and digital infrastructure solutions.",
+      "packages": {
+        "starter": {
+          "name": "Starter Package",
+          "price": "Starting from IDR 15 million",
+          "description": "Perfect for new businesses and startups",
+          "features": [
+            "Company registration (PT/CV)",
+            "NIB & business licenses",
+            "Tax registration (NPWP)",
+            "Basic website (5 pages)",
+            "Business email setup",
+            "Cloud storage (50GB)"
+          ]
+        },
+        "professional": {
+          "name": "Professional Package",
+          "price": "Starting from IDR 35 million",
+          "description": "For established businesses ready to scale",
+          "features": [
+            "Everything in Starter",
+            "Custom website (10 pages)",
+            "CRM system implementation",
+            "Social media setup",
+            "Digital marketing consultation",
+            "Priority support"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise Package",
+          "price": "Custom pricing",
+          "description": "Complete solution for large organizations",
+          "features": [
+            "Everything in Professional",
+            "Custom ERP system",
+            "Advanced automation",
+            "Dedicated account manager",
+            "24/7 support",
+            "Training & consultation"
+          ]
+        }
+      }
+    },
+    "education": {
+      "features": [
+        "Sistema ng Impormasyon ng Estudyante",
+        "LMS (Moodle)",
+        "Pamamahala ng Aklatan",
+        "Modyul ng Pananalapi"
+      ],
+      "hero": {
+        "subtitle": "Education Solutions",
+        "title": "Modern Learning Management Systems",
+        "description": "Transform education with comprehensive digital solutions. From K-12 to universities, we provide complete systems for modern learning.",
+        "primaryCTA": "Request Demo",
+        "secondaryCTA": "View Features"
+      },
+      "name": "Education Solutions",
+      "description": "Comprehensive solutions for schools, universities, and training centers."
+    },
+    "healthcare": {
+      "features": [
+        "Pamamahala ng Pasyente",
+        "OPD/IPD",
+        "Pagsasama ng BPJS",
+        "Laboratoryo at Radyolohiya"
+      ],
+      "hero": {
+        "subtitle": "Healthcare Solutions",
+        "title": "Hospital Information System (SIMRS)",
+        "description": "Complete digital hospital management system. Improve patient care, streamline operations, and ensure regulatory compliance.",
+        "primaryCTA": "Schedule Demo",
+        "secondaryCTA": "View Modules"
+      },
+      "name": "Healthcare Solutions",
+      "description": "SIMRS and healthcare IT solutions for hospitals and clinics.",
+      "modules": {
+        "emr": {
+          "title": "Electronic Medical Records",
+          "description": "Digital patient records with complete medical history and treatment plans."
+        },
+        "registration": {
+          "title": "Patient Registration",
+          "description": "Efficient patient check-in, appointment scheduling, and queue management."
+        },
+        "pharmacy": {
+          "title": "Pharmacy Management",
+          "description": "Medicine inventory, prescription processing, and drug interaction checks."
+        },
+        "laboratory": {
+          "title": "Laboratory Information System",
+          "description": "Lab test management, result tracking, and quality control."
+        },
+        "billing": {
+          "title": "Billing & Insurance",
+          "description": "Automated billing, insurance claims, and financial reporting."
+        },
+        "inventory": {
+          "title": "Inventory Management",
+          "description": "Track medical supplies, equipment, and automated reordering."
+        }
+      }
+    },
+    "retail": {
+      "features": [
+        "E-Commerce Platform",
+        "Sistema ng POS",
+        "Pamamahala ng Imbentaryo",
+        "Payment Gateway"
+      ],
+      "hero": {
+        "subtitle": "Retail & E-commerce Solutions",
+        "title": "Omnichannel Retail Platform",
+        "description": "Complete retail solutions from online store to point-of-sale. Manage your e-commerce, physical stores, and marketplaces from one platform.",
+        "primaryCTA": "Start Your Store",
+        "secondaryCTA": "View Packages"
+      },
+      "name": "Retail Solutions",
+      "description": "E-commerce, POS, and omnichannel retail management systems."
+    }
+  }
+}

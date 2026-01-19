@@ -1,0 +1,33 @@
+# Autobot Wijaya Solution - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important resources
+Allow: /api/og/*
+Allow: /_next/static/
+Allow: /_next/image/
+
+# Sitemaps
+Sitemap: https://autobot.co.id/sitemap.xml
+Sitemap: https://autobot.co.id/sitemap-0.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
