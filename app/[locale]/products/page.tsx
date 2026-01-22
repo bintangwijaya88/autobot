@@ -11,8 +11,8 @@ import { Package, ArrowRight, Sparkles } from 'lucide-react';
 export default function ProductsPage() {
   const products = [
     {
-      name: 'MediWish',
-      slug: 'mediwish',
+      name: 'KiloKelola',
+      slug: 'kilokelola',
       category: 'Healthcare',
       description: 'Sistem informasi rumah sakit yang komprehensif untuk manajemen pasien dan layanan medis.',
       gradient: 'from-[#116366] to-[#14b8a6]',
@@ -53,8 +53,8 @@ export default function ProductsPage() {
       gradient: 'from-[#116366] to-[#14b8a6]',
     },
     {
-      name: 'MatchFinance',
-      slug: 'matchfinance',
+      name: 'Klopdana',
+      slug: 'klopdana',
       category: 'Finance',
       description: 'Platform peer-to-peer lending dan matchmaking finansial untuk UMKM.',
       gradient: 'from-[#116366] to-[#14b8a6]',

@@ -236,17 +236,17 @@ const Header = () => {
       items: [
         {
           icon: DollarSign,
-          title: t('menu.products.items.matchfinance.title'),
-          description: t('menu.products.items.matchfinance.description'),
-          badge: t('menu.products.items.matchfinance.badge'),
-          href: `/${locale}/products/matchfinance`,
+          title: t('menu.products.items.klopdana.title'),
+          description: t('menu.products.items.klopdana.description'),
+          badge: t('menu.products.items.klopdana.badge'),
+          href: `/${locale}/products/klopdana`,
         },
         {
           icon: School,
-          title: t('menu.products.items.mabda.title'),
-          description: t('menu.products.items.mabda.description'),
+          title: t('menu.products.items.bintanx.title'),
+          description: t('menu.products.items.bintanx.description'),
           badge: null,
-          href: `/${locale}/products/mabda`,
+          href: `/${locale}/products/bintanx`,
         },
         {
           icon: Truck,
@@ -257,10 +257,10 @@ const Header = () => {
         },
         {
           icon: Sparkles,
-          title: t('menu.products.items.mediWish.title'),
-          description: t('menu.products.items.mediWish.description'),
+          title: t('menu.products.items.kiloKelola.title'),
+          description: t('menu.products.items.kiloKelola.description'),
           badge: null,
-          href: `/${locale}/products/mediwish`,
+          href: `/${locale}/products/kilokelola`,
         },
         {
           icon: Brain,

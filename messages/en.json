@@ -160,13 +160,13 @@
           "description": "Stock & warehouse mgmt",
           "badge": null
         },
-        "matchfinance": {
-          "title": "Matchfinance",
+        "klopdana": {
+          "title": "Klopdana",
           "description": "Financial management & accounting SaaS",
           "badge": "New"
         },
-        "mabda": {
-          "title": "MABDA",
+        "bintanx": {
+          "title": "BINTANX",
           "description": "School & Islamic boarding ecosystem",
           "badge": null
         },
@@ -175,8 +175,8 @@
           "description": "B2B SaaS platform for courier monitoring & delivery management",
           "badge": null
         },
-        "mediWish": {
-          "title": "MediWish",
+        "kiloKelola": {
+          "title": "KiloKelola",
           "description": "Laundry & medical laundry services",
           "badge": null
         },

@@ -160,13 +160,13 @@
           "description": "Manajemen stok & gudang",
           "badge": null
         },
-        "matchfinance": {
-          "title": "Matchfinance",
+        "klopdana": {
+          "title": "Klopdana",
           "description": "SaaS manajemen keuangan & akuntansi",
           "badge": "Baru"
         },
-        "mabda": {
-          "title": "MABDA",
+        "bintanx": {
+          "title": "BINTANX",
           "description": "Ekosistem sekolah & pondok pesantren",
           "badge": null
         },
@@ -175,8 +175,8 @@
           "description": "Platform SaaS B2B untuk monitoring kurir & manajemen pengiriman",
           "badge": null
         },
-        "mediWish": {
-          "title": "MediWish",
+        "kiloKelola": {
+          "title": "KiloKelola",
           "description": "Layanan laundry & laundry medis",
           "badge": null
         },

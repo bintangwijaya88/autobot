@@ -22,8 +22,8 @@ const productsData: Record<
     pricing: Array<{ name: string; price: string; features: string[]; recommended?: boolean }>;
   }
 > = {
-  mediwish: {
-    name: 'MediWish',
+  kilokelola: {
+    name: 'KiloKelola',
     tagline: 'Sistem Informasi Rumah Sakit Terpadu',
     description:
       'Solusi SIMRS komprehensif untuk manajemen rumah sakit modern. Dari pendaftaran pasien hingga billing, semua terintegrasi dalam satu platform.',
@@ -234,8 +234,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-  const product = productsData[params.slug];
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = productsData[slug];
 
   if (!product) {
     notFound();
