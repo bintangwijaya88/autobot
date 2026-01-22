@@ -88,66 +88,6 @@ const productsData: Record<
       },
     ],
   },
-  deliveroto: {
-    name: 'Deliveroto',
-    tagline: 'Platform Manajemen Pengiriman & Tracking',
-    description:
-      'Sistem pengiriman terpadu untuk bisnis kurir dan logistik. Kelola armada, tracking real-time, dan optimasi rute pengiriman.',
-    category: 'Logistics',
-    features: [
-      'Dashboard Pengiriman Real-time',
-      'GPS Tracking Armada',
-      'Optimasi Rute Otomatis',
-      'Manajemen Driver & Kendaraan',
-      'Proof of Delivery Digital',
-      'Notifikasi Otomatis ke Customer',
-      'Laporan & Analytics',
-      'Mobile App Driver & Customer',
-    ],
-    benefits: [
-      {
-        icon: <Zap className="w-8 h-8 text-white" />,
-        title: 'Pengiriman Lebih Cepat',
-        description: 'Optimasi rute dan tracking real-time mempercepat waktu pengiriman.',
-      },
-      {
-        icon: <Users className="w-8 h-8 text-white" />,
-        title: 'Transparansi Penuh',
-        description: 'Customer bisa tracking paket mereka kapan saja, meningkatkan kepercayaan.',
-      },
-      {
-        icon: <Shield className="w-8 h-8 text-white" />,
-        title: 'Keamanan Pengiriman',
-        description: 'Proof of delivery digital mengurangi risiko kehilangan atau klaim palsu.',
-      },
-    ],
-    pricing: [
-      {
-        name: 'Starter',
-        price: 'Rp 5.000.000',
-        features: ['Up to 5 drivers', 'Basic tracking', 'Email support', '100 deliveries/month'],
-      },
-      {
-        name: 'Business',
-        price: 'Rp 15.000.000',
-        features: [
-          'Up to 50 drivers',
-          'Advanced tracking',
-          'Route optimization',
-          'Priority support',
-          'Unlimited deliveries',
-          'Mobile apps',
-        ],
-        recommended: true,
-      },
-      {
-        name: 'Enterprise',
-        price: 'Custom',
-        features: ['Unlimited drivers', 'Custom features', '24/7 support', 'API access', 'White label'],
-      },
-    ],
-  },
-  // Add similar data for other products
   wabotiq: {
     name: 'WabotIQ',
     tagline: 'WhatsApp Bot Cerdas Berbasis AI',
