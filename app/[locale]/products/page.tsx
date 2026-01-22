@@ -18,10 +18,10 @@ export default function ProductsPage() {
       gradient: 'from-[#116366] to-[#14b8a6]',
     },
     {
-      name: 'Deliveroto',
-      slug: 'deliveroto',
+      name: 'AntarPro',
+      slug: 'delivery-app',
       category: 'Logistics',
-      description: 'Platform manajemen pengiriman dan tracking untuk bisnis logistik dan kurir.',
+      description: 'Platform SaaS monitoring pengiriman & kurir B2B dengan GPS tracking real-time untuk perusahaan.',
       gradient: 'from-[#116366] to-[#14b8a6]',
     },
     {

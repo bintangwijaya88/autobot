@@ -207,6 +207,84 @@ const productsData: Record<
       },
     ],
   },
+  'delivery-app': {
+    name: 'AntarPro',
+    tagline: 'Platform SaaS Monitoring Pengiriman & Kurir B2B',
+    description:
+      'Platform SaaS untuk monitoring dan manajemen pengiriman yang dirancang khusus untuk bisnis B2B. BUKAN jasa pengiriman - kami adalah penyedia platform teknologi untuk monitoring kurir internal perusahaan dengan GPS tracking real-time.',
+    category: 'Logistics',
+    features: [
+      'GPS Tracking Real-Time (Update setiap 30 detik)',
+      'QR Code Verification untuk Pickup & Delivery',
+      'Manajemen Kurir & Absensi GPS',
+      'Dashboard Real-Time & Analytics',
+      'Multi-Outlet Support',
+      'Push Notifications (Firebase FCM)',
+      'Mobile App untuk Kurir (Android & iOS)',
+      'API Integration & Webhook Support',
+    ],
+    benefits: [
+      {
+        icon: <Zap className="w-8 h-8 text-white" />,
+        title: 'Monitoring Real-Time',
+        description: 'Tracking GPS setiap 30 detik dengan battery-efficient technology untuk visibilitas penuh armada kurir.',
+      },
+      {
+        icon: <Users className="w-8 h-8 text-white" />,
+        title: 'Multi-Tenant & Skalabel',
+        description: 'Platform SaaS dengan sistem multi-tenant untuk berbagai perusahaan dari berbagai industri.',
+      },
+      {
+        icon: <Shield className="w-8 h-8 text-white" />,
+        title: 'Keamanan & Verifikasi Ganda',
+        description: 'QR Code verification, digital signature, dan photo proof untuk keamanan maksimal delivery.',
+      },
+    ],
+    pricing: [
+      {
+        name: 'Free Plan',
+        price: 'Gratis Selamanya',
+        features: ['1 Outlet', '1 Kurir Aktif', '100 Pengiriman/bulan', '500 MB Storage', 'GPS Tracking Basic'],
+      },
+      {
+        name: 'Starter',
+        price: 'Rp 299.000/bulan',
+        features: [
+          '3 Outlet',
+          '5 Kurir Aktif',
+          '1,000 Pengiriman/bulan',
+          '5 GB Storage',
+          'WhatsApp Integration',
+          'Priority Support',
+        ],
+        recommended: true,
+      },
+      {
+        name: 'Professional',
+        price: 'Rp 799.000/bulan',
+        features: [
+          '10 Outlet',
+          '20 Kurir Aktif',
+          '10,000 Pengiriman/bulan',
+          '50 GB Storage',
+          'API Access',
+          'Advanced Analytics',
+        ],
+      },
+      {
+        name: 'Enterprise',
+        price: 'Custom Pricing',
+        features: [
+          'Unlimited Outlet & Kurir',
+          'Unlimited Pengiriman',
+          '500 GB+ Storage',
+          'White-label Solution',
+          'Dedicated Support & SLA',
+          'On-premise Deployment',
+        ],
+      },
+    ],
+  },
 };
 
 // Generate static params for all products
