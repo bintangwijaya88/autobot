@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'M1V1d6KGqlFqT0vUD8HyfLB7qGYfAZBokr9gCX-ro6M',
+    other: {
+      'facebook-domain-verification': process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION || '',
+    },
   },
   openGraph: {
     type: "website",
