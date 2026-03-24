@@ -22,10 +22,11 @@ import {
   Lightbulb,
   Rocket,
 } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function AboutPage() {
   const t = useTranslations('about');
+  const locale = useLocale();
 
   return (
     <>
@@ -59,13 +60,13 @@ export default function AboutPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
+                <Link href={`/${locale}/contact`}>
                   <Button size="lg" className="bg-[#116366] hover:bg-[#0d4d50] text-white group">
                     {t('hero.contactUs')}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link href="/portfolio">
+                <Link href={`/${locale}/portfolio`}>
                   <Button size="lg" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">
                     {t('hero.viewPortfolio')}
                   </Button>
@@ -401,12 +402,12 @@ export default function AboutPage() {
               {t('cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={`/${locale}/contact`}>
                 <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100 transition-all">
                   {t('cta.getInTouch')}
                 </Button>
               </Link>
-              <Link href="/careers">
+              <Link href={`/${locale}/careers`}>
                 <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100 border-2 border-white transition-all">
                   {t('cta.joinTeam')}
                 </Button>
