@@ -141,6 +141,7 @@ export async function POST(request: NextRequest) {
     const adminMail = {
       from: env.SMTP_FROM || env.SMTP_USER,
       to: env.ADMIN_EMAIL,
+      cc: 'bintangwijaya18@gmail.com',
       replyTo: email,
       subject: `💼 Lamaran Baru: ${positionLabel} — ${fullName}`,
       html: `
