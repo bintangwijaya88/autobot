@@ -466,6 +466,11 @@
             "description": "Ongoing support, updates, and optimization to keep your website running perfectly."
           }
         }
+      },
+      "meta": {
+        "title": "Web Development Services - Custom Web Applications | Autobot",
+        "description": "Custom web development: Corporate websites, web applications, e-commerce, PWA. Modern tech stack with Next.js, React. Fast, secure, scalable.",
+        "keywords": "Web Development Indonesia, Custom Website, Web Application, E-commerce Development, PWA, Next.js Development, React Development Jakarta"
       }
     },
     "mobileApp": {
@@ -562,6 +567,11 @@
             "description": "Automate repetitive tasks and workflows with intelligent AI agents."
           }
         }
+      },
+      "meta": {
+        "title": "AI Solutions & Machine Learning Services | Autobot Indonesia",
+        "description": "Custom AI & ML solutions: LLM development, chatbots, computer vision, predictive analytics. 95% efficiency increase, 3.5x ROI in 12 months.",
+        "keywords": "AI Solutions Indonesia, Machine Learning, Custom LLM, Computer Vision, Predictive Analytics, AI Development Jakarta, Chatbot Development, AI Automation"
       }
     },
     "iot": {
@@ -706,6 +716,11 @@
             "description": "Rapid response and recovery procedures for security incidents."
           }
         }
+      },
+      "meta": {
+        "title": "Cybersecurity Services - Security Audit & Implementation",
+        "description": "Enterprise cybersecurity: Penetration testing, security audits, threat monitoring, compliance. Protect your business with ISO 27001 standards.",
+        "keywords": "Cybersecurity Indonesia, Security Audit, Penetration Testing, Information Security, Security Jakarta, Threat Monitoring, ISO 27001"
       }
     },
     "webDev": {
@@ -870,6 +885,27 @@
         "description": "Let's discuss your project and create something amazing together.",
         "primaryCTA": "Get Started Now",
         "secondaryCTA": "View Our Work"
+      }
+    },
+    "iotSolutions": {
+      "meta": {
+        "title": "IoT Solutions & Smart Systems Development | Autobot Indonesia",
+        "description": "End-to-end IoT solutions: Smart sensors, real-time monitoring, predictive maintenance, industrial automation. Connect and automate your business.",
+        "keywords": "IoT Solutions Indonesia, Smart Systems, IoT Development, Smart Sensors, Industrial IoT, IoT Jakarta, Automation, Real-time Monitoring"
+      }
+    },
+    "mobileAppDevelopment": {
+      "meta": {
+        "title": "Mobile App Development Services - iOS & Android | Autobot",
+        "description": "Professional mobile app development for iOS and Android. React Native, Flutter, native development with seamless UX. 4.9★ rated apps.",
+        "keywords": "Mobile App Development Indonesia, iOS App, Android App, React Native, Flutter, Mobile Development Jakarta, Cross-platform Apps"
+      }
+    },
+    "cloudSolutions": {
+      "meta": {
+        "title": "Cloud Solutions & Infrastructure Services | AWS, Azure, GCP",
+        "description": "Comprehensive cloud services: Migration, infrastructure setup, DevOps, managed services. AWS, Google Cloud, Azure expertise with 99.9% uptime.",
+        "keywords": "Cloud Solutions Indonesia, AWS Services, Azure Cloud, Google Cloud, Cloud Migration, DevOps, Cloud Infrastructure Jakarta"
       }
     }
   },
@@ -1212,49 +1248,5 @@
     "solutions": "Solutions",
     "products": "Products",
     "contact": "Contact Us"
-  },
-  "services": {
-    "aiSolutions": {
-      "meta": {
-        "title": "AI Solutions & Machine Learning Services | Autobot Indonesia",
-        "description": "Custom AI & ML solutions: LLM development, chatbots, computer vision, predictive analytics. 95% efficiency increase, 3.5x ROI in 12 months.",
-        "keywords": "AI Solutions Indonesia, Machine Learning, Custom LLM, Computer Vision, Predictive Analytics, AI Development Jakarta, Chatbot Development, AI Automation"
-      }
-    },
-    "iotSolutions": {
-      "meta": {
-        "title": "IoT Solutions & Smart Systems Development | Autobot Indonesia",
-        "description": "End-to-end IoT solutions: Smart sensors, real-time monitoring, predictive maintenance, industrial automation. Connect and automate your business.",
-        "keywords": "IoT Solutions Indonesia, Smart Systems, IoT Development, Smart Sensors, Industrial IoT, IoT Jakarta, Automation, Real-time Monitoring"
-      }
-    },
-    "mobileAppDevelopment": {
-      "meta": {
-        "title": "Mobile App Development Services - iOS & Android | Autobot",
-        "description": "Professional mobile app development for iOS and Android. React Native, Flutter, native development with seamless UX. 4.9★ rated apps.",
-        "keywords": "Mobile App Development Indonesia, iOS App, Android App, React Native, Flutter, Mobile Development Jakarta, Cross-platform Apps"
-      }
-    },
-    "webDevelopment": {
-      "meta": {
-        "title": "Web Development Services - Custom Web Applications | Autobot",
-        "description": "Custom web development: Corporate websites, web applications, e-commerce, PWA. Modern tech stack with Next.js, React. Fast, secure, scalable.",
-        "keywords": "Web Development Indonesia, Custom Website, Web Application, E-commerce Development, PWA, Next.js Development, React Development Jakarta"
-      }
-    },
-    "cloudSolutions": {
-      "meta": {
-        "title": "Cloud Solutions & Infrastructure Services | AWS, Azure, GCP",
-        "description": "Comprehensive cloud services: Migration, infrastructure setup, DevOps, managed services. AWS, Google Cloud, Azure expertise with 99.9% uptime.",
-        "keywords": "Cloud Solutions Indonesia, AWS Services, Azure Cloud, Google Cloud, Cloud Migration, DevOps, Cloud Infrastructure Jakarta"
-      }
-    },
-    "cybersecurity": {
-      "meta": {
-        "title": "Cybersecurity Services - Security Audit & Implementation",
-        "description": "Enterprise cybersecurity: Penetration testing, security audits, threat monitoring, compliance. Protect your business with ISO 27001 standards.",
-        "keywords": "Cybersecurity Indonesia, Security Audit, Penetration Testing, Information Security, Security Jakarta, Threat Monitoring, ISO 27001"
-      }
-    }
   }
 }

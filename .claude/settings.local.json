@@ -43,7 +43,10 @@
       "Bash(npm explain:*)",
       "Bash(npm view:*)",
       "WebSearch",
-      "Bash(npm audit:*)"
+      "Bash(npm audit:*)",
+      "Bash(head -20 grep -n \"useTranslations\\\\|t\\(''''services\\\\|t\\(services\" C:Devautobotapp[locale]servicesmobile-app-developmentpage.tsx)",
+      "Bash(head -20 grep -n \"t\\(''''\" \"C:/Dev/autobot/app/[locale]/services/mobile-app-development/page.tsx\")",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

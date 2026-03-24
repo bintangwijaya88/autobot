@@ -466,6 +466,11 @@
             "description": "Dukungan berkelanjutan, update, dan optimisasi untuk menjaga website Anda berjalan sempurna."
           }
         }
+      },
+      "meta": {
+        "title": "Jasa Pembuatan Website & Aplikasi Web Custom | Autobot",
+        "description": "Pembuatan website custom: Website corporate, aplikasi web, e-commerce, PWA. Teknologi modern Next.js, React. Cepat, aman, scalable.",
+        "keywords": "Pembuatan Website Indonesia, Website Custom, Aplikasi Web, E-commerce Development, PWA, Next.js Development, React Development Jakarta"
       }
     },
     "mobileApp": {
@@ -562,6 +567,11 @@
             "description": "Otomasi tugas dan workflow repetitif dengan AI agent cerdas."
           }
         }
+      },
+      "meta": {
+        "title": "Solusi AI & Machine Learning | Autobot Indonesia",
+        "description": "Solusi AI & ML kustom: Pengembangan LLM, chatbot, computer vision, analitik prediktif. Peningkatan efisiensi 95%, ROI 3.5x dalam 12 bulan.",
+        "keywords": "Solusi AI Indonesia, Machine Learning, LLM Custom, Computer Vision, Predictive Analytics, Pengembangan AI Jakarta, Chatbot AI, Otomasi AI"
       }
     },
     "iot": {
@@ -706,6 +716,11 @@
             "description": "Prosedur response dan recovery cepat untuk insiden keamanan."
           }
         }
+      },
+      "meta": {
+        "title": "Layanan Cybersecurity - Audit Keamanan & Implementasi",
+        "description": "Cybersecurity enterprise: Penetration testing, audit keamanan, monitoring ancaman, compliance. Lindungi bisnis Anda dengan standar ISO 27001.",
+        "keywords": "Cybersecurity Indonesia, Audit Keamanan, Penetration Testing, Keamanan Informasi, Security Jakarta, Monitoring Ancaman, ISO 27001"
       }
     },
     "webDev": {
@@ -870,6 +885,27 @@
         "description": "Mari diskusikan proyek Anda dan ciptakan sesuatu yang luar biasa bersama.",
         "primaryCTA": "Mulai Sekarang",
         "secondaryCTA": "Lihat Karya Kami"
+      }
+    },
+    "iotSolutions": {
+      "meta": {
+        "title": "Solusi IoT & Sistem Pintar | Autobot Indonesia",
+        "description": "Solusi IoT end-to-end: Sensor pintar, monitoring real-time, predictive maintenance, otomasi industri. Terhubung dan otomatis kan bisnis Anda.",
+        "keywords": "Solusi IoT Indonesia, Sistem Pintar, Pengembangan IoT, Sensor Pintar, IoT Industri, IoT Jakarta, Otomasi, Monitoring Real-time"
+      }
+    },
+    "mobileAppDevelopment": {
+      "meta": {
+        "title": "Jasa Pengembangan Aplikasi Mobile - iOS & Android | Autobot",
+        "description": "Pengembangan aplikasi mobile profesional untuk iOS dan Android. React Native, Flutter, native development dengan UX terbaik. Rating 4.9★.",
+        "keywords": "Pengembangan Aplikasi Mobile Indonesia, Aplikasi iOS, Aplikasi Android, React Native, Flutter, Mobile Development Jakarta, Aplikasi Cross-platform"
+      }
+    },
+    "cloudSolutions": {
+      "meta": {
+        "title": "Solusi Cloud & Infrastruktur | AWS, Azure, Google Cloud",
+        "description": "Layanan cloud komprehensif: Migrasi cloud, setup infrastruktur, DevOps, managed services. Expertise AWS, Google Cloud, Azure dengan uptime 99.9%.",
+        "keywords": "Solusi Cloud Indonesia, Layanan AWS, Azure Cloud, Google Cloud, Migrasi Cloud, DevOps, Infrastruktur Cloud Jakarta"
       }
     }
   },
@@ -1160,49 +1196,5 @@
     "solutions": "Solusi",
     "products": "Produk",
     "contact": "Hubungi Kami"
-  },
-  "services": {
-    "aiSolutions": {
-      "meta": {
-        "title": "Solusi AI & Machine Learning | Autobot Indonesia",
-        "description": "Solusi AI & ML kustom: Pengembangan LLM, chatbot, computer vision, analitik prediktif. Peningkatan efisiensi 95%, ROI 3.5x dalam 12 bulan.",
-        "keywords": "Solusi AI Indonesia, Machine Learning, LLM Custom, Computer Vision, Predictive Analytics, Pengembangan AI Jakarta, Chatbot AI, Otomasi AI"
-      }
-    },
-    "iotSolutions": {
-      "meta": {
-        "title": "Solusi IoT & Sistem Pintar | Autobot Indonesia",
-        "description": "Solusi IoT end-to-end: Sensor pintar, monitoring real-time, predictive maintenance, otomasi industri. Terhubung dan otomatis kan bisnis Anda.",
-        "keywords": "Solusi IoT Indonesia, Sistem Pintar, Pengembangan IoT, Sensor Pintar, IoT Industri, IoT Jakarta, Otomasi, Monitoring Real-time"
-      }
-    },
-    "mobileAppDevelopment": {
-      "meta": {
-        "title": "Jasa Pengembangan Aplikasi Mobile - iOS & Android | Autobot",
-        "description": "Pengembangan aplikasi mobile profesional untuk iOS dan Android. React Native, Flutter, native development dengan UX terbaik. Rating 4.9★.",
-        "keywords": "Pengembangan Aplikasi Mobile Indonesia, Aplikasi iOS, Aplikasi Android, React Native, Flutter, Mobile Development Jakarta, Aplikasi Cross-platform"
-      }
-    },
-    "webDevelopment": {
-      "meta": {
-        "title": "Jasa Pembuatan Website & Aplikasi Web Custom | Autobot",
-        "description": "Pembuatan website custom: Website corporate, aplikasi web, e-commerce, PWA. Teknologi modern Next.js, React. Cepat, aman, scalable.",
-        "keywords": "Pembuatan Website Indonesia, Website Custom, Aplikasi Web, E-commerce Development, PWA, Next.js Development, React Development Jakarta"
-      }
-    },
-    "cloudSolutions": {
-      "meta": {
-        "title": "Solusi Cloud & Infrastruktur | AWS, Azure, Google Cloud",
-        "description": "Layanan cloud komprehensif: Migrasi cloud, setup infrastruktur, DevOps, managed services. Expertise AWS, Google Cloud, Azure dengan uptime 99.9%.",
-        "keywords": "Solusi Cloud Indonesia, Layanan AWS, Azure Cloud, Google Cloud, Migrasi Cloud, DevOps, Infrastruktur Cloud Jakarta"
-      }
-    },
-    "cybersecurity": {
-      "meta": {
-        "title": "Layanan Cybersecurity - Audit Keamanan & Implementasi",
-        "description": "Cybersecurity enterprise: Penetration testing, audit keamanan, monitoring ancaman, compliance. Lindungi bisnis Anda dengan standar ISO 27001.",
-        "keywords": "Cybersecurity Indonesia, Audit Keamanan, Penetration Testing, Keamanan Informasi, Security Jakarta, Monitoring Ancaman, ISO 27001"
-      }
-    }
   }
 }
