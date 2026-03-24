@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { Section } from '@/components/sections/Section';
 import { Container } from '@/components/sections/Container';
@@ -29,6 +30,7 @@ import {
 } from 'lucide-react';
 
 export default function PartnershipApplyPage() {
+  const locale = useLocale();
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -84,7 +86,7 @@ export default function PartnershipApplyPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/partnership">
+                <Link href={`/${locale}/partnership`}>
                   <Button variant="outline" className="border-2 border-[#116366] text-[#116366] hover:bg-[#116366] hover:text-white px-8 h-12">
                     <ArrowLeft className="mr-2 h-5 w-5" />
                     Back to Partnership
@@ -118,7 +120,7 @@ export default function PartnershipApplyPage() {
         <Container className="relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Link
-              href="/partnership"
+              href={`/${locale}/partnership`}
               className="inline-flex items-center text-[#116366] hover:text-[#0d4d50] mb-6 font-medium transition-colors"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -369,11 +371,11 @@ export default function PartnershipApplyPage() {
                     </Button>
                     <p className="text-sm text-gray-500 mt-4 text-center leading-relaxed">
                       By submitting this form, you agree to our{' '}
-                      <Link href="/legal/terms-of-service" className="text-[#116366] hover:underline">
+                      <Link href={`/${locale}/legal/terms-of-service`} className="text-[#116366] hover:underline">
                         terms and conditions
                       </Link>{' '}
                       and{' '}
-                      <Link href="/legal/privacy-policy" className="text-[#116366] hover:underline">
+                      <Link href={`/${locale}/legal/privacy-policy`} className="text-[#116366] hover:underline">
                         privacy policy
                       </Link>
                     </p>

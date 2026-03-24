@@ -9,7 +9,8 @@ import Link from 'next/link';
 import { ExternalLink, Github, Play, Briefcase, Award, Layers } from 'lucide-react';
 import Image from 'next/image';
 
-export default function PortfolioPage() {
+export default async function PortfolioPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const projects = [
     {
       title: 'MediCare SIMRS',
@@ -290,7 +291,7 @@ export default function PortfolioPage() {
             <p className="text-lg mb-8 text-white/90">
               Let's discuss how we can help you achieve your goals.
             </p>
-            <Link href="/contact">
+            <Link href={`/${locale}/contact`}>
               <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100">
                 Get Started Today
               </Button>

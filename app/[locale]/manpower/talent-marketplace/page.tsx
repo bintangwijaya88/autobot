@@ -23,7 +23,8 @@ import {
   DollarSign,
 } from 'lucide-react';
 
-export default function TalentMarketplacePage() {
+export default async function TalentMarketplacePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const talents = [
     {
       name: 'Ahmad Santoso',
@@ -162,12 +163,12 @@ export default function TalentMarketplacePage() {
             </div>
 
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link href="/contact">
+              <Link href={`/${locale}/contact`}>
                 <Button className="bg-[#116366] hover:bg-[#0d4d50] text-white">
                   Request Talent Consultation
                 </Button>
               </Link>
-              <Link href="/manpower">
+              <Link href={`/${locale}/manpower`}>
                 <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">
                   View All Services
                 </Button>
@@ -329,12 +330,12 @@ export default function TalentMarketplacePage() {
               Let's discuss your requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={`/${locale}/contact`}>
                 <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100">
                   Request Consultation
                 </Button>
               </Link>
-              <Link href="/manpower">
+              <Link href={`/${locale}/manpower`}>
                 <Button
                   size="lg"
                   variant="outline"

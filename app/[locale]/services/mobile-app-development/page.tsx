@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { Section } from '@/components/sections/Section';
 import { Container } from '@/components/sections/Container';
@@ -44,6 +45,7 @@ import {
 import { useState } from 'react';
 
 export default function MobileAppDevelopmentPage() {
+  const locale = useLocale();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const stats = [
@@ -335,13 +337,13 @@ export default function MobileAppDevelopmentPage() {
                 Sudah <strong>200+ apps</strong> diluncurkan dengan rating rata-rata <strong>4.8/5</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/contact">
+                <Link href={`/${locale}/contact`}>
                   <Button size="lg" className="bg-[#116366] hover:bg-[#0d4d50] text-white group">
                     Konsultasi Gratis
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link href="/portfolio">
+                <Link href={`/${locale}/portfolio`}>
                   <Button size="lg" variant="outline" className="border-[#116366] text-[#116366] hover:bg-[#116366] hover:text-white">
                     Lihat Portfolio Apps
                   </Button>
@@ -754,13 +756,13 @@ export default function MobileAppDevelopmentPage() {
                 Mari diskusikan project Anda dan ciptakan sesuatu yang luar biasa bersama-sama.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
+                <Link href={`/${locale}/contact`}>
                   <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100">
                     Mulai Project Sekarang
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <Link href="/portfolio">
+                <Link href={`/${locale}/portfolio`}>
                   <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#116366]">
                     Lihat Portfolio Apps
                   </Button>

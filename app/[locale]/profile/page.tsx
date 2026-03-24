@@ -3,7 +3,8 @@ import { authOptions } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 
-export default async function ProfilePage() {
+export default async function ProfilePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -17,7 +18,7 @@ export default async function ProfilePage() {
       <div className="max-w-3xl mx-auto">
         <div className="mb-6">
           <Link
-            href="/dashboard"
+            href={`/${locale}/dashboard`}
             className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-900"
           >
             <svg

@@ -17,6 +17,7 @@ interface BlogDetailPageProps {
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
+  const { locale } = await params;
   const resolvedParams = await params;
 
   // Fetch blog with error handling
@@ -63,7 +64,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         <Container>
           <div className="max-w-4xl mx-auto">
             <Link
-              href="/resources/blog"
+              href={`/${locale}/resources/blog`}
               className="inline-flex items-center gap-2 text-[#116366] hover:text-[#0d4d50] mb-8 font-medium transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />

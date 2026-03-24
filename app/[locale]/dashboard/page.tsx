@@ -4,7 +4,8 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { SignOutButton } from '@/components/SignOutButton';
 
-export default async function DashboardPage() {
+export default async function DashboardPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -125,7 +126,7 @@ export default async function DashboardPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Actions</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <Link
-                  href="/profile"
+                  href={`/${locale}/profile`}
                   className="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all"
                 >
                   <div className="flex-shrink-0">
@@ -185,7 +186,7 @@ export default async function DashboardPage() {
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href={`/${locale}/contact`}
                   className="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg hover:border-green-500 hover:shadow-md transition-all"
                 >
                   <div className="flex-shrink-0">

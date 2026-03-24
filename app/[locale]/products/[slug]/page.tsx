@@ -235,6 +235,7 @@ export function generateStaticParams() {
 }
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { locale } = await params;
   const { slug } = await params;
   const product = productsData[slug];
 
@@ -354,7 +355,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact">
+                  <Link href={`/${locale}/contact`}>
                     <Button
                       className={`w-full ${
                         plan.recommended
@@ -382,7 +383,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               Konsultasi gratis dengan tim kami untuk mendapatkan solusi terbaik.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={`/${locale}/contact`}>
                 <Button
                   size="lg"
                   className="bg-white text-[#116366] hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
@@ -391,7 +392,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="/products">
+              <Link href={`/${locale}/products`}>
                 <Button
                   size="lg"
                   variant="outline"

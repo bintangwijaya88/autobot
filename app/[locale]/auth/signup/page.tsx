@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
@@ -7,6 +8,7 @@ import { signIn } from 'next-auth/react';
 
 export default function SignUpPage() {
   const router = useRouter();
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -134,7 +136,7 @@ export default function SignUpPage() {
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
             <Link
-              href="/auth/signin"
+              href={`/${locale}/auth/signin`}
               className="font-medium text-purple-600 hover:text-purple-500"
             >
               sign in to existing account

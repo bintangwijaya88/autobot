@@ -8,7 +8,8 @@ import { BackgroundPattern } from '@/components/ui/background-pattern';
 import Link from 'next/link';
 import { Handshake, TrendingUp, Users, Target, CheckCircle, ArrowRight, Rocket, Heart } from 'lucide-react';
 
-export default function PartnershipPage() {
+export default async function PartnershipPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const models = [
     {
       title: 'Co-Development Partnership',
@@ -273,7 +274,7 @@ export default function PartnershipPage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/partnership/apply">
+            <Link href={`/${locale}/partnership/apply`}>
               <Button size="lg" className="bg-[#116366] hover:bg-[#0d4d50] text-white">
                 Start Application <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -331,7 +332,7 @@ export default function PartnershipPage() {
             <p className="text-lg mb-8 text-white/90">
               Let's discuss how we can work together to build something amazing.
             </p>
-            <Link href="/partnership/apply">
+            <Link href={`/${locale}/partnership/apply`}>
               <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100">
                 Apply for Partnership
               </Button>

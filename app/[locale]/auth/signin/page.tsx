@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { signIn } from 'next-auth/react';
 import { useState, FormEvent } from 'react';
@@ -7,6 +8,7 @@ import Link from 'next/link';
 
 export default function SignInPage() {
   const router = useRouter();
+  const locale = useLocale();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') || '/dashboard';
   const error = searchParams.get('error');
@@ -64,7 +66,7 @@ export default function SignInPage() {
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
             <Link
-              href="/auth/signup"
+              href={`/${locale}/auth/signup`}
               className="font-medium text-purple-600 hover:text-purple-500"
             >
               create a new account

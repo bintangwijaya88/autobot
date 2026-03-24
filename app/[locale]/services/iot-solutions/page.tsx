@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { Section } from '@/components/sections/Section';
 import { Container } from '@/components/sections/Container';
@@ -47,6 +48,7 @@ import {
 import { useState } from 'react';
 
 export default function IoTSolutionsPage() {
+  const locale = useLocale();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const stats = [
@@ -360,13 +362,13 @@ export default function IoTSolutionsPage() {
                 Sudah mengelola <strong>10K+ devices</strong> dengan <strong>99.8% uptime</strong> dan latency <strong>&lt;100ms</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/contact">
+                <Link href={`/${locale}/contact`}>
                   <Button size="lg" className="bg-[#116366] hover:bg-[#0d4d50] text-white group">
                     Konsultasi IoT Gratis
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link href="/portfolio">
+                <Link href={`/${locale}/portfolio`}>
                   <Button size="lg" variant="outline" className="border-[#116366] text-[#116366] hover:bg-[#116366] hover:text-white">
                     Lihat Portfolio IoT
                   </Button>
@@ -807,13 +809,13 @@ export default function IoTSolutionsPage() {
                 Mari bangun ekosistem IoT yang powerful dan unlock new possibilities untuk bisnis Anda.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
+                <Link href={`/${locale}/contact`}>
                   <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100">
                     Mulai Project IoT
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <Link href="/portfolio">
+                <Link href={`/${locale}/portfolio`}>
                   <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#116366]">
                     Lihat Portfolio IoT
                   </Button>

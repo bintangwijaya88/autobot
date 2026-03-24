@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
@@ -6,6 +7,7 @@ import Link from 'next/link';
 
 export default function VerifyEmailPage() {
   const searchParams = useSearchParams();
+  const locale = useLocale();
   const router = useRouter();
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
   const [message, setMessage] = useState('');
@@ -106,7 +108,7 @@ export default function VerifyEmailPage() {
             </p>
             <div className="mt-6">
               <Link
-                href="/auth/signin"
+                href={`/${locale}/auth/signin`}
                 className="text-purple-600 hover:text-purple-500 font-medium"
               >
                 Or click here to sign in now
@@ -142,13 +144,13 @@ export default function VerifyEmailPage() {
               </p>
               <div className="flex flex-col space-y-2">
                 <Link
-                  href="/auth/signup"
+                  href={`/${locale}/auth/signup`}
                   className="text-purple-600 hover:text-purple-500 font-medium"
                 >
                   Sign up again
                 </Link>
                 <Link
-                  href="/auth/signin"
+                  href={`/${locale}/auth/signin`}
                   className="text-gray-600 hover:text-gray-500"
                 >
                   Or sign in if already verified

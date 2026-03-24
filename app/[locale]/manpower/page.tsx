@@ -20,7 +20,8 @@ import {
   Target,
 } from 'lucide-react';
 
-export default function ManpowerPage() {
+export default async function ManpowerPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const categories = [
     {
       icon: <Server className="w-8 h-8 text-white" />,
@@ -362,12 +363,12 @@ export default function ManpowerPage() {
               Let us know your requirements and we'll find the perfect match for your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={`/${locale}/contact`}>
                 <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100">
                   Request Talent
                 </Button>
               </Link>
-              <Link href="/manpower/talent-marketplace">
+              <Link href={`/${locale}/manpower/talent-marketplace`}>
                 <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#116366]">
                   Browse Talent
                 </Button>

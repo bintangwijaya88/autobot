@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { Section } from '@/components/sections/Section';
 import { Container } from '@/components/sections/Container';
@@ -45,6 +46,7 @@ import {
 import { useState } from 'react';
 
 export default function AISolutionsPage() {
+  const locale = useLocale();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const stats = [
@@ -428,13 +430,13 @@ export default function AISolutionsPage() {
                 menghasilkan <strong>ROI 3.5x</strong> dalam 12 bulan.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/contact">
+                <Link href={`/${locale}/contact`}>
                   <Button size="lg" className="bg-[#116366] hover:bg-[#0d4d50] text-white group">
                     Konsultasi AI Gratis
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link href="/portfolio">
+                <Link href={`/${locale}/portfolio`}>
                   <Button size="lg" variant="outline" className="border-[#116366] text-[#116366] hover:bg-[#116366] hover:text-white">
                     Lihat Portfolio AI
                   </Button>
@@ -890,13 +892,13 @@ export default function AISolutionsPage() {
                 Mari diskusikan bagaimana AI dapat mentransformasi operasi dan mendorong pertumbuhan bisnis Anda.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
+                <Link href={`/${locale}/contact`}>
                   <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100">
                     Jadwalkan Konsultasi Gratis
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <Link href="/portfolio">
+                <Link href={`/${locale}/portfolio`}>
                   <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#116366]">
                     Lihat Proyek AI Kami
                   </Button>

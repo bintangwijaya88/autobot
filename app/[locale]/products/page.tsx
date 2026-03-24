@@ -8,7 +8,8 @@ import { BackgroundPattern } from '@/components/ui/background-pattern';
 import Link from 'next/link';
 import { Package, ArrowRight, Sparkles } from 'lucide-react';
 
-export default function ProductsPage() {
+export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const products = [
     {
       name: 'KiloKelola',
@@ -283,7 +284,7 @@ export default function ProductsPage() {
               Kami juga menyediakan custom development untuk kebutuhan spesifik bisnis Anda.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={`/${locale}/contact`}>
                 <Button
                   size="lg"
                   className="bg-white text-[#116366] hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
@@ -291,7 +292,7 @@ export default function ProductsPage() {
                   Konsultasi Gratis
                 </Button>
               </Link>
-              <Link href="/services">
+              <Link href={`/${locale}/services`}>
                 <Button
                   size="lg"
                   variant="outline"

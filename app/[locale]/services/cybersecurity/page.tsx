@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from 'next-intl';
 
 import { Section } from '@/components/sections/Section';
 import { Container } from '@/components/sections/Container';
@@ -31,6 +32,7 @@ import {
 } from 'lucide-react';
 
 export default function CybersecurityPage() {
+  const locale = useLocale();
   const features = [
     {
       icon: <Shield className="w-8 h-8 text-white" />,
@@ -228,13 +230,13 @@ export default function CybersecurityPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={`/${locale}/contact`}>
                 <Button size="lg" className="bg-[#116366] hover:bg-[#0d4d50] text-white group">
                   Get Security Assessment
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/portfolio">
+              <Link href={`/${locale}/portfolio`}>
                 <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900">
                   View Case Studies
                 </Button>
@@ -352,7 +354,7 @@ export default function CybersecurityPage() {
                     ))}
                   </div>
 
-                  <Link href="/contact">
+                  <Link href={`/${locale}/contact`}>
                     <Button className="w-full bg-[#116366] hover:bg-[#0d4d50] text-white">
                       Request Quote
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -457,12 +459,12 @@ export default function CybersecurityPage() {
               and provide actionable recommendations to protect your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={`/${locale}/contact`}>
                 <Button size="lg" className="bg-white text-[#116366] hover:bg-gray-100">
                   Schedule Free Assessment
                 </Button>
               </Link>
-              <Link href="/portfolio">
+              <Link href={`/${locale}/portfolio`}>
                 <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#116366]">
                   View Security Projects
                 </Button>
