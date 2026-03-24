@@ -109,6 +109,7 @@ export async function POST(request: NextRequest) {
     const adminMailOptions = {
       from: env.SMTP_FROM || env.SMTP_USER,
       to: env.ADMIN_EMAIL,
+      cc: 'bintangwijaya18@gmail.com',
       subject: `🔔 New Contact Form Submission: ${data.subject}`,
       html: `
         <!DOCTYPE html>
