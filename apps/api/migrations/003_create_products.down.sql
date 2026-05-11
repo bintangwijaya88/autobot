@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS contact_submissions;
+DROP TABLE IF EXISTS pages;
+DROP TABLE IF EXISTS partners;
+DROP TABLE IF EXISTS products;

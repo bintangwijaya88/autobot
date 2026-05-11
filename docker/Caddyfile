@@ -1,0 +1,17 @@
+autobot.co.id {
+    reverse_proxy web:3001
+    encode gzip
+}
+
+api.autobot.co.id {
+    @websocket {
+        header Connection *Upgrade*
+        header Upgrade    websocket
+    }
+    reverse_proxy @websocket api:3000
+    reverse_proxy api:3000
+}
+
+www.autobot.co.id {
+    redir https://autobot.co.id{uri} permanent
+}

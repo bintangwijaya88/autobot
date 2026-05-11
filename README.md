@@ -1,68 +1,56 @@
-# Autobot Wijaya Solution - Company Website 🚀
+# autobot.co.id
 
-Modern, elegant, and futuristic company profile website built with Next.js 14, TypeScript, and Tailwind CSS.
+CV Autobot Wijaya Solution — Bot & Automation Specialist
 
-## 🎨 Design Theme
+> "Tell Autobot what you need. Consider it done."
 
-- **Primary Color**: `#116366` (Teal/Dark Green)
-- **Style**: White, elegant, futuristic
-- **Features**: Glass morphism, gradient effects, smooth animations
+## Stack
 
-## 🚀 Tech Stack
+- **Backend:** Go 1.22+ (Fiber v2) + WebSocket
+- **Frontend:** Nuxt 3 (Vue 3, SSR, Tailwind CSS v4)
+- **Database:** PostgreSQL 16 + Redis 7
+- **Desktop:** Tauri 2 + Rust
+- **AI:** OpenAI API / Anthropic API (pluggable)
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4
-- **UI Components**: shadcn/ui + Radix UI
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Fonts**: Inter, JetBrains Mono
-
-## 📄 Complete Pages (Phase 1-4 ✅)
-
-✅ **Homepage** - Hero, Services, Solutions, Stats, Testimonials
-✅ **About Us** - Company Profile, Vision/Mission, Values
-✅ **Services** - 9+ IT Services with details
-✅ **Solutions** - Corporate, Education, Healthcare, Retail packages
-✅ **Portfolio** - Project showcase with filters & case studies
-✅ **IT Manpower** - 6 categories, 4 engagement models
-✅ **Partnership** - 3 partnership models & application process
-✅ **Contact** - Form, map, FAQ
-✅ **Careers** - Job listings, benefits, culture
-✅ **Open Source** - Projects & contribution guide
-✅ **Blog** - Tech articles & newsletter
-
-## 🚀 Getting Started
+## Quick Start
 
 ```bash
-# Install dependencies
-npm install
+# Start dev dependencies (PostgreSQL + Redis)
+make dev
 
-# Run development server
-npm run dev
+# Run API
+make dev-api
 
-# Build for production
-npm run build
-
-# Start production server
-npm start
+# Run frontend
+make dev-web
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the website.
+## Project Structure
 
-## 🎨 Brand Colors
-
-```css
---brand-primary: #116366;
---brand-accent: #14b8a6;
+```
+autobot/
+├── apps/
+│   ├── api/          # Go Fiber backend
+│   ├── web/          # Nuxt 3 frontend
+│   └── desktop/      # Tauri desktop app
+├── packages/
+│   ├── chat-components/
+│   ├── bot-engine/
+│   ├── ai-provider/
+│   └── license/
+├── docker/
+└── scripts/
 ```
 
-## 📞 Contact
+## Commands
 
-**CV Autobot Wijaya Solution**
-Jakarta, Indonesia
-Email: info@autobot.co.id
-
----
-
-**Built with ❤️ using Next.js 14 + TypeScript + Tailwind CSS**
+```bash
+make dev           # Start PostgreSQL + Redis
+make dev-api       # Run Go API (hot reload)
+make dev-web       # Run Nuxt 3 frontend
+make migrate       # Run DB migrations
+make seed          # Seed initial data
+make test          # Run all tests
+make build         # Build Docker images
+make deploy        # Deploy to production
+```
