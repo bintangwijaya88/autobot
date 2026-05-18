@@ -1,22 +1,23 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres:16-alpine
+  mysql:
+    image: mysql:8.0
     restart: unless-stopped
     environment:
-      POSTGRES_DB: autobot
-      POSTGRES_USER: autobot
-      POSTGRES_PASSWORD: devpassword
+      MYSQL_ROOT_PASSWORD: devpassword
+      MYSQL_DATABASE: autobot
+      MYSQL_USER: autobot
+      MYSQL_PASSWORD: devpassword
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - pgdata_dev:/var/lib/postgresql/data
+      - mysqldata_dev:/var/lib/mysql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U autobot"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uautobot", "-pdevpassword"]
       interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
 
   redis:
     image: redis:7-alpine
@@ -26,4 +27,4 @@ services:
     command: redis-server --maxmemory 128mb --maxmemory-policy allkeys-lru
 
 volumes:
-  pgdata_dev:
+  mysqldata_dev:

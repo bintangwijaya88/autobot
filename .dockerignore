@@ -1,0 +1,32 @@
+# Node
+apps/web/node_modules/
+apps/web/.nuxt/
+apps/web/.output/
+apps/web/dist/
+
+# Go
+apps/api/server
+apps/api/*.exe
+
+# Git
+.git/
+.github/
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Env files (never bake secrets into images)
+.env
+.env.*
+apps/api/.env
+apps/api/.env.*
+apps/web/.env
+apps/web/.env.*

@@ -6,8 +6,8 @@
       style="background: rgba(17,17,17,0.85); border-bottom: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(12px);"
     >
       <NuxtLink to="/" class="flex items-center gap-2.5 select-none">
-        <div class="w-7 h-7 rounded-lg flex items-center justify-center text-[#111] font-bold text-sm" style="background: #F0F0F0;">A</div>
-        <span class="font-semibold text-[15px] tracking-tight" style="color: #F0F0F0;">Autobot</span>
+        <img src="/logo.png" alt="Autobot" class="h-7 w-auto object-contain" />
+        <span class="font-semibold text-[15px] tracking-tight hidden sm:block" style="color: #F0F0F0;">AutobotWs</span>
       </NuxtLink>
 
       <div class="flex items-center gap-1 text-[13.5px]">
@@ -35,7 +35,7 @@
       class="px-6 py-8 text-center text-[13px]"
       style="border-top: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.25);"
     >
-      <p>© 2025 CV Autobot Wijaya Solution &nbsp;·&nbsp; Jakarta, Indonesia</p>
+      <p>© 2026 CV Autobot Wijaya Solution &nbsp;·&nbsp; Jakarta, Indonesia</p>
       <p class="mt-1">
         <a href="mailto:bintang@autobot.co.id" class="hover:text-white/50 transition-colors">bintang@autobot.co.id</a>
       </p>
