@@ -91,7 +91,7 @@ func Load() *Config {
 	rlWindow, _ := strconv.Atoi(getEnv("RATE_LIMIT_WINDOW", "60"))
 
 	return &Config{
-		AppPort: getEnv("APP_PORT", "3000"),
+		AppPort: getEnv("APP_PORT", "50050"),
 		AppEnv:  getEnv("APP_ENV", "development"),
 		DB: DBConfig{
 			Driver:   getEnv("DB_DRIVER", "mysql"),

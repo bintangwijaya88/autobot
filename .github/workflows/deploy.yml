@@ -107,5 +107,5 @@ jobs:
 
             # Health check
             sleep 5
-            curl -f http://localhost:3000/api/health || exit 1
+            curl -f http://localhost:50050/api/health || exit 1
             echo "Deploy successful!"

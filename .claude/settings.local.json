@@ -138,7 +138,11 @@
       "PowerShell(Start-Process -FilePath \"C:\\\\Dev\\\\autobot\\\\apps\\\\api\\\\server.exe\" -WorkingDirectory \"C:\\\\Dev\\\\autobot\\\\apps\\\\api\" -WindowStyle Hidden; Start-Sleep -Seconds 3; Invoke-WebRequest -Uri \"http://localhost:3000/api/health\" -UseBasicParsing -TimeoutSec 5 | Select-Object -ExpandProperty Content)",
       "Bash(Get-Content \"C:\\\\Users\\\\BINTAN~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Dev-autobot\\\\85f430c9-7769-407d-ae1c-a8000ce9262f\\\\tasks\\\\bljurf1yq.output\" -Wait)",
       "Bash(Select-String --line-buffered -Pattern \"Local:|ready|error|Error|EADDRINUSE\")",
-      "Bash(Get-Content *)"
+      "Bash(Get-Content *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "PowerShell(docker run *)"
     ],
     "deny": [],
     "ask": []

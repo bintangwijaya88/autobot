@@ -8,8 +8,8 @@ api.autobot.co.id {
         header Connection *Upgrade*
         header Upgrade    websocket
     }
-    reverse_proxy @websocket api:3000
-    reverse_proxy api:3000
+    reverse_proxy @websocket api:50050
+    reverse_proxy api:50050
 }
 
 www.autobot.co.id {
