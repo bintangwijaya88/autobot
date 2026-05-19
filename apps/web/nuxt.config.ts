@@ -73,7 +73,7 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   compatibilityDate: '2024-04-03',
 
@@ -92,6 +92,14 @@ export default defineNuxtConfig({
           'Referrer-Policy': 'strict-origin-when-cross-origin',
           'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
         },
+      },
+    },
+  },
+
+  vite: {
+    build: {
+      rollupOptions: {
+        maxParallelFileOps: 3,
       },
     },
   },

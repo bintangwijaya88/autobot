@@ -32,7 +32,8 @@ WORKDIR /app
 COPY apps/web/package*.json ./
 RUN npm ci
 COPY apps/web/ .
-RUN NODE_OPTIONS="--max-old-space-size=2048" npm run build
+ENV NUXT_TELEMETRY_DISABLED=1
+RUN NODE_OPTIONS="--max-old-space-size=1536" npm run build
 
 # ==============================
 # Web — Runtime
