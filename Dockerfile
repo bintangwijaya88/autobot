@@ -32,7 +32,7 @@ WORKDIR /app
 COPY apps/web/package*.json ./
 RUN npm ci
 COPY apps/web/ .
-RUN npm run build
+RUN NODE_OPTIONS="--max-old-space-size=2048" npm run build
 
 # ==============================
 # Web — Runtime
