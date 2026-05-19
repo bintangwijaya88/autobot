@@ -26,6 +26,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certifi
     && rm -rf /var/lib/apt/lists/*
 RUN curl https://mise.run | sh && /root/.local/bin/mise use --global node@20
 ENV PATH="/root/.local/share/mise/shims:/root/.local/bin:$PATH"
+# Export the actual node installation to a stable path (no mise needed at runtime)
+RUN cp -rL "$(mise where node)" /opt/node
 WORKDIR /app
 COPY apps/web/package*.json ./
 RUN npm ci
@@ -33,17 +35,15 @@ COPY apps/web/ .
 RUN npm run build
 
 # ==============================
-# Web — Runtime (Node via Mise)
+# Web — Runtime
 # ==============================
 FROM debian:bookworm-slim AS web
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates \
     && rm -rf /var/lib/apt/lists/*
-COPY --from=web-builder /root/.local /root/.local
-COPY --from=web-builder /root/.config/mise /root/.config/mise
-ENV PATH="/root/.local/share/mise/shims:/root/.local/bin:$PATH"
+COPY --from=web-builder /opt/node /opt/node
+ENV PATH="/opt/node/bin:$PATH"
 WORKDIR /app
 COPY --from=web-builder /app/.output .output
-COPY --from=web-builder /app/package.json .
 EXPOSE 50081
 ENV HOST=0.0.0.0
 ENV PORT=50081
