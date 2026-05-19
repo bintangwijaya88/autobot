@@ -39,6 +39,7 @@ FROM debian:bookworm-slim AS web
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=web-builder /root/.local /root/.local
+COPY --from=web-builder /root/.config/mise /root/.config/mise
 ENV PATH="/root/.local/share/mise/shims:/root/.local/bin:$PATH"
 WORKDIR /app
 COPY --from=web-builder /app/.output .output
