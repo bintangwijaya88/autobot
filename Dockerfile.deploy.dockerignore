@@ -1,0 +1,27 @@
+# Node
+apps/web/node_modules/
+apps/web/.nuxt/
+apps/web/dist/
+
+# Git
+.git/
+.github/
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Env files
+.env
+.env.*
+apps/api/.env
+apps/api/.env.*
+apps/web/.env
+apps/web/.env.*
