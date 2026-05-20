@@ -142,7 +142,13 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git push *)",
-      "PowerShell(docker run *)"
+      "PowerShell(docker run *)",
+      "PowerShell(docker version *)",
+      "PowerShell(Start-Process \"C:\\\\Program Files\\\\Docker\\\\Docker\\\\Docker Desktop.exe\" -ErrorAction SilentlyContinue; Write-Host \"Starting Docker Desktop...\")",
+      "PowerShell($timeout = 120; $elapsed = 0; do { Start-Sleep 5; $elapsed += 5; $result = docker ps 2>&1; Write-Host \"[$elapsed s] Waiting for Docker...\"; } until \\($result -notmatch \"error during connect\" -or $elapsed -ge $timeout\\); if \\($result -notmatch \"error during connect\"\\) { Write-Host \"Docker is ready!\" } else { Write-Host \"Timeout waiting for Docker\" })",
+      "PowerShell(go version *)",
+      "PowerShell(go build *)",
+      "PowerShell(npm run *)"
     ],
     "deny": [],
     "ask": []
