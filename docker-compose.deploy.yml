@@ -24,8 +24,8 @@ services:
       target: web
     restart: unless-stopped
     environment:
-      NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE:-https://api.autobot.co.id}
-      NUXT_PUBLIC_WS_URL: ${NUXT_PUBLIC_WS_URL:-wss://api.autobot.co.id/ws}
+      NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE:-https://autobot.co.id}
+      NUXT_PUBLIC_WS_URL: ${NUXT_PUBLIC_WS_URL:-wss://autobot.co.id/ws}
     ports:
       - "50081:50081"
     networks:
