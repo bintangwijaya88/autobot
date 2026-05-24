@@ -76,7 +76,18 @@ const categoryEmoji: Record<string, string> = {
           >
             Lihat Detail
           </NuxtLink>
+          <a
+            v-if="product.demo_url"
+            :href="product.demo_url"
+            target="_blank"
+            rel="noopener"
+            class="px-4 py-2.5 rounded-xl text-sm font-medium hover:opacity-90 transition-all"
+            style="background: linear-gradient(135deg, #7c3aed, #2563eb); color: white;"
+          >
+            Beli Sekarang
+          </a>
           <NuxtLink
+            v-else
             to="/"
             class="px-4 py-2.5 rounded-xl bg-white text-black text-sm font-medium hover:bg-gray-100 transition-colors"
           >

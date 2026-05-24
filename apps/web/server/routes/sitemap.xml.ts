@@ -11,9 +11,15 @@ export default defineEventHandler((event) => {
     { loc: '/partners', priority: '0.7', changefreq: 'monthly' },
     { loc: '/resources', priority: '0.6', changefreq: 'weekly' },
     { loc: '/contact', priority: '0.7', changefreq: 'monthly' },
+    { loc: '/pricing', priority: '0.9', changefreq: 'monthly' },
+    { loc: '/order', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/privacy-policy', priority: '0.4', changefreq: 'yearly' },
+    { loc: '/terms-of-service', priority: '0.4', changefreq: 'yearly' },
+    { loc: '/refund-policy', priority: '0.4', changefreq: 'yearly' },
   ]
 
   const productSlugs = [
+    'wasigap',
     'wablast',
     'wabotiq',
     'ddl-klinik',

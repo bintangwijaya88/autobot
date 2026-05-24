@@ -111,6 +111,40 @@ func seedProducts(ctx context.Context, db *sql.DB) error {
 			},
 			"tech_stack": []string{"Go", "REST/GraphQL", "MySQL", "Redis"},
 		},
+		{
+			"slug": "wasigap", "name": "WaSigap",
+			"tagline":        "Aplikasi WhatsApp Multi-Akun — Bayar Sekali, Pakai Selamanya",
+			"category":       "chatbot",
+			"description":    "WaSigap adalah aplikasi WhatsApp multi-akun untuk bisnis dan tim. Satu dasbor, 99 akun WhatsApp, semua fitur lengkap — bayar sekali, tidak perlu perpanjang selamanya.",
+			"delivery_model": "desktop", "sort_order": 0,
+			"demo_url":        "https://wa.autobot.co.id/",
+			"features": []string{
+				"99 akun WhatsApp dalam 1 aplikasi",
+				"Semua fitur utama tanpa batasan",
+				"500 kredit pesan AI",
+				"Update aplikasi gratis selamanya*",
+				"Tidak perlu berlangganan bulanan",
+				"Multi-device support",
+				"Broadcast & auto-reply",
+				"Dashboard terpusat untuk semua akun",
+			},
+			"pricing": []map[string]interface{}{
+				{
+					"name": "♾️ Lifetime", "price": "Rp 199.600", "period": "sekali bayar",
+					"original_price": "Rp 499.000", "discount": "-60%",
+					"features": []string{
+						"99 akun WhatsApp",
+						"Semua fitur utama",
+						"500 kredit",
+						"Update gratis (1.000 user pertama)",
+						"Tidak perlu perpanjang",
+					},
+					"highlighted": true,
+					"cta_url": "https://wa.autobot.co.id/",
+				},
+			},
+			"tech_stack": []string{"Electron", "Vue 3", "Node.js", "SQLite"},
+		},
 	}
 
 	for _, p := range products {
@@ -119,15 +153,22 @@ func seedProducts(ctx context.Context, db *sql.DB) error {
 		techStack, _ := json.Marshal(p["tech_stack"])
 		id := uuid.New().String()
 
+		demoURL, _ := p["demo_url"].(string)
+		var demoURLPtr *string
+		if demoURL != "" {
+			demoURLPtr = &demoURL
+		}
+
 		_, err := db.ExecContext(ctx, `
-			INSERT INTO products (id, slug, name, tagline, description, category, features, pricing, tech_stack, delivery_model, sort_order, status)
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active')
+			INSERT INTO products (id, slug, name, tagline, description, category, features, pricing, tech_stack, delivery_model, demo_url, sort_order, status)
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active')
 			ON DUPLICATE KEY UPDATE
 				name = VALUES(name), tagline = VALUES(tagline),
 				features = VALUES(features), pricing = VALUES(pricing),
+				demo_url = VALUES(demo_url),
 				updated_at = CURRENT_TIMESTAMP
 		`, id, p["slug"], p["name"], p["tagline"], p["description"], p["category"],
-			string(features), string(pricing), string(techStack), p["delivery_model"], p["sort_order"])
+			string(features), string(pricing), string(techStack), p["delivery_model"], demoURLPtr, p["sort_order"])
 		if err != nil {
 			log.Printf("failed to seed product %s: %v", p["slug"], err)
 		}
