@@ -1,11 +1,9 @@
 # Node
 apps/web/node_modules/
 apps/web/.nuxt/
-apps/web/.output/
 apps/web/dist/
 
 # Go
-apps/api/server
 apps/api/*.exe
 
 # Git

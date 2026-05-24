@@ -2,9 +2,9 @@
 definePageMeta({ layout: 'page' })
 useSeoMeta({
   title: 'Klien & Mitra — Autobot',
-  description: 'Klien dan mitra CV Autobot Wijaya Solution — dari klinik, SMKS, hingga perusahaan impor.',
+  description: 'Klien dan mitra Autobot Wijaya Solution — dari klinik, SMKS, hingga perusahaan impor.',
   ogTitle: 'Klien & Mitra — Autobot',
-  ogDescription: 'Perusahaan-perusahaan yang sudah mempercayakan solusi bot dan automasi kepada CV Autobot Wijaya Solution.',
+  ogDescription: 'Perusahaan-perusahaan yang sudah mempercayakan solusi bot dan automasi kepada Autobot Wijaya Solution.',
   ogUrl: 'https://autobot.co.id/partners',
 })
 

@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Autobot adalah spesialis WhatsApp chatbot, broadcast/blast, dan AI automation untuk bisnis Indonesia. Solusi WaBlastApp, multi-device, knowledge base, dan 20+ modul bisnis.' },
         { name: 'keywords', content: 'whatsapp chatbot, wa blast, automasi bisnis, chatbot indonesia, ai chatbot, wablast, autobot, autobot.co.id' },
-        { name: 'author', content: 'CV Autobot Wijaya Solution' },
+        { name: 'author', content: 'Autobot Wijaya Solution' },
         { name: 'robots', content: 'index, follow' },
         // Open Graph
         { property: 'og:site_name', content: 'Autobot' },
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'CV Autobot Wijaya Solution',
+            name: 'Autobot Wijaya Solution',
             url: 'https://autobot.co.id',
             logo: 'https://autobot.co.id/logo.png',
             image: 'https://autobot.co.id/logo.png',
