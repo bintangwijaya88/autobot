@@ -2,7 +2,7 @@
 definePageMeta({ layout: 'page' })
 useSeoMeta({
   title: 'Kebijakan Privasi — Autobot',
-  description: 'Kebijakan privasi CV Autobot Wijaya Solution mengenai pengumpulan, penggunaan, dan perlindungan data pengguna layanan chatbot.',
+  description: 'Kebijakan privasi Autobot Wijaya Solution mengenai pengumpulan, penggunaan, dan perlindungan data pengguna layanan chatbot.',
   ogTitle: 'Kebijakan Privasi — Autobot',
   ogUrl: 'https://autobot.co.id/privacy-policy',
 })
@@ -11,14 +11,14 @@ useSeoMeta({
 <template>
   <div class="max-w-3xl">
     <h1 class="text-4xl font-bold text-white mb-2">Kebijakan Privasi</h1>
-    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; CV Autobot Wijaya Solution</p>
+    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; Autobot Wijaya Solution</p>
 
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">1. Siapa Kami</h2>
         <p>
-          CV Autobot Wijaya Solution ("Autobot", "kami") adalah perusahaan berbadan hukum yang berkedudukan di Jakarta, Indonesia,
+          Autobot Wijaya Solution ("Autobot", "kami") adalah perusahaan berbadan hukum yang berkedudukan di Jakarta, Indonesia,
           bergerak di bidang pengembangan solusi chatbot dan integrasi kecerdasan buatan (AI) untuk bisnis.
           Situs web ini dapat diakses di <span class="text-blue-400">autobot.co.id</span>.
         </p>
@@ -101,11 +101,11 @@ useSeoMeta({
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">9. Kontak</h2>
         <div class="rounded-2xl border border-white/10 bg-white/3 p-6">
-          <p class="text-white font-semibold mb-3">CV Autobot Wijaya Solution</p>
+          <p class="text-white font-semibold mb-3">Autobot Wijaya Solution</p>
           <div class="space-y-1.5 text-sm">
-            <p>Jl. Raya Kebayoran Lama No. 12, Jakarta Selatan 12240, Indonesia</p>
+            <p>Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung, Jakarta Timur 13810, Indonesia</p>
             <p>Email: <a href="mailto:support@autobot.co.id" class="text-blue-400 hover:text-blue-300">support@autobot.co.id</a></p>
-            <p>WhatsApp: <a href="https://wa.me/6281234567890" class="text-green-400 hover:text-green-300">+62 812-3456-7890</a></p>
+            <p>WhatsApp: <a href="https://wa.me/6282164867681" class="text-green-400 hover:text-green-300">+62 821-6486-7681</a></p>
           </div>
         </div>
       </section>

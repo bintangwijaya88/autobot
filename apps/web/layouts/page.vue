@@ -42,7 +42,7 @@
 
           <!-- Brand -->
           <div class="col-span-2 sm:col-span-1">
-            <p class="text-white font-semibold mb-1 text-[14px]">CV Autobot Wijaya Solution</p>
+            <p class="text-white font-semibold mb-1 text-[14px]">Autobot Wijaya Solution</p>
             <p class="text-xs leading-relaxed mb-3" style="color: rgba(255,255,255,0.3);">
               Spesialis chatbot WhatsApp &amp; AI automation untuk bisnis Indonesia.
             </p>
@@ -70,7 +70,7 @@
               <li><NuxtLink to="/partners" class="hover:text-white/60 transition-colors">Mitra &amp; Case Study</NuxtLink></li>
               <li><NuxtLink to="/contact" class="hover:text-white/60 transition-colors">Kontak</NuxtLink></li>
               <li>
-                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="hover:text-white/60 transition-colors">
+                <a href="https://wa.me/6282164867681" target="_blank" rel="noopener" class="hover:text-white/60 transition-colors">
                   WhatsApp Admin
                 </a>
               </li>
@@ -94,10 +94,10 @@
           class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-5 text-xs"
           style="border-top: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.22);"
         >
-          <p>© 2026 CV Autobot Wijaya Solution · Seluruh hak cipta dilindungi.</p>
+          <p>© 2026 Autobot Wijaya Solution · Seluruh hak cipta dilindungi.</p>
           <div class="flex items-center gap-4">
             <a href="mailto:support@autobot.co.id" class="hover:text-white/40 transition-colors">support@autobot.co.id</a>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="hover:text-white/40 transition-colors">+62 812-3456-7890</a>
+            <a href="https://wa.me/6282164867681" target="_blank" rel="noopener" class="hover:text-white/40 transition-colors">+62 821-6486-7681</a>
           </div>
         </div>
 

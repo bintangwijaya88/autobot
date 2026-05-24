@@ -2,7 +2,7 @@
 definePageMeta({ layout: 'page' })
 useSeoMeta({
   title: 'Syarat & Ketentuan — Autobot',
-  description: 'Syarat dan ketentuan penggunaan layanan chatbot CV Autobot Wijaya Solution.',
+  description: 'Syarat dan ketentuan penggunaan layanan chatbot Autobot Wijaya Solution.',
   ogTitle: 'Syarat & Ketentuan — Autobot',
   ogUrl: 'https://autobot.co.id/terms-of-service',
 })
@@ -11,14 +11,14 @@ useSeoMeta({
 <template>
   <div class="max-w-3xl">
     <h1 class="text-4xl font-bold text-white mb-2">Syarat & Ketentuan</h1>
-    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; CV Autobot Wijaya Solution</p>
+    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; Autobot Wijaya Solution</p>
 
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">1. Penerimaan Syarat</h2>
         <p>
-          Dengan mendaftarkan akun, mengakses, atau menggunakan layanan CV Autobot Wijaya Solution ("Autobot", "kami", "Layanan"),
+          Dengan mendaftarkan akun, mengakses, atau menggunakan layanan Autobot Wijaya Solution ("Autobot", "kami", "Layanan"),
           Anda ("Pengguna", "Klien") menyetujui untuk terikat oleh Syarat & Ketentuan ini.
           Jika Anda tidak setuju, hentikan penggunaan Layanan segera.
         </p>
@@ -82,7 +82,7 @@ useSeoMeta({
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">7. Kekayaan Intelektual</h2>
         <p>
-          Seluruh kode, desain, merek dagang, dan konten pada platform Autobot adalah milik CV Autobot Wijaya Solution.
+          Seluruh kode, desain, merek dagang, dan konten pada platform Autobot adalah milik Autobot Wijaya Solution.
           Anda diberikan lisensi terbatas, non-eksklusif untuk menggunakan Layanan sesuai dengan perjanjian langganan.
           Konten yang Anda unggah (knowledge base, data pelatihan bot) tetap menjadi milik Anda.
         </p>
@@ -109,11 +109,11 @@ useSeoMeta({
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">10. Kontak</h2>
         <div class="rounded-2xl border border-white/10 bg-white/3 p-6">
-          <p class="text-white font-semibold mb-3">CV Autobot Wijaya Solution</p>
+          <p class="text-white font-semibold mb-3">Autobot Wijaya Solution</p>
           <div class="space-y-1.5 text-sm">
-            <p>Jl. Raya Kebayoran Lama No. 12, Jakarta Selatan 12240, Indonesia</p>
+            <p>Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung, Jakarta Timur 13810, Indonesia</p>
             <p>Email: <a href="mailto:support@autobot.co.id" class="text-blue-400 hover:text-blue-300">support@autobot.co.id</a></p>
-            <p>WhatsApp: <a href="https://wa.me/6281234567890" class="text-green-400 hover:text-green-300">+62 812-3456-7890</a></p>
+            <p>WhatsApp: <a href="https://wa.me/6282164867681" class="text-green-400 hover:text-green-300">+62 821-6486-7681</a></p>
           </div>
         </div>
       </section>

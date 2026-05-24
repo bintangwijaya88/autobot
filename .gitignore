@@ -4,7 +4,6 @@ vendor/
 
 # Build outputs
 dist/
-.output/
 .nuxt/
 target/
 bin/
@@ -13,7 +12,6 @@ bin/
 *.exe
 *.test
 *.prof
-apps/api/server
 
 # Environment
 .env
@@ -50,7 +48,6 @@ apps/desktop/src-tauri/target/
 
 # Nuxt
 apps/web/.nuxt/
-apps/web/.output/
 apps/web/dist/
 
 # Test coverage

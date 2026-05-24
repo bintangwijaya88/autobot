@@ -118,7 +118,7 @@ func (h *ChatHandler) HandleWebSocket(c *fws.Conn) {
 		client.SendJSON(model.WSMessage{
 			Type:    "session_init",
 			Role:    "assistant",
-			Content: "Halo! 👋 Saya **Autobot AI**, asisten virtual CV Autobot Wijaya Solution.\n\nTanyakan apa saja — produk, layanan, chatbot, automasi, atau kebutuhan bisnis Anda!",
+			Content: "Halo! 👋 Saya **Autobot AI**, asisten virtual AutobotWS.\n\nTanyakan apa saja — produk, layanan, chatbot, automasi, atau kebutuhan bisnis Anda!",
 		})
 	}
 

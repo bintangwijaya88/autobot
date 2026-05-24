@@ -1,0 +1,45 @@
+import { defineComponent, mergeProps, useSSRContext } from 'vue';
+import { ssrRenderAttrs } from 'vue/server-renderer';
+import { a as useSeoMeta } from './server.mjs';
+import '../_/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'node:url';
+import '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+import 'pinia';
+import 'vue-router';
+
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "terms-of-service",
+  __ssrInlineRender: true,
+  setup(__props) {
+    useSeoMeta({
+      title: "Syarat & Ketentuan \u2014 Autobot",
+      description: "Syarat dan ketentuan penggunaan layanan chatbot Autobot Wijaya Solution.",
+      ogTitle: "Syarat & Ketentuan \u2014 Autobot",
+      ogUrl: "https://autobot.co.id/terms-of-service"
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "max-w-3xl" }, _attrs))}><h1 class="text-4xl font-bold text-white mb-2">Syarat &amp; Ketentuan</h1><p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 \xA0\xB7\xA0 Autobot Wijaya Solution</p><div class="space-y-10 text-gray-300 leading-relaxed"><section><h2 class="text-xl font-semibold text-white mb-3">1. Penerimaan Syarat</h2><p> Dengan mendaftarkan akun, mengakses, atau menggunakan layanan Autobot Wijaya Solution (&quot;Autobot&quot;, &quot;kami&quot;, &quot;Layanan&quot;), Anda (&quot;Pengguna&quot;, &quot;Klien&quot;) menyetujui untuk terikat oleh Syarat &amp; Ketentuan ini. Jika Anda tidak setuju, hentikan penggunaan Layanan segera. </p></section><section><h2 class="text-xl font-semibold text-white mb-3">2. Deskripsi Layanan</h2><p> Autobot menyediakan platform Software as a Service (SaaS) yang mencakup: chatbot berbasis AI (WhatsApp, Web, Telegram), integrasi LLM (OpenAI, Gemini, Claude), WhatsApp blast &amp; broadcast, workflow automation, dan layanan konsultasi terkait. </p></section><section><h2 class="text-xl font-semibold text-white mb-3">3. Kebijakan Penggunaan yang Diterima</h2><p class="mb-3">Anda diizinkan menggunakan Layanan untuk keperluan bisnis yang sah. Secara khusus, Anda dilarang keras menggunakan Layanan untuk:</p><ul class="space-y-2 ml-4"><li class="flex gap-2"><span class="text-red-400 shrink-0">\u2717</span> Aktivitas ilegal berdasarkan hukum Republik Indonesia maupun hukum internasional yang berlaku.</li><li class="flex gap-2"><span class="text-red-400 shrink-0">\u2717</span> Pengiriman pesan spam, penipuan (phishing, scam), atau konten yang menyesatkan.</li><li class="flex gap-2"><span class="text-red-400 shrink-0">\u2717</span> Penyebaran konten yang melanggar hak cipta, fitnah, atau konten yang merugikan pihak lain.</li><li class="flex gap-2"><span class="text-red-400 shrink-0">\u2717</span> Serangan siber, upaya eksploitasi kerentanan, atau penggunaan Layanan untuk menyerang sistem pihak lain.</li><li class="flex gap-2"><span class="text-red-400 shrink-0">\u2717</span> Pengumpulan data tanpa persetujuan (scraping) menggunakan infrastruktur kami.</li><li class="flex gap-2"><span class="text-red-400 shrink-0">\u2717</span> Reselling atau menyewakan kembali akses Layanan kepada pihak lain tanpa perjanjian tertulis dengan kami.</li></ul><p class="mt-3 text-sm p-3 rounded-xl border border-yellow-500/30 bg-yellow-500/10 text-yellow-200"> Pelanggaran kebijakan ini dapat mengakibatkan penangguhan atau penghentian akun secara sepihak tanpa pengembalian dana. </p></section><section><h2 class="text-xl font-semibold text-white mb-3">4. Akun dan Keamanan</h2><ul class="space-y-2 ml-4"><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Anda bertanggung jawab penuh menjaga kerahasiaan kredensial akun Anda.</li><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Segala aktivitas yang terjadi di bawah akun Anda adalah tanggung jawab Anda.</li><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Laporkan segera jika Anda mencurigai akun Anda telah diakses tanpa izin.</li></ul></section><section><h2 class="text-xl font-semibold text-white mb-3">5. Pembayaran dan Langganan</h2><ul class="space-y-2 ml-4"><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Harga layanan ditampilkan dalam Rupiah (IDR) dan sudah termasuk PPN 11% (kecuali disebutkan lain).</li><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Pembayaran diproses melalui Xendit. Kami tidak menyimpan data kartu kredit/debit Anda.</li><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Langganan diperbarui secara otomatis setiap periode kecuali dibatalkan sebelum tanggal pembaruan.</li><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Kegagalan pembayaran akan mengakibatkan penundaan akses selama 3 hari sebelum penangguhan.</li></ul></section><section><h2 class="text-xl font-semibold text-white mb-3">6. Batasan Tanggung Jawab</h2><p class="mb-3">Layanan kami bergantung pada penyedia pihak ketiga (Meta WhatsApp Business API, OpenAI, Google Gemini). Kami tidak bertanggung jawab atas:</p><ul class="space-y-2 ml-4"><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Gangguan layanan yang disebabkan oleh pihak ketiga (termasuk gangguan jaringan Meta/WhatsApp).</li><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Kerugian bisnis tidak langsung akibat gangguan Layanan.</li><li class="flex gap-2"><span class="text-blue-400 shrink-0">\u2022</span> Respons chatbot yang tidak akurat akibat limitasi model AI yang digunakan.</li></ul><p class="mt-3">Total tanggung jawab kami kepada Anda tidak melebihi biaya langganan yang Anda bayarkan dalam 3 bulan terakhir.</p></section><section><h2 class="text-xl font-semibold text-white mb-3">7. Kekayaan Intelektual</h2><p> Seluruh kode, desain, merek dagang, dan konten pada platform Autobot adalah milik Autobot Wijaya Solution. Anda diberikan lisensi terbatas, non-eksklusif untuk menggunakan Layanan sesuai dengan perjanjian langganan. Konten yang Anda unggah (knowledge base, data pelatihan bot) tetap menjadi milik Anda. </p></section><section><h2 class="text-xl font-semibold text-white mb-3">8. Penghentian Layanan</h2><p> Anda dapat menghentikan langganan kapan saja melalui dashboard akun atau menghubungi support kami. Kami berhak menangguhkan atau menghentikan akun yang melanggar Syarat ini tanpa pemberitahuan sebelumnya dalam kasus pelanggaran berat (spam, aktivitas ilegal, abuse). </p></section><section><h2 class="text-xl font-semibold text-white mb-3">9. Hukum yang Berlaku</h2><p> Syarat &amp; Ketentuan ini diatur oleh dan ditafsirkan sesuai dengan hukum Republik Indonesia. Setiap perselisihan diselesaikan terlebih dahulu melalui musyawarah. Jika tidak tercapai kesepakatan dalam 30 hari, sengketa diselesaikan melalui Pengadilan Negeri Jakarta Selatan. </p></section><section><h2 class="text-xl font-semibold text-white mb-3">10. Kontak</h2><div class="rounded-2xl border border-white/10 bg-white/3 p-6"><p class="text-white font-semibold mb-3">Autobot Wijaya Solution</p><div class="space-y-1.5 text-sm"><p>Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung, Jakarta Timur 13810, Indonesia</p><p>Email: <a href="mailto:support@autobot.co.id" class="text-blue-400 hover:text-blue-300">support@autobot.co.id</a></p><p>WhatsApp: <a href="https://wa.me/6282164867681" class="text-green-400 hover:text-green-300">+62 821-6486-7681</a></p></div></div></section></div></div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/terms-of-service.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+
+export { _sfc_main as default };
+//# sourceMappingURL=terms-of-service-CQ4t8RbU.mjs.map

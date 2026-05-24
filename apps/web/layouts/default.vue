@@ -139,6 +139,18 @@
       </div>
     </div>
 
+    <!-- Legal footer strip -->
+    <div
+      class="shrink-0 flex items-center justify-center gap-4 px-4 h-7 text-[11px]"
+      style="border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.2);"
+    >
+      <NuxtLink to="/privacy-policy" class="hover:text-white/40 transition-colors">Kebijakan Privasi</NuxtLink>
+      <span>·</span>
+      <NuxtLink to="/terms-of-service" class="hover:text-white/40 transition-colors">Syarat &amp; Ketentuan</NuxtLink>
+      <span>·</span>
+      <NuxtLink to="/refund-policy" class="hover:text-white/40 transition-colors">Kebijakan Refund</NuxtLink>
+    </div>
+
   </div>
 </template>
 

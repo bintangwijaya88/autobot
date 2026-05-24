@@ -152,7 +152,7 @@ const baseLayout = `<!DOCTYPE html>
     <div style="text-align:center;margin-top:28px;">
       <p style="color:#3a3a3a;font-size:12px;line-height:1.7;margin:0;">
         Email ini dikirim oleh
-        <a href="https://autobot.co.id" style="color:#555;text-decoration:none;">CV Autobot Wijaya Solution</a><br>
+        <a href="https://autobot.co.id" style="color:#555;text-decoration:none;">AutobotWS</a><br>
         Jakarta · <a href="mailto:bintang@autobot.co.id" style="color:#555;text-decoration:none;">bintang@autobot.co.id</a>
       </p>
     </div>

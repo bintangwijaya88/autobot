@@ -30,87 +30,13 @@ func seedData(ctx context.Context, db *sql.DB) error {
 }
 
 func seedProducts(ctx context.Context, db *sql.DB) error {
+	// Remove discontinued products
+	slugsToRemove := []string{"wablast", "wabotiq", "ddl-klinik", "autobot-flow", "autobot-agent", "autobot-connect"}
+	for _, slug := range slugsToRemove {
+		db.ExecContext(ctx, `DELETE FROM products WHERE slug = ?`, slug)
+	}
+
 	products := []map[string]interface{}{
-		{
-			"slug": "wablast", "name": "WaBlast",
-			"tagline":        "WhatsApp Blast & Broadcast Desktop Tool",
-			"category":       "blast",
-			"description":    "Tool desktop untuk mengirim pesan WhatsApp massal ke ribuan kontak.",
-			"delivery_model": "desktop", "sort_order": 1,
-			"features": []string{"Bulk messaging ke ribuan kontak", "Import kontak dari Excel/CSV", "Custom message template", "Scheduled/delayed sending", "Anti-ban delay system", "Report & delivery tracking"},
-			"pricing": []map[string]interface{}{
-				{"name": "Basic", "price": "Rp 500.000", "period": "lifetime", "features": []string{"1 nomor WA", "1.000 kontak/hari"}, "highlighted": false},
-				{"name": "Pro", "price": "Rp 1.500.000", "period": "lifetime", "features": []string{"3 nomor WA", "Unlimited kontak", "Priority support"}, "highlighted": true},
-				{"name": "Enterprise", "price": "Rp 3.000.000", "period": "lifetime", "features": []string{"Unlimited nomor", "API access", "Custom branding"}, "highlighted": false},
-			},
-			"tech_stack": []string{"Tauri 2", "Rust", "Vue 3", "SQLite"},
-		},
-		{
-			"slug": "wabotiq", "name": "WaBotIQ",
-			"tagline":        "WhatsApp Business AI Chatbot Platform",
-			"category":       "chatbot",
-			"description":    "Platform chatbot WhatsApp cerdas dengan AI. Trainable sesuai bisnis Anda.",
-			"delivery_model": "web", "sort_order": 2,
-			"features": []string{"AI-powered auto reply", "Custom knowledge base training", "Multi-agent support", "Conversation analytics", "Webhook integration"},
-			"pricing": []map[string]interface{}{
-				{"name": "Starter", "price": "Rp 299.000", "period": "bulan", "features": []string{"1 nomor WA", "500 pesan AI/bulan"}, "highlighted": false},
-				{"name": "Pro", "price": "Rp 799.000", "period": "bulan", "features": []string{"3 nomor WA", "5.000 pesan AI/bulan", "Analytics"}, "highlighted": true},
-				{"name": "Business", "price": "Rp 1.999.000", "period": "bulan", "features": []string{"Unlimited", "Dedicated instance"}, "highlighted": false},
-			},
-			"tech_stack": []string{"Go", "Vue 3", "PostgreSQL", "OpenAI API"},
-		},
-		{
-			"slug": "ddl-klinik", "name": "DDL Klinik",
-			"tagline":        "WhatsApp AI Chatbot + Booking untuk Klinik & RS",
-			"category":       "chatbot",
-			"description":    "Solusi lengkap untuk klinik: chatbot WhatsApp booking pasien, reminder jadwal, dashboard admin.",
-			"delivery_model": "web", "sort_order": 3,
-			"features": []string{"Booking jadwal via WhatsApp", "Reminder otomatis H-1 dan H-day", "FAQ kesehatan per spesialisasi", "Dashboard admin", "Laporan kunjungan pasien"},
-			"pricing": []map[string]interface{}{
-				{"name": "Basic", "price": "Rp 5.000.000", "period": "tahun", "features": []string{"1 cabang", "1 nomor WA"}, "highlighted": false},
-				{"name": "Pro", "price": "Rp 10.000.000", "period": "tahun", "features": []string{"3 cabang", "SIMRS integration"}, "highlighted": true},
-			},
-			"tech_stack": []string{"Go", "Vue 3", "MySQL", "WhatsApp API"},
-		},
-		{
-			"slug": "autobot-flow", "name": "Autobot Flow",
-			"tagline":        "Visual Workflow Automation Builder",
-			"category":       "workflow",
-			"description":    "Automasi proses bisnis dengan visual builder tanpa coding.",
-			"delivery_model": "web", "sort_order": 4,
-			"features": []string{"Visual drag & drop flow builder", "Trigger: schedule, webhook, event", "Action: WhatsApp, email, API call", "Conditional branching", "Execution logs"},
-			"pricing": []map[string]interface{}{
-				{"name": "Starter", "price": "Rp 499.000", "period": "bulan", "features": []string{"5 active flows"}, "highlighted": false},
-				{"name": "Pro", "price": "Rp 1.499.000", "period": "bulan", "features": []string{"Unlimited flows", "API access"}, "highlighted": true},
-			},
-			"tech_stack": []string{"Go", "Vue 3", "MySQL", "Redis"},
-		},
-		{
-			"slug": "autobot-agent", "name": "Autobot Agent",
-			"tagline":        "Custom AI Agent untuk Bisnis Anda",
-			"category":       "ai_agent",
-			"description":    "AI agent khusus bisnis Anda: customer support, data analyst, lead qualifier.",
-			"delivery_model": "web", "sort_order": 5,
-			"features": []string{"Custom AI training per bisnis", "Deploy ke WhatsApp, web, API", "Knowledge base management", "Human handover capability"},
-			"pricing": []map[string]interface{}{
-				{"name": "Single Agent", "price": "Mulai Rp 3.000.000", "period": "bulan", "features": []string{"1 AI agent", "Custom training"}, "highlighted": false},
-				{"name": "Multi Agent", "price": "Custom", "period": "bulan", "features": []string{"Multiple agents", "Dedicated instance"}, "highlighted": true},
-			},
-			"tech_stack": []string{"Go", "OpenAI API", "Anthropic API", "MySQL"},
-		},
-		{
-			"slug": "autobot-connect", "name": "Autobot Connect",
-			"tagline":        "System Integration Middleware",
-			"category":       "integration",
-			"description":    "Penghubung antar sistem: ERP ↔ WhatsApp, CRM ↔ Email, POS ↔ Inventory.",
-			"delivery_model": "hybrid", "sort_order": 6,
-			"features": []string{"Pre-built connectors (Mekari Jurnal, Accurate)", "WhatsApp ↔ ERP sync", "Real-time data sync", "Error queue & retry"},
-			"pricing": []map[string]interface{}{
-				{"name": "Per Project", "price": "Mulai Rp 10.000.000", "period": "one-time", "features": []string{"Custom scope", "3 bulan support"}, "highlighted": false},
-				{"name": "Managed", "price": "Mulai Rp 2.000.000", "period": "bulan", "features": []string{"Monitoring 24/7", "Priority bug fix"}, "highlighted": true},
-			},
-			"tech_stack": []string{"Go", "REST/GraphQL", "MySQL", "Redis"},
-		},
 		{
 			"slug": "wasigap", "name": "WaSigap",
 			"tagline":        "Aplikasi WhatsApp Multi-Akun — Bayar Sekali, Pakai Selamanya",
@@ -144,6 +70,25 @@ func seedProducts(ctx context.Context, db *sql.DB) error {
 				},
 			},
 			"tech_stack": []string{"Electron", "Vue 3", "Node.js", "SQLite"},
+		},
+		{
+			"slug": "custom-ai", "name": "Custom AI Development",
+			"tagline":        "AI Agent & Chatbot Khusus untuk Bisnis Anda",
+			"category":       "ai_agent",
+			"description":    "Kami bangun AI agent atau chatbot sesuai kebutuhan spesifik bisnis Anda — dari customer support, booking, hingga workflow automation. Deploy ke WhatsApp, web, atau API.",
+			"delivery_model": "custom", "sort_order": 1,
+			"features": []string{
+				"Konsultasi kebutuhan & desain solusi",
+				"AI agent custom berbasis LLM (Claude, GPT-4)",
+				"Knowledge base training sesuai bisnis",
+				"Deploy ke WhatsApp, web, atau API",
+				"Human handover & escalation",
+				"Garansi bug fix 3 bulan",
+			},
+			"pricing": []map[string]interface{}{
+				{"name": "Custom Project", "price": "Mulai Rp 3.000.000", "period": "project", "features": []string{"Scope disesuaikan", "Konsultasi gratis", "3 bulan garansi"}, "highlighted": true},
+			},
+			"tech_stack": []string{"Go", "Anthropic Claude", "OpenAI GPT-4", "Vue 3"},
 		},
 	}
 
@@ -182,8 +127,8 @@ func seedKnowledge(ctx context.Context, db *sql.DB) error {
 		{"company_info", "Apa spesialisasi Autobot?", "Kami spesialis di bidang bot dan automasi: WhatsApp chatbot, WhatsApp blast, workflow automation, system integration, AI agent, dan scheduled worker.", 10},
 		{"faq", "Apakah data saya aman?", "Sangat aman. Setiap deployment client mendapat instance eksklusif — data Anda 100% terisolasi.", 9},
 		{"faq", "Apakah bisa di-install di server sendiri?", "Ya! Produk kami tersedia versi desktop (PC) dan web (server Anda atau managed hosting).", 9},
-		{"product", "Apa bedanya WaBlast dan WaBotIQ?", "WaBlast untuk kirim pesan massal (1-way broadcast), WaBotIQ adalah chatbot AI yang menjawab otomatis (2-way). WaBlast untuk promo, WaBotIQ untuk customer service.", 10},
-		{"custom_dev", "Apakah Autobot menerima jasa custom development?", "Ya! Kami menyediakan jasa custom software development: website, web app, mobile app, desktop app, dan system integration.", 9},
+		{"product", "Apa itu WaSigap?", "WaSigap adalah aplikasi desktop WhatsApp multi-akun — bayar sekali Rp 199.600, pakai selamanya. Support 99 akun WA, 500 kredit AI, update gratis untuk 1.000 user pertama.", 10},
+		{"custom_dev", "Apakah Autobot menerima jasa custom AI development?", "Ya! Kami membangun AI agent dan chatbot custom sesuai kebutuhan bisnis Anda. Mulai dari Rp 3.000.000, dengan konsultasi gratis dan garansi bug fix 3 bulan.", 9},
 	}
 
 	for _, e := range entries {

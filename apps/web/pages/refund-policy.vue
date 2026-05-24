@@ -2,7 +2,7 @@
 definePageMeta({ layout: 'page' })
 useSeoMeta({
   title: 'Kebijakan Pengembalian Dana — Autobot',
-  description: 'Kebijakan refund dan pengembalian dana layanan SaaS chatbot CV Autobot Wijaya Solution.',
+  description: 'Kebijakan refund dan pengembalian dana layanan SaaS chatbot Autobot Wijaya Solution.',
   ogTitle: 'Kebijakan Pengembalian Dana — Autobot',
   ogUrl: 'https://autobot.co.id/refund-policy',
 })
@@ -11,7 +11,7 @@ useSeoMeta({
 <template>
   <div class="max-w-3xl">
     <h1 class="text-4xl font-bold text-white mb-2">Kebijakan Pengembalian Dana</h1>
-    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; CV Autobot Wijaya Solution</p>
+    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; Autobot Wijaya Solution</p>
 
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
@@ -131,10 +131,10 @@ useSeoMeta({
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">5. Kontak</h2>
         <div class="rounded-2xl border border-white/10 bg-white/3 p-6">
-          <p class="text-white font-semibold mb-3">CV Autobot Wijaya Solution — Tim Support</p>
+          <p class="text-white font-semibold mb-3">Autobot Wijaya Solution — Tim Support</p>
           <div class="space-y-1.5 text-sm">
             <p>Email: <a href="mailto:support@autobot.co.id" class="text-blue-400 hover:text-blue-300">support@autobot.co.id</a></p>
-            <p>WhatsApp: <a href="https://wa.me/6281234567890" class="text-green-400 hover:text-green-300">+62 812-3456-7890</a></p>
+            <p>WhatsApp: <a href="https://wa.me/6282164867681" class="text-green-400 hover:text-green-300">+62 821-6486-7681</a></p>
             <p class="text-gray-500 mt-2 text-xs">Jam operasional: Senin–Jumat, 09.00–17.00 WIB</p>
           </div>
         </div>

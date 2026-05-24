@@ -2,7 +2,7 @@
 definePageMeta({ layout: 'page' })
 useSeoMeta({
   title: 'Kontak — Autobot',
-  description: 'Hubungi CV Autobot Wijaya Solution via chat AI, WhatsApp, atau email. Konsultasi gratis untuk kebutuhan chatbot dan automasi bisnis kamu.',
+  description: 'Hubungi Autobot Wijaya Solution via chat AI, WhatsApp, atau email. Konsultasi gratis untuk kebutuhan chatbot dan automasi bisnis kamu.',
   ogTitle: 'Hubungi Autobot',
   ogDescription: 'Konsultasi chatbot WhatsApp & automasi bisnis gratis. Tim kami siap membantu.',
   ogImage: 'https://autobot.co.id/logo.png',
@@ -16,10 +16,10 @@ useSeoMeta({
     <!-- Business identity (required for Xendit verification) -->
     <div class="rounded-2xl border border-white/10 bg-white/3 p-5 mb-8 text-sm">
       <p class="text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">Identitas Bisnis</p>
-      <p class="text-white font-semibold text-base mb-1">CV Autobot Wijaya Solution</p>
+      <p class="text-white font-semibold text-base mb-1">Autobot Wijaya Solution</p>
       <p class="text-gray-400">Situs resmi: <span class="text-blue-400">autobot.co.id</span></p>
       <div class="mt-3 space-y-1 text-gray-400">
-        <p>Jl. Raya Kebayoran Lama No. 12, Jakarta Selatan 12240</p>
+        <p>Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung, Jakarta Timur 13810</p>
         <p>Indonesia</p>
       </div>
       <div class="mt-3 space-y-1 text-gray-400">
@@ -38,7 +38,7 @@ useSeoMeta({
     <p class="text-gray-400 mb-8 text-center text-sm">Cara tercepat adalah via WhatsApp atau chat AI kami. Tim aktif Senin–Jumat 09.00–17.00 WIB.</p>
 
     <div class="space-y-3 mb-8">
-      <a href="https://wa.me/6281234567890" target="_blank" rel="noopener"
+      <a href="https://wa.me/6282164867681" target="_blank" rel="noopener"
         class="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/3 hover:border-green-500/30 transition-all group">
         <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-xl" style="background: rgba(34,197,94,0.12);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-green-400">
@@ -47,7 +47,7 @@ useSeoMeta({
         </div>
         <div class="text-left">
           <p class="text-white font-medium group-hover:text-green-300 transition-colors">WhatsApp Admin</p>
-          <p class="text-gray-500 text-sm">+62 812-3456-7890 · Respon cepat jam kerja</p>
+          <p class="text-gray-500 text-sm">+62 821-6486-7681 · Respon cepat jam kerja</p>
         </div>
         <span class="ml-auto text-gray-600">→</span>
       </a>
