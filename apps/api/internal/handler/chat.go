@@ -66,6 +66,7 @@ func (h *ChatHandler) CreateSession(c *fiber.Ctx) error {
 
 	session, err := h.chatRepo.CreateSession(c.Context(), visitorID, "web", metadata)
 	if err != nil {
+		h.log.Error("create session failed", zap.Error(err))
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "failed to create session"})
 	}
 	metrics.ChatSessionsTotal.Inc()
