@@ -661,7 +661,7 @@ function toArray$1(value) {
   return Array.isArray(value) ? value : [value];
 }
 const __nuxt_page_meta$n = { layout: "page" };
-const __nuxt_page_meta$m = { layout: "page" };
+const __nuxt_page_meta$m = { layout: "page-wide" };
 const __nuxt_page_meta$l = { layout: "page" };
 const __nuxt_page_meta$k = { layout: "page" };
 const __nuxt_page_meta$j = { layout: "page" };
@@ -700,7 +700,7 @@ const _routes = [
     name: "order",
     path: "/order",
     meta: __nuxt_page_meta$m || {},
-    component: () => import('./order-BIdqacrV.mjs')
+    component: () => import('./order-DC9GFxkk.mjs')
   },
   {
     name: "contact",
@@ -1272,6 +1272,7 @@ const plugins = [
 const layouts = {
   admin: defineAsyncComponent(() => import('./admin-FKdr_GMw.mjs').then((m) => m.default || m)),
   default: defineAsyncComponent(() => import('./default-CiHJpkGc.mjs').then((m) => m.default || m)),
+  "page-wide": defineAsyncComponent(() => import('./page-wide-CZv5RF1y.mjs').then((m) => m.default || m)),
   page: defineAsyncComponent(() => import('./page-Cw7SnHbj.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
