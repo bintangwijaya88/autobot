@@ -1,6 +1,6 @@
 const interopDefault = r => r.default || r || [];
 const styles = {
-  "node_modules/nuxt/dist/app/entry.js": () => import('./entry-styles.DT5P9qCz.mjs').then(interopDefault),
+  "node_modules/nuxt/dist/app/entry.js": () => import('./entry-styles.DpgNRQn2.mjs').then(interopDefault),
   "pages/index.vue": () => import('./index-styles.BtkgT35x.mjs').then(interopDefault),
   "pages/admin/email/index.vue": () => import('./index-styles.DU3gxb6s.mjs').then(interopDefault),
   "pages/admin/users/index.vue": () => import('./index-styles.BIH3szlj.mjs').then(interopDefault),
@@ -32,8 +32,8 @@ const styles = {
   "components/artifact/ArtifactPpt.vue": () => import('./ArtifactPpt-styles.NJ1FqNHm.mjs').then(interopDefault),
   "components/chat/ChatWelcome.vue?vue&type=style&index=0&scoped=39d3e5de&lang.css": () => import('./ChatWelcome-styles.DbNuB6cY.mjs').then(interopDefault),
   "components/chat/ChatSuggestions.vue?vue&type=style&index=0&scoped=1b88c7aa&lang.css": () => import('./ChatSuggestions-styles.DgIvWNNx.mjs').then(interopDefault),
-  "components/artifact/ArtifactHtml.vue": () => import('./ArtifactHtml-styles.57HdVYhl.mjs').then(interopDefault),
   "components/artifact/ArtifactMermaid.vue?vue&type=style&index=0&lang.css": () => import('./ArtifactMermaid-styles.DLnd2-l5.mjs').then(interopDefault),
+  "components/artifact/ArtifactHtml.vue": () => import('./ArtifactHtml-styles.57HdVYhl.mjs').then(interopDefault),
   "components/artifact/ArtifactExcel.vue?vue&type=style&index=0&lang.css": () => import('./ArtifactExcel-styles.CXPyyEJ_.mjs').then(interopDefault),
   "components/artifact/ArtifactPpt.vue?vue&type=style&index=0&lang.css": () => import('./ArtifactPpt-styles.NJ1FqNHm.mjs').then(interopDefault),
   "components/artifact/ArtifactHtml.vue?vue&type=style&index=0&lang.css": () => import('./ArtifactHtml-styles.57HdVYhl.mjs').then(interopDefault),

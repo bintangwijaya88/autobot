@@ -26,12 +26,7 @@ const advantages = [
   { icon: '🛠', title: 'Full Support', desc: 'Garansi bug fix 3 bulan + opsi maintenance retainer.' },
 ]
 
-const team = [
-  { name: 'Bintang Wijaya', role: 'Founder & Lead Developer', img: '/bintang-aws.png' },
-  { name: 'Sharaztasya Aulia Nurdi', role: 'Direktur', img: '/sharaztasya-aws.png' },
-  { name: 'Irvan Eko Prasetyo', role: 'DevOps Master', img: '/len-aws.png' },
-  { name: 'Tim AI', role: 'LLM Integration Specialist', img: '/claude-aws.png' },
-]
+
 </script>
 
 <template>
@@ -55,66 +50,14 @@ const team = [
       </div>
     </div>
 
-    <!-- Photo placeholders -->
+    <!-- Team photo -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold text-white mb-4">Galeri Kantor</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        <div
-          v-for="i in 3" :key="i"
-          class="aspect-video rounded-2xl flex flex-col items-center justify-center gap-2"
-          style="background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.12);"
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-gray-600">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span class="text-xs text-gray-600">Foto Kantor {{ i }}</span>
-        </div>
-        <div
-          class="aspect-video rounded-2xl flex flex-col items-center justify-center gap-2"
-          style="background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.12);"
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-gray-600">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-          <span class="text-xs text-gray-600">Foto Tim</span>
-        </div>
-        <div
-          class="aspect-video rounded-2xl flex flex-col items-center justify-center gap-2"
-          style="background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.12);"
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-gray-600">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-          <span class="text-xs text-gray-600">Foto Operasional</span>
-        </div>
+      <h2 class="text-2xl font-bold text-white mb-4">Tim Kami</h2>
+      <div class="rounded-2xl overflow-hidden border border-white/10">
+        <img src="/team-aws.png" alt="Tim AutobotWS" class="w-full object-cover" />
       </div>
     </div>
 
-    <!-- Team placeholders -->
-    <div class="mb-12">
-      <h2 class="text-2xl font-bold text-white mb-4">Tim Kami</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div v-for="member in team" :key="member.name" class="text-center">
-          <div class="w-16 h-16 rounded-full mx-auto mb-3 overflow-hidden"
-            :style="member.img ? '' : 'background: rgba(255,255,255,0.06); border: 1px dashed rgba(255,255,255,0.12);'"
-          >
-            <img
-              v-if="member.img"
-              :src="member.img"
-              :alt="member.name"
-              class="w-full h-full object-cover"
-            />
-            <div v-else class="w-full h-full flex items-center justify-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-gray-600">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
-          </div>
-          <p class="text-white text-sm font-medium">{{ member.name }}</p>
-          <p class="text-gray-500 text-xs mt-0.5">{{ member.role }}</p>
-        </div>
-      </div>
-    </div>
 
     <h2 class="text-2xl font-bold text-white mb-3">Visi</h2>
     <p class="text-gray-400 mb-8">Menjadi penyedia solusi automasi bisnis terdepan di Indonesia, membuat setiap bisnis — dari klinik hingga enterprise — bisa beroperasi lebih efisien dengan bantuan bot cerdas.</p>
