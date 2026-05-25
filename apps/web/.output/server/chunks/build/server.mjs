@@ -1271,7 +1271,7 @@ const plugins = [
 ];
 const layouts = {
   admin: defineAsyncComponent(() => import('./admin-FKdr_GMw.mjs').then((m) => m.default || m)),
-  default: defineAsyncComponent(() => import('./default-BFcDQHmt.mjs').then((m) => m.default || m)),
+  default: defineAsyncComponent(() => import('./default-CiHJpkGc.mjs').then((m) => m.default || m)),
   page: defineAsyncComponent(() => import('./page-Cw7SnHbj.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;

@@ -162,10 +162,11 @@ const userMenuRef = ref<HTMLElement | null>(null)
 const { showSignIn, currentUser, openSignIn, closeSignIn, signOut, loadFromStorage } = useAuth()
 
 const navItems = [
-  { label: 'Fitur',      to: '/features' },
-  { label: 'Products',   to: '/products' },
-  { label: 'Resources',  to: '/resources' },
-  { label: 'Case Study', to: '/partners' },
+  { label: 'Fitur',        to: '/features' },
+  { label: 'Products',     to: '/products' },
+  { label: 'Resources',    to: '/resources' },
+  { label: 'Case Study',   to: '/partners' },
+  { label: 'Konsultasi',   to: '/order' },
 ]
 
 onMounted(() => {
