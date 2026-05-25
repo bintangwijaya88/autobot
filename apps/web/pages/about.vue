@@ -19,6 +19,13 @@ const specializations = [
   'LLM Integration (GPT-4, Claude, Gemini)',
 ]
 
+const team = [
+  { name: 'Bintang Wijaya', role: 'Founder & Lead Developer', img: '/bintang-aws.png' },
+  { name: 'Sharaztasya Aulia Nurdi', role: 'Direktur', img: '/sharaztasya-aws.png' },
+  { name: 'Irvan Eko Prasetyo', role: 'DevOps Master', img: '/len-aws.png' },
+  { name: 'Tim AI', role: 'LLM Integration Specialist', img: '/claude-aws.png' },
+]
+
 const advantages = [
   { icon: '🔒', title: 'Data 100% Terisolasi', desc: 'Setiap client mendapat instance eksklusif — tidak ada data sharing.' },
   { icon: '🤖', title: 'AI-Powered', desc: 'Chatbot & agent yang cerdas, trainable, dan terus belajar.' },
@@ -53,8 +60,24 @@ const advantages = [
     <!-- Team photo -->
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-white mb-4">Tim Kami</h2>
-      <div class="rounded-2xl overflow-hidden border border-white/10">
+      <div class="rounded-2xl overflow-hidden border border-white/10 mb-6">
         <img src="/team-aws.png" alt="Tim AutobotWS" class="w-full object-cover" />
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div v-for="member in team" :key="member.name" class="text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-3 overflow-hidden"
+            :style="member.img ? '' : 'background: rgba(255,255,255,0.06); border: 1px dashed rgba(255,255,255,0.12);'"
+          >
+            <img v-if="member.img" :src="member.img" :alt="member.name" class="w-full h-full object-cover" />
+            <div v-else class="w-full h-full flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="text-gray-600">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-white text-sm font-medium">{{ member.name }}</p>
+          <p class="text-gray-500 text-xs mt-0.5">{{ member.role }}</p>
+        </div>
       </div>
     </div>
 

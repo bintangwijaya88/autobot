@@ -689,7 +689,7 @@ const _routes = [
     name: "about",
     path: "/about",
     meta: __nuxt_page_meta$n || {},
-    component: () => import('./about-0Etgtfli.mjs')
+    component: () => import('./about-BNWISj1t.mjs')
   },
   {
     name: "index",
