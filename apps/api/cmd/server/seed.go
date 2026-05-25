@@ -122,13 +122,34 @@ func seedProducts(ctx context.Context, db *sql.DB) error {
 }
 
 func seedKnowledge(ctx context.Context, db *sql.DB) error {
-	entries := []struct{ category, question, answer string; priority int }{
-		{"company_info", "Siapa Autobot?", "CV Autobot Wijaya Solution adalah perusahaan IT spesialis bot dan automasi berbasis di Jakarta. Didirikan 2022, kami fokus membangun chatbot cerdas, workflow automation, dan AI agent.", 10},
-		{"company_info", "Apa spesialisasi Autobot?", "Kami spesialis di bidang bot dan automasi: WhatsApp chatbot, WhatsApp blast, workflow automation, system integration, AI agent, dan scheduled worker.", 10},
-		{"faq", "Apakah data saya aman?", "Sangat aman. Setiap deployment client mendapat instance eksklusif — data Anda 100% terisolasi.", 9},
-		{"faq", "Apakah bisa di-install di server sendiri?", "Ya! Produk kami tersedia versi desktop (PC) dan web (server Anda atau managed hosting).", 9},
-		{"product", "Apa itu WaSigap?", "WaSigap adalah aplikasi desktop WhatsApp multi-akun — bayar sekali Rp 199.600, pakai selamanya. Support 99 akun WA, 500 kredit AI, update gratis untuk 1.000 user pertama.", 10},
-		{"custom_dev", "Apakah Autobot menerima jasa custom AI development?", "Ya! Kami membangun AI agent dan chatbot custom sesuai kebutuhan bisnis Anda. Mulai dari Rp 3.000.000, dengan konsultasi gratis dan garansi bug fix 3 bulan.", 9},
+	// Clear and re-seed to avoid duplicates on redeploy
+	db.ExecContext(ctx, `DELETE FROM knowledge_base`)
+
+	entries := []struct {
+		category, question, answer string
+		priority                   int
+	}{
+		// Company info
+		{"company_info", "Siapa AutobotWS?", "AutobotWS adalah perusahaan IT spesialis chatbot dan AI berbasis di Jakarta. Didirikan 2022, kami fokus membangun WhatsApp chatbot, broadcast/blast, AI integration, dan workflow automation.", 10},
+		{"company_info", "Apa spesialisasi AutobotWS?", "Kami spesialis di bidang WhatsApp chatbot, WhatsApp blast, AI agent, workflow automation, dan custom software development untuk bisnis.", 10},
+		{"company_info", "Bagaimana cara menghubungi AutobotWS?", "Hubungi kami via email bintang@autobot.co.id, website autobot.co.id, atau WhatsApp di nomor +62 821-6486-7681.", 9},
+		// WaSigap product
+		{"product", "Apa itu WaSigap?", "WaSigap adalah aplikasi desktop WhatsApp multi-akun — bayar sekali Rp 199.600 (diskon -60% dari Rp 499.000), pakai selamanya. Support 99 akun WhatsApp, 500 kredit AI, update gratis untuk 1.000 user pertama. Tidak perlu berlangganan bulanan.", 10},
+		{"product", "Fitur utama WaSigap apa saja?", "WaSigap memiliki fitur: (1) 99 akun WhatsApp dalam 1 aplikasi desktop, (2) Broadcast & blast pesan ke banyak kontak, (3) Auto-reply otomatis, (4) 500 kredit pesan AI untuk balasan cerdas, (5) Multi-device support, (6) Dashboard terpusat semua akun, (7) Update gratis selamanya untuk 1.000 pembeli pertama.", 10},
+		{"product", "Berapa harga WaSigap?", "WaSigap dijual dengan harga Rp 199.600 (bayar sekali, pakai selamanya). Harga normal Rp 499.000, sedang diskon -60%. Tidak ada biaya bulanan atau tahunan. Tersedia di https://wa.autobot.co.id/", 10},
+		{"product", "Siapa target pengguna WaSigap?", "WaSigap cocok untuk: pemilik bisnis online, tim marketing & sales, agen properti, reseller & dropshipper, customer support, dan siapapun yang perlu mengelola banyak akun WhatsApp sekaligus.", 9},
+		{"product", "Apakah WaSigap aman dari banned WhatsApp?", "WaSigap menggunakan teknologi yang meniru perilaku pengguna nyata untuk meminimalkan risiko banned. Namun tetap disarankan mengikuti panduan penggunaan: jangan kirim spam, gunakan delay antar pesan, dan hindari konten yang melanggar kebijakan WhatsApp.", 8},
+		{"product", "AI di WaSigap menggunakan teknologi apa?", "WaSigap menggunakan beberapa pilihan AI: AutobotLLM (AI proprietary kami), OpenAI GPT, dan Anthropic Claude. User mendapat 500 kredit AI gratis saat pembelian.", 9},
+		{"product", "Apa itu kredit AI di WaSigap?", "Kredit AI adalah unit untuk menggunakan fitur balasan cerdas berbasis AI di WaSigap. Setiap pesan yang dibalas AI menggunakan 1 kredit. 500 kredit gratis sudah termasuk dalam pembelian. Kredit tambahan bisa dibeli jika habis.", 8},
+		{"product", "Apakah ada addon atau tambahan untuk WaSigap?", "Ya, tersedia addon berbayar: (1) Kredit AI tambahan, (2) Template pesan premium, (3) Integrasi webhook custom. Detail dan harga bisa ditanyakan langsung via WhatsApp atau email.", 7},
+		{"product", "Bagaimana cara membeli WaSigap?", "Beli WaSigap di https://wa.autobot.co.id/ — klik tombol beli, isi form, lakukan pembayaran, dan dapatkan link download + lisensi via email/WhatsApp. Proses aktivasi instan.", 10},
+		{"product", "Apa perbedaan WaSigap dengan WhatsApp Business biasa?", "WhatsApp Business hanya untuk 1 akun per device. WaSigap support 99 akun dalam 1 aplikasi desktop, plus fitur broadcast massal, auto-reply AI, dan tidak perlu bayar bulanan. Jauh lebih powerful untuk tim dan bisnis skala besar.", 9},
+		{"product", "Apakah WaSigap bisa digunakan offline?", "WaSigap adalah aplikasi desktop yang perlu koneksi internet untuk sinkronisasi WhatsApp. Namun data dan pengaturan tersimpan lokal, sehingga lebih stabil dibanding solusi berbasis browser.", 7},
+		// Custom AI
+		{"custom_dev", "Apakah AutobotWS menerima jasa custom AI development?", "Ya! Kami membangun AI agent dan chatbot custom sesuai kebutuhan spesifik bisnis Anda. Mulai dari Rp 3.000.000, dengan konsultasi gratis dan garansi bug fix 3 bulan. Deploy ke WhatsApp, web, atau API.", 9},
+		// General FAQ
+		{"faq", "Apakah data saya aman?", "Sangat aman. Setiap deployment client mendapat instance eksklusif — data Anda 100% terisolasi. Kami tidak menyimpan data WhatsApp pengguna di server kami.", 9},
+		{"faq", "Apakah ada garansi?", "Ya! WaSigap: garansi produk berfungsi sesuai deskripsi. Custom AI Development: garansi bug fix 3 bulan setelah delivery. Kami juga menyediakan support responsif via WhatsApp.", 9},
 	}
 
 	for _, e := range entries {
@@ -171,18 +192,18 @@ func seedPartners(ctx context.Context, db *sql.DB) error {
 
 func seedPages(ctx context.Context, db *sql.DB) error {
 	pages := []struct{ slug, title, content, metaDesc string }{
-		{"about", "Tentang CV Autobot Wijaya Solution", `# CV Autobot Wijaya Solution
+		{"about", "Tentang AutobotWS", `# AutobotWS
 
-CV Autobot Wijaya Solution adalah perusahaan IT spesialis **bot dan automasi** berbasis di Jakarta. Didirikan 2022.
+AutobotWS adalah perusahaan IT spesialis **WhatsApp chatbot, AI integration, dan workflow automation** berbasis di Jakarta. Didirikan 2022.
 
 ## Visi
-Menjadi penyedia solusi automasi bisnis terdepan di Indonesia.
+Menjadi penyedia solusi chatbot dan AI terdepan di Indonesia.
 
 ## Keunggulan
-- 9+ tahun pengalaman full-stack development
+- Spesialis WhatsApp chatbot & blast
+- AI agent custom berbasis LLM
 - Data 100% terisolasi per client
-- AI-powered chatbot dan agent
-- Support responsif`, "CV Autobot Wijaya Solution — Spesialis bot dan automasi bisnis."},
+- Support responsif`, "AutobotWS — Spesialis WhatsApp chatbot, AI integration, dan workflow automation."},
 		{"services", "Jasa Custom Development", `# Jasa Custom Development
 
 Web App, Mobile App, Desktop App, System Integration, AI/ML Integration.
