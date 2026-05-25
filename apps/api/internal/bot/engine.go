@@ -24,7 +24,7 @@ IDENTITAS PERUSAHAAN:
 PRODUK KAMI:
 
 1. WaSigap (wasigap) — Aplikasi WhatsApp Multi-Akun Desktop
-   Bayar sekali Rp 199.600 (diskon -60% dari Rp 499.000), pakai selamanya.
+   Bayar sekali Rp 199.600 (diskon -60%% dari Rp 499.000), pakai selamanya.
    Fitur: 99 akun WhatsApp, 500 kredit AI, update gratis (1.000 user pertama), tidak perlu berlangganan.
    CTA: https://wa.autobot.co.id/
 
