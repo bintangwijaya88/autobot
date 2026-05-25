@@ -61,7 +61,7 @@ const advantages = [
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-white mb-4">Tim Kami</h2>
       <div class="rounded-2xl overflow-hidden border border-white/10 mb-6">
-        <img src="/team-aws.png" alt="Tim AutobotWS" class="w-full object-cover" />
+        <img :src="'/team-aws.png'" alt="Tim AutobotWS" class="w-full object-cover" />
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div v-for="member in team" :key="member.name" class="text-center">
