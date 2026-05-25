@@ -50,6 +50,13 @@
         </svg>
         Tentang
       </NuxtLink>
+      <NuxtLink to="/order" class="sidebar-item" style="color: #a78bfa;">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" class="shrink-0">
+          <rect x="3" y="4.5" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M3 8.5h14M7 2.5v4M13 2.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Konsultasi
+      </NuxtLink>
     </div>
 
     <!-- Scrollable middle: Features + Recent -->
