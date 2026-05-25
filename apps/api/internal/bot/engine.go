@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"strings"
 
 	"github.com/autobot-wijaya/autobot-api/internal/ai"
@@ -129,6 +130,7 @@ func (e *Engine) StreamProcessMessage(ctx context.Context, session *SessionConte
 
 	content := sb.String()
 	if streamErr != nil || content == "" {
+		log.Printf("[AI ERROR] streamErr=%v content_empty=%v", streamErr, content == "")
 		content = "Maaf, saya sedang mengalami gangguan teknis. Silakan coba lagi atau hubungi kami di bintang@autobot.co.id"
 		onToken(content)
 	}
