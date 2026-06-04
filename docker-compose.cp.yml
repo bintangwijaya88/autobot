@@ -2,7 +2,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile.deploy
+      dockerfile: Dockerfile.cp
       target: api
     restart: unless-stopped
     env_file:
@@ -20,7 +20,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.deploy
+      dockerfile: Dockerfile.cp
       target: web
     restart: unless-stopped
     env_file:

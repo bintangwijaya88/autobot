@@ -61,12 +61,12 @@ Copy-Path (Join-Path (Get-Location) ".output") (Join-Path $webStaging ".output")
 Pop-Location
 
 Write-Host "Copying deploy files..."
-Copy-Path (Join-Path $root "Dockerfile.deploy") (Join-Path $staging "Dockerfile.deploy")
-Copy-Path (Join-Path $root "docker-compose.deploy.yml") (Join-Path $staging "docker-compose.deploy.yml")
+Copy-Path (Join-Path $root "Dockerfile.cp") (Join-Path $staging "Dockerfile.cp")
+Copy-Path (Join-Path $root "docker-compose.cp.yml") (Join-Path $staging "docker-compose.cp.yml")
 Copy-Path (Join-Path $root ".env.example") (Join-Path $staging ".env.example")
 Copy-Path (Join-Path $root "scripts/setup-vps.sh") (Join-Path $staging "setup-vps.sh")
 Copy-Path (Join-Path $root "scripts/backup-db.sh") (Join-Path $staging "backup-db.sh")
 
 Write-Host ""
 Write-Host "VPS package is ready at: $staging"
-Write-Host "Upload that folder to /opt/autobot on the VPS, then run docker compose -f docker-compose.deploy.yml up -d --build"
+Write-Host "Upload that folder to /opt/autobot on the VPS, then run docker compose -f docker-compose.cp.yml up -d --build"
