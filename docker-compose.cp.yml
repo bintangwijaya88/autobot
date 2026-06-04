@@ -1,9 +1,6 @@
 services:
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile.cp
-      target: api
+    image: autobot-api-cp:latest
     restart: unless-stopped
     env_file:
       - path: .env
@@ -18,10 +15,7 @@ services:
       - autobot
 
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile.cp
-      target: web
+    image: autobot-web-cp:latest
     restart: unless-stopped
     env_file:
       - path: .env

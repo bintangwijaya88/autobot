@@ -9,6 +9,7 @@ $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 $staging = Join-Path $root $OutputDir
 $apiStaging = Join-Path $staging "apps/api"
 $webStaging = Join-Path $staging "apps/web"
+$imagesStaging = Join-Path $staging "images"
 
 function Ensure-Directory {
   param([string]$Path)
@@ -30,6 +31,7 @@ if (Test-Path -LiteralPath $staging) {
 
 Ensure-Directory $apiStaging
 Ensure-Directory $webStaging
+Ensure-Directory $imagesStaging
 
 Write-Host "Building API binary for Linux amd64..."
 Push-Location (Join-Path $root "apps/api")
@@ -45,10 +47,10 @@ Copy-Path (Join-Path $root "apps/api/migrations") (Join-Path $apiStaging "migrat
 Write-Host "Building web output..."
 Push-Location (Join-Path $root "apps/web")
 if (-not $env:NUXT_PUBLIC_API_BASE) {
-  $env:NUXT_PUBLIC_API_BASE = "https://api.autobot.co.id"
+  $env:NUXT_PUBLIC_API_BASE = "http://autobot.co.id:50050"
 }
 if (-not $env:NUXT_PUBLIC_WS_URL) {
-  $env:NUXT_PUBLIC_WS_URL = "wss://api.autobot.co.id/ws"
+  $env:NUXT_PUBLIC_WS_URL = "ws://autobot.co.id:50050/ws"
 }
 $env:NUXT_IGNORE_LOCK = "1"
 if (Test-Path (Join-Path (Get-Location) "node_modules")) {
@@ -67,6 +69,14 @@ Copy-Path (Join-Path $root ".env.example") (Join-Path $staging ".env.example")
 Copy-Path (Join-Path $root "scripts/setup-vps.sh") (Join-Path $staging "setup-vps.sh")
 Copy-Path (Join-Path $root "scripts/backup-db.sh") (Join-Path $staging "backup-db.sh")
 
+Write-Host "Building copy-mode Docker images locally..."
+docker build -f (Join-Path $root "Dockerfile.cp") --target api -t autobot-api-cp:latest $root
+docker build -f (Join-Path $root "Dockerfile.cp") --target web -t autobot-web-cp:latest $root
+
+Write-Host "Saving Docker images..."
+docker save -o (Join-Path $imagesStaging "autobot-api-cp.tar") autobot-api-cp:latest
+docker save -o (Join-Path $imagesStaging "autobot-web-cp.tar") autobot-web-cp:latest
+
 Write-Host ""
 Write-Host "VPS package is ready at: $staging"
-Write-Host "Upload that folder to /opt/autobot on the VPS, then run docker compose -f docker-compose.cp.yml up -d --build"
+Write-Host "Upload that folder to /opt/autobot on the VPS, then run docker load -i images/autobot-api-cp.tar && docker load -i images/autobot-web-cp.tar && docker compose -f docker-compose.cp.yml up -d"
