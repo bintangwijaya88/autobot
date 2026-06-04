@@ -49,6 +49,13 @@
         Setuju &amp; Bayar Sekarang →
       </button>
       <button
+        @click="$emit('action', { type: 'show_form', form_type: 'consultation_booking' })"
+        class="w-full py-2.5 rounded-xl text-sm font-semibold transition-all"
+        style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.88); border: 1px solid rgba(255,255,255,0.10);"
+      >
+        Jadwalkan via Google Calendar
+      </button>
+      <button
         @click="$emit('action', { type: 'chat_message', text: 'Saya ingin tanya lebih dulu tentang konsultasinya' })"
         class="w-full text-xs text-center py-1 transition-opacity hover:opacity-70"
         style="color: rgba(255,255,255,0.30);"
@@ -63,9 +70,9 @@
 const emit = defineEmits<{ action: [payload: any] }>()
 
 const terms = [
-  'Fee mengurangi tagihan proyek selanjutnya',
-  'Refund 50% jika dibatalkan sebelum sesi',
-  'Dijadwalkan dalam 1–2 hari kerja via WhatsApp',
+  'Fee konsultasi tidak dapat direfund',
+  'Resume meeting + analisis kebutuhan PDF dikirim maksimal 7 hari kerja',
+  'Pastikan scope, referensi, dan PIC siap sebelum sesi agar aman',
 ]
 
 const agree = () => {

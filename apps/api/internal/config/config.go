@@ -1,6 +1,7 @@
 package config
 
 import (
+	"log"
 	"os"
 	"strconv"
 	"time"
@@ -9,22 +10,31 @@ import (
 )
 
 type Config struct {
-	AppPort   string
-	AppEnv    string
-	DB        DBConfig
-	Redis     RedisConfig
-	JWT       JWTConfig
-	AI        AIConfig
-	CORS      CORSConfig
-	RateLimit RateLimitConfig
-	Admin     AdminConfig
-	SMTP      SMTPConfig
-	Midtrans  MidtransConfig
-	Google    GoogleConfig
+	AppPort      string
+	AppEnv       string
+	DB           DBConfig
+	Redis        RedisConfig
+	JWT          JWTConfig
+	AI           AIConfig
+	CORS         CORSConfig
+	RateLimit    RateLimitConfig
+	Admin        AdminConfig
+	SMTP         SMTPConfig
+	Midtrans     MidtransConfig
+	Google       GoogleConfig
+	Calendar     GoogleCalendarConfig
+	MetricsToken string
+	Xendit       XenditConfig
 }
 
 type MidtransConfig struct {
 	ServerKey    string
+	IsProduction bool
+}
+
+type XenditConfig struct {
+	SecretKey    string
+	WebhookToken string
 	IsProduction bool
 }
 
@@ -63,6 +73,8 @@ type AIConfig struct {
 	OpenAIModel    string
 	AnthropicKey   string
 	AnthropicModel string
+	GroqKey        string
+	GroqModel      string
 }
 
 type CORSConfig struct {
@@ -83,8 +95,26 @@ type GoogleConfig struct {
 	ClientID string
 }
 
+type GoogleCalendarConfig struct {
+	ClientID     string
+	ClientSecret string
+	RefreshToken string
+	AccessToken  string
+	CalendarID   string
+	TimeZone     string
+}
+
 func Load() *Config {
 	_ = godotenv.Load()
+
+	isProd := os.Getenv("APP_ENV") == "production"
+	if isProd {
+		for _, key := range []string{"JWT_SECRET", "ADMIN_PASSWORD", "DB_PASSWORD"} {
+			if os.Getenv(key) == "" {
+				log.Fatalf("SECURITY: required env var %s must be set in production", key)
+			}
+		}
+	}
 
 	jwtExpiry, _ := time.ParseDuration(getEnv("JWT_EXPIRY", "24h"))
 	rlMax, _ := strconv.Atoi(getEnv("RATE_LIMIT_MAX", "60"))
@@ -106,15 +136,17 @@ func Load() *Config {
 			URL: getEnv("REDIS_URL", ""),
 		},
 		JWT: JWTConfig{
-			Secret: getEnv("JWT_SECRET", "change-me-in-production"),
+			Secret: getEnv("JWT_SECRET", "dev-only-secret-change-in-production"),
 			Expiry: jwtExpiry,
 		},
 		AI: AIConfig{
-			Provider:       getEnv("AI_PROVIDER", "openai"),
+			Provider:       getEnv("AI_PROVIDER", "groq"),
 			OpenAIKey:      getEnv("OPENAI_API_KEY", ""),
 			OpenAIModel:    getEnv("OPENAI_MODEL", "gpt-4o-mini"),
 			AnthropicKey:   getEnv("ANTHROPIC_API_KEY", ""),
 			AnthropicModel: getEnv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514"),
+			GroqKey:        getEnv("GROQ_API_KEY", ""),
+			GroqModel:      getEnv("GROQ_MODEL", "llama-3.3-70b-versatile"),
 		},
 		CORS: CORSConfig{
 			Origins: getEnv("CORS_ORIGINS", "http://localhost:3001"),
@@ -142,6 +174,20 @@ func Load() *Config {
 		},
 		Google: GoogleConfig{
 			ClientID: getEnv("GOOGLE_CLIENT_ID", ""),
+		},
+		MetricsToken: getEnv("METRICS_TOKEN", ""),
+		Xendit: XenditConfig{
+			SecretKey:    getEnv("XENDIT_SECRET_KEY", ""),
+			WebhookToken: getEnv("XENDIT_WEBHOOK_TOKEN", ""),
+			IsProduction: getEnv("XENDIT_ENV", "sandbox") == "production",
+		},
+		Calendar: GoogleCalendarConfig{
+			ClientID:     getEnv("GOOGLE_CALENDAR_CLIENT_ID", ""),
+			ClientSecret: getEnv("GOOGLE_CALENDAR_CLIENT_SECRET", ""),
+			RefreshToken: getEnv("GOOGLE_CALENDAR_REFRESH_TOKEN", ""),
+			AccessToken:  getEnv("GOOGLE_CALENDAR_ACCESS_TOKEN", ""),
+			CalendarID:   getEnv("GOOGLE_CALENDAR_ID", ""),
+			TimeZone:     getEnv("GOOGLE_CALENDAR_TIMEZONE", "Asia/Jakarta"),
 		},
 	}
 }

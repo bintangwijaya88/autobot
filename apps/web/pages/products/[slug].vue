@@ -1,12 +1,13 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'page' })
+const { locale } = useLocale()
 
 const route = useRoute()
 const config = useRuntimeConfig()
 const { data: product } = await useFetch<any>(`${config.public.apiBase}/api/products/${route.params.slug}`)
 
 if (!product.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Product not found' })
+  throw createError({ statusCode: 404, statusMessage: locale.value === 'id' ? 'Produk tidak ditemukan' : 'Product not found' })
 }
 
 useSeoMeta({
@@ -41,7 +42,7 @@ const categoryEmoji: Record<string, string> = {
 
     <!-- Features -->
     <div class="mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Fitur Utama</h2>
+      <h2 class="text-2xl font-bold text-white mb-4">{{ locale === 'id' ? 'Fitur Utama' : 'Key Features' }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div v-for="f in (product.features || [])" :key="f" class="flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/3">
           <span class="text-green-400 flex-shrink-0">✓</span>
@@ -52,7 +53,7 @@ const categoryEmoji: Record<string, string> = {
 
     <!-- Pricing -->
     <div v-if="product.pricing?.length" class="mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Harga</h2>
+      <h2 class="text-2xl font-bold text-white mb-4">{{ locale === 'id' ? 'Harga' : 'Pricing' }}</h2>
       <div class="flex gap-4 overflow-x-auto pb-2">
         <div v-for="tier in product.pricing" :key="tier.name"
           class="flex-shrink-0 w-72 rounded-2xl border p-5 relative"
@@ -88,11 +89,11 @@ const categoryEmoji: Record<string, string> = {
           <a v-if="tier.cta_url" :href="tier.cta_url" target="_blank" rel="noopener"
             class="block w-full py-2.5 rounded-xl text-sm font-semibold text-center transition-all hover:opacity-90"
             style="background: linear-gradient(135deg, #7c3aed, #2563eb); color: white;">
-            Beli Sekarang →
+            {{ locale === 'id' ? 'Beli Sekarang' : 'Buy Now' }} →
           </a>
           <NuxtLink v-else to="/" class="block w-full py-2.5 rounded-xl text-sm font-medium text-center transition-colors"
             :class="tier.highlighted ? 'bg-blue-500 text-white hover:bg-blue-400' : 'border border-white/15 text-gray-400 hover:text-white hover:border-white/30'">
-            Order via Chat
+            {{ locale === 'id' ? 'Order via Chat' : 'Order via Chat' }}
           </NuxtLink>
         </div>
       </div>
@@ -116,12 +117,12 @@ const categoryEmoji: Record<string, string> = {
         ? 'border: 1px solid rgba(168,85,247,0.3); background: rgba(124,58,237,0.08);'
         : 'border: 1px solid rgba(59,130,246,0.3); background: rgba(59,130,246,0.08);'"
     >
-      <p class="text-white font-medium mb-4">Tertarik dengan {{ product.name }}?</p>
+      <p class="text-white font-medium mb-4">{{ locale === 'id' ? 'Tertarik dengan' : 'Interested in' }} {{ product.name }}?</p>
       <div class="flex gap-3 justify-center flex-wrap">
         <a v-if="product.demo_url" :href="product.demo_url" target="_blank" rel="noopener"
           class="inline-block px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition-all active:scale-[0.97]"
           style="background: linear-gradient(135deg, #7c3aed, #2563eb); color: white;">
-          Beli Sekarang — Rp 199.600
+          {{ locale === 'id' ? 'Beli Sekarang' : 'Buy Now' }} — Rp 199.600
         </a>
         <NuxtLink v-else to="/" class="inline-block px-6 py-3 rounded-xl bg-white text-black font-medium hover:bg-gray-100 transition-colors">
           Order via Chat
@@ -130,7 +131,7 @@ const categoryEmoji: Record<string, string> = {
           class="inline-block px-6 py-3 rounded-xl text-sm font-medium transition-colors"
           style="border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.6);"
         >
-          Tanya Dulu
+          {{ locale === 'id' ? 'Tanya Dulu' : 'Ask First' }}
         </NuxtLink>
       </div>
     </div>

@@ -4,8 +4,15 @@ const config = useRuntimeConfig()
 const auth = useAuth()
 
 const googleLoading = ref(false)
+const submitLoading = ref(false)
 const error = ref('')
 const googleBtnRef = ref<HTMLElement | null>(null)
+const mode = ref<'login' | 'register'>('login')
+const form = reactive({
+  name: '',
+  email: '',
+  password: '',
+})
 
 onMounted(() => {
   const clientId = config.public.googleClientId as string
@@ -61,6 +68,29 @@ async function handleGoogleCredential(response: { credential: string }) {
   }
 }
 
+async function submitForm() {
+  submitLoading.value = true
+  error.value = ''
+  try {
+    const endpoint = mode.value === 'register' ? '/api/auth/register' : '/api/auth/login'
+    const payload =
+      mode.value === 'register'
+        ? { name: form.name, email: form.email, password: form.password }
+        : { email: form.email, password: form.password }
+
+    const res = await $fetch<{ access_key: string; name: string; email: string }>(
+      `${config.public.apiBase}${endpoint}`,
+      { method: 'POST', body: payload }
+    )
+    auth.setUser(res)
+    emit('close')
+  } catch (e: any) {
+    error.value = e.data?.error || 'Gagal autentikasi, coba lagi'
+  } finally {
+    submitLoading.value = false
+  }
+}
+
 function onKeydown(e: KeyboardEvent) {
   if (e.key === 'Escape') emit('close')
 }
@@ -72,13 +102,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
 <template>
   <Teleport to="body">
     <div
-      class="fixed inset-0 z-50 flex items-center justify-center px-4"
+      class="fixed inset-0 z-50 flex items-start sm:items-center justify-center px-4 py-4 overflow-y-auto"
       style="background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);"
       @click.self="emit('close')"
     >
       <div
-        class="w-full max-w-[340px] rounded-2xl relative flex flex-col items-center"
-        style="background: #161616; border: 1px solid rgba(255,255,255,0.09);"
+        class="w-full max-w-[460px] rounded-[28px] relative flex flex-col items-center overflow-hidden shadow-2xl"
+        style="background: linear-gradient(180deg, #171717 0%, #121212 100%); border: 1px solid rgba(255,255,255,0.10);"
       >
         <!-- Close -->
         <button
@@ -94,32 +124,113 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
         </button>
 
         <!-- Logo + heading -->
-        <div class="flex flex-col items-center pt-9 pb-7 px-8 w-full">
-          <img src="/logo.png" alt="Autobot" class="h-10 w-auto object-contain mb-4" />
-          <h2 class="text-[18px] font-bold text-white mb-1">Masuk ke Autobot</h2>
-          <p class="text-[13px] text-center" style="color: rgba(255,255,255,0.38);">
+        <div class="flex flex-col items-center pt-10 pb-6 px-9 w-full">
+          <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+            <img src="/logo.png" alt="Autobot" class="h-8 w-auto object-contain" />
+          </div>
+          <h2 class="text-[19px] font-bold text-white mb-1 tracking-tight">Masuk ke Autobot</h2>
+          <p class="text-[13px] text-center max-w-[320px] leading-relaxed" style="color: rgba(255,255,255,0.38);">
             Lanjutkan percakapan & simpan riwayat chat kamu
           </p>
         </div>
 
-        <!-- Divider -->
         <div class="w-full h-px" style="background: rgba(255,255,255,0.07);" />
 
-        <!-- Google button area -->
-        <div class="px-8 py-7 w-full flex flex-col items-center gap-4">
+        <div class="px-9 pt-5 pb-3 w-full">
+          <div class="grid grid-cols-2 gap-2 p-1.5 rounded-2xl bg-white/5 border border-white/8">
+            <button class="h-9 rounded-xl text-[13px] font-medium transition-all" :class="mode === 'login' ? 'bg-white text-black shadow-sm' : 'text-white/65 hover:text-white'" @click="mode = 'login'">Login</button>
+            <button class="h-9 rounded-xl text-[13px] font-medium transition-all" :class="mode === 'register' ? 'bg-white text-black shadow-sm' : 'text-white/65 hover:text-white'" @click="mode = 'register'">Register</button>
+          </div>
+        </div>
+
+        <form class="px-9 pb-4 w-full flex flex-col gap-3" @submit.prevent="submitForm">
+          <div class="rounded-2xl border border-white/8 bg-white/5 p-5 space-y-3">
+            <div class="space-y-1">
+              <p class="text-[12px] font-semibold tracking-wider uppercase" style="color: rgba(255,255,255,0.45);">
+                {{ mode === 'login' ? 'Email & Password' : 'Data Akun' }}
+              </p>
+              <p class="text-[12px]" style="color: rgba(255,255,255,0.32);">
+                {{ mode === 'login' ? 'Masukkan email yang terdaftar untuk masuk.' : 'Isi nama, email, dan password untuk membuat akun.' }}
+              </p>
+            </div>
+
+            <input
+              v-if="mode === 'register'"
+              v-model.trim="form.name"
+              type="text"
+              placeholder="Nama"
+              class="w-full h-10 rounded-xl bg-white/5 border border-white/10 px-3 text-[13px] text-white outline-none focus:border-white/25 placeholder:text-white/25 transition-colors"
+            />
+            <input
+              v-model.trim="form.email"
+              type="email"
+              placeholder="Email"
+              class="w-full h-10 rounded-xl bg-white/5 border border-white/10 px-3 text-[13px] text-white outline-none focus:border-white/25 placeholder:text-white/25 transition-colors"
+            />
+            <input
+              v-model="form.password"
+              type="password"
+              placeholder="Password"
+              class="w-full h-10 rounded-xl bg-white/5 border border-white/10 px-3 text-[13px] text-white outline-none focus:border-white/25 placeholder:text-white/25 transition-colors"
+            />
+            <button
+              type="submit"
+              :disabled="submitLoading"
+              class="group relative flex h-10 w-full items-center justify-center gap-2 overflow-hidden rounded-xl border border-white/10 px-4 text-[13px] font-semibold text-white transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60 active:scale-[0.99]"
+              style="background: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.08) 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 10px 25px rgba(0,0,0,0.22);"
+            >
+              <span
+                class="absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                style="background: linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.12) 100%);"
+              />
+              <svg
+                v-if="submitLoading"
+                class="relative z-10 h-4 w-4 animate-spin text-white/80"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-opacity="0.2" stroke-width="2" />
+                <path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+              <svg
+                v-else
+                class="relative z-10 h-4 w-4 text-white/70 transition-transform duration-200 group-hover:translate-x-0.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M5 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="relative z-10">
+                {{ submitLoading ? 'Memproses...' : (mode === 'register' ? 'Buat Akun' : 'Masuk') }}
+              </span>
+            </button>
+          </div>
+        </form>
+
+        <div class="w-full px-9 pb-2">
+          <div class="h-px bg-white/10" />
+        </div>
+
+        <div class="px-9 py-4 w-full flex flex-col items-center gap-3">
+          <p class="text-[12px] w-full text-center" style="color: rgba(255,255,255,0.34);">
+            {{ mode === 'login' ? 'Atau lanjutkan dengan Google' : 'Atau daftar menggunakan Google' }}
+          </p>
 
           <!-- Google Identity Services rendered button -->
           <div
             v-if="(config.public.googleClientId as string)"
             ref="googleBtnRef"
             class="w-full overflow-hidden rounded-full"
-            style="height: 46px;"
+            style="height: 40px;"
           />
 
           <!-- Fallback: no Google client ID configured -->
           <div
             v-else
-            class="w-full flex items-center justify-center gap-3 h-[46px] rounded-full text-sm font-medium cursor-not-allowed"
+            class="w-full flex items-center justify-center gap-2.5 h-[40px] rounded-full text-[13px] font-medium cursor-not-allowed"
             style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.09);"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -138,7 +249,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
         </div>
 
         <!-- Footer note -->
-        <div class="pb-6 px-8 text-center">
+        <div class="pb-6 px-9 text-center">
           <p class="text-[11.5px]" style="color: rgba(255,255,255,0.22);">
             Dengan masuk, kamu setuju dengan
             <span class="underline cursor-pointer hover:text-white/40 transition-colors">Syarat & Ketentuan</span>

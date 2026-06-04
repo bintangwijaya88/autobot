@@ -1,4 +1,4 @@
-.PHONY: dev dev-api dev-web build deploy migrate migrate-down seed test test-e2e logs clean
+.PHONY: dev dev-api dev-web build deploy prepare-vps migrate migrate-down seed test test-e2e logs clean
 
 # Development
 dev:
@@ -19,6 +19,9 @@ build:
 deploy:
 	docker compose pull api web
 	docker compose up -d --no-deps api web
+
+prepare-vps:
+	pwsh -File scripts/prepare-vps.ps1
 
 # Database
 migrate:

@@ -1,0 +1,103 @@
+import { _ as __nuxt_component_0 } from './nuxt-link-D5BEjpNN.mjs';
+import { defineComponent, mergeProps, withCtx, createVNode, openBlock, createBlock, createTextVNode, useSSRContext } from 'vue';
+import { ssrRenderAttrs, ssrRenderStyle, ssrRenderComponent } from 'vue/server-renderer';
+import { a as useSeoMeta } from './server.mjs';
+import '../_/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'node:url';
+import '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+import 'pinia';
+import 'vue-router';
+import 'nanoid';
+import '@vue/shared';
+
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "contact",
+  __ssrInlineRender: true,
+  setup(__props) {
+    useSeoMeta({
+      title: "Kontak \u2014 Autobot",
+      description: "Hubungi Autobot Wijaya Solution via chat AI, WhatsApp, atau email. Konsultasi gratis untuk kebutuhan chatbot dan automasi bisnis kamu.",
+      ogTitle: "Hubungi Autobot",
+      ogDescription: "Konsultasi chatbot WhatsApp & automasi bisnis gratis. Tim kami siap membantu.",
+      ogImage: "https://autobot.co.id/logo.png",
+      ogUrl: "https://autobot.co.id/contact"
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "max-w-lg mx-auto" }, _attrs))}><div class="rounded-2xl border border-white/10 bg-white/3 p-5 mb-8 text-sm"><p class="text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">Identitas Bisnis</p><p class="text-white font-semibold text-base mb-1">Autobot Wijaya Solution</p><p class="text-gray-400">Situs resmi: <span class="text-blue-400">autobot.co.id</span></p><div class="mt-3 space-y-1 text-gray-400"><p>Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung, Jakarta Timur 13810</p><p>Indonesia</p></div><div class="mt-3 space-y-1 text-gray-400"><p> Email support: <a href="mailto:support@autobot.co.id" class="text-blue-400 hover:text-blue-300 transition-colors">support@autobot.co.id</a></p><p> Email admin: <a href="mailto:admin@autobot.co.id" class="text-blue-400 hover:text-blue-300 transition-colors">admin@autobot.co.id</a></p></div></div><h1 class="text-3xl font-bold text-white mb-2 text-center">Hubungi Kami</h1><p class="text-gray-400 mb-8 text-center text-sm">Cara tercepat adalah via WhatsApp atau chat AI kami. Tim aktif Senin\u2013Jumat 09.00\u201317.00 WIB.</p><div class="space-y-3 mb-8"><a href="https://wa.me/6282164867681" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/3 hover:border-green-500/30 transition-all group"><div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-xl" style="${ssrRenderStyle({ "background": "rgba(34,197,94,0.12)" })}"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-green-400"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg></div><div class="text-left"><p class="text-white font-medium group-hover:text-green-300 transition-colors">WhatsApp Admin</p><p class="text-gray-500 text-sm">+62 821-6486-7681 \xB7 Respon cepat jam kerja</p></div><span class="ml-auto text-gray-600">\u2192</span></a>`);
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/",
+        class: "flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/3 hover:border-blue-500/30 transition-all group"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-xl" style="${ssrRenderStyle({ "background": "rgba(59,130,246,0.12)" })}"${_scopeId}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-blue-400"${_scopeId}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14c-2.67 0-5.01-1.34-6.42-3.36C6.95 14.8 9.44 14 12 14s5.05.8 6.42 2.64C16.99 18.66 14.65 20 12 20z"${_scopeId}></path></svg></div><div class="text-left"${_scopeId}><p class="text-white font-medium group-hover:text-blue-300 transition-colors"${_scopeId}>Chat dengan Autobot AI</p><p class="text-gray-500 text-sm"${_scopeId}>Respon instan 24/7</p></div><span class="ml-auto text-gray-600"${_scopeId}>\u2192</span>`);
+          } else {
+            return [
+              createVNode("div", {
+                class: "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-xl",
+                style: { "background": "rgba(59,130,246,0.12)" }
+              }, [
+                (openBlock(), createBlock("svg", {
+                  width: "18",
+                  height: "18",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  "stroke-width": "1.8",
+                  class: "text-blue-400"
+                }, [
+                  createVNode("path", { d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14c-2.67 0-5.01-1.34-6.42-3.36C6.95 14.8 9.44 14 12 14s5.05.8 6.42 2.64C16.99 18.66 14.65 20 12 20z" })
+                ]))
+              ]),
+              createVNode("div", { class: "text-left" }, [
+                createVNode("p", { class: "text-white font-medium group-hover:text-blue-300 transition-colors" }, "Chat dengan Autobot AI"),
+                createVNode("p", { class: "text-gray-500 text-sm" }, "Respon instan 24/7")
+              ]),
+              createVNode("span", { class: "ml-auto text-gray-600" }, "\u2192")
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`<a href="mailto:support@autobot.co.id" class="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/3 hover:border-white/25 transition-all group"><div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-xl" style="${ssrRenderStyle({ "background": "rgba(255,255,255,0.06)" })}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="text-gray-400"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 7l-10 7L2 7"></path></svg></div><div class="text-left"><p class="text-white font-medium group-hover:text-blue-300 transition-colors">Email</p><p class="text-gray-500 text-sm">support@autobot.co.id</p></div><span class="ml-auto text-gray-600">\u2192</span></a></div><div class="text-center">`);
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/pricing",
+        class: "inline-block px-6 py-2.5 rounded-xl bg-white text-black text-sm font-medium hover:bg-gray-100 transition-colors"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(` Lihat Paket Harga `);
+          } else {
+            return [
+              createTextVNode(" Lihat Paket Harga ")
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div></div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/contact.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+
+export { _sfc_main as default };
+//# sourceMappingURL=contact-CDv2Gk2I.mjs.map

@@ -76,9 +76,24 @@ const navItems = [
     icon: `<svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 4h12M4 8h12M4 12h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
   },
   {
+    to: '/admin/blog',
+    label: 'Blog',
+    icon: `<svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 5h12M4 9h12M4 13h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="15" r="2.5" stroke="currentColor" stroke-width="1.3"/></svg>`,
+  },
+  {
+    to: '/admin/integrations',
+    label: 'Integrations',
+    icon: `<svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M7 3H4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1ZM16 3h-3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1ZM7 12H4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1Z" stroke="currentColor" stroke-width="1.4"/><path d="M13 14h4M15 12v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>`,
+  },
+  {
     to: '/admin/knowledge',
     label: 'Knowledge Base',
     icon: `<svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 0 1 6 6c0 2.5-1.5 4.6-3.5 5.5V15H7.5v-1.5C5.5 12.6 4 10.5 4 8a6 6 0 0 1 6-6Z" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 18h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+  },
+  {
+    to: '/admin/meetings',
+    label: 'Meetings',
+    icon: `<svg width="14" height="14" viewBox="0 0 20 20" fill="none"><rect x="3" y="4.5" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 8.5h14M7 2.5v4M13 2.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
   },
   {
     to: '/admin/email',

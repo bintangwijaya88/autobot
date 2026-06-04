@@ -6,10 +6,12 @@ import (
 	"encoding/json"
 	"log"
 
+	"github.com/autobot-wijaya/autobot-api/internal/config"
 	"github.com/google/uuid"
+	"golang.org/x/crypto/bcrypt"
 )
 
-func seedData(ctx context.Context, db *sql.DB) error {
+func seedData(ctx context.Context, db *sql.DB, cfg *config.Config) error {
 	log.Println("seeding products...")
 	if err := seedProducts(ctx, db); err != nil {
 		return err
@@ -24,6 +26,10 @@ func seedData(ctx context.Context, db *sql.DB) error {
 	}
 	log.Println("seeding pages...")
 	if err := seedPages(ctx, db); err != nil {
+		return err
+	}
+	log.Println("seeding default users...")
+	if err := seedDefaultUsers(ctx, db, cfg); err != nil {
 		return err
 	}
 	return nil
@@ -227,5 +233,52 @@ Web App, Mobile App, Desktop App, System Integration, AI/ML Integration.
 			log.Printf("failed to seed page %s: %v", p.slug, err)
 		}
 	}
+	return nil
+}
+
+func seedDefaultUsers(ctx context.Context, db *sql.DB, cfg *config.Config) error {
+	hash := func(password string) string {
+		h, _ := bcrypt.GenerateFromPassword([]byte(password), 12)
+		return string(h)
+	}
+
+	adminID := uuid.New().String()
+	adminAccessKey := uuid.New().String()
+	_, err := db.ExecContext(ctx, `
+		INSERT INTO users (id, email, password_hash, name, display_name, role, is_active, access_key, is_email_verified)
+		VALUES (?, ?, ?, ?, ?, 'admin', 1, ?, 1)
+		ON DUPLICATE KEY UPDATE
+			password_hash = VALUES(password_hash),
+			name = VALUES(name),
+			display_name = VALUES(display_name),
+			role = 'admin',
+			is_active = 1,
+			is_email_verified = 1
+	`, adminID, cfg.Admin.Email, hash(cfg.Admin.Password), "Administrator", "Administrator", adminAccessKey)
+	if err != nil {
+		return err
+	}
+
+	userID := uuid.New().String()
+	userEmail := "user@autobot.co.id"
+	userPassword := "user12345"
+	userAccessKey := uuid.New().String()
+	_, err = db.ExecContext(ctx, `
+		INSERT INTO users (id, email, password_hash, name, display_name, role, is_active, access_key, is_email_verified)
+		VALUES (?, ?, ?, ?, ?, 'user', 1, ?, 1)
+		ON DUPLICATE KEY UPDATE
+			password_hash = VALUES(password_hash),
+			name = VALUES(name),
+			display_name = VALUES(display_name),
+			role = 'user',
+			is_active = 1,
+			is_email_verified = 1
+	`, userID, userEmail, hash(userPassword), "Default User", "Default User", userAccessKey)
+	if err != nil {
+		return err
+	}
+
+	log.Printf("default admin: %s / %s", cfg.Admin.Email, cfg.Admin.Password)
+	log.Printf("default user: %s / %s", userEmail, userPassword)
 	return nil
 }

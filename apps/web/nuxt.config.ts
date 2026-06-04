@@ -32,6 +32,25 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#111111' },
       ],
       script: [
+        // Google Analytics
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-ENVNTMR55Y',
+          async: true,
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ENVNTMR55Y');`,
+        },
+        // Microsoft Clarity
+        {
+          innerHTML: `(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "x0ygtk3h0p");`,
+        },
         {
           type: 'application/ld+json',
           innerHTML: JSON.stringify({

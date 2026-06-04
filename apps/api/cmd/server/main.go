@@ -11,12 +11,13 @@ import (
 
 	"github.com/autobot-wijaya/autobot-api/internal/ai"
 	"github.com/autobot-wijaya/autobot-api/internal/bot"
+	"github.com/autobot-wijaya/autobot-api/internal/calendar"
 	"github.com/autobot-wijaya/autobot-api/internal/config"
 	"github.com/autobot-wijaya/autobot-api/internal/database"
 	"github.com/autobot-wijaya/autobot-api/internal/email"
 	"github.com/autobot-wijaya/autobot-api/internal/handler"
-	"github.com/autobot-wijaya/autobot-api/internal/middleware"
 	_ "github.com/autobot-wijaya/autobot-api/internal/metrics"
+	"github.com/autobot-wijaya/autobot-api/internal/middleware"
 	"github.com/autobot-wijaya/autobot-api/internal/payment"
 	"github.com/autobot-wijaya/autobot-api/internal/repository"
 	"github.com/autobot-wijaya/autobot-api/internal/ws"
@@ -45,7 +46,7 @@ func main() {
 				log.Fatal("seed: failed to connect DB:", err)
 			}
 			defer db.Close()
-			if err := seedData(context.Background(), db); err != nil {
+			if err := seedData(context.Background(), db, cfg); err != nil {
 				log.Fatal("seed failed:", err)
 			}
 			log.Println("seed complete")
@@ -84,21 +85,30 @@ func main() {
 	switch cfg.AI.Provider {
 	case "anthropic":
 		aiProvider = ai.NewAnthropicProvider(cfg)
+	case "groq":
+		aiProvider = ai.NewGroqProvider(cfg)
 	default:
 		aiProvider = ai.NewOpenAIProvider(cfg)
 	}
 
 	mailer := email.New(cfg.SMTP.Host, cfg.SMTP.Port, cfg.SMTP.User, cfg.SMTP.Pass, cfg.SMTP.From, cfg.SMTP.Debug)
 	mt := payment.New(cfg.Midtrans.ServerKey, cfg.Midtrans.IsProduction)
+	googleCalendar := calendar.NewGoogleCalendar(cfg)
 
 	engine := bot.NewEngine(aiProvider, productRepo)
 	hub := ws.NewHub(zapLogger)
 	go hub.Run()
 
-	chatHandler := handler.NewChatHandler(hub, chatRepo, productRepo, userRepo, engine, mailer, mt, zapLogger)
+	chatHandler := handler.NewChatHandler(hub, chatRepo, productRepo, userRepo, engine, mailer, mt, googleCalendar, zapLogger)
 	productHandler := handler.NewProductHandler(productRepo, redisClient, zapLogger)
 	adminHandler := handler.NewAdminHandler(cfg, chatRepo, productRepo, userRepo, mailer, redisClient, zapLogger)
 	userHandler := handler.NewUserHandler(userRepo, mailer, cfg, zapLogger)
+	portalHandler := handler.NewPortalHandler(chatRepo, productRepo, userRepo, zapLogger)
+
+	xenditClient := payment.NewXendit(cfg.Xendit.SecretKey, cfg.Xendit.IsProduction)
+	meetingHandler := handler.NewMeetingHandler(db, xenditClient, cfg, userRepo, zapLogger)
+	blogHandler := handler.NewBlogHandler(db, zapLogger)
+	integrationHandler := handler.NewIntegrationHandler(db, zapLogger)
 
 	app := fiber.New(fiber.Config{
 		AppName:      "Autobot API v1.0",
@@ -121,6 +131,13 @@ func main() {
 
 	app.Get("/api/health", adminHandler.Health)
 	app.Get("/api/metrics", func(c *fiber.Ctx) error {
+		token := cfg.MetricsToken
+		if token != "" && c.Get("X-Metrics-Token") != token {
+			return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "unauthorized"})
+		}
+		if token == "" {
+			return c.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": "metrics not enabled"})
+		}
 		fasthttpadaptor.NewFastHTTPHandler(promhttp.Handler())(c.Context())
 		return nil
 	})
@@ -144,6 +161,28 @@ func main() {
 	api.Post("/auth/request", userHandler.RequestOTP)
 	api.Post("/auth/verify", userHandler.VerifyOTP)
 	api.Post("/auth/google", userHandler.GoogleSignIn)
+	api.Post("/auth/register", userHandler.Register)
+	api.Post("/auth/login", userHandler.Login)
+
+	// Blog (public)
+	api.Get("/blog", blogHandler.List)
+	api.Get("/blog/:slug", blogHandler.GetBySlug)
+
+	// Integrations (public)
+	api.Get("/integrations", integrationHandler.List)
+
+	// Meeting booking (public)
+	api.Post("/meetings", meetingHandler.Create)
+	api.Post("/meetings/webhook", meetingHandler.Webhook)
+	api.Get("/meetings/:id/status", meetingHandler.GetStatus)
+
+	// Customer portal routes — protected by access key
+	portal := api.Group("/portal", handler.PortalAuth(userRepo))
+	portal.Get("/me", portalHandler.Me)
+	portal.Get("/stats", portalHandler.Stats)
+	portal.Get("/sessions", portalHandler.ListSessions)
+	portal.Get("/sessions/:id", portalHandler.GetSession)
+	portal.Get("/contacts", portalHandler.ListContacts)
 
 	admin := api.Group("/admin")
 	admin.Post("/login", adminHandler.Login)
@@ -167,11 +206,32 @@ func main() {
 	adminAuth.Put("/contacts/:id", adminHandler.UpdateContact)
 
 	adminAuth.Get("/pages", adminHandler.ListPages)
+	adminAuth.Post("/pages", adminHandler.CreatePage)
 	adminAuth.Put("/pages/:slug", adminHandler.UpdatePage)
+	adminAuth.Delete("/pages/:slug", adminHandler.DeletePage)
 
 	adminAuth.Get("/knowledge", adminHandler.ListKnowledge)
 	adminAuth.Post("/knowledge", adminHandler.CreateKnowledge)
 	adminAuth.Delete("/knowledge/:id", adminHandler.DeleteKnowledge)
+
+	// Blog admin
+	adminAuth.Get("/blog", blogHandler.AdminList)
+	adminAuth.Get("/blog/:id", blogHandler.AdminGet)
+	adminAuth.Post("/blog", blogHandler.AdminCreate)
+	adminAuth.Put("/blog/:id", blogHandler.AdminUpdate)
+	adminAuth.Delete("/blog/:id", blogHandler.AdminDelete)
+
+	// Integrations admin
+	adminAuth.Get("/integrations", integrationHandler.AdminList)
+	adminAuth.Get("/integrations/:id", integrationHandler.AdminGet)
+	adminAuth.Post("/integrations", integrationHandler.AdminCreate)
+	adminAuth.Put("/integrations/:id", integrationHandler.AdminUpdate)
+	adminAuth.Delete("/integrations/:id", integrationHandler.AdminDelete)
+
+	adminAuth.Get("/meetings", meetingHandler.AdminList)
+	adminAuth.Get("/meetings/stats", meetingHandler.AdminStats)
+	adminAuth.Put("/meetings/:id", meetingHandler.AdminUpdate)
+	adminAuth.Post("/meetings/:id/resend-invoice", meetingHandler.AdminResendInvoice)
 
 	adminAuth.Get("/email/templates", adminHandler.ListEmailTemplates)
 	adminAuth.Post("/email/preview/:id", adminHandler.PreviewEmailTemplate)

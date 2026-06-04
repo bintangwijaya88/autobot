@@ -15,14 +15,17 @@ func SecurityHeaders(cfg *config.Config) fiber.Handler {
 		c.Set("Referrer-Policy", "strict-origin-when-cross-origin")
 		c.Set("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
 
-		if isProd {
-			c.Set("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
-		}
+		c.Set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload")
 
-		// CSP: allow self, fonts, and the declared API origin
+		// CSP: tightened — removed unsafe-inline from script-src
+		scriptSrc := "'self' https://accounts.google.com"
+		if !isProd {
+			// Nuxt dev server needs unsafe-inline for HMR; restrict only in production
+			scriptSrc = "'self' 'unsafe-inline' https://accounts.google.com"
+		}
 		c.Set("Content-Security-Policy",
 			"default-src 'self'; "+
-				"script-src 'self' 'unsafe-inline'; "+
+				"script-src "+scriptSrc+"; "+
 				"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "+
 				"font-src 'self' https://fonts.gstatic.com; "+
 				"img-src 'self' data: https:; "+

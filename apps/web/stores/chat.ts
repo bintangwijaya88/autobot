@@ -60,7 +60,7 @@ export const useChatStore = defineStore('chat', () => {
     switch (msg.type) {
       case 'session_init':
         if (msg.suggestions) suggestions.value = msg.suggestions
-        if (msg.content) {
+        if (msg.content && messages.value.length === 0) {
           addMessage({ role: 'assistant', content: msg.content, isTypingAnim: true })
         }
         break

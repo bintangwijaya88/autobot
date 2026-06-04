@@ -4,12 +4,15 @@ import (
 	"context"
 	"crypto/rand"
 	"database/sql"
+	"encoding/base64"
 	"encoding/hex"
 	"fmt"
 	"math/big"
+	"strings"
 	"time"
 
 	"github.com/google/uuid"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type UserRepo struct {
@@ -21,25 +24,28 @@ func NewUserRepo(db *sql.DB) *UserRepo {
 }
 
 type VisitorUser struct {
-	ID          string
-	Name        string
-	Email       string
-	AccessKey   string
-	IsVerified  bool
+	ID         string
+	Name       string
+	Email      string
+	Role       string
+	AccessKey  string
+	IsVerified bool
 }
 
 // CreatePendingUser creates an unverified user with a verification code.
 // Returns userID and the 6-digit code.
 func (r *UserRepo) CreatePendingUser(ctx context.Context, name, email string) (userID, code string, err error) {
-	// Static code for testing — remove when SMTP is live
-	code = "123456"
+	code, err = randomDigits(6)
+	if err != nil {
+		return "", "", fmt.Errorf("generate otp: %w", err)
+	}
 	userID = uuid.New().String()
 	expires := time.Now().Add(10 * time.Minute)
 
 	_, err = r.db.ExecContext(ctx, `
 		INSERT INTO users (id, email, password_hash, name, display_name, role, is_active,
 		                   verification_code, verification_expires_at, is_email_verified)
-		VALUES (?, ?, '', ?, ?, 'visitor', 1, ?, ?, 0)
+		VALUES (?, ?, '', ?, ?, 'user', 1, ?, ?, 0)
 		ON DUPLICATE KEY UPDATE
 			display_name             = VALUES(display_name),
 			verification_code        = VALUES(verification_code),
@@ -65,20 +71,25 @@ func (r *UserRepo) VerifyCode(ctx context.Context, userID, code string) (accessK
 	var storedCode string
 	var expires time.Time
 	var isVerified bool
+	var attempts int
 
 	err = r.db.QueryRowContext(ctx,
-		`SELECT verification_code, verification_expires_at, is_email_verified FROM users WHERE id = ?`,
+		`SELECT COALESCE(verification_code,''), verification_expires_at, is_email_verified, COALESCE(otp_attempts,0) FROM users WHERE id = ?`,
 		userID,
-	).Scan(&storedCode, &expires, &isVerified)
+	).Scan(&storedCode, &expires, &isVerified, &attempts)
 	if err != nil {
 		return "", fmt.Errorf("user not found")
 	}
 
-	if storedCode != code {
-		return "", fmt.Errorf("invalid code")
+	if attempts >= 5 {
+		return "", fmt.Errorf("too many attempts, request a new code")
 	}
 	if time.Now().After(expires) {
 		return "", fmt.Errorf("code expired")
+	}
+	if storedCode != code {
+		r.db.ExecContext(ctx, `UPDATE users SET otp_attempts = otp_attempts + 1 WHERE id = ?`, userID)
+		return "", fmt.Errorf("invalid code")
 	}
 
 	// Generate 32-char hex access key (16 random bytes)
@@ -90,10 +101,9 @@ func (r *UserRepo) VerifyCode(ctx context.Context, userID, code string) (accessK
 
 	_, err = r.db.ExecContext(ctx, `
 		UPDATE users
-		SET access_key = ?, is_email_verified = 1, verification_code = NULL,
-		    password_hash = ?
+		SET access_key = ?, is_email_verified = 1, verification_code = NULL, otp_attempts = 0
 		WHERE id = ?
-	`, accessKey, accessKey, userID)
+	`, accessKey, userID)
 	if err != nil {
 		return "", fmt.Errorf("update user: %w", err)
 	}
@@ -105,9 +115,9 @@ func (r *UserRepo) FindByAccessKey(ctx context.Context, key string) (*VisitorUse
 	u := &VisitorUser{}
 	var displayName sql.NullString
 	err := r.db.QueryRowContext(ctx, `
-		SELECT id, COALESCE(display_name, name), email, access_key, is_email_verified
+		SELECT id, COALESCE(display_name, name), email, COALESCE(role,'user'), access_key, is_email_verified
 		FROM users WHERE access_key = ? AND is_email_verified = 1
-	`, key).Scan(&u.ID, &displayName, &u.Email, &u.AccessKey, &u.IsVerified)
+	`, key).Scan(&u.ID, &displayName, &u.Email, &u.Role, &u.AccessKey, &u.IsVerified)
 	if err != nil {
 		return nil, err
 	}
@@ -134,9 +144,9 @@ func (r *UserRepo) VerifyGoogleUser(ctx context.Context, userID string) (accessK
 
 	_, err = r.db.ExecContext(ctx, `
 		UPDATE users
-		SET access_key = ?, is_email_verified = 1, verification_code = NULL, password_hash = ?
+		SET access_key = ?, is_email_verified = 1, verification_code = NULL
 		WHERE id = ?
-	`, accessKey, accessKey, userID)
+	`, accessKey, userID)
 	return accessKey, err
 }
 
@@ -148,7 +158,7 @@ func (r *UserRepo) ResendCode(ctx context.Context, userID string) (string, error
 	}
 	expires := time.Now().Add(10 * time.Minute)
 	_, err = r.db.ExecContext(ctx,
-		`UPDATE users SET verification_code = ?, verification_expires_at = ? WHERE id = ?`,
+		`UPDATE users SET verification_code = ?, verification_expires_at = ?, otp_attempts = 0 WHERE id = ?`,
 		code, expires, userID,
 	)
 	return code, err
@@ -159,8 +169,8 @@ func (r *UserRepo) GetByID(ctx context.Context, id string) (*VisitorUser, error)
 	u := &VisitorUser{}
 	var displayName sql.NullString
 	err := r.db.QueryRowContext(ctx,
-		`SELECT id, COALESCE(display_name, name), email FROM users WHERE id = ?`, id,
-	).Scan(&u.ID, &displayName, &u.Email)
+		`SELECT id, COALESCE(display_name, name), email, COALESCE(role,'user') FROM users WHERE id = ?`, id,
+	).Scan(&u.ID, &displayName, &u.Email, &u.Role)
 	if err != nil {
 		return nil, err
 	}
@@ -243,4 +253,100 @@ func randomDigits(n int) (string, error) {
 		result[i] = digits[num.Int64()]
 	}
 	return string(result), nil
+}
+
+func hashPassword(password string) string {
+	hash, _ := bcrypt.GenerateFromPassword([]byte(password), 12)
+	return string(hash)
+}
+
+func checkPassword(hash, password string) bool {
+	return bcrypt.CompareHashAndPassword([]byte(hash), []byte(password)) == nil
+}
+
+func (r *UserRepo) RegisterWithPassword(ctx context.Context, name, email, password string) (*VisitorUser, error) {
+	if strings.TrimSpace(name) == "" {
+		name = email
+	}
+
+	var existingID string
+	err := r.db.QueryRowContext(ctx, `SELECT id FROM users WHERE email = ? LIMIT 1`, email).Scan(&existingID)
+	if err == nil && existingID != "" {
+		return nil, fmt.Errorf("email already registered")
+	}
+	if err != nil && err != sql.ErrNoRows {
+		return nil, fmt.Errorf("failed to check user: %w", err)
+	}
+
+	userID := uuid.New().String()
+	keyBytes := make([]byte, 24)
+	if _, err := rand.Read(keyBytes); err != nil {
+		return nil, fmt.Errorf("generate access key: %w", err)
+	}
+	accessKey := base64.RawURLEncoding.EncodeToString(keyBytes)
+	passHash := hashPassword(password)
+
+	_, err = r.db.ExecContext(ctx, `
+		INSERT INTO users (id, email, password_hash, name, display_name, role, is_active, access_key, is_email_verified)
+		VALUES (?, ?, ?, ?, ?, 'user', 1, ?, 1)
+	`, userID, email, passHash, name, name, accessKey)
+	if err != nil {
+		return nil, fmt.Errorf("failed to create user: %w", err)
+	}
+
+	return &VisitorUser{
+		ID:         userID,
+		Name:       name,
+		Email:      email,
+		Role:       "user",
+		AccessKey:  accessKey,
+		IsVerified: true,
+	}, nil
+}
+
+func (r *UserRepo) LoginWithPassword(ctx context.Context, email, password string) (*VisitorUser, error) {
+	var u VisitorUser
+	var passHash string
+	var isActive bool
+	var displayName sql.NullString
+
+	err := r.db.QueryRowContext(ctx, `
+		SELECT id, COALESCE(display_name, name), email, COALESCE(role,'user'), COALESCE(access_key,''), COALESCE(password_hash,''), is_active, is_email_verified
+		FROM users WHERE email = ? LIMIT 1
+	`, email).Scan(&u.ID, &displayName, &u.Email, &u.Role, &u.AccessKey, &passHash, &isActive, &u.IsVerified)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, fmt.Errorf("invalid credentials")
+		}
+		return nil, fmt.Errorf("failed to load user: %w", err)
+	}
+
+	if !isActive {
+		return nil, fmt.Errorf("account is inactive")
+	}
+	if passHash == "" {
+		return nil, fmt.Errorf("invalid credentials")
+	}
+	if !checkPassword(passHash, password) {
+		return nil, fmt.Errorf("invalid credentials")
+	}
+	if !u.IsVerified {
+		return nil, fmt.Errorf("email not verified")
+	}
+	if displayName.Valid {
+		u.Name = displayName.String
+	}
+
+	if u.AccessKey == "" {
+		keyBytes := make([]byte, 24)
+		if _, err := rand.Read(keyBytes); err != nil {
+			return nil, fmt.Errorf("generate access key: %w", err)
+		}
+		u.AccessKey = base64.RawURLEncoding.EncodeToString(keyBytes)
+		if _, err := r.db.ExecContext(ctx, `UPDATE users SET access_key = ? WHERE id = ?`, u.AccessKey, u.ID); err != nil {
+			return nil, fmt.Errorf("failed to persist access key: %w", err)
+		}
+	}
+
+	return &u, nil
 }

@@ -8,6 +8,7 @@ import (
 
 	"github.com/autobot-wijaya/autobot-api/internal/config"
 	"github.com/autobot-wijaya/autobot-api/internal/email"
+	"github.com/autobot-wijaya/autobot-api/internal/middleware"
 	"github.com/autobot-wijaya/autobot-api/internal/repository"
 	"github.com/gofiber/fiber/v2"
 	"go.uber.org/zap"
@@ -136,5 +137,75 @@ func (h *UserHandler) VerifyOTP(c *fiber.Ctx) error {
 		"access_key": accessKey,
 		"name":       user.Name,
 		"email":      user.Email,
+		"role":       user.Role,
 	})
+}
+
+// POST /api/auth/register — register with email/password
+func (h *UserHandler) Register(c *fiber.Ctx) error {
+	var body struct {
+		Name     string `json:"name"`
+		Email    string `json:"email"`
+		Password string `json:"password"`
+	}
+	if err := c.BodyParser(&body); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "invalid body"})
+	}
+	if !reEmail.MatchString(body.Email) {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "invalid email"})
+	}
+	if len(body.Password) < 6 {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "password minimal 6 karakter"})
+	}
+
+	user, err := h.userRepo.RegisterWithPassword(c.Context(), body.Name, body.Email, body.Password)
+	if err != nil {
+		if err.Error() == "email already registered" {
+			return c.Status(fiber.StatusConflict).JSON(fiber.Map{"error": err.Error()})
+		}
+		h.log.Error("register user", zap.Error(err))
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "failed to register"})
+	}
+
+	return c.JSON(fiber.Map{
+		"access_key": user.AccessKey,
+		"name":       user.Name,
+		"email":      user.Email,
+		"role":       user.Role,
+	})
+}
+
+// POST /api/auth/login — login with email/password
+func (h *UserHandler) Login(c *fiber.Ctx) error {
+	var body struct {
+		Email    string `json:"email"`
+		Password string `json:"password"`
+	}
+	if err := c.BodyParser(&body); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "invalid body"})
+	}
+	if !reEmail.MatchString(body.Email) || body.Password == "" {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "email/password wajib diisi"})
+	}
+
+	user, err := h.userRepo.LoginWithPassword(c.Context(), body.Email, body.Password)
+	if err != nil {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": err.Error()})
+	}
+
+	resp := fiber.Map{
+		"access_key": user.AccessKey,
+		"name":       user.Name,
+		"email":      user.Email,
+		"role":       user.Role,
+	}
+
+	// Admin users also get a JWT so they can access the admin panel directly
+	if user.Role == "admin" {
+		if jwt, err := middleware.GenerateToken(h.cfg, user.ID, user.Email, user.Role); err == nil {
+			resp["admin_token"] = jwt
+		}
+	}
+
+	return c.JSON(resp)
 }

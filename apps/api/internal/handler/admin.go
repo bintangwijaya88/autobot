@@ -363,6 +363,31 @@ func (h *AdminHandler) UpdatePage(c *fiber.Ctx) error {
 	return c.JSON(fiber.Map{"ok": true})
 }
 
+func (h *AdminHandler) CreatePage(c *fiber.Ctx) error {
+	var req struct {
+		Slug      string `json:"slug"`
+		Title     string `json:"title"`
+		Content   string `json:"content"`
+		Published bool   `json:"is_published"`
+		SortOrder int    `json:"sort_order"`
+	}
+	if err := c.BodyParser(&req); err != nil || req.Title == "" || req.Slug == "" {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "slug and title required"})
+	}
+	id := "page-" + req.Slug
+	if err := h.productRepo.CreatePage(c.Context(), id, req.Slug, req.Title, req.Content, req.Published, req.SortOrder); err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "failed to create: " + err.Error()})
+	}
+	return c.JSON(fiber.Map{"slug": req.Slug})
+}
+
+func (h *AdminHandler) DeletePage(c *fiber.Ctx) error {
+	if err := h.productRepo.DeletePage(c.Context(), c.Params("slug")); err != nil {
+		return c.Status(500).JSON(fiber.Map{"error": "failed to delete"})
+	}
+	return c.JSON(fiber.Map{"ok": true})
+}
+
 // ─── Knowledge Base ───────────────────────────────────────────────────────────
 
 func (h *AdminHandler) ListKnowledge(c *fiber.Ctx) error {

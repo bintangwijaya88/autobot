@@ -8,6 +8,7 @@ import (
 	"unicode"
 
 	"github.com/autobot-wijaya/autobot-api/internal/bot"
+	"github.com/autobot-wijaya/autobot-api/internal/calendar"
 	"github.com/autobot-wijaya/autobot-api/internal/email"
 	"github.com/autobot-wijaya/autobot-api/internal/metrics"
 	"github.com/autobot-wijaya/autobot-api/internal/model"
@@ -20,9 +21,9 @@ import (
 	"go.uber.org/zap"
 )
 
-var reEmail     = regexp.MustCompile(`^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$`)
+var reEmail = regexp.MustCompile(`^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$`)
 var reAccessKey = regexp.MustCompile(`^[0-9a-f]{32}$`)
-var reCode      = regexp.MustCompile(`^\d{6}$`)
+var reCode = regexp.MustCompile(`^\d{6}$`)
 
 type ChatHandler struct {
 	hub         *ws.Hub
@@ -32,6 +33,7 @@ type ChatHandler struct {
 	engine      *bot.Engine
 	mailer      *email.Mailer
 	mt          *payment.Midtrans
+	calendar    *calendar.GoogleCalendar
 	log         *zap.Logger
 }
 
@@ -43,10 +45,11 @@ func NewChatHandler(
 	engine *bot.Engine,
 	mailer *email.Mailer,
 	mt *payment.Midtrans,
+	calendar *calendar.GoogleCalendar,
 	log *zap.Logger,
 ) *ChatHandler {
 	return &ChatHandler{hub: hub, chatRepo: chatRepo, productRepo: productRepo,
-		userRepo: userRepo, engine: engine, mailer: mailer, mt: mt, log: log}
+		userRepo: userRepo, engine: engine, mailer: mailer, mt: mt, calendar: calendar, log: log}
 }
 
 // ─── REST ────────────────────────────────────────────────────────────────────
@@ -508,12 +511,24 @@ func (h *ChatHandler) handleFormSubmit(client *ws.Client, sessionID string, wsMs
 	}
 
 	sub := &model.ContactSubmission{Type: wsMsg.FormType, SessionID: &sessionID}
-	if v, ok := formData["name"]; ok { sub.Name = v }
-	if v, ok := formData["email"]; ok && v != "" { sub.Email = &v }
-	if v, ok := formData["phone"]; ok && v != "" { sub.Phone = &v }
-	if v, ok := formData["company"]; ok && v != "" { sub.Company = &v }
-	if v, ok := formData["message"]; ok && v != "" { sub.Message = &v }
-	if v, ok := formData["product"]; ok && v != "" { sub.ProductInterest = &v }
+	if v, ok := formData["name"]; ok {
+		sub.Name = v
+	}
+	if v, ok := formData["email"]; ok && v != "" {
+		sub.Email = &v
+	}
+	if v, ok := formData["phone"]; ok && v != "" {
+		sub.Phone = &v
+	}
+	if v, ok := formData["company"]; ok && v != "" {
+		sub.Company = &v
+	}
+	if v, ok := formData["message"]; ok && v != "" {
+		sub.Message = &v
+	}
+	if v, ok := formData["product"]; ok && v != "" {
+		sub.ProductInterest = &v
+	}
 	sub.FormData, _ = json.Marshal(formData)
 
 	if h.productRepo != nil {
@@ -523,6 +538,10 @@ func (h *ChatHandler) handleFormSubmit(client *ws.Client, sessionID string, wsMs
 	// Consultation payment: skip contact form, create Midtrans charge instead
 	if wsMsg.FormType == "consultation_payment" {
 		h.handleConsultationPayment(client, sessionID, formData)
+		return
+	}
+	if wsMsg.FormType == "consultation_booking" {
+		h.handleConsultationBooking(client, sessionID, formData)
 		return
 	}
 
@@ -588,10 +607,85 @@ func (h *ChatHandler) handleConsultationPayment(client *ws.Client, sessionID str
 	h.chatRepo.SaveMessage(ctx, sessionID, "system", "payment:"+orderID, nil, "consultation_payment")
 }
 
+func (h *ChatHandler) handleConsultationBooking(client *ws.Client, sessionID string, data map[string]string) {
+	ctx := context.Background()
+
+	if h.calendar == nil || !h.calendar.Enabled() {
+		msg := "⚠️ Booking konsultasi belum aktif karena Google Calendar belum dikonfigurasi. Tim kami tetap akan menghubungi Anda via WhatsApp."
+		client.SendJSON(model.WSMessage{
+			Type:        "message",
+			Role:        "assistant",
+			Content:     msg,
+			Suggestions: bot.GetSuggestions("consultation"),
+		})
+		h.chatRepo.SaveMessage(ctx, sessionID, "assistant", msg, nil, "consultation_booking")
+		return
+	}
+
+	duration := calendar.ParseDurationMinutes(data["duration_minutes"])
+	if duration == 0 {
+		duration = 60
+	}
+
+	result, err := h.calendar.CreateConsultationBooking(ctx, calendar.BookingRequest{
+		Name:            data["name"],
+		Email:           data["email"],
+		Phone:           data["phone"],
+		Company:         data["company"],
+		Topic:           data["topic"],
+		Notes:           data["notes"],
+		PreferredDate:   data["preferred_date"],
+		PreferredTime:   data["preferred_time"],
+		DurationMinutes: duration,
+	})
+	if err != nil {
+		h.log.Error("create consultation booking", zap.Error(err))
+		msg := "⚠️ Saya belum bisa membuat event kalender saat ini. Tim kami akan konfirmasi jadwal lewat WhatsApp."
+		client.SendJSON(model.WSMessage{
+			Type:        "message",
+			Role:        "assistant",
+			Content:     msg,
+			Suggestions: bot.GetSuggestions("consultation"),
+		})
+		h.chatRepo.SaveMessage(ctx, sessionID, "assistant", msg, nil, "consultation_booking")
+		return
+	}
+
+	startText := result.StartTime.In(result.StartTime.Location()).Format("02 Jan 2006, 15:04")
+	endText := result.EndTime.In(result.EndTime.Location()).Format("15:04")
+	msg := "✅ Konsultasi berhasil dijadwalkan untuk **" + startText + " - " + endText + "**.\n\n" +
+		"Undangan kalender sudah dibuat" + func() string {
+		if result.HTMLLink != "" {
+			return ".\n\nLink event: " + result.HTMLLink
+		}
+		return "."
+	}() +
+		"\n\nTim kami akan follow up via WhatsApp sebelum sesi dimulai."
+
+	client.SendJSON(model.WSMessage{
+		Type:        "message",
+		Role:        "assistant",
+		Content:     msg,
+		Suggestions: bot.GetSuggestions("consultation"),
+	})
+	h.chatRepo.SaveMessage(ctx, sessionID, "assistant", msg, nil, "consultation_booking")
+}
+
 // ─── History ──────────────────────────────────────────────────────────────────
 
 func (h *ChatHandler) GetHistory(c *fiber.Ctx) error {
-	msgs, err := h.chatRepo.GetSessionMessages(c.Context(), c.Params("id"), 100)
+	sessionID := c.Params("id")
+	visitorID := c.Get("X-Visitor-ID")
+
+	session, err := h.chatRepo.GetSession(c.Context(), sessionID)
+	if err != nil {
+		return c.Status(404).JSON(fiber.Map{"error": "not found"})
+	}
+	if visitorID == "" || session.VisitorID != visitorID {
+		return c.Status(fiber.StatusForbidden).JSON(fiber.Map{"error": "forbidden"})
+	}
+
+	msgs, err := h.chatRepo.GetSessionMessages(c.Context(), sessionID, 100)
 	if err != nil {
 		return c.Status(404).JSON(fiber.Map{"error": "not found"})
 	}
@@ -603,9 +697,15 @@ func (h *ChatHandler) GetHistory(c *fiber.Ctx) error {
 // looksLikeName returns true for short mostly-alphabetic strings that aren't emails/URLs/questions.
 func looksLikeName(s string) bool {
 	s = strings.TrimSpace(s)
-	if len(s) < 2 || len(s) > 40 { return false }
-	if strings.ContainsAny(s, "@/?!.#%") { return false }
-	if strings.Contains(strings.ToLower(s), "http") { return false }
+	if len(s) < 2 || len(s) > 40 {
+		return false
+	}
+	if strings.ContainsAny(s, "@/?!.#%") {
+		return false
+	}
+	if strings.Contains(strings.ToLower(s), "http") {
+		return false
+	}
 
 	alphaOrSpace := 0
 	for _, r := range s {
@@ -618,9 +718,13 @@ func looksLikeName(s string) bool {
 
 func maskEmail(e string) string {
 	parts := strings.SplitN(e, "@", 2)
-	if len(parts) != 2 { return e }
+	if len(parts) != 2 {
+		return e
+	}
 	local := parts[0]
-	if len(local) <= 2 { return local + "@" + parts[1] }
+	if len(local) <= 2 {
+		return local + "@" + parts[1]
+	}
 	return string([]rune(local)[0]) +
 		strings.Repeat("*", len([]rune(local))-2) +
 		string([]rune(local)[len([]rune(local))-1]) +
@@ -727,4 +831,3 @@ func extractDocTitle(content string) string {
 	}
 	return "Dokumen"
 }
-

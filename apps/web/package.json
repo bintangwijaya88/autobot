@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "playwright": "^1.60.0",
     "typescript": "^5.7.3"
   }
 }

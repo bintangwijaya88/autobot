@@ -19,6 +19,8 @@ func NewChatRepository(db *sql.DB) *ChatRepository {
 	return &ChatRepository{db: db}
 }
 
+func (r *ChatRepository) DB() *sql.DB { return r.db }
+
 func (r *ChatRepository) CreateSession(ctx context.Context, visitorID, source string, metadata map[string]interface{}) (*model.ChatSession, error) {
 	meta, _ := json.Marshal(metadata)
 	id := uuid.New().String()

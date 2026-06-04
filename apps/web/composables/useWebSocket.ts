@@ -8,8 +8,10 @@ export const useWebSocket = () => {
   const reconnectTimer = ref<NodeJS.Timeout | null>(null)
   const messageHandlers = ref<Array<(msg: WSMessage) => void>>([])
   let reconnectAttempts = 0
+  let shouldReconnect = true
 
   const connect = (sid?: string) => {
+    shouldReconnect = true
     if (socket?.readyState === WebSocket.OPEN) return
 
     const wsUrl = sid
@@ -39,6 +41,7 @@ export const useWebSocket = () => {
     socket.onclose = () => {
       isConnected.value = false
       socket = null
+      if (!shouldReconnect) return
       // Exponential backoff reconnect
       const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 30000)
       reconnectAttempts++
@@ -88,6 +91,7 @@ export const useWebSocket = () => {
   }
 
   const disconnect = () => {
+    shouldReconnect = false
     if (reconnectTimer.value) clearTimeout(reconnectTimer.value)
     socket?.close()
     socket = null

@@ -31,6 +31,9 @@ func applyMigrations(db *sql.DB) error {
 		createPages,
 		createContactSubmissions,
 		createKnowledgeBase,
+		createMeetings,
+		createBlogPosts,
+		createIntegrations,
 	}
 
 	for i, m := range migrations {
@@ -48,6 +51,7 @@ func applyMigrations(db *sql.DB) error {
 		`ALTER TABLE users ADD COLUMN verification_expires_at DATETIME`,
 		`ALTER TABLE users ADD COLUMN is_email_verified TINYINT(1) DEFAULT 0`,
 		`ALTER TABLE users ADD UNIQUE INDEX idx_access_key (access_key)`,
+		`ALTER TABLE users ADD COLUMN otp_attempts INT DEFAULT 0`,
 	}
 	for _, a := range alters {
 		if _, err := db.Exec(a); err != nil {
@@ -185,4 +189,72 @@ CREATE TABLE IF NOT EXISTS knowledge_base (
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     INDEX idx_category (category),
     FULLTEXT INDEX idx_fulltext (question, answer)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`
+
+const createMeetings = `
+CREATE TABLE IF NOT EXISTS meetings (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(50),
+    company VARCHAR(255),
+    topic TEXT,
+    preferred_date DATE,
+    preferred_time VARCHAR(20),
+    notes TEXT,
+    amount INT NOT NULL DEFAULT 50000,
+    status VARCHAR(50) DEFAULT 'pending',
+    payment_status VARCHAR(50) DEFAULT 'unpaid',
+    payment_id VARCHAR(255),
+    payment_url VARCHAR(500),
+    payment_method VARCHAR(100),
+    xendit_invoice_id VARCHAR(255),
+    session_id VARCHAR(36),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_email (email),
+    INDEX idx_status (status),
+    INDEX idx_payment_status (payment_status)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`
+
+const createBlogPosts = `
+CREATE TABLE IF NOT EXISTS blog_posts (
+    id VARCHAR(36) PRIMARY KEY,
+    slug VARCHAR(200) UNIQUE NOT NULL,
+    title VARCHAR(500) NOT NULL,
+    excerpt TEXT,
+    content LONGTEXT NOT NULL,
+    cover_image VARCHAR(500),
+    author VARCHAR(255) DEFAULT 'Autobot Team',
+    category VARCHAR(100) DEFAULT 'general',
+    tags JSON,
+    is_published TINYINT(1) DEFAULT 0,
+    published_at DATETIME,
+    read_time_minutes INT DEFAULT 5,
+    sort_order INT DEFAULT 0,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_slug (slug),
+    INDEX idx_published (is_published),
+    INDEX idx_category (category),
+    FULLTEXT INDEX idx_ft (title, excerpt, content)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`
+
+const createIntegrations = `
+CREATE TABLE IF NOT EXISTS integrations (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    slug VARCHAR(100) UNIQUE NOT NULL,
+    description TEXT,
+    logo_url VARCHAR(500),
+    category VARCHAR(100) DEFAULT 'general',
+    status VARCHAR(50) DEFAULT 'coming_soon',
+    is_featured TINYINT(1) DEFAULT 0,
+    sort_order INT DEFAULT 0,
+    docs_url VARCHAR(500),
+    knowledge_base TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_status (status),
+    INDEX idx_category (category)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`

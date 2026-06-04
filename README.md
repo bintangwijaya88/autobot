@@ -52,5 +52,6 @@ make migrate       # Run DB migrations
 make seed          # Seed initial data
 make test          # Run all tests
 make build         # Build Docker images
+make prepare-vps   # Build a VPS upload bundle in dist/vps
 make deploy        # Deploy to production
 ```

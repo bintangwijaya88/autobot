@@ -323,6 +323,20 @@ func buildFormContent(formType, title string) interface{} {
 			model.FormField{Name: "product", Label: "Produk yang Diminati", Type: "text", Required: false},
 			model.FormField{Name: "notes", Label: "Catatan", Type: "textarea", Required: false},
 		)
+	} else if formType == "consultation_booking" {
+		fields = append(fields,
+			model.FormField{Name: "preferred_date", Label: "Tanggal Pilihan", Type: "date", Required: true},
+			model.FormField{Name: "preferred_time", Label: "Jam Pilihan", Type: "time", Required: true},
+			model.FormField{
+				Name:     "duration_minutes",
+				Label:    "Durasi",
+				Type:     "select",
+				Required: true,
+				Options:  []string{"30", "45", "60"},
+			},
+			model.FormField{Name: "topic", Label: "Topik Konsultasi", Type: "text", Required: false, Placeholder: "Contoh: integrasi WhatsApp + CRM"},
+			model.FormField{Name: "notes", Label: "Catatan Tambahan", Type: "textarea", Required: false, Placeholder: "Cerita singkat kebutuhan Anda"},
+		)
 	} else {
 		fields = append(fields,
 			model.FormField{Name: "message", Label: "Kebutuhan Anda", Type: "textarea", Required: true, Placeholder: "Ceritakan kebutuhan Anda..."},
@@ -356,6 +370,12 @@ func GetSuggestions(currentIntent string) []model.SuggestedPrompt {
 			{Text: "Ceritakan tentang WaBlast", Icon: "send", Category: "product"},
 			{Text: "Ceritakan tentang WaBotIQ", Icon: "bot", Category: "product"},
 			{Text: "Harga produk chatbot", Icon: "tag", Category: "pricing"},
+		}
+	case IntentConsultation:
+		return []model.SuggestedPrompt{
+			{Text: "Jadwalkan konsultasi", Icon: "calendar", Category: "consultation"},
+			{Text: "Hitung kebutuhan saya", Icon: "calculator", Category: "consultation"},
+			{Text: "Tanya dulu sebelum booking", Icon: "message-circle", Category: "consultation"},
 		}
 	default:
 		return []model.SuggestedPrompt{

@@ -9,6 +9,7 @@ useSeoMeta({
 
 const PRICE = 50_000
 const fmt = (n: number) => new Intl.NumberFormat('id-ID').format(n)
+const config = useRuntimeConfig()
 
 // ── Step state ────────────────────────────────────────────────────────────────
 const step = ref<1 | 2 | 3>(1)
@@ -43,10 +44,38 @@ function goToStep2() {
 // ── Step 2: Form ──────────────────────────────────────────────────────────────
 const form = reactive({ name: '', whatsapp: '', email: '', company: '', notes: '' })
 const formError = ref('')
+const termsAccepted = ref(false)
+const needSuggestions = [
+  'Chatbot WhatsApp',
+  'Broadcast / Blast',
+  'Auto-reply',
+  'Integrasi API',
+  'Workflow Automation',
+  'AI Agent',
+  'CRM / Sales',
+  'Klinik / RS',
+  'E-commerce',
+  'Custom Development',
+]
+const selectedNeeds = ref<string[]>([])
+
+function toggleNeed(need: string) {
+  if (selectedNeeds.value.includes(need)) {
+    selectedNeeds.value = selectedNeeds.value.filter(item => item !== need)
+    return
+  }
+  selectedNeeds.value = [...selectedNeeds.value, need]
+}
+
+const selectedNeedsLabel = computed(() => selectedNeeds.value.join(', '))
 
 function goToCheckout() {
-  if (!form.name || !form.whatsapp) {
-    formError.value = 'Nama dan nomor WhatsApp wajib diisi.'
+  if (!form.name || !form.whatsapp || !form.email) {
+    formError.value = 'Nama, nomor WhatsApp, dan email wajib diisi.'
+    return
+  }
+  if (!termsAccepted.value) {
+    formError.value = 'Silakan setujui syarat konsultasi terlebih dahulu.'
     return
   }
   formError.value = ''
@@ -55,24 +84,54 @@ function goToCheckout() {
 }
 
 // ── Step 3: Checkout ──────────────────────────────────────────────────────────
-const paid = ref(false)
+const paymentBusy = ref(false)
+const paymentError = ref('')
 
-function confirmPayment() {
-  paid.value = true
-  const msg = encodeURIComponent(
-    `Halo AutobotWS! Saya sudah transfer booking konsultasi:\n\n` +
-    `Nama: ${form.name}\n` +
-    `WhatsApp: ${form.whatsapp}\n` +
-    `Email: ${form.email || '-'}\n` +
-    `Perusahaan: ${form.company || '-'}\n` +
-    `Topik: ${selectedTopicLabel.value}\n` +
-    `Catatan: ${form.notes || '-'}\n\n` +
-    `Nominal: Rp ${fmt(PRICE)}\n` +
-    `[Lampirkan bukti transfer/screenshot QRIS]`
-  )
-  setTimeout(() => {
-    window.open(`https://wa.me/6282164867681?text=${msg}`, '_blank')
-  }, 400)
+function buildNotes() {
+  const parts = [
+    form.notes?.trim(),
+    selectedNeedsLabel.value ? `Tag kebutuhan: ${selectedNeedsLabel.value}` : '',
+    `Topik: ${selectedTopicLabel.value}`,
+  ].filter(Boolean)
+  return parts.join('\n\n')
+}
+
+async function createInvoice() {
+  if (paymentBusy.value) return
+  paymentBusy.value = true
+  paymentError.value = ''
+
+  try {
+    const payload = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.whatsapp.trim(),
+      company: form.company.trim(),
+      topic: selectedTopicLabel.value,
+      preferred_date: '',
+      preferred_time: '',
+      notes: buildNotes(),
+    }
+
+    const res = await $fetch<{ meeting_id: string; payment_url?: string; invoice_id?: string; note?: string }>(
+      `${config.public.apiBase}/api/meetings`,
+      {
+        method: 'POST',
+        body: payload,
+      },
+    )
+
+    if (res.payment_url) {
+      window.location.href = res.payment_url
+      return
+    }
+
+    paymentError.value = res.note || 'Invoice Xendit belum tersedia. Silakan coba lagi atau hubungi tim kami.'
+  } catch (err: any) {
+    paymentError.value = err?.data?.error || err?.message || 'Gagal membuat invoice Xendit.'
+  } finally {
+    paymentBusy.value = false
+  }
 }
 </script>
 
@@ -212,10 +271,40 @@ function confirmPayment() {
 
               <div>
                 <label class="block text-xs text-gray-400 mb-1.5 font-medium">Ceritakan Kebutuhan Anda</label>
+                <div class="mb-3 flex flex-wrap gap-2">
+                  <button
+                    v-for="need in needSuggestions"
+                    :key="need"
+                    type="button"
+                    @click="toggleNeed(need)"
+                    class="rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-150 active:scale-[0.98]"
+                    :style="selectedNeeds.includes(need)
+                      ? 'background: rgba(124,58,237,0.22); border: 1px solid rgba(124,58,237,0.55); color: #e9d5ff;'
+                      : 'background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); color: rgba(255,255,255,0.55);'"
+                  >
+                    {{ need }}
+                  </button>
+                </div>
+                <p class="mb-2 text-[11.5px]" style="color: rgba(255,255,255,0.36);">
+                  Pilih satu atau beberapa tag kebutuhan, lalu tambahkan detail sendiri di kolom bawah.
+                </p>
                 <textarea v-model="form.notes" rows="4"
                   placeholder="Bisnis saya bergerak di bidang... saya butuh chatbot untuk... kendala saya saat ini adalah..."
                   class="w-full px-4 py-2.5 rounded-xl text-sm text-white placeholder-gray-600 outline-none focus:ring-1 focus:ring-purple-500/50 transition-all resize-none"
                   style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);" />
+                <div v-if="selectedNeeds.length" class="mt-3 rounded-2xl p-3" style="background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.16);">
+                  <p class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: #c4b5fd;">Tag kebutuhan terpilih</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      v-for="need in selectedNeeds"
+                      :key="need"
+                      class="rounded-full px-3 py-1 text-[11px] font-medium"
+                      style="background: rgba(255,255,255,0.08); color: #f5f3ff; border: 1px solid rgba(255,255,255,0.12);"
+                    >
+                      {{ need }}
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <p v-if="formError" class="text-red-400 text-sm flex items-center gap-2">⚠ {{ formError }}</p>
@@ -236,6 +325,23 @@ function confirmPayment() {
                 </button>
               </div>
 
+              <label class="flex items-start gap-3 rounded-2xl p-4" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                <input
+                  v-model="termsAccepted"
+                  type="checkbox"
+                  class="mt-1 h-4 w-4 rounded border-white/20 bg-white/5 text-purple-500 focus:ring-purple-500/40"
+                />
+                <div class="min-w-0">
+                  <p class="text-sm font-semibold text-white">
+                    Saya setuju dengan syarat konsultasi
+                  </p>
+                  <p class="mt-1 text-xs leading-relaxed" style="color: rgba(255,255,255,0.42);">
+                    Fee ini <strong class="text-white/75">tidak dapat direfund</strong>. Resume pembahasan hasil meeting dan hasil analisis kebutuhan dalam bentuk PDF akan dikirimkan paling lama <strong class="text-white/75">7 hari kerja</strong> setelah sesi selesai dan seluruh data pendukung diterima.
+                    Untuk keamanan, pastikan scope, referensi, dan PIC yang hadir sudah disiapkan sebelum sesi agar analisis lebih akurat.
+                  </p>
+                </div>
+              </label>
+
               <p class="text-xs text-gray-600 text-center">
                 Dengan melanjutkan, Anda menyetujui
                 <NuxtLink to="/terms-of-service" class="text-gray-500 hover:text-gray-400 underline">Syarat & Ketentuan</NuxtLink>
@@ -253,22 +359,24 @@ function confirmPayment() {
               <span class="text-4xl font-bold text-white">Rp {{ fmt(PRICE) }}</span>
             </div>
             <div class="text-gray-400 text-sm mb-4">untuk 45 menit · commitment fee</div>
-            <div class="border-t border-white/10 pt-4 space-y-2.5">
-              <div class="flex items-start gap-2 text-sm">
-                <span class="text-purple-300 text-xs font-medium shrink-0 mt-0.5">TOPIK</span>
-                <span class="text-white font-medium">{{ selectedTopicLabel }}</span>
+              <div class="border-t border-white/10 pt-4 space-y-2.5">
+                <div class="flex items-start gap-2 text-sm">
+                  <span class="text-purple-300 text-xs font-medium shrink-0 mt-0.5">TOPIK</span>
+                  <span class="text-white font-medium">{{ selectedTopicLabel }}</span>
+                </div>
+                <div v-for="item in [
+                  '45 menit bersama tim AutobotWS',
+                  'Analisis kebutuhan bisnis Anda',
+                  'Resume pembahasan meeting dikirim via PDF',
+                  'Analisis kebutuhan bisnis dalam PDF',
+                  'Rekomendasi solusi AI yang tepat',
+                  'Estimasi biaya & timeline project',
+                  'Dikirim maksimal 7 hari kerja setelah sesi',
+                ]" :key="item" class="flex items-start gap-2 text-sm">
+                  <span class="text-purple-400 shrink-0 mt-0.5">✓</span>
+                  <span class="text-gray-300">{{ item }}</span>
+                </div>
               </div>
-              <div v-for="item in [
-                '45 menit bersama tim AutobotWS',
-                'Analisis kebutuhan bisnis Anda',
-                'Rekomendasi solusi AI yang tepat',
-                'Estimasi biaya & timeline project',
-                'Commitment fee diperhitungkan ke project',
-              ]" :key="item" class="flex items-start gap-2 text-sm">
-                <span class="text-purple-400 shrink-0 mt-0.5">✓</span>
-                <span class="text-gray-300">{{ item }}</span>
-              </div>
-            </div>
           </div>
 
           <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
@@ -290,179 +398,128 @@ function confirmPayment() {
 
     <!-- ── STEP 3: Checkout & Payment ─────────────────────────────────────── -->
     <template v-else-if="step === 3">
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-white mb-2">Pembayaran Xendit</h1>
+        <p class="text-gray-400">
+          Kami akan membuat invoice resmi Xendit untuk nominal commitment fee Rp {{ fmt(PRICE) }}.
+          Setelah invoice terbuka, selesaikan pembayaran di halaman Xendit.
+        </p>
+      </div>
 
-      <template v-if="!paid">
-        <div class="mb-8">
-          <h1 class="text-3xl font-bold text-white mb-2">Pembayaran</h1>
-          <p class="text-gray-400">Scan QRIS di bawah, lalu kirim bukti pembayaran via WhatsApp.</p>
-        </div>
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div class="lg:col-span-3 space-y-4">
+          <div class="rounded-2xl p-6" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.10);">
+            <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-3">Checkout Resmi</div>
+            <h2 class="text-white text-2xl font-semibold mb-3">Buka halaman pembayaran Xendit</h2>
+            <p class="text-sm text-gray-400 leading-relaxed mb-5">
+              Setelah invoice dibuat, Anda akan diarahkan ke checkout Xendit yang mendukung transfer bank, e-wallet, dan QRIS sesuai channel yang aktif di akun Anda.
+            </p>
 
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
-
-          <!-- QRIS (3/5) -->
-          <div class="lg:col-span-3 space-y-4">
-
-            <!-- QRIS Card -->
-            <div class="rounded-2xl p-6 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.10);">
-              <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-4">Scan QRIS untuk Membayar</div>
-
-              <!-- QRIS placeholder -->
-              <div class="mx-auto w-52 h-52 rounded-2xl overflow-hidden flex items-center justify-center mb-4"
-                style="background: white;">
-                <div class="flex flex-col items-center justify-center gap-2 w-full h-full" style="background: #f8f8f8;">
-                  <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
-                    <!-- QR mock pattern -->
-                    <rect x="10" y="10" width="25" height="25" rx="3" fill="#111" opacity="0.8"/>
-                    <rect x="14" y="14" width="17" height="17" rx="1" fill="white"/>
-                    <rect x="17" y="17" width="11" height="11" rx="1" fill="#111" opacity="0.8"/>
-                    <rect x="65" y="10" width="25" height="25" rx="3" fill="#111" opacity="0.8"/>
-                    <rect x="69" y="14" width="17" height="17" rx="1" fill="white"/>
-                    <rect x="72" y="17" width="11" height="11" rx="1" fill="#111" opacity="0.8"/>
-                    <rect x="10" y="65" width="25" height="25" rx="3" fill="#111" opacity="0.8"/>
-                    <rect x="14" y="69" width="17" height="17" rx="1" fill="white"/>
-                    <rect x="17" y="72" width="11" height="11" rx="1" fill="#111" opacity="0.8"/>
-                    <rect x="42" y="10" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="50" y="10" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="42" y="18" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="50" y="18" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="42" y="42" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="50" y="42" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="58" y="42" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="42" y="50" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="58" y="50" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="65" y="42" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="73" y="42" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="81" y="42" width="9" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="10" y="42" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="18" y="42" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="26" y="42" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="10" y="50" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="26" y="50" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="65" y="65" width="5" height="20" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="73" y="65" width="5" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="81" y="65" width="9" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="73" y="73" width="17" height="5" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="73" y="81" width="5" height="9" rx="1" fill="#111" opacity="0.7"/>
-                    <rect x="81" y="81" width="9" height="9" rx="1" fill="#111" opacity="0.7"/>
-                    <!-- Center text -->
-                    <text x="50" y="97" text-anchor="middle" font-size="7" fill="#666" font-family="sans-serif">QRIS</text>
-                  </svg>
-                  <p class="text-xs text-gray-400 font-medium">AutobotWS</p>
-                </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+              <div class="rounded-2xl p-4" style="background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.18);">
+                <div class="text-xs text-purple-300 font-semibold uppercase tracking-wider mb-1">Nama</div>
+                <div class="text-sm text-white font-medium">{{ form.name }}</div>
               </div>
-
-              <div class="text-white font-bold text-2xl mb-1">Rp {{ fmt(PRICE) }}</div>
-              <div class="text-gray-500 text-sm mb-5">Sesi Konsultasi 45 Menit · AutobotWS</div>
-
-              <!-- e-wallet logos -->
-              <div class="flex items-center justify-center gap-3 flex-wrap">
-                <span class="px-3 py-1 rounded-lg text-xs font-semibold" style="background: rgba(0,163,136,0.15); color: #00a388; border: 1px solid rgba(0,163,136,0.25);">GoPay</span>
-                <span class="px-3 py-1 rounded-lg text-xs font-semibold" style="background: rgba(79,134,247,0.15); color: #4f86f7; border: 1px solid rgba(79,134,247,0.25);">OVO</span>
-                <span class="px-3 py-1 rounded-lg text-xs font-semibold" style="background: rgba(255,105,0,0.15); color: #ff6900; border: 1px solid rgba(255,105,0,0.25);">Dana</span>
-                <span class="px-3 py-1 rounded-lg text-xs font-semibold" style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1);">m-Banking</span>
-                <span class="px-3 py-1 rounded-lg text-xs font-semibold" style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1);">+ lainnya</span>
+              <div class="rounded-2xl p-4" style="background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.18);">
+                <div class="text-xs text-purple-300 font-semibold uppercase tracking-wider mb-1">Topik</div>
+                <div class="text-sm text-white font-medium">{{ selectedTopicLabel }}</div>
+              </div>
+              <div class="rounded-2xl p-4" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                <div class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">WhatsApp</div>
+                <div class="text-sm text-white font-medium">{{ form.whatsapp }}</div>
+              </div>
+              <div class="rounded-2xl p-4" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                <div class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">Email</div>
+                <div class="text-sm text-white font-medium">{{ form.email }}</div>
               </div>
             </div>
 
-            <!-- Info -->
-            <div class="rounded-xl p-4 flex items-start gap-3" style="background: rgba(234,179,8,0.06); border: 1px solid rgba(234,179,8,0.18);">
+            <div class="rounded-xl p-4 flex items-start gap-3 mb-5" style="background: rgba(234,179,8,0.06); border: 1px solid rgba(234,179,8,0.18);">
               <span class="text-yellow-400 shrink-0 text-base leading-none mt-0.5">ℹ</span>
-              <p class="text-sm text-yellow-200/70 leading-relaxed">
-                Setelah membayar, klik <strong class="text-yellow-200">Konfirmasi Pembayaran</strong> di bawah untuk mengirim bukti transfer via WhatsApp. Tim kami akan segera konfirmasi jadwal.
+              <p class="text-sm text-yellow-200/80 leading-relaxed">
+                Pastikan popup tidak diblokir browser. Jika invoice gagal dibuat, kami tampilkan pesan error dan Anda tetap bisa lanjut lewat WhatsApp.
               </p>
             </div>
 
+            <p v-if="paymentError" class="mb-4 text-sm text-red-300 rounded-xl px-4 py-3" style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.18);">
+              {{ paymentError }}
+            </p>
+
             <div class="flex gap-3">
-              <button @click="step = 2"
+              <button
+                @click="step = 2"
                 class="px-5 py-3 rounded-xl text-sm font-medium transition-all"
-                style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.10);">
+                style="background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.10);"
+              >
                 ← Kembali
               </button>
-              <button @click="confirmPayment"
-                class="flex-1 py-3 rounded-xl font-semibold text-sm transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2"
-                style="background: linear-gradient(135deg, #16a34a, #15803d); color: white;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              <button
+                @click="createInvoice"
+                :disabled="paymentBusy"
+                class="flex-1 py-3 rounded-xl font-semibold text-sm transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                style="background: linear-gradient(135deg, #7c3aed, #2563eb); color: white;"
+              >
+                <svg v-if="paymentBusy" class="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-opacity="0.25" stroke-width="3"/>
+                  <path d="M21 12a9 9 0 0 1-9 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                 </svg>
-                Sudah Bayar — Kirim Bukti via WhatsApp
+                <span>{{ paymentBusy ? 'Membuat Invoice...' : 'Buat Invoice Xendit' }}</span>
               </button>
             </div>
           </div>
+        </div>
 
-          <!-- Order summary (2/5) -->
-          <div class="lg:col-span-2 space-y-4">
-            <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.10);">
-              <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-4">Ringkasan Order</div>
-              <div class="space-y-3 text-sm">
-                <div class="flex justify-between">
-                  <span class="text-gray-400">Layanan</span>
-                  <span class="text-white font-medium">Sesi Konsultasi 45 min</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-400">Topik</span>
-                  <span class="text-white font-medium text-right max-w-[60%]">{{ selectedTopicLabel }}</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-400">Nama</span>
-                  <span class="text-white">{{ form.name }}</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-400">WhatsApp</span>
-                  <span class="text-white">{{ form.whatsapp }}</span>
-                </div>
-                <div v-if="form.company" class="flex justify-between">
-                  <span class="text-gray-400">Perusahaan</span>
-                  <span class="text-white">{{ form.company }}</span>
-                </div>
-                <div class="border-t border-white/10 pt-3 flex justify-between">
-                  <span class="text-gray-300 font-semibold">Total</span>
-                  <span class="text-white font-bold text-lg">Rp {{ fmt(PRICE) }}</span>
-                </div>
+        <div class="lg:col-span-2 space-y-4">
+          <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.10);">
+            <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-4">Ringkasan Order</div>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-400">Layanan</span>
+                <span class="text-white font-medium">Sesi Konsultasi 45 min</span>
               </div>
-            </div>
-
-            <div class="rounded-2xl p-5 space-y-2.5" style="background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.18);">
-              <div class="text-xs text-green-400 font-semibold uppercase tracking-wider mb-1">Yang Anda Dapatkan</div>
-              <div v-for="item in [
-                '45 menit sesi 1-on-1',
-                'Analisis kebutuhan bisnis',
-                'Rekomendasi solusi AI',
-                'Estimasi biaya & timeline',
-                'Fee diperhitungkan ke project',
-              ]" :key="item" class="flex items-center gap-2 text-sm">
-                <span class="text-green-400 shrink-0">✓</span>
-                <span class="text-gray-300">{{ item }}</span>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Topik</span>
+                <span class="text-white font-medium text-right max-w-[60%]">{{ selectedTopicLabel }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">Nama</span>
+                <span class="text-white">{{ form.name }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">WhatsApp</span>
+                <span class="text-white">{{ form.whatsapp }}</span>
+              </div>
+              <div v-if="selectedNeeds.length" class="flex justify-between gap-4">
+                <span class="text-gray-400">Kebutuhan</span>
+                <span class="text-white text-right max-w-[60%]">{{ selectedNeedsLabel }}</span>
+              </div>
+              <div v-if="form.company" class="flex justify-between">
+                <span class="text-gray-400">Perusahaan</span>
+                <span class="text-white">{{ form.company }}</span>
+              </div>
+              <div class="border-t border-white/10 pt-3 flex justify-between">
+                <span class="text-gray-300 font-semibold">Total</span>
+                <span class="text-white font-bold text-lg">Rp {{ fmt(PRICE) }}</span>
               </div>
             </div>
           </div>
-        </div>
-      </template>
 
-      <!-- ── Paid state ───────────────────────────────────────────────────── -->
-      <template v-else>
-        <div class="max-w-lg mx-auto rounded-2xl border border-green-500/30 bg-green-500/10 p-10 text-center">
-          <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style="background: rgba(34,197,94,0.15);">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-          </div>
-          <h2 class="text-2xl font-bold text-white mb-2">Terima Kasih!</h2>
-          <p class="text-gray-400 mb-1">WhatsApp terbuka otomatis — kirimkan bukti transfer Anda.</p>
-          <p class="text-gray-500 text-sm mb-6">Tim kami akan konfirmasi jadwal dalam 1×24 jam hari kerja.</p>
-          <div class="flex gap-3 justify-center flex-wrap">
-            <a href="https://wa.me/6282164867681" target="_blank"
-              class="px-5 py-2.5 rounded-xl text-sm font-semibold"
-              style="background: #22c55e; color: white;">
-              Buka WhatsApp
-            </a>
-            <NuxtLink to="/"
-              class="px-5 py-2.5 rounded-xl text-sm font-medium"
-              style="background: rgba(255,255,255,0.08); color: #F0F0F0; border: 1px solid rgba(255,255,255,0.12);">
-              Kembali ke Beranda
-            </NuxtLink>
+          <div class="rounded-2xl p-5 space-y-2.5" style="background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.18);">
+            <div class="text-xs text-green-400 font-semibold uppercase tracking-wider mb-1">Yang Anda Dapatkan</div>
+            <div v-for="item in [
+              'Checkout resmi via Xendit',
+              '45 menit sesi 1-on-1',
+              'Analisis kebutuhan bisnis',
+              'Resume pembahasan hasil meeting',
+              'Dikirim maksimal 7 hari kerja',
+              'Fee tidak dapat direfund',
+            ]" :key="item" class="flex items-center gap-2 text-sm">
+              <span class="text-green-400 shrink-0">✓</span>
+              <span class="text-gray-300">{{ item }}</span>
+            </div>
           </div>
         </div>
-      </template>
+      </div>
     </template>
 
   </div>

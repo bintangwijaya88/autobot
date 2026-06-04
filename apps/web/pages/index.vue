@@ -89,7 +89,15 @@ const handleAction = (payload: any) => {
     case 'show_form':
       chatStore.addMessage({
         role: 'user',
-        content: `Saya ingin ${payload.form_type === 'order' ? 'order' : payload.form_type === 'demo_request' ? 'request demo' : 'konsultasi'}`,
+        content: `Saya ingin ${
+          payload.form_type === 'order'
+            ? 'order'
+            : payload.form_type === 'demo_request'
+              ? 'request demo'
+              : payload.form_type === 'consultation_booking'
+                ? 'jadwalkan konsultasi'
+                : 'konsultasi'
+        }`,
       })
       ws.sendMessage(`show_form:${payload.form_type}`)
       break

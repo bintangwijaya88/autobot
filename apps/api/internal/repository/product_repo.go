@@ -374,6 +374,18 @@ func (r *ProductRepository) UpdatePage(ctx context.Context, slug, title, content
 	return err
 }
 
+func (r *ProductRepository) CreatePage(ctx context.Context, id, slug, title, content string, published bool, sortOrder int) error {
+	_, err := r.db.ExecContext(ctx,
+		`INSERT INTO pages (id, slug, title, content, is_published, sort_order) VALUES (?, ?, ?, ?, ?, ?)`,
+		id, slug, title, content, published, sortOrder)
+	return err
+}
+
+func (r *ProductRepository) DeletePage(ctx context.Context, slug string) error {
+	_, err := r.db.ExecContext(ctx, `DELETE FROM pages WHERE slug = ?`, slug)
+	return err
+}
+
 // ─── Admin: Knowledge Base ────────────────────────────────────────────────────
 
 func (r *ProductRepository) ListKnowledge(ctx context.Context) ([]*model.KnowledgeEntry, error) {
