@@ -1,1 +1,0 @@
-{"level":"info","ts":1780526059.2701063,"caller":"server/main.go:241","msg":"starting server","addr":":50050","env":"development"}

@@ -7,11 +7,15 @@ dist/
 .nuxt/
 target/
 bin/
+apps/web/.output/
+apps/web/dist/
 
 # Go
 *.exe
 *.test
 *.prof
+.gocache/
+.gopath/
 
 # Environment
 .env
@@ -23,11 +27,13 @@ bin/
 *.db
 *.sqlite
 
-# IDE
+# IDE & local tooling
 .idea/
 .vscode/
 *.swp
 *.swo
+mcps/
+terminals/
 
 # Claude Code local settings
 .claude/settings.local.json
@@ -39,17 +45,27 @@ Thumbs.db
 # Docker
 docker/certs/
 
-# Logs
+# Logs & runtime errors
 *.log
+*.err
 logs/
+api-dev.*
+web-dev.*
+api-server.*
+mysql-laragon.*
+
+# Local dev screenshots
+ss_*.png
 
 # Tauri
 apps/desktop/src-tauri/target/
 
 # Nuxt
 apps/web/.nuxt/
-apps/web/dist/
 
-# Test coverage
+# Test coverage & e2e artifacts
 coverage/
 *.coverprofile
+test-results/
+playwright-report/
+playwright/.cache/
