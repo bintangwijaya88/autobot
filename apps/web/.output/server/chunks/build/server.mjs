@@ -1,5 +1,5 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { ref, hasInjectionContext, inject, computed, toValue, reactive, watch, toRef, isRef, getCurrentInstance, onServerPrefetch, shallowRef, nextTick, unref, defineComponent, createElementBlock, provide, cloneVNode, h, defineAsyncComponent, shallowReactive, Suspense, Fragment, useSSRContext, createApp, withAsyncContext, mergeProps, withCtx, createVNode, onErrorCaptured, resolveDynamicComponent, effectScope, getCurrentScope, isReadonly, toRaw, isShallow, isReactive } from 'vue';
-import { o as hash, p as parseURL, h as encodePath, q as decodePath, l as createError$1, r as hasProtocol, v as isScriptProtocol, n as joinURL, w as withQuery, x as klona, y as sanitizeStatusCode, z as getContext, A as getRequestHeader, d as destr, B as isEqual, C as setCookie, D as getCookie, E as deleteCookie, $ as $fetch, F as defu, G as executeAsync } from '../_/nitro.mjs';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { ref, computed, toValue, reactive, watch, hasInjectionContext, inject, toRef, isRef, getCurrentInstance, onServerPrefetch, shallowRef, nextTick, unref, defineComponent, createElementBlock, provide, cloneVNode, h, defineAsyncComponent, shallowReactive, Suspense, Fragment, useSSRContext, createApp, withAsyncContext, mergeProps, withCtx, createVNode, onErrorCaptured, resolveDynamicComponent, effectScope, getCurrentScope, isReadonly, toRaw, isShallow, isReactive } from 'vue';
+import { o as hash, l as createError$1, p as parseURL, h as encodePath, q as decodePath, r as hasProtocol, v as isScriptProtocol, n as joinURL, w as withQuery, x as klona, y as sanitizeStatusCode, z as getRequestHeader, d as destr, A as isEqual, B as getContext, C as setCookie, D as getCookie, E as deleteCookie, $ as $fetch, F as defu, G as executeAsync } from '../_/nitro.mjs';
 import { u as useSeoMeta$1, a as useHead$1, h as headSymbol, b as baseURL } from '../routes/renderer.mjs';
 import { defineStore, createPinia, setActivePinia, shouldHydrate } from 'pinia';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
@@ -802,33 +802,41 @@ const unhead_k2P3m_ZDyjlr2mMYnoDPwavjsDN8hBlk9cFai0bbopU = /* @__PURE__ */ defin
 function toArray$1(value) {
   return Array.isArray(value) ? value : [value];
 }
-const __nuxt_page_meta$A = { layout: "page" };
-const __nuxt_page_meta$z = { layout: "page-wide" };
-const __nuxt_page_meta$y = { layout: "page" };
-const __nuxt_page_meta$x = { layout: "page" };
-const __nuxt_page_meta$w = { layout: "page" };
-const __nuxt_page_meta$v = { layout: "page" };
-const __nuxt_page_meta$u = { layout: "page" };
-const __nuxt_page_meta$t = { layout: false };
-const __nuxt_page_meta$s = { layout: "portal" };
-const __nuxt_page_meta$r = { layout: "portal" };
-const __nuxt_page_meta$q = { layout: "portal" };
-const __nuxt_page_meta$p = { layout: false };
+const __nuxt_page_meta$I = { layout: "marketing" };
+const __nuxt_page_meta$H = { layout: "page-wide" };
+const __nuxt_page_meta$G = { layout: "marketing" };
+const __nuxt_page_meta$F = { layout: "marketing" };
+const __nuxt_page_meta$E = { layout: "marketing" };
+const __nuxt_page_meta$D = { layout: "marketing" };
+const __nuxt_page_meta$C = { layout: "marketing" };
+const __nuxt_page_meta$B = { layout: "marketing" };
+const __nuxt_page_meta$A = { layout: "marketing" };
+const __nuxt_page_meta$z = { layout: "marketing" };
+const __nuxt_page_meta$y = { layout: "marketing" };
+const __nuxt_page_meta$x = { layout: false };
+const __nuxt_page_meta$w = { layout: "marketing" };
+const __nuxt_page_meta$v = { layout: "portal" };
+const __nuxt_page_meta$u = { layout: "portal" };
+const __nuxt_page_meta$t = { layout: "portal" };
+const __nuxt_page_meta$s = { layout: false };
+const __nuxt_page_meta$r = { layout: "page" };
+const __nuxt_page_meta$q = { layout: "page" };
+const __nuxt_page_meta$p = { layout: "portal" };
 const __nuxt_page_meta$o = { layout: "page" };
-const __nuxt_page_meta$n = { layout: "page" };
-const __nuxt_page_meta$m = { layout: "portal" };
-const __nuxt_page_meta$l = { layout: "page" };
+const __nuxt_page_meta$n = { layout: "marketing" };
+const __nuxt_page_meta$m = { layout: "admin" };
+const __nuxt_page_meta$l = { layout: "admin" };
 const __nuxt_page_meta$k = { layout: "page" };
-const __nuxt_page_meta$j = { layout: "admin" };
-const __nuxt_page_meta$i = { layout: "admin" };
+const __nuxt_page_meta$j = { layout: "marketing" };
+const __nuxt_page_meta$i = { layout: "portal" };
 const __nuxt_page_meta$h = { layout: "page" };
-const __nuxt_page_meta$g = { layout: "portal" };
-const __nuxt_page_meta$f = { layout: "page" };
-const __nuxt_page_meta$e = { layout: "admin" };
-const __nuxt_page_meta$d = { layout: "admin" };
-const __nuxt_page_meta$c = { layout: "page" };
+const __nuxt_page_meta$g = { layout: "admin" };
+const __nuxt_page_meta$f = { layout: "admin" };
+const __nuxt_page_meta$e = { layout: "marketing" };
+const __nuxt_page_meta$d = { layout: "page" };
+const __nuxt_page_meta$c = { layout: "admin" };
 const __nuxt_page_meta$b = { layout: "admin" };
-const __nuxt_page_meta$a = { layout: "admin" };
+const __nuxt_page_meta$a = { layout: "marketing" };
 const __nuxt_page_meta$9 = { layout: "admin" };
 const __nuxt_page_meta$8 = { layout: "admin" };
 const __nuxt_page_meta$7 = { layout: "admin" };
@@ -843,224 +851,272 @@ const _routes = [
   {
     name: "about",
     path: "/about",
-    meta: __nuxt_page_meta$A || {},
-    component: () => import('./about-D41YUVsL.mjs')
+    component: () => import('./about-CaT0wrBo.mjs')
   },
   {
     name: "index",
     path: "/",
-    component: () => import('./index-CqBbWGBT.mjs')
+    meta: __nuxt_page_meta$I || {},
+    component: () => import('./index-3o19D871.mjs')
   },
   {
     name: "order",
     path: "/order",
-    meta: __nuxt_page_meta$z || {},
-    component: () => import('./order-BV-3PRJJ.mjs')
+    meta: __nuxt_page_meta$H || {},
+    component: () => import('./order-C-vgENcG.mjs')
+  },
+  {
+    name: "company",
+    path: "/company",
+    meta: __nuxt_page_meta$G || {},
+    component: () => import('./company-D8FH_hpe.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    meta: __nuxt_page_meta$y || {},
-    component: () => import('./contact-CDv2Gk2I.mjs')
+    meta: __nuxt_page_meta$F || {},
+    component: () => import('./contact-BuNexx0E.mjs')
   },
   {
     name: "pricing",
     path: "/pricing",
-    meta: __nuxt_page_meta$x || {},
-    component: () => import('./pricing-DkbT0pLr.mjs')
+    meta: __nuxt_page_meta$E || {},
+    component: () => import('./pricing-DSycrkDC.mjs')
   },
   {
     name: "features",
     path: "/features",
-    component: () => import('./features-mvKeiZFZ.mjs')
+    component: () => import('./features-DIV1V1TL.mjs')
   },
   {
     name: "partners",
     path: "/partners",
-    meta: __nuxt_page_meta$w || {},
-    component: () => import('./partners-DM7IiOOm.mjs')
+    meta: __nuxt_page_meta$D || {},
+    component: () => import('./partners-Dv9hcjuA.mjs')
   },
   {
     name: "services",
     path: "/services",
-    meta: __nuxt_page_meta$v || {},
-    component: () => import('./services-L0H3Q3fX.mjs')
+    meta: __nuxt_page_meta$C || {},
+    component: () => import('./services-Bo_8FmgX.mjs')
   },
   {
     name: "resources",
     path: "/resources",
-    meta: __nuxt_page_meta$u || {},
-    component: () => import('./resources-RorvrUqN.mjs')
+    meta: __nuxt_page_meta$B || {},
+    component: () => import('./resources-CxrwU6Zi.mjs')
+  },
+  {
+    name: "solutions",
+    path: "/solutions",
+    meta: __nuxt_page_meta$A || {},
+    component: () => import('./solutions-BsNtZ6et.mjs')
+  },
+  {
+    name: "blog",
+    path: "/blog",
+    meta: __nuxt_page_meta$z || {},
+    component: () => import('./index-h-vmWFnr.mjs')
+  },
+  {
+    name: "technology",
+    path: "/technology",
+    meta: __nuxt_page_meta$y || {},
+    component: () => import('./technology-CweiPKu8.mjs')
   },
   {
     name: "admin-login",
     path: "/admin/login",
-    meta: __nuxt_page_meta$t || {},
-    component: () => import('./login-B_1y_tyA.mjs')
+    meta: __nuxt_page_meta$x || {},
+    component: () => import('./login-DAJXvAen.mjs')
+  },
+  {
+    name: "blog-slug",
+    path: "/blog/:slug()",
+    meta: __nuxt_page_meta$w || {},
+    component: () => import('./_slug_-CruKAR-l.mjs')
   },
   {
     name: "portal-chats",
     path: "/portal/chats",
-    meta: { ...__nuxt_page_meta$r || {}, ...{ "middleware": "customer" } },
-    component: () => import('./chats-CtkUK8D7.mjs'),
+    meta: { ...__nuxt_page_meta$u || {}, ...{ "middleware": "customer" } },
+    component: () => import('./chats-M0e5jRsN.mjs'),
     children: [
       {
         name: "portal-chats-id",
         path: ":id()",
-        meta: { ...__nuxt_page_meta$s || {}, ...{ "middleware": "customer" } },
-        component: () => import('./_id_-CK_7wUvO.mjs')
+        meta: { ...__nuxt_page_meta$v || {}, ...{ "middleware": "customer" } },
+        component: () => import('./_id_-CTjjqDDV.mjs')
       }
     ]
   },
   {
     name: "portal",
     path: "/portal",
-    meta: { ...__nuxt_page_meta$q || {}, ...{ "middleware": "customer" } },
-    component: () => import('./index-9iYAYajd.mjs')
+    meta: { ...__nuxt_page_meta$t || {}, ...{ "middleware": "customer" } },
+    component: () => import('./index-qGgFiXFW.mjs')
   },
   {
     name: "portal-login",
     path: "/portal/login",
-    meta: __nuxt_page_meta$p || {},
-    component: () => import('./login-C9aKjatr.mjs')
+    meta: __nuxt_page_meta$s || {},
+    component: () => import('./login-CaftexQX.mjs')
   },
   {
     name: "refund-policy",
     path: "/refund-policy",
-    meta: __nuxt_page_meta$o || {},
-    component: () => import('./refund-policy-3T1fCnFD.mjs')
+    meta: __nuxt_page_meta$r || {},
+    component: () => import('./refund-policy-BPdXbsk2.mjs')
   },
   {
     name: "meeting-failed",
     path: "/meeting/failed",
-    meta: __nuxt_page_meta$n || {},
-    component: () => import('./failed-B6sRNEna.mjs')
+    meta: __nuxt_page_meta$q || {},
+    component: () => import('./failed-BvcTK9NO.mjs')
   },
   {
     name: "portal-profile",
     path: "/portal/profile",
-    meta: { ...__nuxt_page_meta$m || {}, ...{ "middleware": "customer" } },
-    component: () => import('./profile-4rn9B3_o.mjs')
+    meta: { ...__nuxt_page_meta$p || {}, ...{ "middleware": "customer" } },
+    component: () => import('./profile-Mc9rNeQ9.mjs')
   },
   {
     name: "privacy-policy",
     path: "/privacy-policy",
-    meta: __nuxt_page_meta$l || {},
-    component: () => import('./privacy-policy-D_Pf76D7.mjs')
+    meta: __nuxt_page_meta$o || {},
+    component: () => import('./privacy-policy-Wch8uzWz.mjs')
   },
   {
     name: "products",
     path: "/products",
-    meta: __nuxt_page_meta$k || {},
-    component: () => import('./index-6sZzE84-.mjs')
+    meta: __nuxt_page_meta$n || {},
+    component: () => import('./index-aOFZXat1.mjs')
   },
   {
     name: "admin-blog-id",
     path: "/admin/blog/:id()",
-    meta: { ...__nuxt_page_meta$j || {}, ...{ "middleware": "admin" } },
-    component: () => import('./_id_-BP8ny3lD.mjs')
+    meta: { ...__nuxt_page_meta$m || {}, ...{ "middleware": "admin" } },
+    component: () => import('./_id_-DWz-egm_.mjs')
   },
   {
     name: "admin-dashboard",
     path: "/admin/dashboard",
-    meta: { ...__nuxt_page_meta$i || {}, ...{ "middleware": "admin" } },
-    component: () => import('./dashboard-qYfqC5p6.mjs')
+    meta: { ...__nuxt_page_meta$l || {}, ...{ "middleware": "admin" } },
+    component: () => import('./dashboard-DCK3oGYo.mjs')
   },
   {
     name: "meeting-success",
     path: "/meeting/success",
-    meta: __nuxt_page_meta$h || {},
-    component: () => import('./success-OD0a2aCv.mjs')
+    meta: __nuxt_page_meta$k || {},
+    component: () => import('./success-XkKgWUGh.mjs')
+  },
+  {
+    name: "platforms",
+    path: "/platforms",
+    meta: __nuxt_page_meta$j || {},
+    component: () => import('./index-DvLSJxO3.mjs')
   },
   {
     name: "portal-contacts",
     path: "/portal/contacts",
-    meta: { ...__nuxt_page_meta$g || {}, ...{ "middleware": "customer" } },
-    component: () => import('./contacts-CfgLLENR.mjs')
+    meta: { ...__nuxt_page_meta$i || {}, ...{ "middleware": "customer" } },
+    component: () => import('./contacts-C6SGukyu.mjs')
   },
   {
     name: "products-slug",
     path: "/products/:slug()",
-    meta: __nuxt_page_meta$f || {},
-    component: () => import('./_slug_-CAZF6YcO.mjs')
+    meta: __nuxt_page_meta$h || {},
+    component: () => import('./_slug_-zt9ALCjh.mjs')
   },
   {
     name: "admin-blog",
     path: "/admin/blog",
-    meta: { ...__nuxt_page_meta$e || {}, ...{ "middleware": "admin" } },
-    component: () => import('./index-DCY58SMW.mjs')
+    meta: { ...__nuxt_page_meta$g || {}, ...{ "middleware": "admin" } },
+    component: () => import('./index-bh7yw3zv.mjs')
   },
   {
     name: "admin-users-id",
     path: "/admin/users/:id()",
-    meta: { ...__nuxt_page_meta$d || {}, ...{ "middleware": "admin" } },
-    component: () => import('./_id_-lJ72IKUA.mjs')
+    meta: { ...__nuxt_page_meta$f || {}, ...{ "middleware": "admin" } },
+    component: () => import('./_id_-B-i5ds6J.mjs')
+  },
+  {
+    name: "platforms-slug",
+    path: "/platforms/:slug()",
+    meta: __nuxt_page_meta$e || {},
+    component: () => import('./_slug_-uuvtLIln.mjs')
   },
   {
     name: "terms-of-service",
     path: "/terms-of-service",
-    meta: __nuxt_page_meta$c || {},
-    component: () => import('./terms-of-service-B5WRtfTR.mjs')
+    meta: __nuxt_page_meta$d || {},
+    component: () => import('./terms-of-service-CfAAsTX5.mjs')
   },
   {
     name: "admin-email",
     path: "/admin/email",
-    meta: { ...__nuxt_page_meta$b || {}, ...{ "middleware": "admin" } },
+    meta: { ...__nuxt_page_meta$c || {}, ...{ "middleware": "admin" } },
     component: () => import('./index-BXhsfqSx.mjs')
   },
   {
     name: "admin-users",
     path: "/admin/users",
-    meta: { ...__nuxt_page_meta$a || {}, ...{ "middleware": "admin" } },
-    component: () => import('./index-DpAHhMqt.mjs')
+    meta: { ...__nuxt_page_meta$b || {}, ...{ "middleware": "admin" } },
+    component: () => import('./index-Dl7BvlqR.mjs')
+  },
+  {
+    name: "platforms-wasigap",
+    path: "/platforms/wasigap",
+    meta: __nuxt_page_meta$a || {},
+    component: () => import('./wasigap-BRMwf791.mjs')
   },
   {
     name: "admin-content",
     path: "/admin/content",
     meta: { ...__nuxt_page_meta$9 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./index-CsAXWdNW.mjs')
+    component: () => import('./index-Bv4lF_Ld.mjs')
   },
   {
     name: "admin-products-id",
     path: "/admin/products/:id()",
     meta: { ...__nuxt_page_meta$8 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./_id_-AEFC8GaL.mjs')
+    component: () => import('./_id_-BaV6-sAt.mjs')
   },
   {
     name: "admin-sessions-id",
     path: "/admin/sessions/:id()",
     meta: { ...__nuxt_page_meta$7 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./_id_-gMmtZADZ.mjs')
+    component: () => import('./_id_-CMX_-sFR.mjs')
   },
   {
     name: "admin-contacts",
     path: "/admin/contacts",
     meta: { ...__nuxt_page_meta$6 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./index-DWC4pJk3.mjs')
+    component: () => import('./index-BCyy6pWF.mjs')
   },
   {
     name: "admin-content-slug",
     path: "/admin/content/:slug()",
     meta: { ...__nuxt_page_meta$5 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./_slug_-DUXnZKrf.mjs')
+    component: () => import('./_slug_-CzTM8Om_.mjs')
   },
   {
     name: "admin-meetings",
     path: "/admin/meetings",
     meta: { ...__nuxt_page_meta$4 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./index-2V4hVf5z.mjs')
+    component: () => import('./index-B0jopcRS.mjs')
   },
   {
     name: "admin-products",
     path: "/admin/products",
     meta: { ...__nuxt_page_meta$3 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./index-BSPJlFBs.mjs')
+    component: () => import('./index-BLGXkM1_.mjs')
   },
   {
     name: "admin-sessions",
     path: "/admin/sessions",
     meta: { ...__nuxt_page_meta$2 || {}, ...{ "middleware": "admin" } },
-    component: () => import('./index-BwkjbV7S.mjs')
+    component: () => import('./index-C0l7TWyu.mjs')
   },
   {
     name: "admin-knowledge",
@@ -1072,7 +1128,7 @@ const _routes = [
     name: "admin-integrations",
     path: "/admin/integrations",
     meta: { ...__nuxt_page_meta || {}, ...{ "middleware": "admin" } },
-    component: () => import('./index-CiFxE79G.mjs')
+    component: () => import('./index-DyEnDhZY.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -2004,11 +2060,12 @@ const plugins = [
   components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4
 ];
 const layouts = {
-  admin: defineAsyncComponent(() => import('./admin-C4QDLuzK.mjs').then((m) => m.default || m)),
-  default: defineAsyncComponent(() => import('./default-CjdF-ZHQ.mjs').then((m) => m.default || m)),
-  "page-wide": defineAsyncComponent(() => import('./page-wide-BXq2ISt9.mjs').then((m) => m.default || m)),
-  page: defineAsyncComponent(() => import('./page-DPuPw9lD.mjs').then((m) => m.default || m)),
-  portal: defineAsyncComponent(() => import('./portal-Dn1EsKTO.mjs').then((m) => m.default || m))
+  admin: defineAsyncComponent(() => import('./admin-BZfKtzwS.mjs').then((m) => m.default || m)),
+  default: defineAsyncComponent(() => import('./default-CZwfIci-.mjs').then((m) => m.default || m)),
+  marketing: defineAsyncComponent(() => import('./marketing-1bKFueQk.mjs').then((m) => m.default || m)),
+  "page-wide": defineAsyncComponent(() => import('./page-wide-BunL957X.mjs').then((m) => m.default || m)),
+  page: defineAsyncComponent(() => import('./page-COY6zeLd.mjs').then((m) => m.default || m)),
+  portal: defineAsyncComponent(() => import('./portal-XnIhQco6.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -2245,137 +2302,502 @@ function normalizeSlot(slot, data) {
   const slotContent = slot(data);
   return slotContent.length === 1 ? h(slotContent[0]) : h(Fragment, void 0, slotContent);
 }
+const DEFAULT_LOCALE = "id";
 const locales = [
-  { code: "id", label: "Bahasa Indonesia", flag: "🇮🇩" },
-  { code: "en", label: "English", flag: "🇺🇸" }
+  { code: "en", label: "English", shortLabel: "EN", flag: "🇺🇸" },
+  { code: "id", label: "Bahasa Indonesia", shortLabel: "ID", flag: "🇮🇩" },
+  { code: "fil", label: "Filipino", shortLabel: "FIL", flag: "🇵🇭" },
+  { code: "ms", label: "Malay", shortLabel: "MS", flag: "🇲🇾" },
+  { code: "vi", label: "Tiếng Việt", shortLabel: "VI", flag: "🇻🇳" },
+  { code: "km", label: "Khmer", shortLabel: "KM", flag: "🇰🇭" },
+  { code: "zh", label: "中文", shortLabel: "ZH", flag: "🇨🇳" },
+  { code: "ja", label: "日本語", shortLabel: "JA", flag: "🇯🇵" },
+  { code: "th", label: "ไทย", shortLabel: "TH", flag: "🇹🇭" }
 ];
-const messages = {
-  id: {
-    common: {
-      language: "Bahasa",
-      backToChat: "Kembali ke Chat",
-      signIn: "Masuk",
-      signOut: "Keluar",
-      close: "Tutup",
-      loading: "Memuat",
-      choose: "Pilih"
-    },
-    layout: {
-      page: {
-        nav: {
-          products: "Produk",
-          pricing: "Harga",
-          about: "Tentang",
-          contact: "Kontak",
-          chat: "Chat"
-        },
-        footer: {
-          brandDesc: "Spesialis chatbot WhatsApp & AI automation untuk bisnis Indonesia.",
-          products: "Produk",
-          company: "Perusahaan",
-          legal: "Legal",
-          allProducts: "Semua Produk",
-          features: "Fitur",
-          pricing: "Harga",
-          subscribe: "Mulai Berlangganan",
-          about: "Tentang Kami",
-          partners: "Mitra & Case Study",
-          contact: "Kontak",
-          whatsappAdmin: "WhatsApp Admin",
-          privacy: "Kebijakan Privasi",
-          terms: "Syarat & Ketentuan",
-          refund: "Kebijakan Refund",
-          copyright: "© 2026 Autobot Wijaya Solution · Seluruh hak cipta dilindungi."
-        }
+function isLocaleCode(value) {
+  return typeof value === "string" && locales.some((locale) => locale.code === value);
+}
+const legacyEn = {
+  common: {
+    language: "Language",
+    backToChat: "Back to Chat",
+    signIn: "Sign In",
+    signOut: "Sign Out",
+    close: "Close",
+    loading: "Loading",
+    choose: "Choose"
+  },
+  layout: {
+    page: {
+      nav: {
+        products: "Products",
+        pricing: "Pricing",
+        about: "About",
+        contact: "Contact",
+        chat: "Chat"
+      },
+      footer: {
+        brandDesc: "autobotws — software, AI automation, dan sistem digital untuk bisnis Indonesia.",
+        products: "Products",
+        company: "Company",
+        legal: "Legal",
+        allProducts: "All Products",
+        features: "Features",
+        pricing: "Pricing",
+        subscribe: "Start Subscription",
+        about: "About Us",
+        partners: "Partners & Case Studies",
+        contact: "Contact",
+        whatsappAdmin: "WhatsApp Admin",
+        privacy: "Privacy Policy",
+        terms: "Terms of Service",
+        refund: "Refund Policy",
+        copyright: "© 2026 autobotws · All rights reserved."
       }
-    },
-    sidebar: {
-      newChat: "New Chat",
-      search: "Search",
-      explore: "Explore",
-      features: "Fitur",
-      products: "Produk",
-      about: "Tentang",
-      consult: "Konsultasi",
-      allFeatures: "Lihat semua fitur",
-      recent: "Recent",
-      language: "Bahasa Indonesia",
-      adminPanel: "Admin Panel",
-      copied: "✓ Tersalin",
-      copyAccessKey: "Salin access key"
-    },
-    portal: {
-      backToChat: "Back to Chat",
-      signOut: "Sign Out",
-      dashboard: "Dashboard",
-      chats: "My Chats",
-      contacts: "My Contacts",
-      profile: "Profile"
     }
   },
-  en: {
-    common: {
-      language: "Language",
-      backToChat: "Back to Chat",
-      signIn: "Sign In",
-      signOut: "Sign Out",
-      close: "Close",
-      loading: "Loading",
-      choose: "Choose"
-    },
-    layout: {
-      page: {
-        nav: {
-          products: "Products",
-          pricing: "Pricing",
-          about: "About",
-          contact: "Contact",
-          chat: "Chat"
-        },
-        footer: {
-          brandDesc: "Specialists in WhatsApp chatbots and AI automation for Indonesian businesses.",
-          products: "Products",
-          company: "Company",
-          legal: "Legal",
-          allProducts: "All Products",
-          features: "Features",
-          pricing: "Pricing",
-          subscribe: "Start Subscription",
-          about: "About Us",
-          partners: "Partners & Case Studies",
-          contact: "Contact",
-          whatsappAdmin: "WhatsApp Admin",
-          privacy: "Privacy Policy",
-          terms: "Terms of Service",
-          refund: "Refund Policy",
-          copyright: "© 2026 Autobot Wijaya Solution · All rights reserved."
-        }
+  sidebar: {
+    newChat: "New Chat",
+    search: "Search",
+    explore: "Explore",
+    features: "Features",
+    products: "Products",
+    about: "About",
+    consult: "Consultation",
+    allFeatures: "View all features",
+    recent: "Recent",
+    language: "English",
+    adminPanel: "Admin Panel",
+    copied: "✓ Copied",
+    copyAccessKey: "Copy access key"
+  },
+  portal: {
+    backToChat: "Back to Chat",
+    signOut: "Sign Out",
+    dashboard: "Dashboard",
+    chats: "My Chats",
+    contacts: "My Contacts",
+    profile: "Profile"
+  }
+};
+const legacyId = {
+  ...legacyEn,
+  common: {
+    ...legacyEn.common,
+    language: "Bahasa",
+    backToChat: "Kembali ke Chat",
+    signIn: "Masuk",
+    signOut: "Keluar",
+    close: "Tutup",
+    loading: "Memuat",
+    choose: "Pilih"
+  },
+  layout: {
+    page: {
+      nav: {
+        products: "Produk",
+        pricing: "Harga",
+        about: "Tentang",
+        contact: "Kontak",
+        chat: "Chat"
+      },
+      footer: {
+        brandDesc: "autobotws — software, AI automation, dan sistem digital untuk bisnis Indonesia.",
+        products: "Produk",
+        company: "Perusahaan",
+        legal: "Legal",
+        allProducts: "Semua Produk",
+        features: "Fitur",
+        pricing: "Harga",
+        subscribe: "Mulai Berlangganan",
+        about: "Tentang Kami",
+        partners: "Mitra & Case Study",
+        contact: "Kontak",
+        whatsappAdmin: "WhatsApp Admin",
+        privacy: "Kebijakan Privasi",
+        terms: "Syarat & Ketentuan",
+        refund: "Kebijakan Refund",
+        copyright: "© 2026 autobotws · Seluruh hak cipta dilindungi."
       }
+    }
+  },
+  sidebar: {
+    ...legacyEn.sidebar,
+    features: "Fitur",
+    products: "Produk",
+    about: "Tentang",
+    consult: "Konsultasi",
+    allFeatures: "Lihat semua fitur",
+    language: "Bahasa Indonesia",
+    copied: "✓ Tersalin",
+    copyAccessKey: "Salin access key"
+  }
+};
+const marketingEn = {
+  nav: {
+    product: "Product",
+    services: "Services",
+    research: "Research",
+    platforms: "Platforms",
+    solutions: "Solutions",
+    technology: "Technology",
+    company: "Company",
+    blog: "Blog",
+    bookConsultation: "Book Consultation"
+  },
+  footer: {
+    brandDesc: "autobotws — software, AI automation, and digital system solutions for growing businesses in Indonesia.",
+    legalLine: "Legal entity: CV Autobot Wijaya Solution",
+    company: "Company",
+    companyProfile: "Company Profile",
+    services: "Services",
+    partners: "Partners & Case Studies",
+    technology: "Technology",
+    useCases: "Use Cases",
+    platforms: "Platforms",
+    allPlatforms: "All Platforms",
+    resources: "Resources",
+    research: "Research",
+    blog: "Blog",
+    privacy: "Privacy Policy"
+  },
+  language: {
+    label: "Language"
+  },
+  home: {
+    badge: "Software, AI Automation & Digital Systems",
+    heroTitle: "Software, AI Automation, and Digital System Solutions for Growing Businesses.",
+    heroDesc: "autobotws helps businesses automate workflows, manage customer communication, and build scalable digital systems through software, AI, and practical automation solutions.",
+    capabilities: {
+      sales: "Reduce manual work with business process automation",
+      workflow: "Speed up customer response through WhatsApp and AI agents",
+      integration: "Build digital systems aligned with your daily operations"
     },
-    sidebar: {
-      newChat: "New Chat",
-      search: "Search",
-      explore: "Explore",
-      features: "Features",
-      products: "Products",
-      about: "About",
-      consult: "Consultation",
-      allFeatures: "View all features",
-      recent: "Recent",
-      language: "English",
-      adminPanel: "Admin Panel",
-      copied: "✓ Copied",
-      copyAccessKey: "Copy access key"
+    explorePlatforms: "Explore Products",
+    viewUseCases: "View Use Cases",
+    stats: {
+      platforms: "Core & vertical products",
+      records: "Production records handled",
+      years: "Years building business systems"
     },
-    portal: {
-      backToChat: "Back to Chat",
-      signOut: "Sign Out",
-      dashboard: "Dashboard",
-      chats: "My Chats",
-      contacts: "My Contacts",
-      profile: "Profile"
+    bannerTitle: "Product and automation solutions built for real operations.",
+    bannerDesc: "WaSigap, KlopDana, SanyClean, Bintanx, and custom systems for Indonesian businesses.",
+    commandCenter: {
+      title: "autobotws Command Center",
+      subtitle: "AI workflow health and product ecosystem",
+      live: "Live",
+      conversations: "Qualified conversations",
+      automated: "Manual steps automated",
+      followup: "Faster follow-up cycle",
+      sources: "Integrated data sources",
+      pipeline: "Automation pipeline",
+      lead: "WhatsApp lead captured",
+      qualification: "AI qualification complete",
+      proposal: "Proposal generated and assigned",
+      screenshot: "Hero product screenshot placeholder",
+      recommended: "Recommended 1440 x 630"
+    },
+    banner: {
+      title: "Full-width company profile banner placeholder",
+      desc: "Use for office, team, product montage, or high-tech automation visual. Recommended 1920 x 640."
+    },
+    platformSuite: {
+      eyebrow: "Core Products",
+      title: "Four flagship products for practical business needs.",
+      directory: "View all products",
+      preview: "preview"
+    },
+    visual: {
+      eyebrow: "Product Visual System",
+      title: "Purpose-built placeholders for each product shape.",
+      desc: "Each visual slot now matches a real product format: website hero, dashboard, workflow map, and mobile service journey.",
+      cta: "Match visuals to platform pages",
+      browser: "Platform web hero",
+      browserType: "Browser frame",
+      dashboard: "Operations dashboard",
+      dashboardType: "Analytics board",
+      workflow: "Workflow canvas",
+      workflowType: "Automation map",
+      mobile: "Mobile service flow",
+      mobileType: "Phone preview",
+      thumbnail: "Square thumbnail 800 x 800"
+    },
+    useCases: {
+      eyebrow: "Use Cases",
+      title: "Built around operational outcomes.",
+      desc: "Each solution page explains how autobotws turns repetitive work into measurable digital workflows.",
+      cta: "Explore all use cases"
+    },
+    next: {
+      eyebrow: "Next Step",
+      title: "Discuss your business needs with our team.",
+      desc: "Tell us your operational bottleneck — we will recommend the right product or custom development approach.",
+      cta: "Book Consultation"
+    }
+  },
+  products: {
+    eyebrow: "Products",
+    title: "Flagship products and vertical solutions.",
+    desc: "autobotws develops WaSigap, KlopDana, SanyClean, and Bintanx as core products, plus vertical solutions for specific industries.",
+    detail: "Detail",
+    visit: "Visit site",
+    coreLabel: "Core Products",
+    verticalLabel: "Vertical Solutions"
+  },
+  services: {
+    eyebrow: "Services",
+    title: "Services built around business outcomes.",
+    desc: "Beyond ready-made products, we help businesses build, automate, and integrate digital systems according to their operational needs.",
+    cta: "Discuss your project",
+    modelsTitle: "Engagement models",
+    models: {
+      fixed: { name: "Fixed Price", desc: "Clear scope and defined budget." },
+      tnm: { name: "Time & Material", desc: "Iterative development, billed per sprint." },
+      retainer: { name: "Retainer", desc: "Monthly partnership for ongoing development and support." }
+    }
+  },
+  company: {
+    eyebrow: "About autobotws",
+    title: "autobotws",
+    subtitle: "Software, AI Automation, and Digital System Solutions for Growing Businesses.",
+    about: "autobotws is an Indonesian technology brand focused on software development, AI automation, WhatsApp automation, and system integration. We build practical digital solutions that help businesses reduce manual work, improve customer communication, and manage operations more efficiently.",
+    aboutExtended: "Our products include WaSigap for AI-powered WhatsApp automation, KlopDana for bank reconciliation, SanyClean for cleaning service management, and Bintanx for academic information systems.",
+    problemEyebrow: "Problems We Address",
+    problemTitle: "Operational bottlenecks that slow businesses down.",
+    solutionEyebrow: "Solutions We Offer",
+    solutionTitle: "Practical software and automation that teams can actually use.",
+    visionEyebrow: "Vision",
+    vision: "To become an Indonesian technology company that helps businesses and organizations transform through practical, relevant, and sustainable digital, automation, and AI solutions.",
+    missionEyebrow: "Mission",
+    valuesEyebrow: "Company Values",
+    advantagesEyebrow: "Strengths",
+    advantagesDesc: "autobotws combines software engineering, AI integration, automation workflows, and business process understanding to build solutions that are practical, scalable, and relevant for daily operations.",
+    productsEyebrow: "Flagship Products",
+    industriesEyebrow: "Industries Served",
+    industriesDesc: "Our solutions are adapted for organizations that need cleaner operations, faster customer response, and more structured administration.",
+    workflowEyebrow: "How We Work",
+    workflowTitle: "From consultation to sustainable support.",
+    workflowDesc: "We start from real business problems, then design the right solution — whether a ready-made product, custom development, or a combination of both.",
+    legalEyebrow: "Legal Entity",
+    legalBrand: "Brand name",
+    legalName: "Legal entity",
+    legalNib: "Legal document",
+    legalAddress: "Location",
+    legalFounded: "Founded",
+    legalFounder: "Founder",
+    legalField: "Business field",
+    legalWebsite: "Website",
+    cloudEyebrow: "Cloud Credits Usage",
+    cloudTitle: "How we use cloud credits and infrastructure funding.",
+    cloudDesc: "Cloud credits support product development, infrastructure scaling, and AI-powered automation for WaSigap and other autobotws products.",
+    teamEyebrow: "Our Team",
+    ctaTitle: "Ready to streamline your business operations?",
+    ctaDesc: "Consult your automation, software, or integration needs with the autobotws team.",
+    ctaButton: "Contact Us",
+    viewPartners: "View partners & case studies"
+  },
+  platforms: {
+    eyebrow: "Products",
+    title: "Product portfolio built by autobotws.",
+    desc: "Four core products for WhatsApp automation, bank reconciliation, cleaning services, and academic systems — plus vertical solutions for specific industries.",
+    all: "All",
+    viewPlatform: "View platform",
+    customEyebrow: "active platforms",
+    customTitle: "Need a custom combination?",
+    customDesc: "autobotws can connect these products or build a new one based on your customer journey, operations, and existing systems.",
+    customCta: "Discuss implementation",
+    back: "Back to platform suite",
+    visit: "Visit",
+    plan: "Plan this platform",
+    coreModules: "Core modules",
+    bestFor: "Best for",
+    bestForDesc: "Customers or teams that need a focused digital platform with room to integrate into the wider autobotws ecosystem.",
+    implementation: "Implementation path",
+    implementationDesc: "Start from the service flow, package core modules, connect operational data, then improve the experience based on usage.",
+    connect: "Can connect with",
+    connectDesc: "WhatsApp, payment systems, CRM, Google Workspace, operational dashboards, internal tools, and custom APIs.",
+    related: "Related use cases",
+    more: "More platforms",
+    moreTitle: "Build a connected suite.",
+    allPlatforms: "All platforms"
+  },
+  wasigap: {
+    badge: "AI WhatsApp Automation",
+    heroTitle: "AI WhatsApp Automation for Indonesian SMEs.",
+    heroDesc: "WaSigap helps clinics, online stores, service businesses, and customer service teams manage WhatsApp conversations with AI auto-reply, CRM, broadcast scheduling, and automated follow-up.",
+    problemEyebrow: "Market Problem",
+    problemTitle: "WhatsApp is critical — but most teams still manage it manually.",
+    solutionEyebrow: "Product Solution",
+    solutionTitle: "One dashboard for AI replies, CRM, broadcast, and workflow automation.",
+    solutionDesc: "WaSigap combines AI auto-reply, customer CRM, scheduled broadcast, multi-agent customer service, flow builder, and marketplace integration in a single operational dashboard.",
+    demoEyebrow: "Product Demo",
+    demoTitle: "See WaSigap in action.",
+    demoDesc: "Product screenshot and demo placeholder — replace with live dashboard capture or demo URL.",
+    featuresEyebrow: "Key Features",
+    featuresTitle: "Built for daily WhatsApp operations.",
+    useCasesEyebrow: "Use Cases",
+    useCasesTitle: "Designed for Indonesian business workflows.",
+    businessModelEyebrow: "Business Model",
+    businessModelTitle: "Flexible plans for SMEs and growing teams.",
+    tractionEyebrow: "Traction & Progress",
+    tractionTitle: "Product progress and operational footprint.",
+    techEyebrow: "Technology & Infrastructure",
+    techTitle: "Cloud-ready SaaS architecture.",
+    techDesc: "WaSigap runs on scalable backend, queue workers, AI inference layer, and multi-tenant infrastructure designed for high-volume WhatsApp operations.",
+    cloudEyebrow: "How We Use Cloud Credits",
+    cloudTitle: "Cloud credits accelerate product scale.",
+    cloudDesc: "Credits support backend hosting, database, queue jobs, AI inference, media storage, monitoring, CDN, staging, and multi-tenant SaaS scaling.",
+    aboutEyebrow: "About autobotws",
+    aboutTitle: "Built by autobotws",
+    aboutDesc: "autobotws is an Indonesian technology brand focused on software development, AI automation, and WhatsApp automation. WaSigap is our flagship product for customer communication automation.",
+    legalEyebrow: "Legal Entity",
+    ctaTitle: "Ready to automate your WhatsApp operations?",
+    ctaDesc: "Try WaSigap or discuss custom setup for your business workflow.",
+    ctaPrimary: "Visit WaSigap",
+    ctaSecondary: "Contact Founder",
+    back: "All products"
+  },
+  technology: {
+    eyebrow: "Technology",
+    title: "Modern stack for scalable digital products.",
+    intro: "autobotws builds scalable digital products using modern web, mobile, desktop, cloud, and AI technologies. Our technology stack allows us to develop flexible systems for automation, customer communication, data processing, and business operations.",
+    principle: "We select technology based on product requirements, scalability, security, integration needs, and long-term maintainability.",
+    categoriesEyebrow: "Technology Capabilities",
+    ctaTitle: "Need custom integration architecture?",
+    ctaDesc: "autobotws can connect existing tools without forcing your team to migrate everything at once.",
+    ctaButton: "Talk to solution team"
+  },
+  research: {
+    eyebrow: "Research",
+    title: "Research and references for building useful platforms.",
+    desc: "A clean library for product research, implementation notes, architecture references, and operating documentation across the autobotws product portfolio.",
+    comingSoon: "Coming soon",
+    platform: {
+      title: "Platform Research",
+      desc: "Notes on market problems, product direction, workflow assumptions, and platform positioning.",
+      label: "Research notes"
+    },
+    architecture: {
+      title: "Architecture References",
+      desc: "How autobotws structures AI, automation, APIs, dashboards, and multi-platform operations.",
+      label: "System design"
+    },
+    guides: {
+      title: "Implementation Guides",
+      desc: "Practical guides for turning business processes into digital workflows and product modules.",
+      label: "Guides"
+    },
+    docs: {
+      title: "Case Documentation",
+      desc: "Documentation templates for product launches, integration plans, customer journeys, and operating playbooks.",
+      label: "Documentation"
     }
   }
+};
+const translatedMarketing = {
+  id: {
+    nav: { product: "Produk", services: "Layanan", research: "Riset", platforms: "Platform", solutions: "Solusi", technology: "Teknologi", company: "Perusahaan", blog: "Blog", bookConsultation: "Pesan Konsultasi" },
+    footer: { brandDesc: "autobotws — solusi software, AI automation, dan sistem digital untuk bisnis yang berkembang di Indonesia.", legalLine: "Badan hukum: CV Autobot Wijaya Solution", company: "Perusahaan", companyProfile: "Profil Perusahaan", services: "Layanan", partners: "Mitra & Studi Kasus", technology: "Teknologi", useCases: "Use Case", platforms: "Platform", allPlatforms: "Semua Platform", resources: "Resource", research: "Riset", blog: "Blog", privacy: "Kebijakan Privasi" },
+    language: { label: "Bahasa" },
+    home: {
+      badge: "Software, AI Automation & Sistem Digital",
+      heroTitle: "Solusi Software, AI Automation, dan Sistem Digital untuk Bisnis yang Berkembang.",
+      heroDesc: "autobotws membantu bisnis mengotomatisasi proses kerja, mengelola komunikasi pelanggan, dan membangun sistem digital yang scalable melalui software, AI, dan solusi otomasi praktis.",
+      capabilities: { sales: "Mengurangi pekerjaan manual melalui otomasi proses bisnis", workflow: "Mempercepat layanan pelanggan lewat WhatsApp dan AI agent", integration: "Membangun sistem digital yang selaras dengan operasional harian" },
+      explorePlatforms: "Jelajahi Produk",
+      viewUseCases: "Lihat Use Case",
+      stats: { platforms: "Produk inti & vertikal", records: "Record produksi ditangani", years: "Tahun membangun sistem bisnis" },
+      bannerTitle: "Solusi produk dan otomasi untuk operasional bisnis nyata.",
+      bannerDesc: "WaSigap, KlopDana, SanyClean, Bintanx, dan sistem custom untuk bisnis Indonesia.",
+      commandCenter: { title: "autobotws Command Center", subtitle: "Kesehatan workflow AI dan ekosistem produk", live: "Live", conversations: "Percakapan terkualifikasi", automated: "Langkah manual terotomasi", followup: "Siklus follow-up lebih cepat", sources: "Sumber data terintegrasi", pipeline: "Pipeline otomasi", lead: "Lead WhatsApp masuk", qualification: "Kualifikasi AI selesai", proposal: "Proposal dibuat dan ditugaskan", screenshot: "Placeholder screenshot produk hero", recommended: "Rekomendasi 1440 x 630" },
+      banner: { title: "Placeholder banner profil perusahaan penuh", desc: "Gunakan untuk kantor, tim, montase produk, atau visual otomasi high-tech. Rekomendasi 1920 x 640." },
+      platformSuite: { eyebrow: "Produk Unggulan", title: "Empat produk inti untuk kebutuhan bisnis praktis.", directory: "Lihat semua produk", preview: "preview" },
+      visual: { eyebrow: "Sistem Visual Produk", title: "Placeholder khusus untuk tiap bentuk produk.", desc: "Setiap slot visual cocok dengan format produk nyata: hero website, dashboard, peta workflow, dan alur layanan mobile.", cta: "Cocokkan visual ke halaman platform", browser: "Hero web platform", browserType: "Frame browser", dashboard: "Dashboard operasional", dashboardType: "Board analitik", workflow: "Kanvas workflow", workflowType: "Peta otomasi", mobile: "Alur layanan mobile", mobileType: "Preview ponsel", thumbnail: "Thumbnail kotak 800 x 800" },
+      useCases: { eyebrow: "Use Case", title: "Dibangun untuk hasil operasional.", desc: "Setiap halaman solusi menjelaskan bagaimana autobotws mengubah pekerjaan berulang menjadi workflow digital yang terukur.", cta: "Jelajahi semua use case" },
+      next: { eyebrow: "Langkah Berikutnya", title: "Diskusikan kebutuhan bisnis Anda dengan tim kami.", desc: "Ceritakan bottleneck operasional Anda — kami bantu rekomendasikan produk atau pengembangan custom yang paling relevan.", cta: "Pesan Konsultasi" }
+    },
+    products: { eyebrow: "Produk", title: "Produk unggulan dan solusi vertikal.", desc: "autobotws mengembangkan WaSigap, KlopDana, SanyClean, dan Bintanx sebagai produk inti, serta solusi vertikal untuk kebutuhan industri tertentu.", detail: "Detail", visit: "Kunjungi situs", coreLabel: "Produk Inti", verticalLabel: "Solusi Vertikal" },
+    services: { eyebrow: "Layanan", title: "Layanan yang ditulis dari sudut pandang manfaat bisnis.", desc: "Selain produk siap pakai, kami membantu bisnis membangun, mengotomasi, dan mengintegrasikan sistem digital sesuai kebutuhan operasional.", cta: "Diskusikan proyek Anda", modelsTitle: "Model kerja sama", models: { fixed: { name: "Fixed Price", desc: "Ruang lingkup jelas dan anggaran pasti." }, tnm: { name: "Time & Material", desc: "Pengembangan iteratif, bayar per sprint." }, retainer: { name: "Retainer", desc: "Kemitraan bulanan untuk pengembangan dan dukungan berkelanjutan." } } },
+    company: { eyebrow: "Tentang autobotws", title: "autobotws", subtitle: "Solusi Software, AI Automation, dan Sistem Digital untuk Bisnis yang Berkembang.", about: "autobotws adalah brand teknologi asal Indonesia yang berfokus pada pengembangan software, AI automation, otomasi WhatsApp, dan integrasi sistem. Kami membangun solusi digital yang praktis untuk membantu bisnis mengurangi pekerjaan manual, meningkatkan komunikasi pelanggan, dan mengelola operasional dengan lebih efisien.", aboutExtended: "Produk kami mencakup WaSigap untuk otomasi WhatsApp berbasis AI, KlopDana untuk rekonsiliasi bank, SanyClean untuk manajemen layanan kebersihan, dan Bintanx untuk sistem informasi akademik.", problemEyebrow: "Masalah yang Kami Bantu Selesaikan", problemTitle: "Bottleneck operasional yang memperlambat bisnis.", solutionEyebrow: "Solusi yang Kami Tawarkan", solutionTitle: "Software dan otomasi praktis yang benar-benar dipakai tim.", visionEyebrow: "Visi", vision: "Menjadi brand teknologi Indonesia yang membantu bisnis bertransformasi melalui solusi digital, otomasi, dan AI yang praktis, relevan, dan berkelanjutan.", missionEyebrow: "Misi", valuesEyebrow: "Nilai Perusahaan", advantagesEyebrow: "Kenapa autobotws", advantagesDesc: "autobotws menggabungkan software engineering, integrasi AI, workflow automation, dan pemahaman proses bisnis untuk membangun solusi yang praktis, scalable, dan relevan dengan kebutuhan operasional harian.", productsEyebrow: "Produk Unggulan", industriesEyebrow: "Industri yang Dilayani", industriesDesc: "Solusi autobotws dapat disesuaikan untuk organisasi yang membutuhkan operasional lebih rapi, respons pelanggan lebih cepat, dan administrasi lebih terstruktur.", workflowEyebrow: "Alur Kerja Sama", workflowTitle: "Dari konsultasi hingga dukungan berkelanjutan.", workflowDesc: "Kami memulai dari masalah bisnis nyata, lalu merancang solusi yang tepat — bisa berupa produk siap pakai, custom development, atau kombinasi keduanya.", legalEyebrow: "Legal Entity", legalBrand: "Brand name", legalName: "Legal entity", legalNib: "Legal document", legalAddress: "Location", legalFounded: "Founded", legalFounder: "Founder", legalField: "Business field", legalWebsite: "Website", cloudEyebrow: "Penggunaan Cloud Credits", cloudTitle: "Bagaimana kami menggunakan cloud credits dan funding infrastruktur.", cloudDesc: "Cloud credits digunakan untuk mendukung pengembangan produk, scaling infrastruktur, dan otomasi berbasis AI pada WaSigap serta produk autobotws lainnya.", teamEyebrow: "Tim Kami", ctaTitle: "Siap merapikan operasional bisnis Anda?", ctaDesc: "Konsultasikan kebutuhan otomasi, software, atau integrasi sistem dengan tim autobotws.", ctaButton: "Hubungi Kami", viewPartners: "Lihat mitra & studi kasus" },
+    technology: { eyebrow: "Teknologi", title: "Stack modern untuk produk digital yang scalable.", intro: "autobotws membangun produk digital yang scalable menggunakan teknologi web, mobile, desktop, cloud, dan AI modern. Stack teknologi ini memungkinkan pengembangan sistem yang fleksibel untuk otomasi, komunikasi pelanggan, pengolahan data, dan operasional bisnis.", principle: "autobotws memilih teknologi berdasarkan kebutuhan produk, skala sistem, keamanan data, kemudahan integrasi, dan rencana pengembangan jangka panjang.", categoriesEyebrow: "Kapabilitas Teknologi", ctaTitle: "Butuh arsitektur integrasi custom?", ctaDesc: "autobotws dapat menghubungkan tools yang sudah ada tanpa memaksa migrasi penuh.", ctaButton: "Hubungi tim solusi" },
+    platforms: { eyebrow: "Produk", title: "Portfolio produk yang dibangun autobotws.", desc: "Empat produk inti untuk otomasi WhatsApp, rekonsiliasi bank, layanan kebersihan, dan sistem akademik — plus solusi vertikal untuk industri tertentu.", all: "Semua", viewPlatform: "Lihat produk", customEyebrow: "produk aktif", customTitle: "Butuh kombinasi atau pengembangan khusus?", customDesc: "autobotws dapat menghubungkan produk ini atau membangun solusi baru sesuai customer journey, operasional, dan sistem Anda.", customCta: "Diskusikan implementasi", back: "Kembali ke daftar produk", visit: "Kunjungi", plan: "Rencanakan produk ini", coreModules: "Fitur utama", bestFor: "Cocok untuk", bestForDesc: "Bisnis atau tim yang membutuhkan solusi digital fokus dengan ruang integrasi ke ekosistem autobotws.", implementation: "Jalur implementasi", implementationDesc: "Mulai dari alur layanan, aktifkan modul inti, hubungkan data operasional, lalu tingkatkan dari penggunaan nyata.", connect: "Dapat terhubung dengan", connectDesc: "WhatsApp, sistem pembayaran, CRM, Google Workspace, dashboard operasional, tools internal, dan custom API.", related: "Use case terkait", more: "Produk lain", moreTitle: "Bangun solusi terhubung.", allPlatforms: "Semua produk" },
+    wasigap: { badge: "Otomasi WhatsApp Berbasis AI", heroTitle: "Otomasi WhatsApp Berbasis AI untuk Bisnis Indonesia.", heroDesc: "WaSigap membantu klinik, toko online, bisnis jasa, dan tim customer service mengelola percakapan WhatsApp melalui AI auto-reply, CRM, broadcast terjadwal, dan follow-up otomatis.", problemEyebrow: "Masalah Pasar", problemTitle: "WhatsApp penting — tetapi sebagian besar tim masih mengelolanya secara manual.", solutionEyebrow: "Solusi Produk", solutionTitle: "Satu dashboard untuk AI reply, CRM, broadcast, dan workflow automation.", solutionDesc: "WaSigap menggabungkan AI auto-reply, CRM pelanggan, broadcast terjadwal, multi-agent customer service, flow builder, dan integrasi marketplace dalam satu dashboard operasional.", demoEyebrow: "Demo Produk", demoTitle: "Lihat WaSigap beraksi.", demoDesc: "Placeholder screenshot dan demo produk — ganti dengan capture dashboard live atau [Demo URL].", featuresEyebrow: "Fitur Utama", featuresTitle: "Dibangun untuk operasional WhatsApp harian.", useCasesEyebrow: "Use Case", useCasesTitle: "Dirancang untuk alur kerja bisnis Indonesia.", businessModelEyebrow: "Model Bisnis", businessModelTitle: "Paket fleksibel untuk UMKM dan tim yang berkembang.", tractionEyebrow: "Traction & Progress", tractionTitle: "Progress produk dan jejak operasional.", techEyebrow: "Teknologi & Infrastruktur", techTitle: "Arsitektur SaaS siap cloud.", techDesc: "WaSigap berjalan di backend scalable, queue workers, layer AI inference, dan infrastruktur multi-tenant untuk operasi WhatsApp volume tinggi.", cloudEyebrow: "Penggunaan Cloud Credits", cloudTitle: "Cloud credits mempercepat scale produk.", cloudDesc: "Credits mendukung hosting backend, database, queue jobs, AI inference, media storage, monitoring, CDN, staging, dan scaling infrastruktur SaaS multi-tenant.", aboutEyebrow: "Tentang autobotws", aboutTitle: "Dibangun oleh autobotws", aboutDesc: "autobotws adalah brand teknologi Indonesia yang berfokus pada software development, AI automation, dan otomasi WhatsApp. WaSigap adalah produk unggulan kami untuk otomasi komunikasi pelanggan.", legalEyebrow: "Legal Entity", ctaTitle: "Siap mengotomasi operasional WhatsApp Anda?", ctaDesc: "Coba WaSigap atau diskusikan setup custom untuk workflow bisnis Anda.", ctaPrimary: "Kunjungi WaSigap", ctaSecondary: "Hubungi Founder", back: "Semua produk" },
+    research: { eyebrow: "Riset", title: "Riset dan referensi untuk membangun platform yang berguna.", desc: "Library ringkas untuk riset produk, catatan implementasi, referensi arsitektur, dan dokumentasi operasional di seluruh portfolio autobotws.", comingSoon: "Segera hadir", platform: { title: "Riset Platform", desc: "Catatan masalah pasar, arah produk, asumsi workflow, dan positioning platform.", label: "Catatan riset" }, architecture: { title: "Referensi Arsitektur", desc: "Cara autobotws menyusun AI, otomasi, API, dashboard, dan operasi multi-platform.", label: "Desain sistem" }, guides: { title: "Panduan Implementasi", desc: "Panduan praktis untuk mengubah proses bisnis menjadi workflow digital dan modul produk.", label: "Panduan" }, docs: { title: "Dokumentasi Case", desc: "Template dokumentasi untuk launch produk, rencana integrasi, customer journey, dan playbook operasional.", label: "Dokumentasi" } }
+  },
+  fil: {
+    nav: { product: "Produkto", research: "Pananaliksik", platforms: "Mga Platform", solutions: "Solusyon", technology: "Teknolohiya", company: "Kompanya", blog: "Blog", bookConsultation: "Mag-book ng Konsultasyon" },
+    footer: { brandDesc: "Kompanya para sa AI, automation, at digital infrastructure para sa modernong negosyo.", company: "Kompanya", companyProfile: "Profile ng Kompanya", technology: "Teknolohiya", useCases: "Use Cases", platforms: "Mga Platform", allPlatforms: "Lahat ng Platform", resources: "Resources", research: "Pananaliksik", blog: "Blog", privacy: "Privacy Policy" },
+    language: { label: "Wika" },
+    home: { ...marketingEn.home, badge: "AI, Automation, at Digital Infrastructure", heroTitle: "Bumuo ng modernong business operating system kasama ang Autobot.", explorePlatforms: "Tingnan ang Platforms", viewUseCases: "Tingnan ang Use Cases" },
+    products: { ...marketingEn.products, eyebrow: "Produkto", title: "Portfolio ng produkto para sa praktikal na digital operations.", detail: "Detalye", visit: "Bisitahin ang site" },
+    platforms: { ...marketingEn.platforms, all: "Lahat", viewPlatform: "Tingnan ang platform", back: "Bumalik sa platform suite", visit: "Bisitahin", customCta: "Pag-usapan ang implementasyon" },
+    research: { ...marketingEn.research, eyebrow: "Pananaliksik", comingSoon: "Malapit na" }
+  },
+  ms: {
+    nav: { product: "Produk", research: "Penyelidikan", platforms: "Platform", solutions: "Solusi", technology: "Teknologi", company: "Syarikat", blog: "Blog", bookConsultation: "Tempah Konsultasi" },
+    footer: { brandDesc: "Syarikat AI, automasi, dan infrastruktur digital untuk perniagaan moden.", company: "Syarikat", companyProfile: "Profil Syarikat", technology: "Teknologi", useCases: "Kes Penggunaan", platforms: "Platform", allPlatforms: "Semua Platform", resources: "Sumber", research: "Penyelidikan", blog: "Blog", privacy: "Dasar Privasi" },
+    language: { label: "Bahasa" },
+    home: { ...marketingEn.home, badge: "AI, Automasi, dan Infrastruktur Digital", heroTitle: "Bina sistem operasi perniagaan moden dengan Autobot.", explorePlatforms: "Teroka Platform", viewUseCases: "Lihat Kes Penggunaan" },
+    products: { ...marketingEn.products, eyebrow: "Produk", title: "Portfolio produk untuk operasi digital praktikal.", detail: "Butiran", visit: "Lawati laman" },
+    platforms: { ...marketingEn.platforms, all: "Semua", viewPlatform: "Lihat platform", back: "Kembali ke platform suite", visit: "Lawati", customCta: "Bincang implementasi" },
+    research: { ...marketingEn.research, eyebrow: "Penyelidikan", comingSoon: "Akan datang" }
+  },
+  vi: {
+    nav: { product: "Sản phẩm", research: "Nghiên cứu", platforms: "Nền tảng", solutions: "Giải pháp", technology: "Công nghệ", company: "Công ty", blog: "Blog", bookConsultation: "Đặt lịch tư vấn" },
+    footer: { brandDesc: "Công ty AI, tự động hóa và hạ tầng số cho doanh nghiệp hiện đại.", company: "Công ty", companyProfile: "Hồ sơ công ty", technology: "Công nghệ", useCases: "Trường hợp sử dụng", platforms: "Nền tảng", allPlatforms: "Tất cả nền tảng", resources: "Tài nguyên", research: "Nghiên cứu", blog: "Blog", privacy: "Chính sách bảo mật" },
+    language: { label: "Ngôn ngữ" },
+    home: { ...marketingEn.home, badge: "AI, Tự động hóa và Hạ tầng số", heroTitle: "Xây dựng hệ điều hành kinh doanh hiện đại với Autobot.", explorePlatforms: "Khám phá nền tảng", viewUseCases: "Xem trường hợp sử dụng" },
+    products: { ...marketingEn.products, eyebrow: "Sản phẩm", title: "Danh mục sản phẩm cho vận hành số thực tế.", detail: "Chi tiết", visit: "Truy cập site" },
+    platforms: { ...marketingEn.platforms, all: "Tất cả", viewPlatform: "Xem nền tảng", back: "Quay lại bộ nền tảng", visit: "Truy cập", customCta: "Trao đổi triển khai" },
+    research: { ...marketingEn.research, eyebrow: "Nghiên cứu", comingSoon: "Sắp ra mắt" }
+  },
+  km: {
+    nav: { product: "ផលិតផល", research: "ស្រាវជ្រាវ", platforms: "វេទិកា", solutions: "ដំណោះស្រាយ", technology: "បច្ចេកវិទ្យា", company: "ក្រុមហ៊ុន", blog: "ប្លុក", bookConsultation: "កក់ការប្រឹក្សា" },
+    footer: { brandDesc: "ក្រុមហ៊ុន AI, ស្វ័យប្រវត្តិកម្ម និងហេដ្ឋារចនាសម្ព័ន្ធឌីជីថលសម្រាប់អាជីវកម្មទំនើប។", company: "ក្រុមហ៊ុន", companyProfile: "ប្រវត្តិក្រុមហ៊ុន", technology: "បច្ចេកវិទ្យា", useCases: "ករណីប្រើប្រាស់", platforms: "វេទិកា", allPlatforms: "វេទិកាទាំងអស់", resources: "ធនធាន", research: "ស្រាវជ្រាវ", blog: "ប្លុក", privacy: "គោលការណ៍ឯកជនភាព" },
+    language: { label: "ភាសា" },
+    home: { ...marketingEn.home, badge: "AI, ស្វ័យប្រវត្តិកម្ម និងហេដ្ឋារចនាសម្ព័ន្ធឌីជីថល", heroTitle: "បង្កើតប្រព័ន្ធប្រតិបត្តិការអាជីវកម្មទំនើបជាមួយ Autobot។", explorePlatforms: "មើលវេទិកា", viewUseCases: "មើលករណីប្រើប្រាស់" },
+    products: { ...marketingEn.products, eyebrow: "ផលិតផល", title: "បណ្ដុំផលិតផលសម្រាប់ប្រតិបត្តិការឌីជីថលជាក់ស្តែង។", detail: "លម្អិត", visit: "ចូលមើលវេបសាយ" },
+    platforms: { ...marketingEn.platforms, all: "ទាំងអស់", viewPlatform: "មើលវេទិកា", back: "ត្រឡប់ទៅវេទិកា", visit: "ចូលមើល", customCta: "ពិភាក្សាការអនុវត្ត" },
+    research: { ...marketingEn.research, eyebrow: "ស្រាវជ្រាវ", comingSoon: "ឆាប់ៗនេះ" }
+  },
+  zh: {
+    nav: { product: "产品", research: "研究", platforms: "平台", solutions: "解决方案", technology: "技术", company: "公司", blog: "博客", bookConsultation: "预约咨询" },
+    footer: { brandDesc: "面向现代企业的 AI、自动化与数字基础设施公司。", company: "公司", companyProfile: "公司简介", technology: "技术", useCases: "用例", platforms: "平台", allPlatforms: "全部平台", resources: "资源", research: "研究", blog: "博客", privacy: "隐私政策" },
+    language: { label: "语言" },
+    home: { ...marketingEn.home, badge: "AI、自动化与数字基础设施", heroTitle: "用 Autobot 构建现代业务操作系统。", explorePlatforms: "探索平台", viewUseCases: "查看用例" },
+    products: { ...marketingEn.products, eyebrow: "产品", title: "面向实际数字运营的产品组合。", detail: "详情", visit: "访问网站" },
+    platforms: { ...marketingEn.platforms, all: "全部", viewPlatform: "查看平台", back: "返回平台套件", visit: "访问", customCta: "讨论实施" },
+    research: { ...marketingEn.research, eyebrow: "研究", comingSoon: "即将推出" }
+  },
+  ja: {
+    nav: { product: "プロダクト", research: "リサーチ", platforms: "プラットフォーム", solutions: "ソリューション", technology: "テクノロジー", company: "会社", blog: "ブログ", bookConsultation: "相談を予約" },
+    footer: { brandDesc: "現代企業向けのAI、自動化、デジタル基盤の会社です。", company: "会社", companyProfile: "会社概要", technology: "テクノロジー", useCases: "ユースケース", platforms: "プラットフォーム", allPlatforms: "すべてのプラットフォーム", resources: "リソース", research: "リサーチ", blog: "ブログ", privacy: "プライバシーポリシー" },
+    language: { label: "言語" },
+    home: { ...marketingEn.home, badge: "AI、自動化、デジタル基盤", heroTitle: "Autobotで現代的なビジネスOSを構築します。", explorePlatforms: "プラットフォームを見る", viewUseCases: "ユースケースを見る" },
+    products: { ...marketingEn.products, eyebrow: "プロダクト", title: "実用的なデジタル運用のための製品ポートフォリオ。", detail: "詳細", visit: "サイトを見る" },
+    platforms: { ...marketingEn.platforms, all: "すべて", viewPlatform: "プラットフォームを見る", back: "プラットフォーム一覧へ戻る", visit: "訪問", customCta: "実装を相談" },
+    research: { ...marketingEn.research, eyebrow: "リサーチ", comingSoon: "近日公開" }
+  },
+  th: {
+    nav: { product: "สินค้า", research: "วิจัย", platforms: "แพลตฟอร์ม", solutions: "โซลูชัน", technology: "เทคโนโลยี", company: "บริษัท", blog: "บล็อก", bookConsultation: "จองคำปรึกษา" },
+    footer: { brandDesc: "บริษัท AI, ระบบอัตโนมัติ และโครงสร้างพื้นฐานดิจิทัลสำหรับธุรกิจยุคใหม่", company: "บริษัท", companyProfile: "โปรไฟล์บริษัท", technology: "เทคโนโลยี", useCases: "กรณีใช้งาน", platforms: "แพลตฟอร์ม", allPlatforms: "แพลตฟอร์มทั้งหมด", resources: "ทรัพยากร", research: "วิจัย", blog: "บล็อก", privacy: "นโยบายความเป็นส่วนตัว" },
+    language: { label: "ภาษา" },
+    home: { ...marketingEn.home, badge: "AI, ระบบอัตโนมัติ และโครงสร้างพื้นฐานดิจิทัล", heroTitle: "สร้างระบบปฏิบัติการธุรกิจสมัยใหม่ด้วย Autobot", explorePlatforms: "ดูแพลตฟอร์ม", viewUseCases: "ดูกรณีใช้งาน" },
+    products: { ...marketingEn.products, eyebrow: "สินค้า", title: "พอร์ตโฟลิโอผลิตภัณฑ์สำหรับการดำเนินงานดิจิทัลที่ใช้งานได้จริง", detail: "รายละเอียด", visit: "เข้าชมเว็บไซต์" },
+    platforms: { ...marketingEn.platforms, all: "ทั้งหมด", viewPlatform: "ดูแพลตฟอร์ม", back: "กลับไปยังชุดแพลตฟอร์ม", visit: "เข้าชม", customCta: "พูดคุยการนำไปใช้" },
+    research: { ...marketingEn.research, eyebrow: "วิจัย", comingSoon: "เร็วๆ นี้" }
+  }
+};
+const messages = {
+  en: { ...legacyEn, marketing: marketingEn },
+  id: { ...legacyId, marketing: translatedMarketing.id },
+  fil: { ...legacyEn, common: { ...legacyEn.common, language: "Wika" }, sidebar: { ...legacyEn.sidebar, language: "Filipino" }, marketing: translatedMarketing.fil },
+  ms: { ...legacyEn, common: { ...legacyEn.common, language: "Bahasa" }, sidebar: { ...legacyEn.sidebar, language: "Malay" }, marketing: translatedMarketing.ms },
+  vi: { ...legacyEn, common: { ...legacyEn.common, language: "Ngôn ngữ" }, sidebar: { ...legacyEn.sidebar, language: "Tiếng Việt" }, marketing: translatedMarketing.vi },
+  km: { ...legacyEn, common: { ...legacyEn.common, language: "ភាសា" }, sidebar: { ...legacyEn.sidebar, language: "Khmer" }, marketing: translatedMarketing.km },
+  zh: { ...legacyEn, common: { ...legacyEn.common, language: "语言" }, sidebar: { ...legacyEn.sidebar, language: "中文" }, marketing: translatedMarketing.zh },
+  ja: { ...legacyEn, common: { ...legacyEn.common, language: "言語" }, sidebar: { ...legacyEn.sidebar, language: "日本語" }, marketing: translatedMarketing.ja },
+  th: { ...legacyEn, common: { ...legacyEn.common, language: "ภาษา" }, sidebar: { ...legacyEn.sidebar, language: "ไทย" }, marketing: translatedMarketing.th }
 };
 function resolve(path, obj) {
   return path.split(".").reduce((acc, key) => {
@@ -2384,13 +2806,14 @@ function resolve(path, obj) {
   }, obj);
 }
 function translate(locale, key) {
-  return resolve(key, messages[locale]) ?? key;
+  return resolve(key, messages[locale]) ?? resolve(key, messages[DEFAULT_LOCALE]) ?? key;
 }
 const COOKIE_NAME = "autobot_locale";
 function useLocale() {
   const cookie = useCookie(COOKIE_NAME, { sameSite: "lax" });
-  const locale = useState("autobot-locale", () => cookie.value || "id");
+  const locale = useState("autobot-locale", () => isLocaleCode(cookie.value) ? cookie.value : DEFAULT_LOCALE);
   function setLocale(next) {
+    if (!isLocaleCode(next)) return;
     locale.value = next;
     cookie.value = next;
   }
@@ -2564,7 +2987,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
       {
         id: "page-features",
         kind: "page",
-        title: locale.value === "id" ? "Fitur Lengkap WaBlastApp" : "WaBlastApp Features",
+        title: locale.value === "id" ? "Fitur Lengkap WaSigap" : "WaSigap Features",
         description: locale.value === "id" ? "Auto-reply, AI multi-provider, broadcast, manajemen kontak, dan 20+ modul bisnis." : "Auto-reply, AI multi-provider, broadcast, contact management, and 20+ business modules.",
         category: locale.value === "id" ? "Halaman Publik" : "Public Page",
         route: "/features",
@@ -2625,9 +3048,9 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         id: "page-about",
         kind: "page",
         title: locale.value === "id" ? "Tentang Autobot" : "About Autobot",
-        description: locale.value === "id" ? "Profil perusahaan, visi, keunggulan, dan tim Autobot Wijaya Solution." : "Company profile, vision, strengths, and the Autobot Wijaya Solution team.",
+        description: locale.value === "id" ? "Profil autobotws: visi, keunggulan, produk, dan tim." : "autobotws company profile, vision, strengths, products, and team.",
         category: locale.value === "id" ? "Perusahaan" : "Company",
-        route: "/about",
+        route: "/company",
         tags: ["about", "company", "team"],
         emoji: "🏢",
         actionLabel: locale.value === "id" ? "Buka halaman" : "Open page",
@@ -2763,7 +3186,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         title: "Auto-Reply & Rule Engine",
         description: locale.value === "id" ? "Exact match, contains match, regex, override kontak, dan fallback." : "Exact match, contains match, regex, contact override, and fallback.",
         category: locale.value === "id" ? "Fitur" : "Feature",
-        query: "Bagaimana fitur auto-reply dan rule engine bekerja di WaBlastApp?",
+        query: "Bagaimana fitur auto-reply dan rule engine bekerja di WaSigap?",
         tags: ["auto-reply", "rule", "regex"],
         emoji: "↩️",
         actionLabel: locale.value === "id" ? "Tanya AI" : "Ask AI",
@@ -2787,7 +3210,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         title: "Broadcast & Blast",
         description: locale.value === "id" ? "Blast massal, broadcast terjadwal, media, status pengiriman, delay." : "Mass blast, scheduled broadcast, media, delivery status, and delay.",
         category: locale.value === "id" ? "Fitur" : "Feature",
-        query: "Bagaimana cara broadcast dan blast pesan massal di WaBlastApp?",
+        query: "Bagaimana cara broadcast dan blast pesan massal di WaSigap?",
         tags: ["broadcast", "blast", "schedule"],
         emoji: "📣",
         actionLabel: locale.value === "id" ? "Tanya AI" : "Ask AI",
@@ -2799,7 +3222,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         title: "Chat & Kontak",
         description: locale.value === "id" ? "Multi-device, import Excel, operator takeover, jam operasional." : "Multi-device, Excel import, operator takeover, operating hours.",
         category: locale.value === "id" ? "Fitur" : "Feature",
-        query: "Bagaimana manajemen chat dan kontak di WaBlastApp?",
+        query: "Bagaimana manajemen chat dan kontak di WaSigap?",
         tags: ["chat", "contacts", "excel"],
         emoji: "👥",
         actionLabel: locale.value === "id" ? "Tanya AI" : "Ask AI",
@@ -2811,7 +3234,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         title: "20+ Modul Bisnis",
         description: locale.value === "id" ? "Klinik, CRM, keuangan, F&B, travel, event, dan lainnya." : "Clinic, CRM, finance, F&B, travel, events, and more.",
         category: locale.value === "id" ? "Fitur" : "Feature",
-        query: "Ceritakan paket modul bisnis yang tersedia di WaBlastApp",
+        query: "Ceritakan paket modul bisnis yang tersedia di WaSigap",
         tags: ["modules", "business", "industry"],
         emoji: "🏢",
         actionLabel: locale.value === "id" ? "Tanya AI" : "Ask AI",
@@ -3005,11 +3428,14 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   __name: "app",
   __ssrInlineRender: true,
   setup(__props) {
+    const route = useRoute();
     const { locale } = useLocale();
     const { showSearch } = useSearchModal();
+    const isDarkShell = computed(() => route.meta.layout !== "marketing");
     useHead(() => ({
       bodyAttrs: {
-        class: "antialiased"
+        class: "antialiased",
+        style: isDarkShell.value ? "background-color: #111111; color: #F0F0F0;" : "background-color: #f8fafc; color: #0f172a;"
       },
       htmlAttrs: {
         lang: locale.value
@@ -3019,7 +3445,9 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       const _component_NuxtLayout = __nuxt_component_0;
       const _component_NuxtPage = __nuxt_component_1;
       const _component_CommonSearchModal = _sfc_main$3;
-      _push(`<div${ssrRenderAttrs(mergeProps({ "data-theme": "dark" }, _attrs))}>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({
+        "data-theme": unref(isDarkShell) ? "dark" : void 0
+      }, _attrs))}>`);
       _push(ssrRenderComponent(_component_NuxtLayout, null, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -3061,7 +3489,7 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-CTUKPAhT.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-D3xEMi26.mjs'));
     const _Error = defineAsyncComponent(() => import('./error-500-BJjk8yzu.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
@@ -3154,5 +3582,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { useSeoMeta as a, useChatStore as b, useRuntimeConfig as c, useRoute as d, entry_default as default, useRouter as e, useFetch as f, encodeRoutePath as g, useNuxtApp as h, nuxtLinkDefaults as i, useLocale as j, useState as k, createError as l, defineNuxtRouteMiddleware as m, navigateTo as n, useSearchModal as o, resolveRouteObject as r, useHead as u };
+export { useLocale as a, useSeoMeta as b, useChatStore as c, useRouter as d, entry_default as default, useFetch as e, useRuntimeConfig as f, useRoute as g, createError as h, encodeRoutePath as i, useNuxtApp as j, nuxtLinkDefaults as k, useState as l, defineNuxtRouteMiddleware as m, navigateTo as n, useSearchModal as o, resolveRouteObject as r, useHead as u };
 //# sourceMappingURL=server.mjs.map

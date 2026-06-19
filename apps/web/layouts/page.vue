@@ -7,13 +7,13 @@
     >
       <NuxtLink to="/" class="flex items-center gap-2.5 select-none">
         <img src="/logo.png" alt="Autobot" class="h-7 w-auto object-contain" />
-        <span class="font-semibold text-[15px] tracking-tight hidden sm:block" style="color: #F0F0F0;">AutobotWs</span>
+        <span class="font-semibold text-[15px] tracking-tight hidden sm:block" style="color: #F0F0F0;">autobotws</span>
       </NuxtLink>
 
       <div class="flex items-center gap-1 text-[13.5px]">
         <NuxtLink to="/products" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">{{ t('layout.page.nav.products') }}</NuxtLink>
         <NuxtLink to="/pricing" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">{{ t('layout.page.nav.pricing') }}</NuxtLink>
-        <NuxtLink to="/about" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">{{ t('layout.page.nav.about') }}</NuxtLink>
+        <NuxtLink to="/company" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">{{ t('layout.page.nav.about') }}</NuxtLink>
         <NuxtLink to="/contact" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">{{ t('layout.page.nav.contact') }}</NuxtLink>
         <NuxtLink
           to="/"
@@ -60,7 +60,7 @@
 
           <!-- Brand -->
           <div class="col-span-2 sm:col-span-1">
-            <p class="text-white font-semibold mb-1 text-[14px]">Autobot Wijaya Solution</p>
+            <p class="text-white font-semibold mb-1 text-[14px]">autobotws</p>
             <p class="text-xs leading-relaxed mb-3" style="color: rgba(255,255,255,0.3);">
               {{ t('layout.page.footer.brandDesc') }}
             </p>
@@ -84,7 +84,7 @@
           <div>
             <p class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-3">{{ t('layout.page.footer.company') }}</p>
             <ul class="space-y-2">
-              <li><NuxtLink to="/about" class="hover:text-white/60 transition-colors">{{ t('layout.page.footer.about') }}</NuxtLink></li>
+              <li><NuxtLink to="/company" class="hover:text-white/60 transition-colors">{{ t('layout.page.footer.about') }}</NuxtLink></li>
               <li><NuxtLink to="/partners" class="hover:text-white/60 transition-colors">{{ t('layout.page.footer.partners') }}</NuxtLink></li>
               <li><NuxtLink to="/contact" class="hover:text-white/60 transition-colors">{{ t('layout.page.footer.contact') }}</NuxtLink></li>
               <li>

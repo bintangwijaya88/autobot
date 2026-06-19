@@ -1,5 +1,5 @@
 <template>
-  <div data-theme="dark">
+  <div :data-theme="isDarkShell ? 'dark' : undefined">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -8,8 +8,10 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
 const { locale } = useLocale()
 const { showSearch, openSearch } = useSearchModal()
+const isDarkShell = computed(() => route.meta.layout !== 'marketing')
 
 function onGlobalKeydown(e: KeyboardEvent) {
   const target = e.target as HTMLElement | null
@@ -28,6 +30,9 @@ onUnmounted(() => window.removeEventListener('keydown', onGlobalKeydown))
 useHead(() => ({
   bodyAttrs: {
     class: 'antialiased',
+    style: isDarkShell.value
+      ? 'background-color: #111111; color: #F0F0F0;'
+      : 'background-color: #f8fafc; color: #0f172a;',
   },
   htmlAttrs: {
     lang: locale.value,

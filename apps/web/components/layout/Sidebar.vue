@@ -46,7 +46,7 @@
         </svg>
         {{ t('sidebar.products') }}
       </NuxtLink>
-      <NuxtLink to="/about" class="sidebar-item">
+      <NuxtLink to="/company" class="sidebar-item">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" class="shrink-0">
           <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/>
           <path d="M10 9v5M10 7v.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -271,10 +271,10 @@ const featureCategories = [
     borderColor: 'rgba(34,197,94,0.22)',
     labelColor: '#86efac',
     features: [
-      { label: 'Exact & Contains Match', query: 'Bagaimana fitur exact match dan contains match auto-reply di WaBlastApp?' },
-      { label: 'Regex Pattern', query: 'Apakah WaBlast mendukung regex untuk aturan auto-reply?' },
+      { label: 'Exact & Contains Match', query: 'Bagaimana fitur exact match dan contains match auto-reply di WaSigap?' },
+      { label: 'Regex Pattern', query: 'Apakah WaSigap mendukung regex untuk aturan auto-reply?' },
       { label: 'Override Per Kontak', query: 'Bisakah saya set aturan reply berbeda untuk kontak tertentu?' },
-      { label: 'Default Fallback', query: 'Bagaimana cara setup default fallback reply di WaBlastApp?' },
+      { label: 'Default Fallback', query: 'Bagaimana cara setup default fallback reply di WaSigap?' },
     ],
   },
   {
@@ -285,10 +285,10 @@ const featureCategories = [
     borderColor: 'rgba(99,102,241,0.22)',
     labelColor: '#a5b4fc',
     features: [
-      { label: 'OpenAI / Claude / Gemini', query: 'AI provider apa saja yang didukung WaBlastApp?' },
-      { label: 'Knowledge Base (FAQ)', query: 'Bagaimana cara upload knowledge base ke WaBlastApp?' },
-      { label: 'Custom AI Persona', query: 'Bisakah buat persona AI yang berbeda per kontak di WaBlast?' },
-      { label: 'Estimasi Biaya AI', query: 'Bagaimana cara pantau biaya penggunaan AI di WaBlastApp?' },
+      { label: 'OpenAI / Claude / Gemini', query: 'AI provider apa saja yang didukung WaSigap?' },
+      { label: 'Knowledge Base (FAQ)', query: 'Bagaimana cara upload knowledge base ke WaSigap?' },
+      { label: 'Custom AI Persona', query: 'Bisakah buat persona AI yang berbeda per kontak di WaSigap?' },
+      { label: 'Estimasi Biaya AI', query: 'Bagaimana cara pantau biaya penggunaan AI di WaSigap?' },
     ],
   },
   {
@@ -299,10 +299,10 @@ const featureCategories = [
     borderColor: 'rgba(234,179,8,0.20)',
     labelColor: '#fde047',
     features: [
-      { label: 'Blast Massal + Delay', query: 'Bagaimana cara blast pesan ke ribuan kontak di WaBlastApp?' },
-      { label: 'Broadcast Terjadwal', query: 'Bagaimana cara menjadwalkan broadcast di WaBlastApp?' },
-      { label: 'Template + Media', query: 'Bagaimana cara membuat template pesan dengan media di WaBlast?' },
-      { label: 'Status Pengiriman', query: 'Bagaimana cara melihat status pengiriman broadcast di WaBlast?' },
+      { label: 'Blast Massal + Delay', query: 'Bagaimana cara blast pesan ke ribuan kontak di WaSigap?' },
+      { label: 'Broadcast Terjadwal', query: 'Bagaimana cara menjadwalkan broadcast di WaSigap?' },
+      { label: 'Template + Media', query: 'Bagaimana cara membuat template pesan dengan media di WaSigap?' },
+      { label: 'Status Pengiriman', query: 'Bagaimana cara melihat status pengiriman broadcast di WaSigap?' },
     ],
   },
   {
@@ -314,9 +314,9 @@ const featureCategories = [
     labelColor: '#93c5fd',
     features: [
       { label: 'Multi-Device WA', query: 'Berapa banyak nomor WhatsApp yang bisa dihubungkan?' },
-      { label: 'Import Kontak Excel', query: 'Bagaimana cara import kontak dari Excel ke WaBlastApp?' },
-      { label: 'Operator Takeover', query: 'Apa itu operator takeover di WaBlastApp?' },
-      { label: 'Jam Operasional', query: 'Bagaimana cara mengatur jam operasional bot WaBlast?' },
+      { label: 'Import Kontak Excel', query: 'Bagaimana cara import kontak dari Excel ke WaSigap?' },
+      { label: 'Operator Takeover', query: 'Apa itu operator takeover di WaSigap?' },
+      { label: 'Jam Operasional', query: 'Bagaimana cara mengatur jam operasional bot WaSigap?' },
     ],
   },
   {
@@ -327,10 +327,10 @@ const featureCategories = [
     borderColor: 'rgba(168,85,247,0.20)',
     labelColor: '#c4b5fd',
     features: [
-      { label: 'Klinik, Salon, Apotek', query: 'Ceritakan paket modul bisnis kesehatan di WaBlastApp' },
-      { label: 'CRM, Sales, Marketing', query: 'Ceritakan paket modul CRM dan Sales di WaBlastApp' },
-      { label: 'HR, Keuangan, Toko', query: 'Ceritakan paket modul HR dan Keuangan di WaBlastApp' },
-      { label: 'F&B, Event, Travel', query: 'Ceritakan paket modul F&B dan Event di WaBlastApp' },
+      { label: 'Klinik, Salon, Apotek', query: 'Ceritakan paket modul bisnis kesehatan di WaSigap' },
+      { label: 'CRM, Sales, Marketing', query: 'Ceritakan paket modul CRM dan Sales di WaSigap' },
+      { label: 'HR, Keuangan, Toko', query: 'Ceritakan paket modul HR dan Keuangan di WaSigap' },
+      { label: 'F&B, Event, Travel', query: 'Ceritakan paket modul F&B dan Event di WaSigap' },
     ],
   },
 ]
@@ -359,7 +359,7 @@ const currentLang = computed(() => locales.find(lang => lang.code === locale.val
 
 const toggleLangMenu = () => { langOpen.value = !langOpen.value }
 
-const setLang = (lang: { code: 'id' | 'en'; label: string; flag: string }) => {
+const setLang = (lang: (typeof locales)[number]) => {
   setLocale(lang.code)
   langOpen.value = false
 }

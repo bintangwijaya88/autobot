@@ -32,7 +32,7 @@ const staticItems = computed<SearchItem[]>(() => [
   {
     id: 'page-features',
     kind: 'page',
-    title: locale.value === 'id' ? 'Fitur Lengkap WaBlastApp' : 'WaBlastApp Features',
+    title: locale.value === 'id' ? 'Fitur Lengkap WaSigap' : 'WaSigap Features',
     description: locale.value === 'id'
       ? 'Auto-reply, AI multi-provider, broadcast, manajemen kontak, dan 20+ modul bisnis.'
       : 'Auto-reply, AI multi-provider, broadcast, contact management, and 20+ business modules.',
@@ -102,10 +102,10 @@ const staticItems = computed<SearchItem[]>(() => [
     kind: 'page',
     title: locale.value === 'id' ? 'Tentang Autobot' : 'About Autobot',
     description: locale.value === 'id'
-      ? 'Profil perusahaan, visi, keunggulan, dan tim Autobot Wijaya Solution.'
-      : 'Company profile, vision, strengths, and the Autobot Wijaya Solution team.',
+      ? 'Profil autobotws: visi, keunggulan, produk, dan tim.'
+      : 'autobotws company profile, vision, strengths, products, and team.',
     category: locale.value === 'id' ? 'Perusahaan' : 'Company',
-    route: '/about',
+    route: '/company',
     tags: ['about', 'company', 'team'],
     emoji: '🏢',
     actionLabel: locale.value === 'id' ? 'Buka halaman' : 'Open page',
@@ -267,7 +267,7 @@ const featureItems = computed<SearchItem[]>(() => [
       ? 'Exact match, contains match, regex, override kontak, dan fallback.'
       : 'Exact match, contains match, regex, contact override, and fallback.',
     category: locale.value === 'id' ? 'Fitur' : 'Feature',
-    query: 'Bagaimana fitur auto-reply dan rule engine bekerja di WaBlastApp?',
+    query: 'Bagaimana fitur auto-reply dan rule engine bekerja di WaSigap?',
     tags: ['auto-reply', 'rule', 'regex'],
     emoji: '↩️',
     actionLabel: locale.value === 'id' ? 'Tanya AI' : 'Ask AI',
@@ -295,7 +295,7 @@ const featureItems = computed<SearchItem[]>(() => [
       ? 'Blast massal, broadcast terjadwal, media, status pengiriman, delay.'
       : 'Mass blast, scheduled broadcast, media, delivery status, and delay.',
     category: locale.value === 'id' ? 'Fitur' : 'Feature',
-    query: 'Bagaimana cara broadcast dan blast pesan massal di WaBlastApp?',
+    query: 'Bagaimana cara broadcast dan blast pesan massal di WaSigap?',
     tags: ['broadcast', 'blast', 'schedule'],
     emoji: '📣',
     actionLabel: locale.value === 'id' ? 'Tanya AI' : 'Ask AI',
@@ -309,7 +309,7 @@ const featureItems = computed<SearchItem[]>(() => [
       ? 'Multi-device, import Excel, operator takeover, jam operasional.'
       : 'Multi-device, Excel import, operator takeover, operating hours.',
     category: locale.value === 'id' ? 'Fitur' : 'Feature',
-    query: 'Bagaimana manajemen chat dan kontak di WaBlastApp?',
+    query: 'Bagaimana manajemen chat dan kontak di WaSigap?',
     tags: ['chat', 'contacts', 'excel'],
     emoji: '👥',
     actionLabel: locale.value === 'id' ? 'Tanya AI' : 'Ask AI',
@@ -323,7 +323,7 @@ const featureItems = computed<SearchItem[]>(() => [
       ? 'Klinik, CRM, keuangan, F&B, travel, event, dan lainnya.'
       : 'Clinic, CRM, finance, F&B, travel, events, and more.',
     category: locale.value === 'id' ? 'Fitur' : 'Feature',
-    query: 'Ceritakan paket modul bisnis yang tersedia di WaBlastApp',
+    query: 'Ceritakan paket modul bisnis yang tersedia di WaSigap',
     tags: ['modules', 'business', 'industry'],
     emoji: '🏢',
     actionLabel: locale.value === 'id' ? 'Tanya AI' : 'Ask AI',

@@ -44,7 +44,7 @@ async function login() {
       <div class="flex flex-col items-center mb-8">
         <img src="/logo.png" alt="Autobot" class="h-12 w-auto object-contain mb-4" />
         <h1 class="text-[22px] font-bold text-white tracking-tight">Admin Dashboard</h1>
-        <p class="text-sm mt-1" style="color: rgba(255,255,255,0.35);">Autobot Wijaya Solution</p>
+        <p class="text-sm mt-1" style="color: rgba(255,255,255,0.35);">autobotws Admin</p>
       </div>
 
       <!-- Form card -->

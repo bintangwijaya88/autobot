@@ -4,7 +4,12 @@ export default defineEventHandler((event) => {
 
   const staticPages = [
     { loc: '/', priority: '1.0', changefreq: 'weekly' },
-    { loc: '/about', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/platforms', priority: '0.95', changefreq: 'weekly' },
+    { loc: '/solutions', priority: '0.85', changefreq: 'monthly' },
+    { loc: '/technology', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/company', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/blog', priority: '0.75', changefreq: 'weekly' },
+
     { loc: '/products', priority: '0.9', changefreq: 'weekly' },
     { loc: '/features', priority: '0.8', changefreq: 'monthly' },
     { loc: '/services', priority: '0.8', changefreq: 'monthly' },
@@ -20,21 +25,32 @@ export default defineEventHandler((event) => {
 
   const productSlugs = [
     'wasigap',
-    'wablast',
-    'wabotiq',
-    'ddl-klinik',
-    'autobot-flow',
-    'autobot-agent',
-    'autobot-connect',
+    'antarpro',
+    'bintanx',
+    'klopdana',
+    'suratmedis',
+    'sanyclean',
   ]
 
   const productPages = productSlugs.map(slug => ({
-    loc: `/products/${slug}`,
+    loc: `/platforms/${slug}`,
     priority: '0.8',
     changefreq: 'weekly',
   }))
 
-  const allPages = [...staticPages, ...productPages]
+  const blogSlugs = [
+    'automation-ecosystem-bukan-sekadar-chatbot',
+    'mendesain-ai-agent-untuk-operasional-bisnis',
+    'workflow-automation-untuk-perusahaan-bertumbuh',
+  ]
+
+  const blogPages = blogSlugs.map(slug => ({
+    loc: `/blog/${slug}`,
+    priority: '0.65',
+    changefreq: 'monthly',
+  }))
+
+  const allPages = [...staticPages, ...productPages, ...blogPages]
 
   const urls = allPages
     .map(

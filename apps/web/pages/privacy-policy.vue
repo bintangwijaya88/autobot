@@ -1,9 +1,9 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'page' })
 useSeoMeta({
-  title: 'Kebijakan Privasi — Autobot',
-  description: 'Kebijakan privasi Autobot Wijaya Solution mengenai pengumpulan, penggunaan, dan perlindungan data pengguna layanan chatbot.',
-  ogTitle: 'Kebijakan Privasi — Autobot',
+  title: 'Kebijakan Privasi — autobotws',
+  description: 'Kebijakan privasi autobotws (CV Autobot Wijaya Solution) mengenai pengumpulan, penggunaan, dan perlindungan data pengguna layanan.',
+  ogTitle: 'Kebijakan Privasi — autobotws',
   ogUrl: 'https://autobot.co.id/privacy-policy',
 })
 </script>
@@ -11,15 +11,16 @@ useSeoMeta({
 <template>
   <div class="max-w-3xl">
     <h1 class="text-4xl font-bold text-white mb-2">Kebijakan Privasi</h1>
-    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; Autobot Wijaya Solution</p>
+    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; autobotws · CV Autobot Wijaya Solution</p>
 
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">1. Siapa Kami</h2>
         <p>
-          Autobot Wijaya Solution ("Autobot", "kami") adalah perusahaan berbadan hukum yang berkedudukan di Jakarta, Indonesia,
-          bergerak di bidang pengembangan solusi chatbot dan integrasi kecerdasan buatan (AI) untuk bisnis.
+          <strong class="text-white">autobotws</strong> adalah brand teknologi yang dioperasikan oleh
+          <strong class="text-white">CV Autobot Wijaya Solution</strong> ("kami"), badan usaha berkedudukan di Jakarta, Indonesia,
+          yang bergerak di bidang pengembangan software, AI automation, otomasi WhatsApp, dan integrasi sistem untuk bisnis.
           Situs web ini dapat diakses di <span class="text-blue-400">autobot.co.id</span>.
         </p>
       </section>
@@ -101,7 +102,8 @@ useSeoMeta({
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">9. Kontak</h2>
         <div class="rounded-2xl border border-white/10 bg-white/3 p-6">
-          <p class="text-white font-semibold mb-3">Autobot Wijaya Solution</p>
+          <p class="text-white font-semibold mb-1">autobotws</p>
+          <p class="text-gray-400 text-sm mb-3">CV Autobot Wijaya Solution</p>
           <div class="space-y-1.5 text-sm">
             <p>Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung, Jakarta Timur 13810, Indonesia</p>
             <p>Email: <a href="mailto:support@autobot.co.id" class="text-blue-400 hover:text-blue-300">support@autobot.co.id</a></p>

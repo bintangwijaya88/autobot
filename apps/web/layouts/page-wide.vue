@@ -11,7 +11,7 @@
       <div class="flex items-center gap-1 text-[13.5px]">
         <NuxtLink to="/products" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">Produk</NuxtLink>
         <NuxtLink to="/pricing" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">Harga</NuxtLink>
-        <NuxtLink to="/about" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">Tentang</NuxtLink>
+        <NuxtLink to="/company" class="px-3 py-1.5 rounded-lg transition-colors" style="color: rgba(255,255,255,0.5);" active-class="!text-white bg-white/5">Tentang</NuxtLink>
         <NuxtLink
           to="/"
           class="ml-2 px-4 py-1.5 rounded-full font-medium transition-all hover:bg-gray-100 active:scale-[0.97]"

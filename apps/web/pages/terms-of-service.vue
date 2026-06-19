@@ -1,9 +1,9 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'page' })
 useSeoMeta({
-  title: 'Syarat & Ketentuan — Autobot',
-  description: 'Syarat dan ketentuan penggunaan layanan chatbot Autobot Wijaya Solution.',
-  ogTitle: 'Syarat & Ketentuan — Autobot',
+  title: 'Syarat & Ketentuan — autobotws',
+  description: 'Syarat dan ketentuan penggunaan layanan autobotws (CV Autobot Wijaya Solution).',
+  ogTitle: 'Syarat & Ketentuan — autobotws',
   ogUrl: 'https://autobot.co.id/terms-of-service',
 })
 </script>
@@ -11,14 +11,14 @@ useSeoMeta({
 <template>
   <div class="max-w-3xl">
     <h1 class="text-4xl font-bold text-white mb-2">Syarat & Ketentuan</h1>
-    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; Autobot Wijaya Solution</p>
+    <p class="text-gray-500 text-sm mb-10">Terakhir diperbarui: 25 Mei 2026 &nbsp;·&nbsp; autobotws · CV Autobot Wijaya Solution</p>
 
     <div class="space-y-10 text-gray-300 leading-relaxed">
 
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">1. Penerimaan Syarat</h2>
         <p>
-          Dengan mendaftarkan akun, mengakses, atau menggunakan layanan Autobot Wijaya Solution ("Autobot", "kami", "Layanan"),
+          Dengan mendaftarkan akun, mengakses, atau menggunakan layanan autobotws yang dioperasikan oleh CV Autobot Wijaya Solution ("kami", "Layanan"),
           Anda ("Pengguna", "Klien") menyetujui untuk terikat oleh Syarat & Ketentuan ini.
           Jika Anda tidak setuju, hentikan penggunaan Layanan segera.
         </p>
@@ -27,7 +27,7 @@ useSeoMeta({
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">2. Deskripsi Layanan</h2>
         <p>
-          Autobot menyediakan platform Software as a Service (SaaS) yang mencakup:
+          autobotws menyediakan platform Software as a Service (SaaS) yang mencakup:
           chatbot berbasis AI (WhatsApp, Web, Telegram), integrasi LLM (OpenAI, Gemini, Claude),
           WhatsApp blast & broadcast, workflow automation, dan layanan konsultasi terkait.
         </p>
@@ -82,7 +82,7 @@ useSeoMeta({
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">7. Kekayaan Intelektual</h2>
         <p>
-          Seluruh kode, desain, merek dagang, dan konten pada platform Autobot adalah milik Autobot Wijaya Solution.
+          Seluruh kode, desain, merek dagang, dan konten pada platform autobotws adalah milik CV Autobot Wijaya Solution.
           Anda diberikan lisensi terbatas, non-eksklusif untuk menggunakan Layanan sesuai dengan perjanjian langganan.
           Konten yang Anda unggah (knowledge base, data pelatihan bot) tetap menjadi milik Anda.
         </p>
@@ -109,7 +109,8 @@ useSeoMeta({
       <section>
         <h2 class="text-xl font-semibold text-white mb-3">10. Kontak</h2>
         <div class="rounded-2xl border border-white/10 bg-white/3 p-6">
-          <p class="text-white font-semibold mb-3">Autobot Wijaya Solution</p>
+          <p class="text-white font-semibold mb-1">autobotws</p>
+          <p class="text-gray-400 text-sm mb-3">CV Autobot Wijaya Solution</p>
           <div class="space-y-1.5 text-sm">
             <p>Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung, Jakarta Timur 13810, Indonesia</p>
             <p>Email: <a href="mailto:support@autobot.co.id" class="text-blue-400 hover:text-blue-300">support@autobot.co.id</a></p>

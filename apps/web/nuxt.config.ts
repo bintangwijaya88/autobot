@@ -4,20 +4,20 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Autobot — Spesialis WhatsApp Chatbot & Automasi Bisnis',
+      title: 'autobotws — Software, AI Automation & Digital Systems',
       titleTemplate: '%s | Autobot',
       htmlAttrs: { lang: 'id' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Autobot adalah spesialis WhatsApp chatbot, broadcast/blast, dan AI automation untuk bisnis Indonesia. Solusi WaBlastApp, multi-device, knowledge base, dan 20+ modul bisnis.' },
-        { name: 'keywords', content: 'whatsapp chatbot, wa blast, automasi bisnis, chatbot indonesia, ai chatbot, wablast, autobot, autobot.co.id' },
-        { name: 'author', content: 'Autobot Wijaya Solution' },
+        { name: 'description', content: 'autobotws membantu bisnis mengotomatisasi proses kerja, mengelola komunikasi pelanggan, dan membangun sistem digital yang scalable melalui software, AI, dan solusi otomasi praktis.' },
+        { name: 'keywords', content: 'ai automation, workflow automation, ai agent indonesia, crm automation, whatsapp automation, integration platform, autobot wijaya solution' },
+        { name: 'author', content: 'autobotws' },
         { name: 'robots', content: 'index, follow' },
         // Open Graph
         { property: 'og:site_name', content: 'Autobot' },
-        { property: 'og:title', content: 'Autobot — Spesialis WhatsApp Chatbot & Automasi Bisnis' },
-        { property: 'og:description', content: 'Platform WhatsApp chatbot, blast, dan AI automation terlengkap untuk bisnis Indonesia.' },
+        { property: 'og:title', content: 'autobotws — Software, AI Automation & Digital Systems' },
+        { property: 'og:description', content: 'autobotws membantu bisnis mengotomatisasi workflow, mengelola komunikasi pelanggan, dan membangun sistem digital yang scalable.' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://autobot.co.id' },
         { property: 'og:image', content: 'https://autobot.co.id/logo.png' },
@@ -26,10 +26,10 @@ export default defineNuxtConfig({
         { property: 'og:locale', content: 'id_ID' },
         // Twitter / X
         { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:title', content: 'Autobot — WhatsApp Chatbot & Automasi Bisnis' },
-        { name: 'twitter:description', content: 'Spesialis WA chatbot, blast massal, dan AI automation untuk bisnis Indonesia.' },
+        { name: 'twitter:title', content: 'autobotws — Software, AI Automation & Digital Systems' },
+        { name: 'twitter:description', content: 'Software, AI automation, WhatsApp automation, dan sistem digital untuk bisnis Indonesia.' },
         { name: 'twitter:image', content: 'https://autobot.co.id/logo.png' },
-        { name: 'theme-color', content: '#111111' },
+        { name: 'theme-color', content: '#f8fafc' },
       ],
       script: [
         // Google Analytics
@@ -56,12 +56,21 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'Autobot Wijaya Solution',
+            name: 'autobotws',
+            alternateName: ['CV Autobot Wijaya Solution', 'Autobot Wijaya Solution'],
             url: 'https://autobot.co.id',
             logo: 'https://autobot.co.id/logo.png',
             image: 'https://autobot.co.id/logo.png',
-            description: 'Spesialis WhatsApp chatbot, broadcast/blast, dan AI automation untuk bisnis Indonesia.',
-            address: { '@type': 'PostalAddress', addressLocality: 'Jakarta', addressCountry: 'ID' },
+            description: 'autobotws — software, AI automation, WhatsApp automation, and digital system solutions for growing businesses in Indonesia.',
+            foundingDate: '2022',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung',
+              addressLocality: 'Jakarta Timur',
+              addressRegion: 'DKI Jakarta',
+              postalCode: '13810',
+              addressCountry: 'ID',
+            },
             contactPoint: { '@type': 'ContactPoint', email: 'bintang@autobot.co.id', contactType: 'customer service' },
             sameAs: ['https://autobot.co.id'],
           }),

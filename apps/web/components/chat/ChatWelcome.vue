@@ -106,7 +106,7 @@ const suggestions = [
   { text: 'Lihat portofolio kami', icon: '🗂', accent: true },
   { text: 'Buatkan proposal layanan untuk saya', icon: '📄', accent: true },
   { text: 'Buatkan flowchart alur proses order', icon: '◎', accent: true },
-  { text: 'Buatkan presentasi WaBlastApp', icon: '🎯', accent: true },
+  { text: 'Buatkan presentasi WaSigap', icon: '🎯', accent: true },
   { text: 'Buatkan laporan excel penjualan', icon: '📊', accent: false },
   { text: 'Saya butuh chatbot WhatsApp', icon: '💬', accent: false },
   { text: 'Mau blast promo ke banyak kontak', icon: '📣', accent: false },

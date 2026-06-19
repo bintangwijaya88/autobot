@@ -4,6 +4,8 @@
 
 /* ── Design tokens ─────────────────────────────────────────── */
 :root {
+  --ui-scale: 1.05;
+
   /* Surfaces */
   --bg-base:       #111111;
   --bg-surface:    #171717;
@@ -53,6 +55,14 @@ html, body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: calc(16px * var(--ui-scale));
+}
+
+body {
+  zoom: var(--ui-scale);
 }
 
 /* ── Scrollbar ─────────────────────────────────────────────── */
