@@ -92,8 +92,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   },
 
   runtimeConfig: {
+    apiBase: process.env.NUXT_API_BASE || 'http://localhost:3000',
     public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000',
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || '',
       wsUrl: process.env.NUXT_PUBLIC_WS_URL || 'ws://localhost:3000/ws',
       googleClientId: process.env.NUXT_PUBLIC_GOOGLE_CLIENT_ID || '',
     },

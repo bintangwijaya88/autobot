@@ -1,19 +1,35 @@
 # ==============================
-# API — pre-built binary (Linux amd64)
+# API — build from source
 # ==============================
+FROM golang:1.24-alpine AS api-builder
+WORKDIR /src
+RUN apk add --no-cache ca-certificates tzdata
+COPY apps/api/go.mod apps/api/go.sum ./
+RUN go mod download
+COPY apps/api/ ./
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /out/server ./cmd/server
+
 FROM alpine:3.21 AS api
 RUN apk add --no-cache ca-certificates tzdata
-COPY apps/api/server /server
+COPY --from=api-builder /out/server /server
 COPY apps/api/migrations /migrations
-EXPOSE 50080
+EXPOSE 50050
 CMD ["/server"]
 
 # ==============================
-# Web — pre-built Nuxt output
+# Web — build from source
 # ==============================
+FROM node:20-alpine AS web-builder
+WORKDIR /app
+COPY apps/web/package*.json ./
+RUN npm ci
+COPY apps/web/ ./
+ENV NODE_OPTIONS="--max-old-space-size=2048"
+RUN npm run build
+
 FROM node:20-alpine AS web
 WORKDIR /app
-COPY apps/web/.output .output
+COPY --from=web-builder /app/.output .output
 EXPOSE 50081
 ENV HOST=0.0.0.0
 ENV PORT=50081
