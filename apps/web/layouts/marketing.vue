@@ -81,6 +81,11 @@
             {{ t('marketing.footer.brandDesc') }}
           </p>
           <p class="mt-2 text-xs text-slate-400">{{ t('marketing.footer.legalLine') }}</p>
+          <div class="mt-4 grid gap-2 text-sm">
+            <a href="mailto:support@autobot.co.id" class="font-semibold text-slate-700 hover:text-slate-950">support@autobot.co.id</a>
+            <a href="https://wa.me/6282164867681" target="_blank" rel="noopener" class="font-semibold text-slate-700 hover:text-slate-950">WhatsApp: +62 821-6486-7681</a>
+            <a href="https://www.linkedin.com/in/bintangwijaya/" target="_blank" rel="noopener" class="font-semibold text-slate-700 hover:text-slate-950">Founder LinkedIn</a>
+          </div>
         </div>
         <div class="grid gap-6 sm:grid-cols-3">
           <div>
@@ -107,6 +112,7 @@
               <NuxtLink to="/resources" class="hover:text-slate-950">{{ t('marketing.footer.research') }}</NuxtLink>
               <NuxtLink to="/blog" class="hover:text-slate-950">{{ t('marketing.footer.blog') }}</NuxtLink>
               <NuxtLink to="/privacy-policy" class="hover:text-slate-950">{{ t('marketing.footer.privacy') }}</NuxtLink>
+              <NuxtLink to="/terms-of-service" class="hover:text-slate-950">Terms of Service</NuxtLink>
             </div>
           </div>
         </div>

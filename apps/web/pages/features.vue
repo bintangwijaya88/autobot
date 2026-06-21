@@ -128,6 +128,7 @@ const businessModules = [
   { icon: '💼', label: 'Sales Automation', sub: 'Lead & Quotation', query: 'Ceritakan tentang paket modul Sales di WaSigap' },
   { icon: '💊', label: 'Apotek', sub: 'Resep & BPJS', query: 'Ceritakan tentang paket modul Apotek di WaSigap' },
 ]
+
 </script>
 
 <template>
@@ -227,6 +228,7 @@ const businessModules = [
           </button>
         </div>
       </section>
+
     </div>
 
     <!-- CTA bottom -->
@@ -246,4 +248,3 @@ const businessModules = [
 
   </div>
 </template>
-

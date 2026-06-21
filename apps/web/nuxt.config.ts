@@ -4,20 +4,20 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'autobotws — Software, AI Automation & Digital Systems',
-      titleTemplate: '%s | Autobot',
+      title: 'autobotws — AI Automation and Software Products for Indonesian Businesses',
+      titleTemplate: '%s | autobotws',
       htmlAttrs: { lang: 'id' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'autobotws membantu bisnis mengotomatisasi proses kerja, mengelola komunikasi pelanggan, dan membangun sistem digital yang scalable melalui software, AI, dan solusi otomasi praktis.' },
-        { name: 'keywords', content: 'ai automation, workflow automation, ai agent indonesia, crm automation, whatsapp automation, integration platform, autobot wijaya solution' },
+        { name: 'description', content: 'autobotws builds AI automation, WhatsApp automation, and software products for Indonesian SMEs, clinics, online stores, and service businesses.' },
+        { name: 'keywords', content: 'autobotws, AI automation, WhatsApp automation, software products, SaaS Indonesia, CRM automation, workflow automation, WaSigap' },
         { name: 'author', content: 'autobotws' },
         { name: 'robots', content: 'index, follow' },
         // Open Graph
-        { property: 'og:site_name', content: 'Autobot' },
-        { property: 'og:title', content: 'autobotws — Software, AI Automation & Digital Systems' },
-        { property: 'og:description', content: 'autobotws membantu bisnis mengotomatisasi workflow, mengelola komunikasi pelanggan, dan membangun sistem digital yang scalable.' },
+        { property: 'og:site_name', content: 'autobotws' },
+        { property: 'og:title', content: 'autobotws — AI Automation and Software Products' },
+        { property: 'og:description', content: 'Software, AI automation, and WhatsApp automation products for growing Indonesian businesses.' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://autobot.co.id' },
         { property: 'og:image', content: 'https://autobot.co.id/logo.png' },
@@ -25,9 +25,9 @@ export default defineNuxtConfig({
         { property: 'og:image:height', content: '512' },
         { property: 'og:locale', content: 'id_ID' },
         // Twitter / X
-        { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:title', content: 'autobotws — Software, AI Automation & Digital Systems' },
-        { name: 'twitter:description', content: 'Software, AI automation, WhatsApp automation, dan sistem digital untuk bisnis Indonesia.' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'autobotws — AI Automation and Software Products' },
+        { name: 'twitter:description', content: 'Software, AI automation, and WhatsApp automation products for growing Indonesian businesses.' },
         { name: 'twitter:image', content: 'https://autobot.co.id/logo.png' },
         { name: 'theme-color', content: '#f8fafc' },
       ],
@@ -61,7 +61,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             url: 'https://autobot.co.id',
             logo: 'https://autobot.co.id/logo.png',
             image: 'https://autobot.co.id/logo.png',
-            description: 'autobotws — software, AI automation, WhatsApp automation, and digital system solutions for growing businesses in Indonesia.',
+            description: 'autobotws builds AI automation, WhatsApp automation, and software products for Indonesian SMEs, clinics, online stores, and service businesses.',
             foundingDate: '2022',
             address: {
               '@type': 'PostalAddress',
@@ -106,6 +106,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
   compatibilityDate: '2024-04-03',
 
+  experimental: {
+    appManifest: false,
+  },
+
   // Security headers via Nuxt server routes
   routeRules: {
     '/admin/**': { ssr: false },
@@ -125,11 +129,4 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     },
   },
 
-  vite: {
-    build: {
-      rollupOptions: {
-        maxParallelFileOps: 3,
-      },
-    },
-  },
 })
