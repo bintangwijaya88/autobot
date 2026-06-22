@@ -94,8 +94,8 @@ export const platformGroups = [
         tier: 'core' as const,
         tagline: 'AI-powered WhatsApp automation platform.',
         desc: 'WaSigap membantu bisnis mengelola percakapan WhatsApp melalui AI auto-reply, CRM, broadcast terjadwal, follow-up pelanggan, dan otomasi alur kerja dalam satu dashboard.',
-        url: 'https://wa.autobot.co.id',
-        domain: 'wa.autobot.co.id',
+        url: 'https://wasigap.com',
+        domain: 'wasigap.com',
         targetUsers: 'Klinik, toko online, bisnis jasa, dan tim customer service dengan volume chat tinggi.',
         features: [
           'AI auto-reply WhatsApp',
@@ -543,9 +543,11 @@ export const wasigapBusinessModel = [
 ]
 
 export const wasigapTraction = [
-  { label: 'Status produk', value: '[Status Produk]' },
-  { label: 'Pengguna aktif', value: '[Jumlah User]' },
-  { label: 'Klien / mitra', value: '[Jumlah Client]' },
+  { label: 'Status produk', value: 'Aktif — digunakan oleh early adopters' },
+  { label: 'Registered users', value: '200 pengguna terdaftar' },
+  { label: 'Pengguna aktif', value: '80 pengguna aktif' },
+  { label: 'AI tokens diproses', value: '30M+ token AI' },
+  { label: 'Integrasi AI provider', value: 'Claude, OpenAI, Mimo, Groq, AWS Bedrock' },
   { label: 'Wilayah operasional', value: 'Indonesia' },
 ]
 
