@@ -107,14 +107,17 @@ jobs:
           script: |
             cd /opt/autobot
 
+            # Sync compose files
+            git pull origin main
+
             # Pull latest images
-            docker compose pull api web wasigap
+            docker compose -f docker-compose.deploy.yml pull api web wasigap
 
             # Run migrations
-            docker compose run --rm api /server migrate up
+            docker compose -f docker-compose.deploy.yml run --rm api /server migrate up
 
             # Restart services
-            docker compose up -d --no-deps api web wasigap
+            docker compose -f docker-compose.deploy.yml up -d --no-deps api web wasigap
 
             # Cleanup
             docker image prune -f
