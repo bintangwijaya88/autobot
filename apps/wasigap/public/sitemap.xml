@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wasigap.com/</loc>
+    <loc>https://wa.autobot.co.id/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://wasigap.com/features</loc>
+    <loc>https://wa.autobot.co.id/features</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wasigap.com/pricing</loc>
+    <loc>https://wa.autobot.co.id/pricing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wasigap.com/startup</loc>
+    <loc>https://wa.autobot.co.id/startup</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://wasigap.com/about</loc>
+    <loc>https://wa.autobot.co.id/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://wasigap.com/contact</loc>
+    <loc>https://wa.autobot.co.id/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wasigap.com/privacy-policy</loc>
+    <loc>https://wa.autobot.co.id/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://wasigap.com/terms-of-service</loc>
+    <loc>https://wa.autobot.co.id/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

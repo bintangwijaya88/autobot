@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'Explore all WaSigap features: AI auto-reply, CRM, broadcast scheduler, AI follow-up, AI worker, multi AI provider support, and more for WhatsApp business automation.',
   ogTitle: 'WaSigap Features — AI WhatsApp Automation',
   ogDescription: 'Complete feature list for WaSigap: AI auto-reply, CRM, broadcast, AI follow-up, AI worker, and multi-provider AI support.',
-  ogUrl: 'https://wasigap.com/features',
-  ogImage: 'https://wasigap.com/logo.png',
+  ogUrl: 'https://wa.autobot.co.id/features',
+  ogImage: 'https://wa.autobot.co.id/logo.png',
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://wasigap.com/features' }],
+  link: [{ rel: 'canonical', href: 'https://wa.autobot.co.id/features' }],
 })
 
 const coreFeatures = [

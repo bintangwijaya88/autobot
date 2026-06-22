@@ -4,14 +4,14 @@ useSeoMeta({
   description: 'WaSigap helps Indonesian SMEs, clinics, e-commerce sellers, and service businesses automate WhatsApp customer support, manage CRM data, schedule broadcasts, and improve response speed with AI.',
   ogTitle: 'WaSigap — AI WhatsApp Automation Platform for Growing Businesses',
   ogDescription: 'AI-powered WhatsApp automation and CRM platform for Indonesian SMEs, clinics, e-commerce sellers, and service businesses.',
-  ogUrl: 'https://wasigap.com',
-  ogImage: 'https://wasigap.com/logo.png',
+  ogUrl: 'https://wa.autobot.co.id',
+  ogImage: 'https://wa.autobot.co.id/logo.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://wasigap.com' }],
+  link: [{ rel: 'canonical', href: 'https://wa.autobot.co.id' }],
 })
 
 const trustStats = [
