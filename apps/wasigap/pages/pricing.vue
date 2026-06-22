@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'WaSigap Lifetime Access for Rp 199.000 one-time payment. Includes 200 AI credits/month, multi WhatsApp account, AI auto-reply, broadcast, CRM, and free updates.',
   ogTitle: 'WaSigap Pricing — Lifetime Access from Rp 199.000',
   ogDescription: 'One-time payment, no monthly subscription. Includes AI auto-reply, CRM, broadcast scheduler, and multi-account support.',
-  ogUrl: 'https://wasigap.com/pricing',
-  ogImage: 'https://wasigap.com/logo.png',
+  ogUrl: 'https://wa.autobot.co.id/pricing',
+  ogImage: 'https://wa.autobot.co.id/logo.png',
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://wasigap.com/pricing' }],
+  link: [{ rel: 'canonical', href: 'https://wa.autobot.co.id/pricing' }],
 })
 
 const features = [

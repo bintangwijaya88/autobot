@@ -106,7 +106,7 @@
           </div>
         </div>
         <div class="mt-10 border-t border-slate-200 pt-6 text-center text-xs text-slate-400">
-          © {{ new Date().getFullYear() }} WaSigap by AutobotWS · CV Autobot Wijaya Solution · All rights reserved · <a href="https://wasigap.com" class="hover:text-slate-600">wasigap.com</a>
+          © {{ new Date().getFullYear() }} WaSigap by AutobotWS · CV Autobot Wijaya Solution · All rights reserved · <a href="https://wa.autobot.co.id" class="hover:text-slate-600">wa.autobot.co.id</a>
         </div>
       </div>
     </footer>

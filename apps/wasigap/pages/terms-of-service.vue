@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'WaSigap Terms of Service. Rules and responsibilities for using the WaSigap AI WhatsApp automation and CRM platform by AutobotWS.',
   ogTitle: 'Terms of Service — WaSigap',
   ogDescription: 'Terms of Service for WaSigap AI WhatsApp Automation Platform by AutobotWS.',
-  ogUrl: 'https://wasigap.com/terms-of-service',
-  ogImage: 'https://wasigap.com/logo.png',
+  ogUrl: 'https://wa.autobot.co.id/terms-of-service',
+  ogImage: 'https://wa.autobot.co.id/logo.png',
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://wasigap.com/terms-of-service' }],
+  link: [{ rel: 'canonical', href: 'https://wa.autobot.co.id/terms-of-service' }],
 })
 </script>
 
@@ -19,7 +19,7 @@ useHead({
       <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <p class="text-sm font-extrabold uppercase tracking-widest text-slate-500">Legal</p>
         <h1 class="mt-3 text-5xl font-black tracking-tight text-slate-950">Terms of Service</h1>
-        <p class="mt-4 text-sm text-slate-500">Last updated: June 2026 · Applies to wasigap.com and WaSigap services</p>
+        <p class="mt-4 text-sm text-slate-500">Last updated: June 2026 · Applies to wa.autobot.co.id and WaSigap services</p>
       </div>
     </section>
 
@@ -30,7 +30,7 @@ useHead({
           <div class="rounded-[24px] border border-slate-200 bg-white p-7 lg:p-8">
             <h2 class="text-2xl font-extrabold text-slate-950">1. Acceptance of Terms</h2>
             <p class="mt-4 text-base leading-8 text-slate-600">
-              By accessing or using WaSigap services at <strong>https://wasigap.com</strong>, you agree to be bound by these Terms of Service. WaSigap is operated by AutobotWS under CV Autobot Wijaya Solution ("we", "us", or "our"). If you do not agree to these terms, do not use the service.
+              By accessing or using WaSigap services at <strong>https://wa.autobot.co.id</strong>, you agree to be bound by these Terms of Service. WaSigap is operated by AutobotWS under CV Autobot Wijaya Solution ("we", "us", or "our"). If you do not agree to these terms, do not use the service.
             </p>
           </div>
 
@@ -145,7 +145,7 @@ useHead({
           <div class="rounded-[24px] border border-slate-200 bg-white p-7 lg:p-8">
             <h2 class="text-2xl font-extrabold text-slate-950">8. Changes to Terms</h2>
             <p class="mt-4 text-base leading-8 text-slate-600">
-              We may update these Terms of Service from time to time. Changes will be posted at <strong>https://wasigap.com/terms-of-service</strong> with an updated date. Continued use of WaSigap after changes constitutes acceptance of the updated terms.
+              We may update these Terms of Service from time to time. Changes will be posted at <strong>https://wa.autobot.co.id/terms-of-service</strong> with an updated date. Continued use of WaSigap after changes constitutes acceptance of the updated terms.
             </p>
           </div>
 
@@ -157,7 +157,7 @@ useHead({
             <div class="mt-4 grid gap-2 text-sm">
               <p><strong class="text-slate-950">Email:</strong> <a href="mailto:support@autobot.co.id" class="text-emerald-700 hover:text-emerald-800">support@autobot.co.id</a></p>
               <p><strong class="text-slate-950">Company:</strong> CV Autobot Wijaya Solution</p>
-              <p><strong class="text-slate-950">Website:</strong> <a href="https://wasigap.com" class="text-emerald-700 hover:text-emerald-800">https://wasigap.com</a></p>
+              <p><strong class="text-slate-950">Website:</strong> <a href="https://wa.autobot.co.id" class="text-emerald-700 hover:text-emerald-800">https://wa.autobot.co.id</a></p>
             </div>
           </div>
 

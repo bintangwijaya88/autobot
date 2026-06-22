@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'WaSigap is an AI WhatsApp automation and CRM platform by AutobotWS. 200 registered users, 80 active users, 30M+ AI tokens processed. Built for Indonesian SMEs and service businesses.',
   ogTitle: 'WaSigap Startup Profile — AutobotWS',
   ogDescription: 'AI WhatsApp automation and CRM platform by AutobotWS (CV Autobot Wijaya Solution). 200 registered users, 80 active users, 30M+ AI tokens processed.',
-  ogUrl: 'https://wasigap.com/startup',
-  ogImage: 'https://wasigap.com/logo.png',
+  ogUrl: 'https://wa.autobot.co.id/startup',
+  ogImage: 'https://wa.autobot.co.id/logo.png',
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://wasigap.com/startup' }],
+  link: [{ rel: 'canonical', href: 'https://wa.autobot.co.id/startup' }],
 })
 
 const traction = [
@@ -46,7 +46,7 @@ const startupProfile = [
   { label: 'Product Name', value: 'WaSigap' },
   { label: 'Company / Startup', value: 'AutobotWS' },
   { label: 'Legal Entity', value: 'CV Autobot Wijaya Solution' },
-  { label: 'Product Website', value: 'https://wasigap.com' },
+  { label: 'Product Website', value: 'https://wa.autobot.co.id' },
   { label: 'Product Category', value: 'AI WhatsApp Automation & CRM Platform' },
   { label: 'Target Market', value: 'Indonesian SMEs, clinics, e-commerce sellers, service businesses' },
   { label: 'Product Status', value: 'Active — currently used by early adopters' },

@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'WaSigap Privacy Policy. How we collect, use, and protect your business data, WhatsApp conversation data, CRM records, and AI usage logs.',
   ogTitle: 'Privacy Policy — WaSigap',
   ogDescription: 'Privacy Policy for WaSigap AI WhatsApp Automation Platform by AutobotWS.',
-  ogUrl: 'https://wasigap.com/privacy-policy',
-  ogImage: 'https://wasigap.com/logo.png',
+  ogUrl: 'https://wa.autobot.co.id/privacy-policy',
+  ogImage: 'https://wa.autobot.co.id/logo.png',
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://wasigap.com/privacy-policy' }],
+  link: [{ rel: 'canonical', href: 'https://wa.autobot.co.id/privacy-policy' }],
 })
 </script>
 
@@ -19,7 +19,7 @@ useHead({
       <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <p class="text-sm font-extrabold uppercase tracking-widest text-slate-500">Legal</p>
         <h1 class="mt-3 text-5xl font-black tracking-tight text-slate-950">Privacy Policy</h1>
-        <p class="mt-4 text-sm text-slate-500">Last updated: June 2026 · Applies to wasigap.com and WaSigap services</p>
+        <p class="mt-4 text-sm text-slate-500">Last updated: June 2026 · Applies to wa.autobot.co.id and WaSigap services</p>
       </div>
     </section>
 
@@ -30,7 +30,7 @@ useHead({
           <div class="rounded-[24px] border border-slate-200 bg-white p-7 lg:p-8">
             <h2 class="text-2xl font-extrabold text-slate-950">1. Introduction</h2>
             <p class="mt-4 text-base leading-8 text-slate-600">
-              WaSigap is an AI-powered WhatsApp automation and CRM platform operated by AutobotWS under CV Autobot Wijaya Solution ("we", "us", or "our"). This Privacy Policy explains how we collect, use, process, and protect your personal information and business data when you use WaSigap services accessible at <strong>https://wasigap.com</strong>.
+              WaSigap is an AI-powered WhatsApp automation and CRM platform operated by AutobotWS under CV Autobot Wijaya Solution ("we", "us", or "our"). This Privacy Policy explains how we collect, use, process, and protect your personal information and business data when you use WaSigap services accessible at <strong>https://wa.autobot.co.id</strong>.
             </p>
             <p class="mt-4 text-base leading-8 text-slate-600">
               By using WaSigap, you agree to the collection and use of data as described in this policy.
@@ -131,7 +131,7 @@ useHead({
           <div class="rounded-[24px] border border-slate-200 bg-white p-7 lg:p-8">
             <h2 class="text-2xl font-extrabold text-slate-950">9. Changes to This Policy</h2>
             <p class="mt-4 text-base leading-8 text-slate-600">
-              We may update this Privacy Policy from time to time. Changes will be posted at <strong>https://wasigap.com/privacy-policy</strong> with an updated date. Continued use of WaSigap after changes constitutes acceptance of the updated policy.
+              We may update this Privacy Policy from time to time. Changes will be posted at <strong>https://wa.autobot.co.id/privacy-policy</strong> with an updated date. Continued use of WaSigap after changes constitutes acceptance of the updated policy.
             </p>
           </div>
 
@@ -143,7 +143,7 @@ useHead({
             <div class="mt-4 grid gap-2 text-sm">
               <p><strong class="text-slate-950">Email:</strong> <a href="mailto:support@autobot.co.id" class="text-emerald-700 hover:text-emerald-800">support@autobot.co.id</a></p>
               <p><strong class="text-slate-950">Company:</strong> CV Autobot Wijaya Solution</p>
-              <p><strong class="text-slate-950">Website:</strong> <a href="https://wasigap.com" class="text-emerald-700 hover:text-emerald-800">https://wasigap.com</a></p>
+              <p><strong class="text-slate-950">Website:</strong> <a href="https://wa.autobot.co.id" class="text-emerald-700 hover:text-emerald-800">https://wa.autobot.co.id</a></p>
             </div>
           </div>
 

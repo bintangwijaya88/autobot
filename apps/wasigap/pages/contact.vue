@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'Contact WaSigap for product demos, business inquiries, partnership, or startup verification. Reach us via WhatsApp, email, or the contact form.',
   ogTitle: 'Contact WaSigap',
   ogDescription: 'Get in touch with WaSigap for business inquiries, product demos, or partnership discussions.',
-  ogUrl: 'https://wasigap.com/contact',
-  ogImage: 'https://wasigap.com/logo.png',
+  ogUrl: 'https://wa.autobot.co.id/contact',
+  ogImage: 'https://wa.autobot.co.id/logo.png',
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://wasigap.com/contact' }],
+  link: [{ rel: 'canonical', href: 'https://wa.autobot.co.id/contact' }],
 })
 
 const form = reactive({
@@ -82,7 +82,7 @@ const colorMap: Record<string, { card: string; badge: string }> = {
           Get in touch with WaSigap
         </h1>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-          For business inquiries, partnership, product demo, or startup verification, please contact WaSigap through the official website at <strong class="text-slate-950">https://wasigap.com</strong>. Our team is active Monday–Friday, 09.00–17.00 WIB.
+          For business inquiries, partnership, product demo, or startup verification, please contact WaSigap through the official website at <strong class="text-slate-950">https://wa.autobot.co.id</strong>. Our team is active Monday–Friday, 09.00–17.00 WIB.
         </p>
       </div>
     </section>

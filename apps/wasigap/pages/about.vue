@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'WaSigap is built by AutobotWS under CV Autobot Wijaya Solution. We help Indonesian SMEs, clinics, e-commerce sellers, and service businesses automate WhatsApp with AI.',
   ogTitle: 'About WaSigap — AI WhatsApp Automation by AutobotWS',
   ogDescription: 'WaSigap is an AI WhatsApp automation and CRM platform built by AutobotWS (CV Autobot Wijaya Solution) for Indonesian businesses.',
-  ogUrl: 'https://wasigap.com/about',
-  ogImage: 'https://wasigap.com/logo.png',
+  ogUrl: 'https://wa.autobot.co.id/about',
+  ogImage: 'https://wa.autobot.co.id/logo.png',
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://wasigap.com/about' }],
+  link: [{ rel: 'canonical', href: 'https://wa.autobot.co.id/about' }],
 })
 
 const missionPoints = [
@@ -42,7 +42,7 @@ const legalItems = [
   { label: 'Product Name', value: 'WaSigap' },
   { label: 'Company / Startup', value: 'AutobotWS' },
   { label: 'Legal Entity', value: 'CV Autobot Wijaya Solution' },
-  { label: 'Website', value: 'https://wasigap.com' },
+  { label: 'Website', value: 'https://wa.autobot.co.id' },
   { label: 'Founder', value: 'Bintang Wijaya' },
   { label: 'Location', value: 'Jakarta, Indonesia' },
   { label: 'Business Field', value: 'AI WhatsApp Automation, CRM, Software Development' },
