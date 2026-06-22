@@ -18,3 +18,14 @@ EXPOSE 50081
 ENV HOST=0.0.0.0
 ENV PORT=50081
 CMD ["node", ".output/server/index.mjs"]
+
+# ==============================
+# WaSigap - pre-built Nuxt output
+# ==============================
+FROM node:20-alpine AS wasigap
+WORKDIR /app
+COPY apps/wasigap/.output .output
+EXPOSE 50082
+ENV HOST=0.0.0.0
+ENV PORT=50082
+CMD ["node", ".output/server/index.mjs"]

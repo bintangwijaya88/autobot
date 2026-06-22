@@ -31,6 +31,17 @@ services:
       - autobot
 
 
+  wasigap:
+    image: autobot-wasigap-cp:latest
+    restart: unless-stopped
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "50082"
+    ports:
+      - "50082:50082"
+    networks:
+      - autobot
+
 networks:
   autobot:
     driver: bridge
