@@ -29,9 +29,9 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'canonical', href: 'https://wa.autobot.co.id' },
-        { rel: 'icon', type: 'image/png', href: '/logo.png' },
-        { rel: 'shortcut icon', href: '/logo.png' },
-        { rel: 'apple-touch-icon', href: '/logo.png' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
+        { rel: 'shortcut icon', href: '/logo.svg' },
+        { rel: 'apple-touch-icon', href: '/logo.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {

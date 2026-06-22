@@ -3,7 +3,7 @@
     <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
       <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <NuxtLink to="/" class="flex items-center gap-2.5">
-          <img src="/logo.png" alt="WaSigap" class="h-8 w-auto object-contain" />
+          <img :src="'/logo.png'" alt="WaSigap" class="h-8 w-auto object-contain" />
           <div class="leading-tight">
             <p class="text-sm font-bold tracking-tight text-slate-950">WaSigap</p>
             <p class="hidden text-xs text-slate-500 sm:block">AI WhatsApp Automation</p>
@@ -68,7 +68,7 @@
         <div class="grid gap-10 md:grid-cols-[1.4fr_2fr]">
           <div>
             <div class="flex items-center gap-2.5">
-              <img src="/logo.png" alt="WaSigap" class="h-7 w-auto" />
+              <img :src="'/logo.png'" alt="WaSigap" class="h-7 w-auto" />
               <p class="font-bold text-slate-950">WaSigap</p>
             </div>
             <p class="mt-3 max-w-xs text-sm leading-6 text-slate-500">

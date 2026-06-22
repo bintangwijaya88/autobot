@@ -96,7 +96,7 @@ const colorMap: Record<string, string> = {
 }
 
 const aiProviders = [
-  { name: 'Claude', desc: 'Anthropic's Claude models for high-quality conversational AI and long context support.' },
+  { name: 'Claude', desc: "Anthropic's Claude models for high-quality conversational AI and long context support." },
   { name: 'OpenAI', desc: 'GPT models for general-purpose AI auto-reply, summarization, and content generation.' },
   { name: 'Mimo', desc: 'Specialized AI provider for targeted Indonesian business conversation flows.' },
   { name: 'Groq', desc: 'Ultra-fast AI inference for low-latency WhatsApp responses at scale.' },
