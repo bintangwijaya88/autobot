@@ -36,7 +36,7 @@ export const companyProfile = {
   productionRecords: '600K+',
   founder: 'Bintang Wijaya',
   businessField: 'Software Development, AI Automation, System Integration',
-  legalPlaceholder: '[Nomor Legalitas/NIB]',
+  legalPlaceholder: '1506220026754',
   address: 'Gg. Bina Warga III Desa No.36, Lubang Buaya, Cipayung, Kota Jakarta Timur, DKI Jakarta 13810, Indonesia',
   email: 'support@autobot.co.id',
   whatsapp: '+62 821-6486-7681',

@@ -126,7 +126,7 @@ useSeoMeta({
           <p class="mt-2 text-sm leading-6 text-slate-600">
             <span class="font-bold text-slate-950">CV Autobot Wijaya Solution</span>
           </p>
-          <p class="mt-1 text-sm text-slate-500">[Nomor Legalitas/NIB]</p>
+          <p class="mt-1 text-sm text-slate-500">NIB: 1506220026754</p>
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">

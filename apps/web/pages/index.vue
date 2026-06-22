@@ -225,9 +225,9 @@ const legalItems = [
   { label: 'Founder', value: 'Bintang Wijaya' },
   { label: 'Location', value: 'Indonesia' },
   { label: 'Website', value: 'https://autobot.co.id' },
-  { label: 'Product Website', value: 'https://wasigap.com' },
+  { label: 'Product Website', value: 'https://wa.autobot.co.id' },
   { label: 'Business Field', value: 'Software Development, AI Automation, WhatsApp Automation, and System Integration' },
-  { label: 'Legal Document', value: '[NIB / Akta / Nomor Legalitas]' },
+  { label: 'NIB', value: '1506220026754' },
 ]
 
 const founderLinks = [
