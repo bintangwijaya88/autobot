@@ -8,6 +8,7 @@ env:
   REGISTRY: ghcr.io
   API_IMAGE: ghcr.io/${{ github.repository }}/api
   WEB_IMAGE: ghcr.io/${{ github.repository }}/web
+  WASIGAP_IMAGE: ghcr.io/${{ github.repository }}/wasigap
 
 jobs:
   test:
@@ -81,6 +82,18 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Build & push WaSigap
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: docker/Dockerfile.wasigap
+          push: true
+          tags: |
+            ${{ env.WASIGAP_IMAGE }}:latest
+            ${{ env.WASIGAP_IMAGE }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -95,13 +108,13 @@ jobs:
             cd /opt/autobot
 
             # Pull latest images
-            docker compose pull api web
+            docker compose pull api web wasigap
 
             # Run migrations
             docker compose run --rm api /server migrate up
 
             # Restart services
-            docker compose up -d --no-deps api web
+            docker compose up -d --no-deps api web wasigap
 
             # Cleanup
             docker image prune -f
