@@ -1,46 +1,38 @@
 services:
   api:
+    container_name: autobot_api
     build:
       context: .
-      dockerfile: Dockerfile
-      target: api
+      dockerfile: docker/Dockerfile.api
     restart: unless-stopped
     env_file:
       - path: .env
         required: false
     environment:
-      APP_PORT: "50080"
+      APP_PORT: "50050"
     ports:
-      - "50080:50080"
+      - "50050:50050"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     networks:
       - autobot
 
   web:
+    container_name: autobot_web
     build:
       context: .
-      dockerfile: Dockerfile
-      target: web
+      dockerfile: docker/Dockerfile.web
     restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
     environment:
-      NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE:-https://api.autobot.co.id}
-      NUXT_PUBLIC_WS_URL: ${NUXT_PUBLIC_WS_URL:-wss://api.autobot.co.id/ws}
+      NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE:-https://autobot.co.id}
+      NUXT_PUBLIC_WS_URL: ${NUXT_PUBLIC_WS_URL:-wss://autobot.co.id/ws}
+      HOST: "0.0.0.0"
+      PORT: "50081"
     ports:
       - "50081:50081"
-    networks:
-      - autobot
-
-  wasigap:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.wasigap
-    restart: unless-stopped
-    environment:
-      HOST: "0.0.0.0"
-      PORT: "50082"
-    ports:
-      - "50082:50082"
     networks:
       - autobot
 
