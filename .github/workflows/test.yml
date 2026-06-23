@@ -34,11 +34,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-          cache: npm
-          cache-dependency-path: apps/web/package-lock.json
 
       - name: Install dependencies
-        run: cd apps/web && npm ci
+        run: cd apps/web && npm install
 
       - name: Type check
         run: cd apps/web && npx nuxi typecheck 2>&1 | tail -20 || true
