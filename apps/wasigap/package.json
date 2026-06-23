@@ -13,7 +13,8 @@
     "@nuxtjs/tailwindcss": "^6.12.2",
     "lucide-vue-next": "^0.474.0",
     "nuxt": "^3.15.4",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "wasigap-web": "file:"
   },
   "devDependencies": {
     "typescript": "^5.7.3"
