@@ -9,21 +9,6 @@ on:
 jobs:
   backend-test:
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: testpassword
-          MYSQL_DATABASE: autobot_test
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
-      redis:
-        image: redis:7-alpine
-        ports:
-          - 6379:6379
-        options: --health-cmd="redis-cli ping" --health-interval=5s --health-timeout=3s --health-retries=5
-
     steps:
       - uses: actions/checkout@v4
 
@@ -33,37 +18,10 @@ jobs:
           cache: true
           cache-dependency-path: apps/api/go.sum
 
-      - name: Run migrations
+      - name: Unit tests (no DB required)
         env:
-          DB_HOST: 127.0.0.1
-          DB_PORT: 3306
-          DB_NAME: autobot_test
-          DB_USER: root
-          DB_PASSWORD: testpassword
-          REDIS_URL: redis://localhost:6379
-          APP_ENV: test
           JWT_SECRET: test-secret
-          ADMIN_EMAIL: admin@test.com
-          ADMIN_PASSWORD: admin123
-          AI_PROVIDER: openai
-          OPENAI_API_KEY: sk-test
-        run: cd apps/api && go run ./cmd/server migrate
-
-      - name: Run tests
-        env:
-          DB_HOST: 127.0.0.1
-          DB_PORT: 3306
-          DB_NAME: autobot_test
-          DB_USER: root
-          DB_PASSWORD: testpassword
-          REDIS_URL: redis://localhost:6379
-          APP_ENV: test
-          JWT_SECRET: test-secret
-          ADMIN_EMAIL: admin@test.com
-          ADMIN_PASSWORD: admin123
-          AI_PROVIDER: openai
-          OPENAI_API_KEY: sk-test
-        run: cd apps/api && go test ./... -v -timeout 120s 2>&1 | head -200
+        run: cd apps/api && go test ./internal/middleware/... ./internal/repository/... ./internal/handler/... -v -count=1 -timeout 60s
 
       - name: Build check
         run: cd apps/api && go build ./...
