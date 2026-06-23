@@ -120,7 +120,7 @@ jobs:
             docker compose -f docker-compose.deploy.yml pull api web wasigap
 
             # Restart tanpa build
-            docker compose -f docker-compose.deploy.yml up -d --no-deps --no-build api web wasigap
+            docker compose -f docker-compose.deploy.yml up -d --no-build
 
             # Cleanup image lama
             docker image prune -f
