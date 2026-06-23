@@ -1,9 +1,6 @@
 services:
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile.deploy
-      target: api
+    image: ghcr.io/bintangwijaya88/autobot/api:latest
     restart: unless-stopped
     env_file:
       - path: .env
@@ -18,10 +15,7 @@ services:
       - autobot
 
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile.deploy
-      target: web
+    image: ghcr.io/bintangwijaya88/autobot/web:latest
     restart: unless-stopped
     env_file:
       - path: .env
@@ -36,7 +30,6 @@ services:
       - "50081:50081"
     networks:
       - autobot
-
 
   wasigap:
     image: ghcr.io/bintangwijaya88/autobot/wasigap:latest

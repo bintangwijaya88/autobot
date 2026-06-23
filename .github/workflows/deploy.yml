@@ -113,19 +113,16 @@ jobs:
           script: |
             cd /opt/autobot
 
-            # Sync compose files
+            # Sync compose file terbaru
             git pull origin main
 
-            # Pull latest images
+            # Pull image terbaru dari GHCR (tidak ada build di VPS)
             docker compose -f docker-compose.deploy.yml pull api web wasigap
 
-            # Run migrations
-            docker compose -f docker-compose.deploy.yml run --rm api /server migrate up
+            # Restart tanpa build
+            docker compose -f docker-compose.deploy.yml up -d --no-deps --no-build api web wasigap
 
-            # Restart services
-            docker compose -f docker-compose.deploy.yml up -d --no-deps api web wasigap
-
-            # Cleanup
+            # Cleanup image lama
             docker image prune -f
 
             # Health check

@@ -1,113 +1,63 @@
 #!/bin/bash
 # ============================================================
-# deploy.sh — build + transfer + run ke VPS
+# deploy.sh — build image lokal, push ke GHCR, VPS pull & run
 # Usage: ./deploy.sh [api|web|wasigap|all]
 # ============================================================
 
 set -e
 
 TARGET=${1:-all}
+REGISTRY="ghcr.io/bintangwijaya88/autobot"
 VPS_USER="autobot"
 VPS_HOST="autobot.co.id"
-VPS_DIR="/var/www/autobot/autobot.co.id"
+VPS_DIR="/opt/autobot"
 
 echo "==> Target: $TARGET"
 
-# ── 1. Build API (Go binary linux/amd64) ──────────────────
-build_api() {
-  echo "[api] Building Go binary..."
-  cd apps/api
-  GOOS=linux GOARCH=amd64 go build -o server ./cmd/server
-  cd ../..
-  echo "[api] Done: apps/api/server"
+# ── Build & push image ke GHCR ────────────────────────────
+push_image() {
+  local name=$1
+  local dockerfile=$2
+  echo "[build] $name..."
+  docker build -t ${REGISTRY}/${name}:latest -f ${dockerfile} .
+  docker push ${REGISTRY}/${name}:latest
+  echo "[push] ${REGISTRY}/${name}:latest done"
 }
 
-# ── 2. Build Web (Nuxt) ───────────────────────────────────
-build_web() {
-  echo "[web] Building Nuxt..."
-  cd apps/web
-  npm ci
-  npm run build
-  cd ../..
-  echo "[web] Done: apps/web/.output"
-}
-
-# ── 3. Build WaSigap (Nuxt) ───────────────────────────────
-build_wasigap() {
-  echo "[wasigap] Building Nuxt..."
-  cd apps/wasigap
-  npm ci
-  npm run build
-  cd ../..
-  echo "[wasigap] Done: apps/wasigap/.output"
-}
-
-# ── 4. Transfer ke VPS ────────────────────────────────────
-transfer() {
-  echo "[transfer] Syncing files to VPS..."
-  rsync -avz --delete \
-    --exclude='.git' \
-    --exclude='node_modules' \
-    --exclude='apps/api/*.go' \
-    --exclude='apps/web/node_modules' \
-    --exclude='apps/wasigap/node_modules' \
-    ./ ${VPS_USER}@${VPS_HOST}:${VPS_DIR}/
-  echo "[transfer] Done"
-}
-
-# ── 5. Build image + restart di VPS ───────────────────────
-deploy_vps() {
-  echo "[vps] Building images and restarting containers..."
+# ── VPS: pull image terbaru dan restart container ─────────
+restart_vps() {
+  local services="$1"
+  echo "[vps] Pulling & restarting: ${services}..."
   ssh ${VPS_USER}@${VPS_HOST} bash << EOF
     set -e
     cd ${VPS_DIR}
-
-    if [ "$TARGET" = "api" ] || [ "$TARGET" = "all" ]; then
-      docker build --target api -f Dockerfile.cp -t autobot-api-cp:latest .
-      docker compose -f docker-compose.cp.yml up -d --no-deps api
-      echo "[vps] API restarted"
-    fi
-
-    if [ "$TARGET" = "web" ] || [ "$TARGET" = "all" ]; then
-      docker build --target web -f Dockerfile.cp -t autobot-web-cp:latest .
-      docker compose -f docker-compose.cp.yml up -d --no-deps web
-      echo "[vps] Web restarted"
-    fi
-
-    if [ "$TARGET" = "wasigap" ] || [ "$TARGET" = "all" ]; then
-      docker build --target wasigap -f Dockerfile.cp -t autobot-wasigap-cp:latest .
-      docker compose -f docker-compose.cp.yml up -d --no-deps wasigap
-      echo "[vps] WaSigap restarted"
-    fi
-
+    docker compose -f docker-compose.deploy.yml pull ${services}
+    docker compose -f docker-compose.deploy.yml up -d --no-deps --no-build ${services}
+    docker image prune -f
     echo "[vps] Status:"
-    docker compose -f docker-compose.cp.yml ps
+    docker compose -f docker-compose.deploy.yml ps
 EOF
 }
 
 # ── Run ───────────────────────────────────────────────────
 case "$TARGET" in
   api)
-    build_api
-    transfer
-    deploy_vps
+    push_image api docker/Dockerfile.api
+    restart_vps api
     ;;
   web)
-    build_web
-    transfer
-    deploy_vps
+    push_image web docker/Dockerfile.web
+    restart_vps web
     ;;
   wasigap)
-    build_wasigap
-    transfer
-    deploy_vps
+    push_image wasigap docker/Dockerfile.wasigap
+    restart_vps wasigap
     ;;
   all)
-    build_api
-    build_web
-    build_wasigap
-    transfer
-    deploy_vps
+    push_image api docker/Dockerfile.api
+    push_image web docker/Dockerfile.web
+    push_image wasigap docker/Dockerfile.wasigap
+    restart_vps "api web wasigap"
     ;;
   *)
     echo "Usage: ./deploy.sh [api|web|wasigap|all]"
@@ -116,4 +66,4 @@ case "$TARGET" in
 esac
 
 echo ""
-echo "✅ Deploy selesai!"
+echo "Deploy selesai!"
