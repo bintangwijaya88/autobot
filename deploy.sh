@@ -1,6 +1,6 @@
 #!/bin/bash
 # deploy.sh — build lokal, upload ke VPS, restart service
-# Usage: ./deploy.sh [api|web|wasigap|all]
+# Usage: ./deploy.sh [api|web|all]
 
 set -e
 
@@ -20,11 +20,6 @@ build_web() {
   cd apps/web && npm ci && npm run build && cd ../..
 }
 
-build_wasigap() {
-  echo "[wasigap] Building..."
-  cd apps/wasigap && npm ci && npm run build && cd ../..
-}
-
 upload_api() {
   echo "[upload] API..."
   ssh $VPS "mkdir -p $DEST/bin"
@@ -40,23 +35,15 @@ upload_web() {
   ssh $VPS "sudo systemctl restart autobot-web"
 }
 
-upload_wasigap() {
-  echo "[upload] WaSigap..."
-  ssh $VPS "mkdir -p $DEST/wasigap"
-  rsync -az --delete apps/wasigap/.output/ $VPS:$DEST/wasigap/.output/
-  ssh $VPS "sudo systemctl restart autobot-wasigap"
-}
-
 case "$TARGET" in
-  api)     build_api;     upload_api     ;;
-  web)     build_web;     upload_web     ;;
-  wasigap) build_wasigap; upload_wasigap ;;
+  api)  build_api;  upload_api  ;;
+  web)  build_web;  upload_web  ;;
   all)
-    build_api && build_web && build_wasigap
-    upload_api && upload_web && upload_wasigap
+    build_api && build_web
+    upload_api && upload_web
     ;;
   *)
-    echo "Usage: ./deploy.sh [api|web|wasigap|all]"
+    echo "Usage: ./deploy.sh [api|web|all]"
     exit 1
     ;;
 esac
