@@ -1,7 +1,7 @@
 FROM node:22 AS builder
 WORKDIR /app
 COPY apps/web/package*.json ./
-RUN npm ci
+RUN npm install
 COPY apps/web/ .
 ENV NUXT_PUBLIC_API_BASE=https://autobot.co.id
 ENV NUXT_PUBLIC_WS_URL=wss://autobot.co.id/ws
