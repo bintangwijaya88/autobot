@@ -1,63 +1,59 @@
 #!/bin/bash
-# ============================================================
-# deploy.sh — build image lokal, push ke GHCR, VPS pull & run
+# deploy.sh — build lokal, upload ke VPS, restart service
 # Usage: ./deploy.sh [api|web|wasigap|all]
-# ============================================================
 
 set -e
 
 TARGET=${1:-all}
-REGISTRY="ghcr.io/bintangwijaya88/autobot"
-VPS_USER="autobot"
-VPS_HOST="autobot.co.id"
-VPS_DIR="/opt/autobot"
+VPS=autobot@autobot.co.id
+DEST=/opt/autobot
 
-echo "==> Target: $TARGET"
-
-# ── Build & push image ke GHCR ────────────────────────────
-push_image() {
-  local name=$1
-  local dockerfile=$2
-  echo "[build] $name..."
-  docker build -t ${REGISTRY}/${name}:latest -f ${dockerfile} .
-  docker push ${REGISTRY}/${name}:latest
-  echo "[push] ${REGISTRY}/${name}:latest done"
+build_api() {
+  echo "[api] Building..."
+  cd apps/api
+  GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o server ./cmd/server
+  cd ../..
 }
 
-# ── VPS: pull image terbaru dan restart container ─────────
-restart_vps() {
-  local services="$1"
-  echo "[vps] Pulling & restarting: ${services}..."
-  ssh ${VPS_USER}@${VPS_HOST} bash << EOF
-    set -e
-    cd ${VPS_DIR}
-    docker compose -f docker-compose.deploy.yml pull ${services}
-    docker compose -f docker-compose.deploy.yml up -d --no-deps --no-build ${services}
-    docker image prune -f
-    echo "[vps] Status:"
-    docker compose -f docker-compose.deploy.yml ps
-EOF
+build_web() {
+  echo "[web] Building..."
+  cd apps/web && npm ci && npm run build && cd ../..
 }
 
-# ── Run ───────────────────────────────────────────────────
+build_wasigap() {
+  echo "[wasigap] Building..."
+  cd apps/wasigap && npm ci && npm run build && cd ../..
+}
+
+upload_api() {
+  echo "[upload] API..."
+  ssh $VPS "mkdir -p $DEST/bin"
+  rsync -az apps/api/server        $VPS:$DEST/bin/server
+  rsync -az apps/api/migrations/   $VPS:$DEST/bin/migrations/
+  ssh $VPS "chmod +x $DEST/bin/server && sudo systemctl restart autobot-api"
+}
+
+upload_web() {
+  echo "[upload] Web..."
+  ssh $VPS "mkdir -p $DEST/web"
+  rsync -az --delete apps/web/.output/ $VPS:$DEST/web/.output/
+  ssh $VPS "sudo systemctl restart autobot-web"
+}
+
+upload_wasigap() {
+  echo "[upload] WaSigap..."
+  ssh $VPS "mkdir -p $DEST/wasigap"
+  rsync -az --delete apps/wasigap/.output/ $VPS:$DEST/wasigap/.output/
+  ssh $VPS "sudo systemctl restart autobot-wasigap"
+}
+
 case "$TARGET" in
-  api)
-    push_image api docker/Dockerfile.api
-    restart_vps api
-    ;;
-  web)
-    push_image web docker/Dockerfile.web
-    restart_vps web
-    ;;
-  wasigap)
-    push_image wasigap docker/Dockerfile.wasigap
-    restart_vps wasigap
-    ;;
+  api)     build_api;     upload_api     ;;
+  web)     build_web;     upload_web     ;;
+  wasigap) build_wasigap; upload_wasigap ;;
   all)
-    push_image api docker/Dockerfile.api
-    push_image web docker/Dockerfile.web
-    push_image wasigap docker/Dockerfile.wasigap
-    restart_vps "api web wasigap"
+    build_api && build_web && build_wasigap
+    upload_api && upload_web && upload_wasigap
     ;;
   *)
     echo "Usage: ./deploy.sh [api|web|wasigap|all]"
@@ -65,5 +61,4 @@ case "$TARGET" in
     ;;
 esac
 
-echo ""
-echo "Deploy selesai!"
+echo "Done!"

@@ -1,0 +1,14 @@
+[Unit]
+Description=Autobot API
+After=network.target
+
+[Service]
+User=autobot
+WorkingDirectory=/opt/autobot/bin
+EnvironmentFile=/opt/autobot/bin/.env
+ExecStart=/opt/autobot/bin/server
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

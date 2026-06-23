@@ -1,0 +1,16 @@
+[Unit]
+Description=Autobot Web
+After=network.target
+
+[Service]
+User=autobot
+WorkingDirectory=/opt/autobot/web
+EnvironmentFile=/opt/autobot/web/.env
+Environment=HOST=0.0.0.0
+Environment=PORT=50081
+ExecStart=/usr/bin/node .output/server/index.mjs
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
