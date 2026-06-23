@@ -1,5 +1,6 @@
 services:
   api:
+    container_name: autobot_api
     image: ghcr.io/bintangwijaya88/autobot/api:latest
     restart: unless-stopped
     env_file:
@@ -15,6 +16,7 @@ services:
       - autobot
 
   web:
+    container_name: autobot_web
     image: ghcr.io/bintangwijaya88/autobot/web:latest
     restart: unless-stopped
     env_file:
@@ -32,6 +34,7 @@ services:
       - autobot
 
   wasigap:
+    container_name: autobot_wasigap
     image: ghcr.io/bintangwijaya88/autobot/wasigap:latest
     restart: unless-stopped
     environment:
