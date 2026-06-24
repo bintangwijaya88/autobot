@@ -65,7 +65,7 @@
               {{ t('layout.page.footer.brandDesc') }}
             </p>
             <p class="text-xs" style="color: rgba(255,255,255,0.25);">
-              Jl. Raya Kebayoran Lama No. 12<br/>Jakarta Selatan 12240, Indonesia
+              Gg. Bina Warga III Desa No.36<br/>Lubang Buaya, Cipayung, Jakarta Timur 13810, Indonesia
             </p>
           </div>
 

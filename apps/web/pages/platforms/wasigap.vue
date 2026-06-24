@@ -20,8 +20,8 @@ useSeoMeta({
   description: 'WaSigap membantu klinik, toko online, bisnis jasa, dan tim customer service mengelola percakapan WhatsApp melalui AI auto-reply, CRM, broadcast terjadwal, dan follow-up otomatis.',
   ogTitle: 'WaSigap — AI WhatsApp Automation for Indonesian SMEs',
   ogDescription: 'WaSigap helps businesses manage WhatsApp conversations with AI auto-reply, CRM, broadcast scheduling, customer follow-up, and workflow automation from one dashboard.',
-  ogImage: 'https://wasigap.com/logo.png',
-  ogUrl: 'https://wasigap.com',
+  ogImage: 'https://autobot.co.id/logo.png',
+  ogUrl: 'https://autobot.co.id/platforms/wasigap',
 })
 </script>
 

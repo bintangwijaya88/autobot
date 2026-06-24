@@ -94,8 +94,8 @@ export const platformGroups = [
         tier: 'core' as const,
         tagline: 'AI-powered WhatsApp automation platform.',
         desc: 'WaSigap membantu bisnis mengelola percakapan WhatsApp melalui AI auto-reply, CRM, broadcast terjadwal, follow-up pelanggan, dan otomasi alur kerja dalam satu dashboard.',
-        url: 'https://wasigap.com',
-        domain: 'wasigap.com',
+        url: 'https://wa.autobot.co.id',
+        domain: 'wa.autobot.co.id',
         targetUsers: 'Klinik, toko online, bisnis jasa, dan tim customer service dengan volume chat tinggi.',
         features: [
           'AI auto-reply WhatsApp',

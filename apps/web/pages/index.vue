@@ -210,7 +210,7 @@ const startupProgress = [
   { label: 'Product status', value: 'Active — used by early adopters and businesses' },
   { label: 'Main product', value: 'WaSigap' },
   { label: 'Target market', value: 'Indonesian SMEs, clinics, online stores, and service businesses' },
-  { label: 'Website', value: 'https://wasigap.com' },
+  { label: 'Website', value: 'https://wa.autobot.co.id' },
   { label: 'Demo', value: 'Available via product website and direct demo request' },
   { label: 'Registered users', value: '200 registered users' },
   { label: 'Active users', value: '80 active users' },
@@ -268,7 +268,7 @@ const founderLinks = [
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
-              href="https://wasigap.com"
+              href="https://wa.autobot.co.id"
               target="_blank"
               rel="noopener"
               class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
@@ -360,7 +360,7 @@ const founderLinks = [
 
           <div class="mt-6 grid gap-3">
             <a
-              href="https://wasigap.com"
+              href="https://wa.autobot.co.id"
               target="_blank"
               rel="noopener"
               class="inline-flex items-center justify-between rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-bold text-slate-900 transition hover:border-emerald-300 hover:shadow-sm"
@@ -589,7 +589,7 @@ const founderLinks = [
                 Contact Founder
               </a>
               <a
-                href="https://wasigap.com"
+                href="https://wa.autobot.co.id"
                 target="_blank"
                 rel="noopener"
                 class="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-3 text-sm font-bold text-emerald-800 transition hover:border-emerald-300 hover:bg-emerald-100"
